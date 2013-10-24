@@ -38,3 +38,22 @@ void Teacher::showTime()
 		text[2] = ' ';
 	ui.lcdNClock->display(text);
 }
+
+void Teacher::on_pBHomeWork_clicked()
+{
+    homeWorkTool= new HomeWorkTool;
+    homeWorkTool->show();
+
+}
+
+void Teacher::on_cBSettings_currentIndexChanged(int index)
+{
+    if(index==1)
+    {
+        manageClasses = new ManageClasses;
+        manageClasses->show();
+
+        ui.cBSettings->setCurrentIndex(0);
+
+    }
+}
