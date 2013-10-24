@@ -104,6 +104,11 @@
    </item>
    <item>
     <property name="text">
+     <string>Add Subject</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
      <string>ShutDown</string>
     </property>
    </item>

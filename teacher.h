@@ -7,6 +7,7 @@
 #include "ui_teacher.h"
 #include "homeworktool.h"
 #include "manageclasses.h"
+#include "subjectmanage.h"
 
 class Teacher : public QWidget
 {
@@ -18,6 +19,7 @@ public:
 	//void showTime();
     HomeWorkTool *homeWorkTool;
     ManageClasses *manageClasses;
+    SubjectManage *subjectManage;
 
 private:
 	Ui::TeacherClass ui;

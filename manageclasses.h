@@ -20,6 +20,7 @@ public:
     explicit ManageClasses(QWidget *parent = 0);
     ~ManageClasses();
     QString filepath;
+    QString newGradeFolderPath;
 
     
 private slots:

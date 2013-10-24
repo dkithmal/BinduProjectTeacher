@@ -9,12 +9,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>567</width>
-    <height>302</height>
+    <width>576</width>
+    <height>294</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Home Work Tool</string>
+   <string>Form</string>
   </property>
   <widget class="QLabel" name="lHomeWork">
    <property name="geometry">
@@ -64,7 +64,7 @@
     </font>
    </property>
    <property name="title">
-    <string>Create New one</string>
+    <string>Create New One</string>
    </property>
    <widget class="QPushButton" name="pBNewHomeWork">
     <property name="geometry">

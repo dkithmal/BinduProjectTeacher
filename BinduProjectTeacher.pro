@@ -19,18 +19,24 @@ SOURCES += main.cpp\
     newhomework.cpp \
     newnote.cpp \
     openhomework.cpp \
-    manageclasses.cpp
+    manageclasses.cpp \
+    subjectmanage.cpp \
+    newmixpaper.cpp
 
 HEADERS  += teacher.h \
     homeworktool.h \
     newhomework.h \
     newnote.h \
     openhomework.h \
-    manageclasses.h
+    manageclasses.h \
+    subjectmanage.h \
+    newmixpaper.h
 
 FORMS    += teacher.ui \
     homeworktool.ui \
     newhomework.ui \
     newnote.ui \
     openhomework.ui \
-    manageclasses.ui
+    manageclasses.ui \
+    subjectmanage.ui \
+    newmixpaper.ui

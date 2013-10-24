@@ -10,19 +10,14 @@
     <height>438</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTreeView" name="treeView">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>361</width>
-     <height>391</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="lSelectSubject">
    <property name="geometry">
     <rect>
@@ -94,6 +89,29 @@
    <property name="text">
     <string>Close</string>
    </property>
+  </widget>
+  <widget class="QTreeWidget" name="tWSelectSubject">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>361</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <attribute name="headerVisible">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string notr="true">1</string>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>

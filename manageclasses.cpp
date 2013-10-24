@@ -7,7 +7,10 @@ ManageClasses::ManageClasses(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tWManage->setCurrentIndex(0);
+    //filepath means config filepath
     filepath ="D:/dk work/Motarola/Bindu/Administration/GradesAndClassManage/GradesAndClassManage.xml";
+    newGradeFolderPath="D:/dk work/Motarola/Bindu/HomeWorkTool/HomeWork/Papers/";
+
 }
 
 ManageClasses::~ManageClasses()
@@ -69,8 +72,15 @@ void ManageClasses::on_pBAddGrade_clicked()
             stream <<document.toString();
             newConfigFile.close();
 
-            QMessageBox::information(this,"Success","New Grade Created");
+            //creating new dirctry for grade
+            QString newGradepath=newGradeFolderPath;
+            newGradepath.append(ui->lEGradeName->text());
+            QDir().mkdir(newGradepath);
             ui->lEGradeName->clear();
+
+            QMessageBox::information(this,"Success","New Grade Created");
+
+
 
         }
 
@@ -154,7 +164,7 @@ void ManageClasses::on_tWManage_currentChanged(int index)
 
                     if(i==0)
                     {
-                        QDomNodeList classList= itemNode.childNodes();
+                        QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
 
                         ui->cBSelectClass->clear();
                         for(int j=0;j<classList.count();j++)
@@ -210,8 +220,7 @@ void ManageClasses::on_pBCreateClass_clicked()
 
                 if(!itemNode.toElement().attribute("GradeName").compare(ui->cBSelectGrade_2->currentText()))
                 {
-                    qDebug() <<itemNode.toElement().attribute("GradeName");
-                    qDebug() <<ui->cBSelectGrade_2->currentText();
+
 
                     QDomElement sClass= document.createElement("Class");
                     sClass.setAttribute("ClassName",ui->lEClassName->text());
@@ -244,6 +253,8 @@ void ManageClasses::on_pBCreateClass_clicked()
             QTextStream stream(&newConfigFile);
             stream <<document.toString();
             newConfigFile.close();
+
+
 
             QMessageBox::information(this,"Success","New Class Created");
             ui->lEGradeName->clear();
@@ -289,8 +300,7 @@ void ManageClasses::on_cBSelectGrade_3_currentIndexChanged(const QString &arg1)
                 {
                     if(ui->cBSelectGrade_3->currentText()==itemNode.toElement().attribute("GradeName"))
                     {
-                        QDomNodeList classList= itemNode.childNodes();
-
+                        QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
                         ui->cBSelectClass->clear();
                         for(int j=0;j<classList.count();j++)
                         {
@@ -301,14 +311,6 @@ void ManageClasses::on_cBSelectGrade_3_currentIndexChanged(const QString &arg1)
 
                     }
 
-//                    //gradeList.append(itemNode.toElement().attribute("GradeName"));
-//                    ui->cBSelectGrade_3->addItem(itemNode.toElement().attribute("GradeName"));
-
-//                    if(i==0)
-//                    {
-
-
-//                    }
 
 
                 }
@@ -350,7 +352,7 @@ void ManageClasses::on_pBAddStudent_clicked()
             {
                 if(ui->cBSelectGrade_3->currentText()==itemNode.toElement().attribute("GradeName"))
                 {
-                    QDomNodeList classList= itemNode.childNodes();
+                    QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
 
 
                     for(int j=0;j<classList.count();j++)
