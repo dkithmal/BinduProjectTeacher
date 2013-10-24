@@ -56,4 +56,5 @@ void Teacher::on_cBSettings_currentIndexChanged(int index)
         ui.cBSettings->setCurrentIndex(0);
 
     }
+
 }
