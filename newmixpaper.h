@@ -23,23 +23,31 @@ public:
     explicit NewMixPaper(QWidget *parent = 0,QString filePath=NULL);
     ~NewMixPaper();
     void drowHeader(QDomElement root);
+    void drowEditQuestions(QDomElement root);
     void drowQuestions(QDomElement root);
     void toCreatePaperLayout();
+    void saveAnswers();
+    void saveEditedQuestions();
     QString paperCrationPath;
 
     int qustionNo;
     int mcqNo;
     int essayNO;
+    int totalNoOfQuestions;
+    int indexofTabWidget;
 
      QVBoxLayout *paperHeaderLayout;
      QVBoxLayout *paperQuestionsLayout;
 
      QRadioButton *rBMcqAnswers[25][4];
+     QLineEdit *lEMcqAnswers[25][4];
      QFrame *mcqFrames[25];
-     QVBoxLayout  *mcqQuestionLayout[5];
+     QGridLayout  *questionLayout[5];
      QLabel *qusestionLables[50];
-     QLineEdit *essayAnswers[25];
-     QVBoxLayout  *essayQuestionLayout[5];
+     QTextEdit *qusestionEdit[50];
+     QTextEdit *essayAnswers[25];
+
+     //QVBoxLayout  *essayQuestionLayout[5];
     
 private slots:
     void on_cBNoOfChoises_currentIndexChanged(int index);
@@ -51,6 +59,14 @@ private slots:
     void on_tabWidget_currentChanged(int index);
 
     void on_tWPaperCreation_currentChanged(int index);
+
+    void on_pBPrivious_clicked();
+
+    void on_pBNext_clicked();
+
+    void on_pBEPrivious_clicked();
+
+    void on_pBENext_clicked();
 
 private:
     Ui::NewMixPaper *ui;
