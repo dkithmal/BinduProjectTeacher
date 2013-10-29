@@ -82,6 +82,7 @@ public:
         cBSettings->insertItems(0, QStringList()
          << QApplication::translate("TeacherClass", "Settings", 0)
          << QApplication::translate("TeacherClass", "Admistration", 0)
+         << QApplication::translate("TeacherClass", "Add Subject", 0)
          << QApplication::translate("TeacherClass", "ShutDown", 0)
         );
     } // retranslateUi

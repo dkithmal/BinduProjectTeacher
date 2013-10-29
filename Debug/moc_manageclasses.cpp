@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_ManageClasses_t {
-    QByteArrayData data[3];
-    char stringdata[38];
+    QByteArrayData data[9];
+    char stringdata[164];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,10 +31,19 @@ static const qt_meta_stringdata_ManageClasses_t qt_meta_stringdata_ManageClasses
     {
 QT_MOC_LITERAL(0, 0, 13),
 QT_MOC_LITERAL(1, 14, 21),
-QT_MOC_LITERAL(2, 36, 0)
+QT_MOC_LITERAL(2, 36, 0),
+QT_MOC_LITERAL(3, 37, 26),
+QT_MOC_LITERAL(4, 64, 5),
+QT_MOC_LITERAL(5, 70, 24),
+QT_MOC_LITERAL(6, 95, 38),
+QT_MOC_LITERAL(7, 134, 4),
+QT_MOC_LITERAL(8, 139, 23)
     },
     "ManageClasses\0on_pBAddGrade_clicked\0"
-    "\0"
+    "\0on_tWManage_currentChanged\0index\0"
+    "on_pBCreateClass_clicked\0"
+    "on_cBSelectGrade_3_currentIndexChanged\0"
+    "arg1\0on_pBAddStudent_clicked\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -44,7 +53,7 @@ static const uint qt_meta_data_ManageClasses[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -52,9 +61,17 @@ static const uint qt_meta_data_ManageClasses[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x08,
+       1,    0,   39,    2, 0x08,
+       3,    1,   40,    2, 0x08,
+       5,    0,   43,    2, 0x08,
+       6,    1,   44,    2, 0x08,
+       8,    0,   47,    2, 0x08,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    7,
     QMetaType::Void,
 
        0        // eod
@@ -66,10 +83,13 @@ void ManageClasses::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         ManageClasses *_t = static_cast<ManageClasses *>(_o);
         switch (_id) {
         case 0: _t->on_pBAddGrade_clicked(); break;
+        case 1: _t->on_tWManage_currentChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->on_pBCreateClass_clicked(); break;
+        case 3: _t->on_cBSelectGrade_3_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 4: _t->on_pBAddStudent_clicked(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject ManageClasses::staticMetaObject = {
@@ -97,13 +117,13 @@ int ManageClasses::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 5;
     }
     return _id;
 }

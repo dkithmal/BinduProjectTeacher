@@ -17,7 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTreeView>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,26 +25,24 @@ QT_BEGIN_NAMESPACE
 class Ui_NewNote
 {
 public:
-    QTreeView *treeView;
     QLabel *lSelectSubject;
     QLabel *lNoteName;
     QLineEdit *lineEdit;
     QPushButton *pBCreateNote;
     QPushButton *pBClose;
+    QTreeWidget *tWSelectSubject;
 
     void setupUi(QWidget *NewNote)
     {
         if (NewNote->objectName().isEmpty())
             NewNote->setObjectName(QStringLiteral("NewNote"));
         NewNote->resize(714, 438);
-        treeView = new QTreeView(NewNote);
-        treeView->setObjectName(QStringLiteral("treeView"));
-        treeView->setGeometry(QRect(10, 30, 361, 391));
+        QFont font;
+        font.setPointSize(12);
+        NewNote->setFont(font);
         lSelectSubject = new QLabel(NewNote);
         lSelectSubject->setObjectName(QStringLiteral("lSelectSubject"));
         lSelectSubject->setGeometry(QRect(20, 5, 101, 21));
-        QFont font;
-        font.setPointSize(12);
         lSelectSubject->setFont(font);
         lNoteName = new QLabel(NewNote);
         lNoteName->setObjectName(QStringLiteral("lNoteName"));
@@ -59,6 +57,14 @@ public:
         pBClose = new QPushButton(NewNote);
         pBClose->setObjectName(QStringLiteral("pBClose"));
         pBClose->setGeometry(QRect(630, 380, 75, 31));
+        tWSelectSubject = new QTreeWidget(NewNote);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setText(0, QStringLiteral("1"));
+        tWSelectSubject->setHeaderItem(__qtreewidgetitem);
+        tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
+        tWSelectSubject->setGeometry(QRect(10, 30, 361, 381));
+        tWSelectSubject->setFont(font);
+        tWSelectSubject->header()->setVisible(false);
 
         retranslateUi(NewNote);
         QObject::connect(pBClose, SIGNAL(clicked()), NewNote, SLOT(close()));

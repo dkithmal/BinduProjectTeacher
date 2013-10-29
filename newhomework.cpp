@@ -179,6 +179,8 @@ void NewHomeWork::on_pBCreatePaper_clicked()
 
          newMixPaper = new NewMixPaper(0,newqPaperSavefilepath);
          newMixPaper->show();
+
+        // this->close();
     }
 
 

@@ -25,6 +25,7 @@ void HomeWorkTool::on_pBNewHomeWork_clicked()
         {
             newHomeWork = new NewHomeWork;
             newHomeWork->show();
+            this->close();
 
         }
         else

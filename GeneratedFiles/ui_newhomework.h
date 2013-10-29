@@ -19,7 +19,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
-#include <QtWidgets/QTreeView>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +27,6 @@ QT_BEGIN_NAMESPACE
 class Ui_NewHomeWork
 {
 public:
-    QTreeView *treeView;
     QLabel *lPaperName;
     QLabel *lSelectSubject;
     QLineEdit *lEPaperName;
@@ -39,20 +38,19 @@ public:
     QRadioButton *rBEssayMcq;
     QPushButton *pBCreatePaper;
     QPushButton *pBClose;
+    QTreeWidget *tWSelectSubject;
 
     void setupUi(QWidget *NewHomeWork)
     {
         if (NewHomeWork->objectName().isEmpty())
             NewHomeWork->setObjectName(QStringLiteral("NewHomeWork"));
         NewHomeWork->resize(781, 447);
-        treeView = new QTreeView(NewHomeWork);
-        treeView->setObjectName(QStringLiteral("treeView"));
-        treeView->setGeometry(QRect(10, 30, 381, 391));
+        QFont font;
+        font.setPointSize(12);
+        NewHomeWork->setFont(font);
         lPaperName = new QLabel(NewHomeWork);
         lPaperName->setObjectName(QStringLiteral("lPaperName"));
         lPaperName->setGeometry(QRect(400, 10, 91, 21));
-        QFont font;
-        font.setPointSize(12);
         lPaperName->setFont(font);
         lSelectSubject = new QLabel(NewHomeWork);
         lSelectSubject->setObjectName(QStringLiteral("lSelectSubject"));
@@ -87,6 +85,14 @@ public:
         pBClose = new QPushButton(NewHomeWork);
         pBClose->setObjectName(QStringLiteral("pBClose"));
         pBClose->setGeometry(QRect(680, 380, 75, 31));
+        tWSelectSubject = new QTreeWidget(NewHomeWork);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setText(0, QStringLiteral("1"));
+        tWSelectSubject->setHeaderItem(__qtreewidgetitem);
+        tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
+        tWSelectSubject->setGeometry(QRect(10, 40, 371, 391));
+        tWSelectSubject->setFont(font);
+        tWSelectSubject->header()->setVisible(false);
 
         retranslateUi(NewHomeWork);
         QObject::connect(pBClose, SIGNAL(clicked()), NewHomeWork, SLOT(close()));

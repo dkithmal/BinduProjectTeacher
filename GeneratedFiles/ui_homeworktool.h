@@ -41,7 +41,7 @@ public:
         if (HomeWorkTool->objectName().isEmpty())
             HomeWorkTool->setObjectName(QStringLiteral("HomeWorkTool"));
         HomeWorkTool->setEnabled(true);
-        HomeWorkTool->resize(567, 302);
+        HomeWorkTool->resize(576, 294);
         lHomeWork = new QLabel(HomeWorkTool);
         lHomeWork->setObjectName(QStringLiteral("lHomeWork"));
         lHomeWork->setGeometry(QRect(200, 10, 181, 16));
@@ -95,10 +95,10 @@ public:
 
     void retranslateUi(QWidget *HomeWorkTool)
     {
-        HomeWorkTool->setWindowTitle(QApplication::translate("HomeWorkTool", "Home Work Tool", 0));
+        HomeWorkTool->setWindowTitle(QApplication::translate("HomeWorkTool", "Form", 0));
         lHomeWork->setText(QApplication::translate("HomeWorkTool", "Home Work Tool", 0));
         pBClose->setText(QApplication::translate("HomeWorkTool", "Close", 0));
-        groupBox->setTitle(QApplication::translate("HomeWorkTool", "Create New one", 0));
+        groupBox->setTitle(QApplication::translate("HomeWorkTool", "Create New One", 0));
         pBNewHomeWork->setText(QApplication::translate("HomeWorkTool", "Create ", 0));
         rBNewHomeWrok->setText(QApplication::translate("HomeWorkTool", "Home Work", 0));
         rBNewShotNote->setText(QApplication::translate("HomeWorkTool", "Short Note", 0));
