@@ -15,9 +15,9 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListView>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTreeView>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,40 +25,51 @@ QT_BEGIN_NAMESPACE
 class Ui_OpenHomeWork
 {
 public:
-    QTreeView *treeView;
     QLabel *lSelectSubject;
     QLabel *lSelectPaper;
-    QListView *listView;
     QPushButton *pBOpen;
     QPushButton *pBClose;
+    QPushButton *pBDeleteHomeWork;
+    QTreeWidget *tWSelectSubject;
+    QListWidget *lWHomeWorks;
 
     void setupUi(QWidget *OpenHomeWork)
     {
         if (OpenHomeWork->objectName().isEmpty())
             OpenHomeWork->setObjectName(QStringLiteral("OpenHomeWork"));
         OpenHomeWork->resize(800, 450);
-        treeView = new QTreeView(OpenHomeWork);
-        treeView->setObjectName(QStringLiteral("treeView"));
-        treeView->setGeometry(QRect(10, 30, 411, 401));
+        QFont font;
+        font.setPointSize(12);
+        OpenHomeWork->setFont(font);
         lSelectSubject = new QLabel(OpenHomeWork);
         lSelectSubject->setObjectName(QStringLiteral("lSelectSubject"));
         lSelectSubject->setGeometry(QRect(20, 5, 121, 21));
-        QFont font;
-        font.setPointSize(12);
         lSelectSubject->setFont(font);
         lSelectPaper = new QLabel(OpenHomeWork);
         lSelectPaper->setObjectName(QStringLiteral("lSelectPaper"));
         lSelectPaper->setGeometry(QRect(430, 5, 101, 21));
         lSelectPaper->setFont(font);
-        listView = new QListView(OpenHomeWork);
-        listView->setObjectName(QStringLiteral("listView"));
-        listView->setGeometry(QRect(430, 30, 361, 331));
         pBOpen = new QPushButton(OpenHomeWork);
         pBOpen->setObjectName(QStringLiteral("pBOpen"));
-        pBOpen->setGeometry(QRect(430, 370, 361, 31));
+        pBOpen->setGeometry(QRect(630, 370, 161, 31));
         pBClose = new QPushButton(OpenHomeWork);
         pBClose->setObjectName(QStringLiteral("pBClose"));
         pBClose->setGeometry(QRect(710, 410, 75, 31));
+        pBDeleteHomeWork = new QPushButton(OpenHomeWork);
+        pBDeleteHomeWork->setObjectName(QStringLiteral("pBDeleteHomeWork"));
+        pBDeleteHomeWork->setGeometry(QRect(430, 370, 151, 31));
+        tWSelectSubject = new QTreeWidget(OpenHomeWork);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setText(0, QStringLiteral("1"));
+        tWSelectSubject->setHeaderItem(__qtreewidgetitem);
+        tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
+        tWSelectSubject->setGeometry(QRect(10, 30, 411, 411));
+        tWSelectSubject->setFont(font);
+        tWSelectSubject->header()->setVisible(false);
+        lWHomeWorks = new QListWidget(OpenHomeWork);
+        lWHomeWorks->setObjectName(QStringLiteral("lWHomeWorks"));
+        lWHomeWorks->setGeometry(QRect(430, 30, 361, 331));
+        lWHomeWorks->setFont(font);
 
         retranslateUi(OpenHomeWork);
         QObject::connect(pBClose, SIGNAL(clicked()), OpenHomeWork, SLOT(close()));
@@ -73,6 +84,7 @@ public:
         lSelectPaper->setText(QApplication::translate("OpenHomeWork", "Select paper", 0));
         pBOpen->setText(QApplication::translate("OpenHomeWork", "Open", 0));
         pBClose->setText(QApplication::translate("OpenHomeWork", "Close", 0));
+        pBDeleteHomeWork->setText(QApplication::translate("OpenHomeWork", "Delete Home Work", 0));
     } // retranslateUi
 
 };

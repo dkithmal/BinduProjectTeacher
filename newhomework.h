@@ -1,13 +1,15 @@
 #ifndef NEWHOMEWORK_H
 #define NEWHOMEWORK_H
 
-#include <QWidget>
+#include <QtWidgets>
 #include <QString>
 #include <QFile>
 #include <QtXml>
 #include <QDebug>
 #include <QMessageBox>
 #include "newmixpaper.h"
+#include "newmcqpaper.h"
+#include "newessaypaper.h"
 
 namespace Ui {
 class NewHomeWork;
@@ -23,6 +25,8 @@ public:
     void setSubjetToTree();
     QString filepath;
     NewMixPaper *newMixPaper;
+    NewMcqPaper *newMcqPaper;
+    NewEssayPaper *newEssayPaper;
     QString qPaperSavefilepath;
     
 private slots:

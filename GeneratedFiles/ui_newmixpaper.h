@@ -259,7 +259,7 @@ public:
         QObject::connect(pBClose, SIGNAL(clicked()), NewMixPaper, SLOT(close()));
         QObject::connect(pushButton_2, SIGNAL(clicked()), NewMixPaper, SLOT(close()));
 
-        tWPaperCreation->setCurrentIndex(2);
+        tWPaperCreation->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(NewMixPaper);
@@ -293,7 +293,7 @@ public:
         pBPrivious->setText(QApplication::translate("NewMixPaper", "Privious", 0));
         pBNext->setText(QApplication::translate("NewMixPaper", "Next", 0));
         lPageNo->setText(QApplication::translate("NewMixPaper", "1", 0));
-        tWPaperCreation->setTabText(tWPaperCreation->indexOf(tab_2), QApplication::translate("NewMixPaper", "View Paper", 0));
+        tWPaperCreation->setTabText(tWPaperCreation->indexOf(tab_2), QApplication::translate("NewMixPaper", "Create Answers", 0));
         gBEHeader->setTitle(QString());
         gBEQuestions->setTitle(QString());
         lEPageNo->setText(QApplication::translate("NewMixPaper", "1", 0));

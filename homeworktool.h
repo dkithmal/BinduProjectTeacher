@@ -1,7 +1,7 @@
 #ifndef HOMEWORKTOOL_H
 #define HOMEWORKTOOL_H
 
-#include <QWidget>
+#include <QtWidgets>
 #include <QString>
 #include <QFile>
 #include <QtXml>
@@ -9,7 +9,8 @@
 #include <QMessageBox>
 #include "newnote.h"
 #include "newhomework.h"
-#include "openhomework.h"
+#include "openhomework.h";
+#include "opennote.h"
 
 namespace Ui {
 class HomeWorkTool;
@@ -24,9 +25,13 @@ public:
     ~HomeWorkTool();
     NewHomeWork *newHomeWork;
     NewNote *newNote;
+    OpenHomeWork *openHomeWork;
+    OpenNote  *openNote;
     
 private slots:
     void on_pBNewHomeWork_clicked();
+
+    void on_pBOpenExistingHw_clicked();
 
 private:
     Ui::HomeWorkTool *ui;

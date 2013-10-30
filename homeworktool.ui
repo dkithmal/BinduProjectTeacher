@@ -152,7 +152,7 @@
      <string>Open </string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
+   <widget class="QRadioButton" name="rBOpenHomeWork">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -170,7 +170,7 @@
      <string>Home Work</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_2">
+   <widget class="QRadioButton" name="rBOpenNote">
     <property name="geometry">
      <rect>
       <x>150</x>

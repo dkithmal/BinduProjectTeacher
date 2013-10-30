@@ -27,7 +27,7 @@ class Ui_NewNote
 public:
     QLabel *lSelectSubject;
     QLabel *lNoteName;
-    QLineEdit *lineEdit;
+    QLineEdit *lENoteName;
     QPushButton *pBCreateNote;
     QPushButton *pBClose;
     QTreeWidget *tWSelectSubject;
@@ -48,9 +48,9 @@ public:
         lNoteName->setObjectName(QStringLiteral("lNoteName"));
         lNoteName->setGeometry(QRect(390, 10, 101, 16));
         lNoteName->setFont(font);
-        lineEdit = new QLineEdit(NewNote);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(380, 30, 321, 31));
+        lENoteName = new QLineEdit(NewNote);
+        lENoteName->setObjectName(QStringLiteral("lENoteName"));
+        lENoteName->setGeometry(QRect(380, 30, 321, 31));
         pBCreateNote = new QPushButton(NewNote);
         pBCreateNote->setObjectName(QStringLiteral("pBCreateNote"));
         pBCreateNote->setGeometry(QRect(380, 80, 321, 31));

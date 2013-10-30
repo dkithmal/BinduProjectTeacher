@@ -87,37 +87,37 @@ void NewHomeWork::setSubjetToTree()
 void NewHomeWork::on_pBCreatePaper_clicked()
 {
     int x=0;
-//    if(!ui->tWSelectSubject->currentIndex().isValid()||!ui->tWSelectSubject->currentIndex().parent().isValid())
-//    {
-//        QMessageBox::information(this,"Error","Select Subject");
-//        x=1;
+    if(!ui->tWSelectSubject->currentIndex().isValid()||!ui->tWSelectSubject->currentIndex().parent().isValid())
+    {
+        QMessageBox::information(this,"Error","Select Subject");
+        x=1;
 
-//    }
+    }
 
-//     if(ui->lEPaperName->text().isEmpty())
-//    {
-//        QMessageBox::information(this,"Error","Enter Paper Name");
-//        x=1;
+     if(ui->lEPaperName->text().isEmpty())
+    {
+        QMessageBox::information(this,"Error","Enter Paper Name");
+        x=1;
 
-//    }
+    }
 
-//    if(ui->lEDuration->text().isEmpty())
-//    {
-//        QMessageBox::information(this,"Error","Enter Paper Duration");
-//        x=1;
+    if(ui->lEDuration->text().isEmpty())
+    {
+        QMessageBox::information(this,"Error","Enter Paper Duration");
+        x=1;
 
-//    }
+    }
 
-//    if(!(ui->rBEssay->isChecked()||ui->rBEssayMcq->isChecked()||ui->rBMcq->isChecked()))
-//    {
-//        QMessageBox::information(this,"Error","Select Paper Type");
-//        x=1;
+    if(!(ui->rBEssay->isChecked()||ui->rBEssayMcq->isChecked()||ui->rBMcq->isChecked()))
+    {
+        QMessageBox::information(this,"Error","Select Paper Type");
+        x=1;
 
-//    }
+    }
 
 
 
-     if(ui->rBEssayMcq->isChecked()&&x==0)
+     if(x==0)
     {
          //QString filepath ="D:/dk work/Motarola/project/assinment/";
         // filepath.append(ui->fileName->text());
@@ -175,13 +175,130 @@ void NewHomeWork::on_pBCreatePaper_clicked()
          }
 
 
+         //to create HomeWork tag
+
+             QFile openConfigFile(filepath);
+             if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+             {
+                 qDebug()<<"error";
+
+             }
+             else
+             {
+                 QDomDocument document;
+
+                 document.setContent(&openConfigFile);
+                 QDomElement root= document.firstChildElement();
+
+                 QDomNodeList grades = root.elementsByTagName("Grade");
 
 
+                 for(int i=0;i<grades.count();i++)
+                 {
+
+                     QDomNode itemNode = grades.at(i);
+
+                     if(itemNode.isElement())
+                     {
+                         if(itemNode.toElement().attribute("GradeName")==ui->tWSelectSubject->currentItem()->parent()->text(0))
+                         {
+                             QDomNodeList classList= itemNode.toElement().elementsByTagName("Subject");
+
+                                 for(int j=0;j<classList.count();j++)
+                                 {
+
+                                     QDomNode itemNodeClass = classList.at(j);
+
+                                      if(itemNodeClass.toElement().attribute("SubjectName")==ui->tWSelectSubject->currentItem()->text(0))
+                                      {
+                                          QDomElement homeWorkElement=document.createElement(QString("HomeWork"));
+                                          homeWorkElement.setAttribute("HomeWorkName",ui->lEPaperName->text());
+                                          if(ui->rBMcq->isChecked())
+                                          {
+                                              homeWorkElement.setAttribute("Type","Mcq");
+
+                                          }
+                                          if(ui->rBEssay->isChecked())
+                                          {
+                                              homeWorkElement.setAttribute("Type","Essay");
+
+                                          }
+                                          if(ui->rBEssayMcq->isChecked())
+                                          {
+                                              homeWorkElement.setAttribute("Type","EssayMcq");
+
+                                          }
+                                          itemNodeClass.appendChild(homeWorkElement);
+
+
+
+                                          break;
+
+                                      }
+
+
+                                 }
+
+
+                          }
+                                 //break;
+
+                       }
+
+
+
+                     }
+
+
+                 openConfigFile.close();
+
+                 if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+                 {
+                     qDebug()<<"error";
+
+                 }
+                 else
+                 {
+                     QTextStream stream(&openConfigFile);
+                     stream <<document.toString();
+                     //qDebug() <<document.toString();
+                     openConfigFile.close();
+                 //  QMessageBox::information(this,"Success","Mcq Qustion Added");
+
+                }
+
+                }
+
+
+
+
+
+
+
+     if(ui->rBEssayMcq->isChecked()&&x==0)
+     {
          newMixPaper = new NewMixPaper(0,newqPaperSavefilepath);
          newMixPaper->show();
+     }
+
+     if(ui->rBMcq->isChecked()&&x==0)
+     {
+         newMcqPaper = new NewMcqPaper(0,newqPaperSavefilepath);
+         newMcqPaper->show();
+
+     }
+
+     if(ui->rBEssay->isChecked()&&x==0)
+     {
+         newEssayPaper = new NewEssayPaper(0,newqPaperSavefilepath);
+         newEssayPaper->show();
+
+     }
 
         // this->close();
     }
+
+
 
 
 

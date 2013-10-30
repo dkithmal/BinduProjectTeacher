@@ -21,7 +21,12 @@ SOURCES += main.cpp\
     openhomework.cpp \
     manageclasses.cpp \
     subjectmanage.cpp \
-    newmixpaper.cpp
+    newmixpaper.cpp \
+    newmcqpaper.cpp \
+    newessaypaper.cpp \
+    newnotecreating.cpp \
+    opennote.cpp \
+    editnote.cpp
 
 HEADERS  += teacher.h \
     homeworktool.h \
@@ -30,7 +35,12 @@ HEADERS  += teacher.h \
     openhomework.h \
     manageclasses.h \
     subjectmanage.h \
-    newmixpaper.h
+    newmixpaper.h \
+    newmcqpaper.h \
+    newessaypaper.h \
+    newnotecreating.h \
+    opennote.h \
+    editnote.h
 
 FORMS    += teacher.ui \
     homeworktool.ui \
@@ -39,4 +49,9 @@ FORMS    += teacher.ui \
     openhomework.ui \
     manageclasses.ui \
     subjectmanage.ui \
-    newmixpaper.ui
+    newmixpaper.ui \
+    newmcqpaper.ui \
+    newessaypaper.ui \
+    newnotecreating.ui \
+    opennote.ui \
+    editnote.ui

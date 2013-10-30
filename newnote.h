@@ -1,12 +1,13 @@
 #ifndef NEWNOTE_H
 #define NEWNOTE_H
 
-#include <QWidget>
+#include <QtWidgets>
 #include <QString>
 #include <QFile>
 #include <QtXml>
 #include <QDebug>
 #include <QMessageBox>
+#include "newnotecreating.h"
 
 
 
@@ -23,7 +24,12 @@ public:
     ~NewNote();
     void setSubjetToTree();
     QString filepath;
+    QString noteSavefilepath;
+    NewNoteCreating *newNoteCreating;
     
+private slots:
+    void on_pBCreateNote_clicked();
+
 private:
     Ui::NewNote *ui;
 };

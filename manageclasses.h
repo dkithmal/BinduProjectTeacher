@@ -1,7 +1,7 @@
 #ifndef MANAGECLASSES_H
 #define MANAGECLASSES_H
 
-#include <QWidget>
+#include <QtWidgets>
 #include <QString>
 #include <QFile>
 #include <QtXml>

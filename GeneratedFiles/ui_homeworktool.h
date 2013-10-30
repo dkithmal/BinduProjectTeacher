@@ -33,8 +33,8 @@ public:
     QRadioButton *rBNewShotNote;
     QGroupBox *groupBox_2;
     QPushButton *pBOpenExistingHw;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
+    QRadioButton *rBOpenHomeWork;
+    QRadioButton *rBOpenNote;
 
     void setupUi(QWidget *HomeWorkTool)
     {
@@ -78,14 +78,14 @@ public:
         pBOpenExistingHw = new QPushButton(groupBox_2);
         pBOpenExistingHw->setObjectName(QStringLiteral("pBOpenExistingHw"));
         pBOpenExistingHw->setGeometry(QRect(80, 110, 111, 41));
-        radioButton = new QRadioButton(groupBox_2);
-        radioButton->setObjectName(QStringLiteral("radioButton"));
-        radioButton->setGeometry(QRect(20, 46, 111, 21));
-        radioButton->setFont(font1);
-        radioButton_2 = new QRadioButton(groupBox_2);
-        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
-        radioButton_2->setGeometry(QRect(150, 46, 101, 21));
-        radioButton_2->setFont(font1);
+        rBOpenHomeWork = new QRadioButton(groupBox_2);
+        rBOpenHomeWork->setObjectName(QStringLiteral("rBOpenHomeWork"));
+        rBOpenHomeWork->setGeometry(QRect(20, 46, 111, 21));
+        rBOpenHomeWork->setFont(font1);
+        rBOpenNote = new QRadioButton(groupBox_2);
+        rBOpenNote->setObjectName(QStringLiteral("rBOpenNote"));
+        rBOpenNote->setGeometry(QRect(150, 46, 101, 21));
+        rBOpenNote->setFont(font1);
 
         retranslateUi(HomeWorkTool);
         QObject::connect(pBClose, SIGNAL(clicked()), HomeWorkTool, SLOT(close()));
@@ -104,8 +104,8 @@ public:
         rBNewShotNote->setText(QApplication::translate("HomeWorkTool", "Short Note", 0));
         groupBox_2->setTitle(QApplication::translate("HomeWorkTool", "Open Existing one", 0));
         pBOpenExistingHw->setText(QApplication::translate("HomeWorkTool", "Open ", 0));
-        radioButton->setText(QApplication::translate("HomeWorkTool", "Home Work", 0));
-        radioButton_2->setText(QApplication::translate("HomeWorkTool", "Short Note", 0));
+        rBOpenHomeWork->setText(QApplication::translate("HomeWorkTool", "Home Work", 0));
+        rBOpenNote->setText(QApplication::translate("HomeWorkTool", "Short Note", 0));
     } // retranslateUi
 
 };

@@ -10,19 +10,14 @@
     <height>450</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTreeView" name="treeView">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>411</width>
-     <height>401</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="lSelectSubject">
    <property name="geometry">
     <rect>
@@ -59,22 +54,12 @@
     <string>Select paper</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>30</y>
-     <width>361</width>
-     <height>331</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pBOpen">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>630</x>
      <y>370</y>
-     <width>361</width>
+     <width>161</width>
      <height>31</height>
     </rect>
    </property>
@@ -93,6 +78,57 @@
    </property>
    <property name="text">
     <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pBDeleteHomeWork">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>370</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Home Work</string>
+   </property>
+  </widget>
+  <widget class="QTreeWidget" name="tWSelectSubject">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>411</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <attribute name="headerVisible">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string notr="true">1</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QListWidget" name="lWHomeWorks">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>30</y>
+     <width>361</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
  </widget>

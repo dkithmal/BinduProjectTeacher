@@ -41,7 +41,7 @@ public:
 
      QRadioButton *rBMcqAnswers[25][4];
      QLineEdit *lEMcqAnswers[25][4];
-     QFrame *mcqFrames[25];
+     //QFrame *mcqFrames[25];
      QGridLayout  *questionLayout[5];
      QLabel *qusestionLables[50];
      QTextEdit *qusestionEdit[50];

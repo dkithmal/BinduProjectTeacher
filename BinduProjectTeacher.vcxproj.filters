@@ -36,12 +36,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{a255d348-bf64-4e59-bab3-ddd910c15260}</UniqueIdentifier>
+      <UniqueIdentifier>{bb65aae2-ac51-4d86-afb1-62a7f04b774f}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{9373e93f-d801-43ba-81e4-58179d8f615a}</UniqueIdentifier>
+      <UniqueIdentifier>{2e87733d-7be5-4c27-b791-3cb3ab71f81d}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -56,13 +56,22 @@
     <ClCompile Include="manageclasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="newessaypaper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="newhomework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="newmcqpaper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="newmixpaper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="newnote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="newnotecreating.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="openhomework.cpp">
@@ -86,10 +95,22 @@
     <ClCompile Include="Release\moc_manageclasses.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_newessaypaper.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_newessaypaper.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="Debug\moc_newhomework.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_newhomework.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_newmcqpaper.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_newmcqpaper.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_newmixpaper.cpp">
@@ -102,6 +123,12 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_newnote.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_newnotecreating.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_newnotecreating.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_openhomework.cpp">
@@ -130,13 +157,22 @@
     <CustomBuild Include="manageclasses.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="newessaypaper.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="newhomework.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="newmcqpaper.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="newmixpaper.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="newnote.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="newnotecreating.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="openhomework.h">
@@ -156,13 +192,22 @@
     <CustomBuild Include="manageclasses.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="newessaypaper.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="newhomework.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="newmcqpaper.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="newmixpaper.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="newnote.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="newnotecreating.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="openhomework.ui">
@@ -182,13 +227,22 @@
     <ClInclude Include="GeneratedFiles\ui_manageclasses.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_newessaypaper.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_newhomework.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_newmcqpaper.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_newmixpaper.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_newnote.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_newnotecreating.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_openhomework.h">

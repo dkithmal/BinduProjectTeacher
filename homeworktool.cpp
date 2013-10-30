@@ -38,3 +38,28 @@ void HomeWorkTool::on_pBNewHomeWork_clicked()
 
 
 }
+
+void HomeWorkTool::on_pBOpenExistingHw_clicked()
+{
+    if(!(ui->rBOpenHomeWork->isChecked()||ui->rBOpenNote->isChecked()))
+    {
+         QMessageBox::information(this,"Error","Plese Select Note or Home Work");
+    }
+    else
+    {
+        if(ui->rBOpenHomeWork->isChecked())
+        {
+            openHomeWork = new OpenHomeWork;
+            openHomeWork->show();
+            this->close();
+
+        }
+        else
+        {
+            openNote = new OpenNote;
+            openNote->show();
+
+        }
+    }
+
+}

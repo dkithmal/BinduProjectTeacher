@@ -54,7 +54,7 @@
     <string>Note Name</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lENoteName">
    <property name="geometry">
     <rect>
      <x>380</x>
