@@ -21,10 +21,17 @@ public:
     ~SubjectManage();
     void setDefaultCB();
     QString filepath;
-    QString newGradeFolderPath;
+    QString basicPath;
+    bool removeDir(const QString &dirName);
     
 private slots:
        void on_pBAddSubject_clicked();
+
+       void on_tWSubjectManage_currentChanged(int index);
+
+       void on_cBSelectGradeRemove_currentIndexChanged(int index);
+
+       void on_pBRemove_clicked();
 
 private:
     Ui::SubjectManage *ui;

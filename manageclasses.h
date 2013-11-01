@@ -20,7 +20,8 @@ public:
     explicit ManageClasses(QWidget *parent = 0);
     ~ManageClasses();
     QString filepath;
-    QString newGradeFolderPath;
+    QString basicPath;
+    bool removeDir(const QString &dirName);
 
     
 private slots:
@@ -33,6 +34,20 @@ private slots:
     void on_cBSelectGrade_3_currentIndexChanged(const QString &arg1);
 
     void on_pBAddStudent_clicked();
+
+    void on_cBSelectGradeForRClass_currentIndexChanged(int index);
+
+
+
+    void on_cBSelectGradeFRStudent_currentIndexChanged(int index);
+
+    void on_cBSelectClassFRStudent_currentIndexChanged(int index);
+
+    void on_pBRemoveGrade_clicked();
+
+    void on_pBRemoveClass_clicked();
+
+    void on_pBRemoveStudent_clicked();
 
 private:
     Ui::ManageClasses *ui;

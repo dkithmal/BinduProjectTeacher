@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>5</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -346,7 +346,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>60</y>
+       <y>140</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -355,11 +355,11 @@
       <string>Select Class</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="cBSelectClass_3">
+    <widget class="QComboBox" name="cBSelectClassForRClass">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>60</y>
+       <x>200</x>
+       <y>140</y>
        <width>121</width>
        <height>31</height>
       </rect>
@@ -368,8 +368,8 @@
     <widget class="QPushButton" name="pBRemoveClass">
      <property name="geometry">
       <rect>
-       <x>400</x>
-       <y>50</y>
+       <x>390</x>
+       <y>90</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -391,6 +391,29 @@
       <string>Close</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>55</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select Grade</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cBSelectGradeForRClass">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>51</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_6">
     <attribute name="title">
@@ -400,7 +423,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>40</y>
+       <y>120</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -409,11 +432,11 @@
       <string>Select Class</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="cBSelectClass_2">
+    <widget class="QComboBox" name="cBSelectClassFRStudent">
      <property name="geometry">
       <rect>
        <x>190</x>
-       <y>40</y>
+       <y>110</y>
        <width>131</width>
        <height>31</height>
       </rect>
@@ -423,7 +446,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>125</y>
+       <y>180</y>
        <width>111</width>
        <height>21</height>
       </rect>
@@ -432,12 +455,12 @@
       <string>Select Student</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="cBSelectStudent">
+    <widget class="QComboBox" name="cBSelectStudentFRStudent">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>120</y>
-       <width>131</width>
+       <x>170</x>
+       <y>180</y>
+       <width>171</width>
        <height>31</height>
       </rect>
      </property>
@@ -445,8 +468,8 @@
     <widget class="QPushButton" name="pBRemoveStudent">
      <property name="geometry">
       <rect>
-       <x>400</x>
-       <y>70</y>
+       <x>390</x>
+       <y>100</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -466,6 +489,29 @@
      </property>
      <property name="text">
       <string>Close</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>45</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select Grade</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cBSelectGradeFRStudent">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>41</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
      </property>
     </widget>
    </widget>
