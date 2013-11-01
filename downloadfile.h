@@ -8,7 +8,7 @@
 #include <QtXml>
 #include <QDebug>
 #include <QMessageBox>
-
+#include "downloadmanage.h"
 namespace Ui {
 class DownloadFile;
 }
@@ -22,9 +22,11 @@ public:
     ~DownloadFile();
     void setFileList();
     void setClassList();
+    QString getSelectedClassStudents();
     QString filepath;
-    QString basicFilepath;
+    QString basicPath;
     QString Otherfilepath;
+    DownloadManage *downloadManage;
     
 private slots:
     void on_tWSelectClass_clicked(const QModelIndex &index);

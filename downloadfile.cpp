@@ -7,7 +7,7 @@ DownloadFile::DownloadFile(QWidget *parent) :
 {
     ui->setupUi(this);
     filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
-    basicFilepath="D:/dk work/Motarola/Bindu/HomeWorkTool/HomeWork/Papers/";
+    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
     setFileList();
     setClassList();
 }
@@ -253,6 +253,149 @@ void DownloadFile::on_pBDownload_clicked()
 
     if(x==0)
     {
+        QString creatingFullFilePathToSave;
+        QString creatingCommand;
+        QString creatingstudentList;
+
+        //creatingFullFilePathToDownload=basicPath;
+       // creatingFullFilePathToDownload.append("")
+
+        creatingCommand="Download ";
+        creatingCommand.append(ui->tWSelectHomeWork->currentItem()->parent()->text(0));
+        creatingCommand.append("/Answer/");
+        creatingCommand.append(ui->tWSelectHomeWork->currentItem()->text(0));
+
+
+        //creating directry to subject and paper name
+        QString creatingDirectries=basicPath;
+        creatingDirectries.append("Answers/");
+        creatingDirectries.append(ui->tWSelectHomeWork->currentItem()->parent()->parent()->text(0));
+        creatingDirectries.append("/");
+        creatingDirectries.append(ui->tWSelectClass->currentItem()->text(0));
+        creatingDirectries.append("/");
+        creatingDirectries.append(ui->tWSelectHomeWork->currentItem()->parent()->text(0));
+
+        if(QDir(creatingDirectries).exists())
+        {
+            creatingDirectries.append("/");
+            creatingDirectries.append(ui->tWSelectHomeWork->currentItem()->text(0));
+            if(!QDir(creatingDirectries).exists())
+            {
+              QDir().mkdir(creatingDirectries);
+            }
+
+
+
+        }
+        else
+        {
+            QDir().mkdir(creatingDirectries);
+
+            creatingDirectries.append("/");
+            creatingDirectries.append(ui->tWSelectHomeWork->currentItem()->text(0));
+            if(!QDir(creatingDirectries).exists())
+            {
+              QDir().mkdir(creatingDirectries);
+            }
+
+        }
+
+        //finally two paths are became equil so give path
+      creatingFullFilePathToSave=creatingDirectries;
+      creatingFullFilePathToSave.append("/");
+
+
+
+        if(ui->cBSelectStudent->currentText()=="All")
+        {
+            creatingstudentList=getSelectedClassStudents();
+
+        }
+        else
+        {
+            creatingstudentList=ui->cBSelectStudent->currentText();
+
+        }
+
+        downloadManage=new DownloadManage(0,creatingCommand,creatingFullFilePathToSave,creatingstudentList);
+        downloadManage->show();
+
+    }
+
+
+
+
+}
+
+QString DownloadFile::getSelectedClassStudents()
+{
+    if(ui->tWSelectClass->currentIndex().parent().isValid())
+    {
+
+        QFile openConfigFile(filepath);
+        if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+        {
+            qDebug()<<"error";
+
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openConfigFile);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+
+            for(int i=0;i<grades.count();i++)
+            {
+
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
+                {
+                    if(itemNode.toElement().attribute("GradeName")==ui->tWSelectClass->currentItem()->parent()->text(0))
+                    {
+                        QDomNodeList classeList= itemNode.toElement().elementsByTagName("Class");
+
+                            for(int j=0;j<classeList.count();j++)
+                            {
+                                QDomNode itemNodeClass = classeList.at(j);
+                                if(itemNodeClass.toElement().attribute("ClassName")==ui->tWSelectClass->currentItem()->text(0))
+                                {
+                                    QDomNodeList studentList=itemNodeClass.toElement().elementsByTagName("students");
+                                    QDomNode students=studentList.at(0);
+                                    QString studentNameList=students.firstChild().nodeValue();
+
+                                        return studentNameList;
+
+                                    break;
+
+                                }
+
+
+
+
+                            }
+                            break;
+
+                    }
+
+
+                  //ui->tWSelectClass->addTopLevelItem(grade);
+
+
+                }
+
+
+
+
+           }
+
+
+       }
+
 
     }
 

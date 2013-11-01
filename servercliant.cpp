@@ -121,7 +121,7 @@ void ServerCliant::ExecuteCommand(QByteArray clientCommand)
             Command = clientCommand.trimmed();
         }
 
-        qDebug() << "ServerReplay: " << Command << " " << Arg<<"\n";
+        qDebug() << "ServerReplay: " << Command ;
 
 
         if(Command=="INIT")
@@ -132,6 +132,11 @@ void ServerCliant::ExecuteCommand(QByteArray clientCommand)
         else if(Command=="DOWNSTART")
         {
             DoNewDownload(Arg);
+        }
+        else if(Command=="DownloadDone")
+        {
+            toHaddleUploadDone();
+
         }
 
 
@@ -155,11 +160,14 @@ void ServerCliant::DoINIT(QByteArray Arg)
 
  QStringList studentNameList=studentList.split(",");
 
+ int x=0;
     foreach (QString student, studentNameList)
     {
         if(student==Arg)
         {
             qDebug()<<" Success: student match";
+            x=1;
+
             if(CCommand=="Download")
             {
                 ToDownload();
@@ -176,6 +184,11 @@ void ServerCliant::DoINIT(QByteArray Arg)
             }
 
         }
+
+    }
+    if(x==0)
+    {
+         emit socket->disconnectFromHost();
 
     }
 
@@ -297,5 +310,12 @@ void ServerCliant::DoDownload(QByteArray Arg)
         newfile->write(Arg);
 
     }
+
+}
+
+void ServerCliant::toHaddleUploadDone()
+{
+    qDebug()<<"Server Downloaded file";
+    emit socket->disconnectFromHost();
 
 }

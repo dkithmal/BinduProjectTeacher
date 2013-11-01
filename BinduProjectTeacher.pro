@@ -32,7 +32,8 @@ SOURCES += main.cpp\
     newuploadordownload.cpp \
     uploadmanage.cpp \
     servercliant.cpp \
-    downloadfile.cpp
+    downloadfile.cpp \
+    downloadmanage.cpp
 
 HEADERS  += teacher.h \
     homeworktool.h \
@@ -51,7 +52,8 @@ HEADERS  += teacher.h \
     newuploadordownload.h \
     uploadmanage.h \
     servercliant.h \
-    downloadfile.h
+    downloadfile.h \
+    downloadmanage.h
 
 FORMS    += teacher.ui \
     homeworktool.ui \
@@ -69,4 +71,5 @@ FORMS    += teacher.ui \
     uploadfile.ui \
     newuploadordownload.ui \
     uploadmanage.ui \
-    downloadfile.ui
+    downloadfile.ui \
+    downloadmanage.ui

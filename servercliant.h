@@ -17,6 +17,7 @@ public:
     explicit ServerCliant(QObject *parent = 0);
     QTcpSocket *socket;
     void test(QString command,QString filePath,QString studentList,QString iPAddress);
+    void toHaddleUploadDone();
     int DownloadStrted;
     QString downloadFilePath;
     QString studentList;

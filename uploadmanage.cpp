@@ -24,9 +24,6 @@ void UploadManage::uploadingfiles(QString command ,QString filePath,QString stud
     qDebug()<<filePath<<"filePath";
     qDebug()<<studentList<<"studentList";
     cliant = new ServerCliant;
-    //QString uploadCommand="Upload ";
-    //uploadCommand.append(ui->lineEdit_2->text());
-    //uploadCommand.append("Maths/Other/aaaa.xml");
     cliant->test(command,filePath,studentList,"192.168.1.4");
 
 }

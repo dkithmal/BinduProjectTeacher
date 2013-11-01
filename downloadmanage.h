@@ -1,10 +1,26 @@
 #ifndef DOWNLOADMANAGE_H
 #define DOWNLOADMANAGE_H
 
-class DownloadManage
+#include <QWidget>
+#include <QDebug>
+#include "servercliant.h"
+namespace Ui {
+class DownloadManage;
+}
+
+class DownloadManage : public QWidget
 {
+    Q_OBJECT
+    
 public:
-    DownloadManage();
+    explicit DownloadManage(QWidget *parent = 0,QString command=NULL ,QString filePath=NULL,QString studentList=NULL);
+    ~DownloadManage();
+    void downloadingfiles(QString command ,QString filePath,QString studentList);
+    ServerCliant *cliant;
+
+    
+private:
+    Ui::DownloadManage *ui;
 };
 
 #endif // DOWNLOADMANAGE_H
