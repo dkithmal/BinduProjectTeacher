@@ -24,10 +24,11 @@ public:
     ~NewHomeWork();
     void setSubjetToTree();
     QString filepath;
+    QString basicPath;
     NewMixPaper *newMixPaper;
     NewMcqPaper *newMcqPaper;
     NewEssayPaper *newEssayPaper;
-    QString qPaperSavefilepath;
+
     
 private slots:
     void on_pBCreatePaper_clicked();

@@ -6,8 +6,8 @@ NewNote::NewNote(QWidget *parent) :
     ui(new Ui::NewNote)
 {
     ui->setupUi(this);
-    filepath ="D:/dk work/Motarola/Bindu/Administration/GradesAndClassManage/GradesAndClassManage.xml";
-    noteSavefilepath="D:/dk work/Motarola/Bindu/HomeWorkTool/HomeWork/Notes/";
+    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
     setSubjetToTree();
 }
 
@@ -109,7 +109,8 @@ void NewNote::on_pBCreateNote_clicked()
         //QString filepath ="D:/dk work/Motarola/project/assinment/";
        // filepath.append(ui->fileName->text());
        // filepath.append(".xml");
-        QString newNoteSavefilepath=noteSavefilepath;
+        QString newNoteSavefilepath=basicPath;
+        newNoteSavefilepath.append("Note/");
         newNoteSavefilepath.append(ui->tWSelectSubject->currentItem()->parent()->text(0));
         newNoteSavefilepath.append("/");
         newNoteSavefilepath.append(ui->tWSelectSubject->currentItem()->text(0));

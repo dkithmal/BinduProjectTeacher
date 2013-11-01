@@ -6,8 +6,8 @@ OpenNote::OpenNote(QWidget *parent) :
     ui(new Ui::OpenNote)
 {
     ui->setupUi(this);
-    filepath ="D:/dk work/Motarola/Bindu/Administration/GradesAndClassManage/GradesAndClassManage.xml";
-    qPaperSavefilepath="D:/dk work/Motarola/Bindu/HomeWorkTool/HomeWork/Papers/";
+    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
     setSubjetToTree();
 }
 
@@ -191,9 +191,8 @@ void OpenNote::on_pBOpen_clicked()
 
     if(x==0)
     {
-        QString newNoteFilePath=qPaperSavefilepath;
-        newNoteFilePath.append("../");
-        newNoteFilePath.append("Notes/");
+        QString newNoteFilePath=basicPath;
+        newNoteFilePath.append("Note/");
         newNoteFilePath.append(ui->tWSelectSubject->currentItem()->parent()->text(0));
         newNoteFilePath.append("/");
         newNoteFilePath.append(ui->tWSelectSubject->currentItem()->text(0));

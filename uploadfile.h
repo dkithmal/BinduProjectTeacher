@@ -27,7 +27,7 @@ public:
     QString getSelecteHomeWorkType();
 
     QString filepath;
-    QString basicFilepath;
+    QString basicPath;
     QString Otherfilepath;
 
     UploadManage  *uploadManage;

@@ -21,7 +21,7 @@ public:
     explicit OpenNote(QWidget *parent = 0);
     ~OpenNote();
     QString filepath;
-    QString qPaperSavefilepath;
+    QString basicPath;
     void setSubjetToTree();
     EditNote *editNote;
     

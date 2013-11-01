@@ -6,11 +6,7 @@ Teacher::Teacher(QWidget *parent)
 	ui.setupUi(this);
 //	QWidget::showFullScreen();
 
-	//QFont font = ui.pBHomeWork->font();
-	//font.setPointSize(20);
-	//ui.pBHomeWork->setFont(font);
-	//ui.pBManager->setFont(font);
-	//ui.pBUpload->setFont(font);
+
 
 	//set time
 	QTimer *timer = new QTimer(this);

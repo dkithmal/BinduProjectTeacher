@@ -23,7 +23,7 @@ public:
     explicit OpenHomeWork(QWidget *parent = 0);
     ~OpenHomeWork();
     QString filepath;
-    QString qPaperSavefilepath;
+    QString basicPath;
     void setSubjetToTree();
     NewMixPaper *newMixPaper;
     NewMcqPaper *mewMcqPaper;

@@ -6,7 +6,7 @@ DownloadFile::DownloadFile(QWidget *parent) :
     ui(new Ui::DownloadFile)
 {
     ui->setupUi(this);
-    filepath ="D:/dk work/Motarola/Bindu/Administration/GradesAndClassManage/GradesAndClassManage.xml";
+    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
     basicFilepath="D:/dk work/Motarola/Bindu/HomeWorkTool/HomeWork/Papers/";
     setFileList();
     setClassList();

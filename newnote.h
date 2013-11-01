@@ -24,7 +24,7 @@ public:
     ~NewNote();
     void setSubjetToTree();
     QString filepath;
-    QString noteSavefilepath;
+    QString basicPath;
     NewNoteCreating *newNoteCreating;
     
 private slots:

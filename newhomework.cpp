@@ -6,8 +6,8 @@ NewHomeWork::NewHomeWork(QWidget *parent) :
     ui(new Ui::NewHomeWork)
 {
     ui->setupUi(this);
-    filepath ="D:/dk work/Motarola/Bindu/Administration/GradesAndClassManage/GradesAndClassManage.xml";
-    qPaperSavefilepath="D:/dk work/Motarola/Bindu/HomeWorkTool/HomeWork/Papers/";
+    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
     setSubjetToTree();
 }
 
@@ -18,11 +18,6 @@ NewHomeWork::~NewHomeWork()
 
 void NewHomeWork::setSubjetToTree()
 {
-
-    //QTreeWidgetItem *item= new QTreeWidgetItem(ui->tWSelectSubject);
-    //item->setText(0,"dfdfdfdfdf");
-    //ui->tWSelectSubject->addTopLevelItem(item);
-
 
 
 
@@ -119,10 +114,9 @@ void NewHomeWork::on_pBCreatePaper_clicked()
 
      if(x==0)
     {
-         //QString filepath ="D:/dk work/Motarola/project/assinment/";
-        // filepath.append(ui->fileName->text());
-        // filepath.append(".xml");
-         QString newqPaperSavefilepath=qPaperSavefilepath;
+
+         QString newqPaperSavefilepath=basicPath;
+         newqPaperSavefilepath.append("HomeWork/");
          newqPaperSavefilepath.append(ui->tWSelectSubject->currentItem()->parent()->text(0));
          newqPaperSavefilepath.append("/");
          newqPaperSavefilepath.append(ui->tWSelectSubject->currentItem()->text(0));

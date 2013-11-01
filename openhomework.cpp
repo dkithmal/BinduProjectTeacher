@@ -6,8 +6,8 @@ OpenHomeWork::OpenHomeWork(QWidget *parent) :
     ui(new Ui::OpenHomeWork)
 {
     ui->setupUi(this);
-    filepath ="D:/dk work/Motarola/Bindu/Administration/GradesAndClassManage/GradesAndClassManage.xml";
-    qPaperSavefilepath="D:/dk work/Motarola/Bindu/HomeWorkTool/HomeWork/Papers/";
+    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
     setSubjetToTree();
 }
 
@@ -230,7 +230,10 @@ void OpenHomeWork::on_pBOpen_clicked()
                                              QDomNode paper=paperNameList.at(z);
                                              if(paper.toElement().attribute("HomeWorkName")==ui->lWHomeWorks->currentItem()->text())
                                              {
-                                                 QString newfilepath=qPaperSavefilepath.append(ui->tWSelectSubject->currentItem()->parent()->text(0));
+                                                 QString newfilepath=basicPath;
+                                                 newfilepath.append("HomeWork/");
+                                                 newfilepath.append(ui->tWSelectSubject->currentItem()->parent()->text(0));
+                                                // QString newfilepath=qPaperSavefilepath.append(ui->tWSelectSubject->currentItem()->parent()->text(0));
                                                  newfilepath.append("/");
                                                  newfilepath.append(ui->tWSelectSubject->currentItem()->text(0));
                                                  newfilepath.append("/");

@@ -6,8 +6,8 @@ UploadFile::UploadFile(QWidget *parent) :
     ui(new Ui::UploadFile)
 {
     ui->setupUi(this);
-        filepath ="D:/dk work/Motarola/Bindu/Administration/GradesAndClassManage/GradesAndClassManage.xml";
-        basicFilepath="D:/dk work/Motarola/Bindu/HomeWorkTool/HomeWork/Papers/";
+        filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
+        basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
         setFileList();
         setClassList();
 }
@@ -306,12 +306,12 @@ void UploadFile::on_pBUpload_clicked()
         QString creatingCommand;
         if(ui->rBSelectHomeWork->isChecked())
         {
-            creatingFullFilePath=basicFilepath;
-            creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->parent()->parent()->text(0));
-            creatingFullFilePath.append("/");
-            creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->parent()->text(0));
-            creatingFullFilePath.append("/");
-            creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->text(0));
+           creatingFullFilePath=basicPath;
+//            creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->parent()->parent()->text(0));
+//            creatingFullFilePath.append("/");
+//            creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->parent()->text(0));
+//            creatingFullFilePath.append("/");
+//            creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->text(0));
 
 
             creatingCommand="Upload ";
@@ -319,7 +319,14 @@ void UploadFile::on_pBUpload_clicked()
 
             if(getSelecteHomeWorkType()=="HomeWork")
             {
+                creatingFullFilePath.append("HomeWork/");
+                creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->parent()->parent()->text(0));
+                creatingFullFilePath.append("/");
+                creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->parent()->text(0));
+                creatingFullFilePath.append("/");
+                creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->text(0));
                 creatingFullFilePath.append(".xml");
+
                 creatingCommand.append("/HomeWork/");
                 creatingCommand.append(ui->tWSelectHomeWork->currentItem()->text(0));
                 creatingCommand.append(".xml");
@@ -328,7 +335,14 @@ void UploadFile::on_pBUpload_clicked()
             }
             if(getSelecteHomeWorkType()=="Note")
             {
+                creatingFullFilePath.append("Note/");
+                creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->parent()->parent()->text(0));
+                creatingFullFilePath.append("/");
+                creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->parent()->text(0));
+                creatingFullFilePath.append("/");
+                creatingFullFilePath.append(ui->tWSelectHomeWork->currentItem()->text(0));
                 creatingFullFilePath.append(".txt");
+
                 creatingCommand.append("/Note/");
                 creatingCommand.append(ui->tWSelectHomeWork->currentItem()->text(0));
                 creatingCommand.append(".txt");
