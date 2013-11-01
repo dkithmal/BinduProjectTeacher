@@ -59,99 +59,118 @@ void SubjectManage::setDefaultCB()
 
 void SubjectManage::on_pBAddSubject_clicked()
 {
-    QFile newConfigFile(filepath);
-    if(!newConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    int x=0;
+    if(ui->cBSelectGradeAdd->currentText().isEmpty())
     {
+        QMessageBox::information(this,"Error","Please Select Grade");
+        x=1;
 
     }
-    else
+    if(ui->lESubjectName->text().isEmpty())
     {
+        QMessageBox::information(this,"Error","Please Enter Subject Name");
+        x=1;
 
-        QDomDocument document;
-        QDomElement root;
+    }
 
-        document.setContent(&newConfigFile);
-        root= document.firstChildElement();
-
-        QDomNodeList grades = root.elementsByTagName("Grade");
-
-        for(int i=0;i<grades.count();i++)
-        {
-            QDomNode itemNode = grades.at(i);
-
-            if(itemNode.isElement())
-            {
-
-
-
-                if(!itemNode.toElement().attribute("GradeName").compare(ui->cBSelectGradeAdd->currentText()))
-                {
-
-
-                    QDomElement subject= document.createElement("Subject");
-                    subject.setAttribute("SubjectName",ui->lESubjectName->text());
-                    itemNode.appendChild(subject);
-                    root.appendChild(itemNode);
-                    break;
-
-                }
-
-                }
-
-
-
-        }
-
-        newConfigFile.close();
-
-        if(!newConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+    if(x==0)
+    {
+        QFile newConfigFile(filepath);
+        if(!newConfigFile.open(QFile::ReadWrite| QIODevice::Text))
         {
 
         }
         else
         {
-            QTextStream stream(&newConfigFile);
-            stream <<document.toString();
+
+            QDomDocument document;
+            QDomElement root;
+
+            document.setContent(&newConfigFile);
+            root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+            for(int i=0;i<grades.count();i++)
+            {
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
+                {
+
+
+
+                    if(!itemNode.toElement().attribute("GradeName").compare(ui->cBSelectGradeAdd->currentText()))
+                    {
+
+
+                        QDomElement subject= document.createElement("Subject");
+                        subject.setAttribute("SubjectName",ui->lESubjectName->text());
+                        itemNode.appendChild(subject);
+                        root.appendChild(itemNode);
+                        break;
+
+                    }
+
+                    }
+
+
+
+            }
+
             newConfigFile.close();
 
-            //creating new dirctrys
-            QString newSubjectPathForHomework=basicPath;
-            QString newSubjectPathForNote=basicPath;
-
-            //creating new directry in homework directry
-            newSubjectPathForHomework.append("HomeWork/");
-            newSubjectPathForHomework.append(ui->cBSelectGradeAdd->currentText());
-            newSubjectPathForHomework.append("/");
-            newSubjectPathForHomework.append(ui->lESubjectName->text());
-            if(!QDir(newSubjectPathForHomework).exists())
+            if(!newConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
             {
-                QDir().mkdir(newSubjectPathForHomework);
+
+            }
+            else
+            {
+                QTextStream stream(&newConfigFile);
+                stream <<document.toString();
+                newConfigFile.close();
+
+                //creating new dirctrys
+                QString newSubjectPathForHomework=basicPath;
+                QString newSubjectPathForNote=basicPath;
+
+                //creating new directry in homework directry
+                newSubjectPathForHomework.append("HomeWork/");
+                newSubjectPathForHomework.append(ui->cBSelectGradeAdd->currentText());
+                newSubjectPathForHomework.append("/");
+                newSubjectPathForHomework.append(ui->lESubjectName->text());
+                if(!QDir(newSubjectPathForHomework).exists())
+                {
+                    QDir().mkdir(newSubjectPathForHomework);
+
+
+                }
+
+                //creating new directry in homework directry
+                newSubjectPathForNote.append("Note/");
+                newSubjectPathForNote.append(ui->cBSelectGradeAdd->currentText());
+                newSubjectPathForNote.append("/");
+                newSubjectPathForNote.append(ui->lESubjectName->text());
+                if(!QDir(newSubjectPathForNote).exists())
+                {
+                    QDir().mkdir(newSubjectPathForNote);
+
+
+                }
+
+
+
+
+                QMessageBox::information(this,"Success","New Subject Created");
+                ui->lESubjectName->clear();
 
 
             }
-
-            //creating new directry in homework directry
-            newSubjectPathForNote.append("Note/");
-            newSubjectPathForNote.append(ui->cBSelectGradeAdd->currentText());
-            newSubjectPathForNote.append("/");
-            newSubjectPathForNote.append(ui->lESubjectName->text());
-            if(!QDir(newSubjectPathForNote).exists())
-            {
-                QDir().mkdir(newSubjectPathForNote);
-
-
-            }
-
-
-
-
-            QMessageBox::information(this,"Success","New Subject Created");
-            ui->lESubjectName->clear();
-
 
         }
 
     }
+
 
 }
 
@@ -270,109 +289,127 @@ void SubjectManage::on_cBSelectGradeRemove_currentIndexChanged(int index)
 
 void SubjectManage::on_pBRemove_clicked()
 {
-
-    QFile openConfigFile(filepath);
-    if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    int x=0;
+    if(ui->cBSelectGradeRemove->currentText().isEmpty())
     {
-        qDebug()<<"error";
-
+         QMessageBox::information(this,"Error","Please Select Grade");
+        x=1;
     }
-    else
+    if(ui->cBSelectSubjectRemove->currentText().isEmpty())
     {
-        QDomDocument document;
+        QMessageBox::information(this,"Error","Please Select Subject");
+        x=1;
+    }
 
-        document.setContent(&openConfigFile);
-        QDomElement root= document.firstChildElement();
-
-        QDomNodeList grades = root.elementsByTagName("Grade");
-
-       // ui->cBSelectGrade_2->clear();
-        for(int i=0;i<grades.count();i++)
+    if(x==0)
+    {
+        QFile openConfigFile(filepath);
+        if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
         {
-            QDomNode itemNode = grades.at(i);
+            qDebug()<<"error";
 
-            if(itemNode.isElement())
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openConfigFile);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+           // ui->cBSelectGrade_2->clear();
+            for(int i=0;i<grades.count();i++)
             {
-                if(ui->cBSelectGradeRemove->currentText()==itemNode.toElement().attribute("GradeName"))
-                {
-                    QDomNodeList subjectList= itemNode.toElement().elementsByTagName("Subject");
-                  //  ui->cBSelectClassFRStudent->clear();
-                    for(int j=0;j<subjectList.count();j++)
-                    {
-                        QDomNode itemNodeSubject= subjectList.at(j);
-                        if(itemNodeSubject.toElement().attribute("SubjectName")==ui->cBSelectSubjectRemove->currentText())
-                        {
-                            itemNode.toElement().removeChild(itemNodeSubject);
+                QDomNode itemNode = grades.at(i);
 
+                if(itemNode.isElement())
+                {
+                    if(ui->cBSelectGradeRemove->currentText()==itemNode.toElement().attribute("GradeName"))
+                    {
+                        QDomNodeList subjectList= itemNode.toElement().elementsByTagName("Subject");
+                      //  ui->cBSelectClassFRStudent->clear();
+                        for(int j=0;j<subjectList.count();j++)
+                        {
+                            QDomNode itemNodeSubject= subjectList.at(j);
+                            if(itemNodeSubject.toElement().attribute("SubjectName")==ui->cBSelectSubjectRemove->currentText())
+                            {
+                                itemNode.toElement().removeChild(itemNodeSubject);
+
+
+                            }
+                            // ui->cBSelectClassFRStudent->addItem(itemNodeClass.toElement().attribute("ClassName"));
 
                         }
-                        // ui->cBSelectClassFRStudent->addItem(itemNodeClass.toElement().attribute("ClassName"));
 
                     }
+
+
+                   // break;
 
                 }
 
 
-               // break;
+
+
+           }
+
+            document.appendChild(root);
+            openConfigFile.close();
+
+            if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+            {
 
             }
+            else
+            {
+                QTextStream stream(&openConfigFile);
+                stream <<document.toString();
+                openConfigFile.close();
 
+                //creating class directry in Answer directry
+                QString removeingSubjectInHomWordDirectry=basicPath;
+                removeingSubjectInHomWordDirectry.append("HomeWork/");
+                removeingSubjectInHomWordDirectry.append(ui->cBSelectGradeRemove->currentText());
+                removeingSubjectInHomWordDirectry.append("/");
+                removeingSubjectInHomWordDirectry.append(ui->cBSelectSubjectRemove->currentText());
+
+                if(QDir(removeingSubjectInHomWordDirectry).exists())
+                {
+                    bool a=removeDir(removeingSubjectInHomWordDirectry);
+
+                }
+
+                qDebug()<<removeingSubjectInHomWordDirectry<<"delete file path";
+                //creating class directry in Answer directry
+                QString removeingSubjectInNoteDirectry=basicPath;
+                removeingSubjectInNoteDirectry.append("Note/");
+                removeingSubjectInNoteDirectry.append(ui->cBSelectGradeRemove->currentText());
+                removeingSubjectInNoteDirectry.append("/");
+                removeingSubjectInNoteDirectry.append(ui->cBSelectSubjectRemove->currentText());
+
+                qDebug()<<removeingSubjectInNoteDirectry<<"delete file path 2";
+
+                if(QDir(removeingSubjectInNoteDirectry).exists())
+                {
+                    bool a=removeDir(removeingSubjectInNoteDirectry);
+
+                }
+
+
+
+            }
 
 
 
        }
 
-        document.appendChild(root);
-        openConfigFile.close();
+        on_tWSubjectManage_currentChanged(1);
 
-        if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
-        {
-
-        }
-        else
-        {
-            QTextStream stream(&openConfigFile);
-            stream <<document.toString();
-            openConfigFile.close();
-
-            //creating class directry in Answer directry
-            QString removeingSubjectInHomWordDirectry=basicPath;
-            removeingSubjectInHomWordDirectry.append("HomeWork/");
-            removeingSubjectInHomWordDirectry.append(ui->cBSelectGradeRemove->currentText());
-            removeingSubjectInHomWordDirectry.append("/");
-            removeingSubjectInHomWordDirectry.append(ui->cBSelectSubjectRemove->currentText());
-
-            if(QDir(removeingSubjectInHomWordDirectry).exists())
-            {
-                bool a=removeDir(removeingSubjectInHomWordDirectry);
-
-            }
-
-            qDebug()<<removeingSubjectInHomWordDirectry<<"delete file path";
-            //creating class directry in Answer directry
-            QString removeingSubjectInNoteDirectry=basicPath;
-            removeingSubjectInNoteDirectry.append("Note/");
-            removeingSubjectInNoteDirectry.append(ui->cBSelectGradeRemove->currentText());
-            removeingSubjectInNoteDirectry.append("/");
-            removeingSubjectInNoteDirectry.append(ui->cBSelectSubjectRemove->currentText());
-
-            qDebug()<<removeingSubjectInNoteDirectry<<"delete file path 2";
-
-            if(QDir(removeingSubjectInNoteDirectry).exists())
-            {
-                bool a=removeDir(removeingSubjectInNoteDirectry);
-
-            }
+    }
 
 
 
-        }
-
-
-
-   }
-
-    on_tWSubjectManage_currentChanged(1);
 }
 
 bool SubjectManage::removeDir(const QString &dirName)

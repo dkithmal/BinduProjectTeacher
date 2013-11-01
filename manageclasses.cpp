@@ -20,139 +20,151 @@ ManageClasses::~ManageClasses()
 
 void ManageClasses::on_pBAddGrade_clicked()
 {
-
-    QFile newConfigFile(filepath);
-    if(!newConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    int x=0;
+    if(ui->lEGradeName->text().isEmpty())
     {
-
+        QMessageBox::information(this,"Error","Please Enter Grade");
+        x=1;
     }
-    else
+
+    if(x==0)
     {
-        QDomDocument document;
-        QDomElement root;
 
-
-        if(newConfigFile.size()==0)
-        {
-            root = document.createElement("Administration");
-            QDomElement grade= document.createElement("Grade");
-            grade.setAttribute("GradeName",ui->lEGradeName->text());
-            root.appendChild(grade);
-
-
-        }
-        else
-        {
-            document.setContent(&newConfigFile);
-            root= document.firstChildElement();
-
-
-            QDomElement grade= document.createElement("Grade");
-            grade.setAttribute("GradeName",ui->lEGradeName->text());
-            root.appendChild(grade);
-
-
-
-
-
-        }
-
-
-
-        document.appendChild(root);
-        newConfigFile.close();
-
-        if(!newConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+        QFile newConfigFile(filepath);
+        if(!newConfigFile.open(QFile::ReadWrite| QIODevice::Text))
         {
 
         }
         else
         {
-            QTextStream stream(&newConfigFile);
-            stream <<document.toString();
+            QDomDocument document;
+            QDomElement root;
+
+
+            if(newConfigFile.size()==0)
+            {
+                root = document.createElement("Administration");
+                QDomElement grade= document.createElement("Grade");
+                grade.setAttribute("GradeName",ui->lEGradeName->text());
+                root.appendChild(grade);
+
+
+            }
+            else
+            {
+                document.setContent(&newConfigFile);
+                root= document.firstChildElement();
+
+
+                QDomElement grade= document.createElement("Grade");
+                grade.setAttribute("GradeName",ui->lEGradeName->text());
+                root.appendChild(grade);
+
+
+
+
+
+            }
+
+
+
+            document.appendChild(root);
             newConfigFile.close();
 
-            //creating new dirctry for grade
-            QString creatingHWGradePath=basicPath;
-            QString creatingNoteGradePath=basicPath;
-            QString creatingAnswerGradePath=basicPath;
-
-
-            //creating directry to Grade in Homework
-            creatingHWGradePath.append("HomeWork");
-            if(QDir(creatingHWGradePath).exists())
+            if(!newConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
             {
-                creatingHWGradePath.append("/");
-                creatingHWGradePath.append(ui->lEGradeName->text());
-                QDir().mkdir(creatingHWGradePath);
-
 
             }
             else
             {
-                 QDir().mkdir(creatingHWGradePath);
-                 creatingHWGradePath.append("/");
-                 creatingHWGradePath.append(ui->lEGradeName->text());
-                 QDir().mkdir(creatingHWGradePath);
+                QTextStream stream(&newConfigFile);
+                stream <<document.toString();
+                newConfigFile.close();
+
+                //creating new dirctry for grade
+                QString creatingHWGradePath=basicPath;
+                QString creatingNoteGradePath=basicPath;
+                QString creatingAnswerGradePath=basicPath;
+
+
+                //creating directry to Grade in Homework
+                creatingHWGradePath.append("HomeWork");
+                if(QDir(creatingHWGradePath).exists())
+                {
+                    creatingHWGradePath.append("/");
+                    creatingHWGradePath.append(ui->lEGradeName->text());
+                    QDir().mkdir(creatingHWGradePath);
+
+
+                }
+                else
+                {
+                     QDir().mkdir(creatingHWGradePath);
+                     creatingHWGradePath.append("/");
+                     creatingHWGradePath.append(ui->lEGradeName->text());
+                     QDir().mkdir(creatingHWGradePath);
+
+
+                }
+
+                //creading directriy to Grade in Note
+                creatingNoteGradePath.append("Note");
+                if(QDir(creatingNoteGradePath).exists())
+                {
+                    creatingNoteGradePath.append("/");
+                    creatingNoteGradePath.append(ui->lEGradeName->text());
+                    QDir().mkdir(creatingNoteGradePath);
+
+
+                }
+                else
+                {
+                     QDir().mkdir(creatingNoteGradePath);
+                     creatingNoteGradePath.append("/");
+                     creatingNoteGradePath.append(ui->lEGradeName->text());
+                     QDir().mkdir(creatingNoteGradePath);
+
+
+                }
+
+
+                //creating directry to Grade in Answers
+                creatingAnswerGradePath.append("Answers");
+                if(QDir(creatingAnswerGradePath).exists())
+                {
+                    creatingAnswerGradePath.append("/");
+                    creatingAnswerGradePath.append(ui->lEGradeName->text());
+                    QDir().mkdir(creatingAnswerGradePath);
+
+
+                }
+                else
+                {
+                     QDir().mkdir(creatingAnswerGradePath);
+                     creatingAnswerGradePath.append("/");
+                     creatingAnswerGradePath.append(ui->lEGradeName->text());
+                     QDir().mkdir(creatingAnswerGradePath);
+
+
+                }
+
+
+               // newGradepath.append(ui->lEGradeName->text());
+               // QDir().mkdir(newGradepath);
+                ui->lEGradeName->clear();
+
+                QMessageBox::information(this,"Success","New Grade Created");
+
 
 
             }
-
-            //creading directriy to Grade in Note
-            creatingNoteGradePath.append("Note");
-            if(QDir(creatingNoteGradePath).exists())
-            {
-                creatingNoteGradePath.append("/");
-                creatingNoteGradePath.append(ui->lEGradeName->text());
-                QDir().mkdir(creatingNoteGradePath);
-
-
-            }
-            else
-            {
-                 QDir().mkdir(creatingNoteGradePath);
-                 creatingNoteGradePath.append("/");
-                 creatingNoteGradePath.append(ui->lEGradeName->text());
-                 QDir().mkdir(creatingNoteGradePath);
-
-
-            }
-
-
-            //creating directry to Grade in Answers
-            creatingAnswerGradePath.append("Answers");
-            if(QDir(creatingAnswerGradePath).exists())
-            {
-                creatingAnswerGradePath.append("/");
-                creatingAnswerGradePath.append(ui->lEGradeName->text());
-                QDir().mkdir(creatingAnswerGradePath);
-
-
-            }
-            else
-            {
-                 QDir().mkdir(creatingAnswerGradePath);
-                 creatingAnswerGradePath.append("/");
-                 creatingAnswerGradePath.append(ui->lEGradeName->text());
-                 QDir().mkdir(creatingAnswerGradePath);
-
-
-            }
-
-
-           // newGradepath.append(ui->lEGradeName->text());
-           // QDir().mkdir(newGradepath);
-            ui->lEGradeName->clear();
-
-            QMessageBox::information(this,"Success","New Grade Created");
 
 
 
         }
 
-
-
     }
+
 
 
 }
@@ -428,88 +440,114 @@ void ManageClasses::on_tWManage_currentChanged(int index)
 
 void ManageClasses::on_pBCreateClass_clicked()
 {
-    QFile newConfigFile(filepath);
-    if(!newConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    int x=0;
+    if(ui->cBSelectGrade_2->currentText().isEmpty())
     {
+        QMessageBox::information(this,"Error","Please Select Grade");
+        x=1;
 
     }
-    else
+    if(ui->lEClassName->text().isEmpty())
     {
+        QMessageBox::information(this,"Error","Please Enter Class name");
+        x=1;
 
-        QDomDocument document;
-        QDomElement root;
+    }
+    if(ui->tEStudents->document()->toPlainText().isEmpty())
+    {
+        QMessageBox::information(this,"Error","Please Enter atleast one studnet");
+        x=1;
 
-        document.setContent(&newConfigFile);
-        root= document.firstChildElement();
+    }
 
-        QDomNodeList grades = root.elementsByTagName("Grade");
-
-        for(int i=0;i<grades.count();i++)
-        {
-            QDomNode itemNode = grades.at(i);
-
-            if(itemNode.isElement())
-            {
-
-
-
-                if(!itemNode.toElement().attribute("GradeName").compare(ui->cBSelectGrade_2->currentText()))
-                {
-
-
-                    QDomElement sClass= document.createElement("Class");
-                    sClass.setAttribute("ClassName",ui->lEClassName->text());
-
-
-                    QDomElement students=document.createElement("students");
-                    students.appendChild(document.createTextNode(ui->tEStudents->document()->toPlainText()));
-                    sClass.appendChild(students);
-
-                    itemNode.appendChild(sClass);
-                    root.appendChild(itemNode);
-                    break;
-
-                }
-
-                }
-
-
-
-        }
-
-        newConfigFile.close();
-
-        if(!newConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+    if(x==0)
+    {
+        QFile newConfigFile(filepath);
+        if(!newConfigFile.open(QFile::ReadWrite| QIODevice::Text))
         {
 
         }
         else
         {
-            QTextStream stream(&newConfigFile);
-            stream <<document.toString();
+
+            QDomDocument document;
+            QDomElement root;
+
+            document.setContent(&newConfigFile);
+            root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+            for(int i=0;i<grades.count();i++)
+            {
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
+                {
+
+
+
+                    if(!itemNode.toElement().attribute("GradeName").compare(ui->cBSelectGrade_2->currentText()))
+                    {
+
+
+                        QDomElement sClass= document.createElement("Class");
+                        sClass.setAttribute("ClassName",ui->lEClassName->text());
+
+
+                        QDomElement students=document.createElement("students");
+                        students.appendChild(document.createTextNode(ui->tEStudents->document()->toPlainText()));
+                        sClass.appendChild(students);
+
+                        itemNode.appendChild(sClass);
+                        root.appendChild(itemNode);
+                        break;
+
+                    }
+
+                    }
+
+
+
+            }
+
             newConfigFile.close();
 
+            if(!newConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+            {
+
+            }
+            else
+            {
+                QTextStream stream(&newConfigFile);
+                stream <<document.toString();
+                newConfigFile.close();
 
 
-            //creating class directry in Answer directry
-            QString creatingClassInAnswerDirectry=basicPath;
-            creatingClassInAnswerDirectry.append("Answers/");
-            creatingClassInAnswerDirectry.append(ui->cBSelectGrade_2->currentText());
-            creatingClassInAnswerDirectry.append("/");
-            creatingClassInAnswerDirectry.append(ui->lEClassName->text());
-            QDir().mkdir(creatingClassInAnswerDirectry);
+
+                //creating class directry in Answer directry
+                QString creatingClassInAnswerDirectry=basicPath;
+                creatingClassInAnswerDirectry.append("Answers/");
+                creatingClassInAnswerDirectry.append(ui->cBSelectGrade_2->currentText());
+                creatingClassInAnswerDirectry.append("/");
+                creatingClassInAnswerDirectry.append(ui->lEClassName->text());
+                QDir().mkdir(creatingClassInAnswerDirectry);
 
 
-            QMessageBox::information(this,"Success","New Class Created");
-            ui->lEGradeName->clear();
+                QMessageBox::information(this,"Success","New Class Created");
+                ui->lEGradeName->clear();
 
 
-            ui->lEClassName->clear();
-            ui->tEStudents->clear();
+                ui->lEClassName->clear();
+                ui->tEStudents->clear();
+
+            }
 
         }
 
+
     }
+
 
 
 
@@ -572,83 +610,109 @@ void ManageClasses::on_cBSelectGrade_3_currentIndexChanged(const QString &arg1)
 
 void ManageClasses::on_pBAddStudent_clicked()
 {
-    QFile openConfigFile(filepath);
-    if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    int x=0;
+
+    if(ui->cBSelectGrade_3->currentText().isEmpty())
     {
-        qDebug()<<"error";
+        QMessageBox::information(this,"Error","Please Select Grade");
+        x=1;
 
     }
-    else
+    if(ui->cBSelectClass->currentText().isEmpty())
     {
-        QDomDocument document;
+        QMessageBox::information(this,"Error","Please Select Class name");
+        x=1;
 
-        document.setContent(&openConfigFile);
-        QDomElement root= document.firstChildElement();
+    }
+    if(ui->lEStudentName->text().isEmpty())
+    {
+        QMessageBox::information(this,"Error","Please Enter student name");
+        x=1;
 
-        QDomNodeList grades = root.elementsByTagName("Grade");
+    }
 
-
-        for(int i=0;i<grades.count();i++)
+    if(x==0)
+    {
+        QFile openConfigFile(filepath);
+        if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
         {
-            QDomNode itemNode = grades.at(i);
+            qDebug()<<"error";
 
-            if(itemNode.isElement())
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openConfigFile);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+
+            for(int i=0;i<grades.count();i++)
             {
-                if(ui->cBSelectGrade_3->currentText()==itemNode.toElement().attribute("GradeName"))
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
                 {
-                    QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
-
-
-                    for(int j=0;j<classList.count();j++)
+                    if(ui->cBSelectGrade_3->currentText()==itemNode.toElement().attribute("GradeName"))
                     {
-                        QDomNode itemNodeClass = classList.at(j);
-                        // ui->cBSelectClass->addItem(itemNodeClass.toElement().attribute("ClassName"));
-                        if(ui->cBSelectClass->currentText()==itemNodeClass.toElement().attribute("ClassName"))
+                        QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
+
+
+                        for(int j=0;j<classList.count();j++)
                         {
-                            QDomElement students=itemNodeClass.toElement();
-                            QDomNode studentNames=students.elementsByTagName("students").at(0);
-                           // qDebug()<<studentNames.firstChild().nodeValue();
-                            QString newStudents=studentNames.firstChild().nodeValue();
-                            newStudents.append(",");
-                            newStudents.append(ui->lEStudentName->text());
-                            QDomElement newstudents = document.createElement(QString("students"));
-                            newstudents.appendChild(document.createTextNode(newStudents));
-                            students.replaceChild(newstudents,studentNames);
-
-
-                            openConfigFile.close();
-
-                            if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+                            QDomNode itemNodeClass = classList.at(j);
+                            // ui->cBSelectClass->addItem(itemNodeClass.toElement().attribute("ClassName"));
+                            if(ui->cBSelectClass->currentText()==itemNodeClass.toElement().attribute("ClassName"))
                             {
+                                QDomElement students=itemNodeClass.toElement();
+                                QDomNode studentNames=students.elementsByTagName("students").at(0);
+                               // qDebug()<<studentNames.firstChild().nodeValue();
+                                QString newStudents=studentNames.firstChild().nodeValue();
+                                newStudents.append(",");
+                                newStudents.append(ui->lEStudentName->text());
+                                QDomElement newstudents = document.createElement(QString("students"));
+                                newstudents.appendChild(document.createTextNode(newStudents));
+                                students.replaceChild(newstudents,studentNames);
 
-                            }
-                            else
-                            {
-                                QTextStream stream(&openConfigFile);
-                                stream <<document.toString();
+
                                 openConfigFile.close();
 
-                                QMessageBox::information(this,"Success","New Student Added");
-                                ui->lEStudentName->clear();
+                                if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+                                {
+
+                                }
+                                else
+                                {
+                                    QTextStream stream(&openConfigFile);
+                                    stream <<document.toString();
+                                    openConfigFile.close();
+
+                                    QMessageBox::information(this,"Success","New Student Added");
+                                    ui->lEStudentName->clear();
+
+
+                                }
+
+
+
 
 
                             }
-
-
-
-
 
                         }
 
                     }
 
+
                 }
 
-
             }
+         }
 
-        }
-     }
+
+    }
 
 
 }
@@ -828,97 +892,108 @@ void ManageClasses::on_cBSelectClassFRStudent_currentIndexChanged(int index)
 
 void ManageClasses::on_pBRemoveGrade_clicked()
 {
-    ui->cBSelectStudentFRStudent->clear();
-    QFile openConfigFile(filepath);
-    if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    int x=0;
+    if(ui->cBSelectGrade->currentText().isEmpty())
     {
-        qDebug()<<"error";
+        QMessageBox::information(this,"Error","Please Select Grade");
+        x=1;
 
     }
-    else
+
+    if(x==0)
     {
-        QDomDocument document;
-
-        document.setContent(&openConfigFile);
-        QDomElement root= document.firstChildElement();
-
-        QDomNodeList grades = root.elementsByTagName("Grade");
-
-       // ui->cBSelectGrade_2->clear();
-        for(int i=0;i<grades.count();i++)
+        QFile openConfigFile(filepath);
+        if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
         {
-            QDomNode itemNode = grades.at(i);
-
-            if(itemNode.isElement())
-            {
-                if(ui->cBSelectGrade->currentText()==itemNode.toElement().attribute("GradeName"))
-                {
-                    root.removeChild(itemNode);
-
-
-                }
-
-
-               // break;
-
-            }
-
-
-
-
-       }
-
-        document.appendChild(root);
-        openConfigFile.close();
-
-        if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
-        {
+            qDebug()<<"error";
 
         }
         else
         {
-            QTextStream stream(&openConfigFile);
-            stream <<document.toString();
+            QDomDocument document;
+
+            document.setContent(&openConfigFile);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+           // ui->cBSelectGrade_2->clear();
+            for(int i=0;i<grades.count();i++)
+            {
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
+                {
+                    if(ui->cBSelectGrade->currentText()==itemNode.toElement().attribute("GradeName"))
+                    {
+                        root.removeChild(itemNode);
+
+
+                    }
+
+
+                   // break;
+
+                }
+
+
+
+
+           }
+
+            document.appendChild(root);
             openConfigFile.close();
 
-            QString creatingHWGradePath=basicPath;
-            QString creatingNoteGradePath=basicPath;
-            QString creatingAnswerGradePath=basicPath;
-
-
-            //creating path to delete directry form homeWork
-            creatingHWGradePath.append("HomeWork/");
-            creatingHWGradePath.append(ui->cBSelectGrade->currentText());
-            if(QDir(creatingHWGradePath).exists())
+            if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
             {
-                bool a=removeDir(creatingHWGradePath);
+
+            }
+            else
+            {
+                QTextStream stream(&openConfigFile);
+                stream <<document.toString();
+                openConfigFile.close();
+
+                QString creatingHWGradePath=basicPath;
+                QString creatingNoteGradePath=basicPath;
+                QString creatingAnswerGradePath=basicPath;
+
+
+                //creating path to delete directry form homeWork
+                creatingHWGradePath.append("HomeWork/");
+                creatingHWGradePath.append(ui->cBSelectGrade->currentText());
+                if(QDir(creatingHWGradePath).exists())
+                {
+                    bool a=removeDir(creatingHWGradePath);
+
+                }
+
+                //creating path to delete directry form Note
+                creatingNoteGradePath.append("Note/");
+                creatingNoteGradePath.append(ui->cBSelectGrade->currentText());
+                if(QDir(creatingNoteGradePath).exists())
+                {
+                    bool a=removeDir(creatingNoteGradePath);
+
+                }
+
+                //creating path to delete diretry from Anserts
+                creatingAnswerGradePath.append("Answers/");
+                creatingAnswerGradePath.append(ui->cBSelectGrade->currentText());
+                if(QDir(creatingAnswerGradePath).exists())
+                {
+                    bool a=removeDir(creatingAnswerGradePath);
+
+                }
+
+              }
+
 
             }
 
-            //creating path to delete directry form Note
-            creatingNoteGradePath.append("Note/");
-            creatingNoteGradePath.append(ui->cBSelectGrade->currentText());
-            if(QDir(creatingNoteGradePath).exists())
-            {
-                bool a=removeDir(creatingNoteGradePath);
+            on_tWManage_currentChanged(3);
+    }
 
-            }
-
-            //creating path to delete diretry from Anserts
-            creatingAnswerGradePath.append("Answers/");
-            creatingAnswerGradePath.append(ui->cBSelectGrade->currentText());
-            if(QDir(creatingAnswerGradePath).exists())
-            {
-                bool a=removeDir(creatingAnswerGradePath);
-
-            }
-
-          }
-
-
-        }
-
-        on_tWManage_currentChanged(3);
 
  }
 
@@ -951,200 +1026,240 @@ bool ManageClasses::removeDir(const QString &dirName)
 
 void ManageClasses::on_pBRemoveClass_clicked()
 {
-    ui->cBSelectStudentFRStudent->clear();
-    QFile openConfigFile(filepath);
-    if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    int x=0;
+    if(ui->cBSelectGradeForRClass->currentText().isEmpty())
     {
-        qDebug()<<"error";
+        QMessageBox::information(this,"Error","Please Select Grade");
+        x=1;
 
     }
-    else
+    if(ui->cBSelectClassForRClass->currentText().isEmpty())
     {
-        QDomDocument document;
+        QMessageBox::information(this,"Error","Please Select Class");
+        x=1;
 
-        document.setContent(&openConfigFile);
-        QDomElement root= document.firstChildElement();
+    }
 
-        QDomNodeList grades = root.elementsByTagName("Grade");
-
-       // ui->cBSelectGrade_2->clear();
-        for(int i=0;i<grades.count();i++)
+    if(x==0)
+    {
+        QFile openConfigFile(filepath);
+        if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
         {
-            QDomNode itemNode = grades.at(i);
+            qDebug()<<"error";
 
-            if(itemNode.isElement())
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openConfigFile);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+           // ui->cBSelectGrade_2->clear();
+            for(int i=0;i<grades.count();i++)
             {
-                if(ui->cBSelectGradeFRStudent->currentText()==itemNode.toElement().attribute("GradeName"))
-                {
-                    QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
-                  //  ui->cBSelectClassFRStudent->clear();
-                    for(int j=0;j<classList.count();j++)
-                    {
-                        QDomNode itemNodeClass = classList.at(j);
-                        if(itemNodeClass.toElement().attribute("ClassName")==ui->cBSelectClassFRStudent->currentText())
-                        {
-                            itemNode.toElement().removeChild(itemNodeClass);
+                QDomNode itemNode = grades.at(i);
 
+                if(itemNode.isElement())
+                {
+                    if(ui->cBSelectGradeFRStudent->currentText()==itemNode.toElement().attribute("GradeName"))
+                    {
+                        QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
+                      //  ui->cBSelectClassFRStudent->clear();
+                        for(int j=0;j<classList.count();j++)
+                        {
+                            QDomNode itemNodeClass = classList.at(j);
+                            if(itemNodeClass.toElement().attribute("ClassName")==ui->cBSelectClassFRStudent->currentText())
+                            {
+                                itemNode.toElement().removeChild(itemNodeClass);
+
+
+                            }
+                            // ui->cBSelectClassFRStudent->addItem(itemNodeClass.toElement().attribute("ClassName"));
 
                         }
-                        // ui->cBSelectClassFRStudent->addItem(itemNodeClass.toElement().attribute("ClassName"));
 
                     }
+
+
+                   // break;
 
                 }
 
 
-               // break;
+
+
+           }
+
+            document.appendChild(root);
+            openConfigFile.close();
+
+            if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+            {
 
             }
+            else
+            {
+                QTextStream stream(&openConfigFile);
+                stream <<document.toString();
+                openConfigFile.close();
 
+                //creating class directry in Answer directry
+                QString creatingClassInAnswerDirectry=basicPath;
+                creatingClassInAnswerDirectry.append("Answers/");
+                creatingClassInAnswerDirectry.append(ui->cBSelectGradeForRClass->currentText());
+                creatingClassInAnswerDirectry.append("/");
+                creatingClassInAnswerDirectry.append(ui->cBSelectClassForRClass->currentText());
+
+                if(QDir(creatingClassInAnswerDirectry).exists())
+                {
+                    bool a=removeDir(creatingClassInAnswerDirectry);
+
+                }
+
+
+
+            }
 
 
 
        }
 
-        document.appendChild(root);
-        openConfigFile.close();
+        on_tWManage_currentChanged(4);
 
-        if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
-        {
+    }
 
-        }
-        else
-        {
-            QTextStream stream(&openConfigFile);
-            stream <<document.toString();
-            openConfigFile.close();
-
-            //creating class directry in Answer directry
-            QString creatingClassInAnswerDirectry=basicPath;
-            creatingClassInAnswerDirectry.append("Answers/");
-            creatingClassInAnswerDirectry.append(ui->cBSelectGradeForRClass->currentText());
-            creatingClassInAnswerDirectry.append("/");
-            creatingClassInAnswerDirectry.append(ui->cBSelectClassForRClass->currentText());
-
-            if(QDir(creatingClassInAnswerDirectry).exists())
-            {
-                bool a=removeDir(creatingClassInAnswerDirectry);
-
-            }
-
-
-
-        }
-
-
-
-   }
-
-    on_tWManage_currentChanged(4);
 
 
 }
 
 void ManageClasses::on_pBRemoveStudent_clicked()
 {
-    //ui->cBSelectStudentFRStudent->clear();
-    QFile openConfigFile(filepath);
-    if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    int x=0;
+    if(ui->cBSelectGradeFRStudent->currentText().isEmpty())
     {
-        qDebug()<<"error";
+        QMessageBox::information(this,"Error","Please Select Grade");
+        x=1;
 
     }
-    else
+    if(ui->cBSelectClassFRStudent->currentText().isEmpty())
     {
-        QDomDocument document;
+        QMessageBox::information(this,"Error","Please Select Class");
+        x=1;
+    }
+    if(ui->cBSelectStudentFRStudent->currentText().isEmpty())
+    {
+        QMessageBox::information(this,"Error","Please Select Student");
+        x=1;
 
-        document.setContent(&openConfigFile);
-        QDomElement root= document.firstChildElement();
-
-        QDomNodeList grades = root.elementsByTagName("Grade");
-
-       // ui->cBSelectGrade_2->clear();
-        for(int i=0;i<grades.count();i++)
+    }
+    if(x==0)
+    {
+        QFile openConfigFile(filepath);
+        if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
         {
-            QDomNode itemNode = grades.at(i);
-
-            if(itemNode.isElement())
-            {
-                if(ui->cBSelectGradeFRStudent->currentText()==itemNode.toElement().attribute("GradeName"))
-                {
-                    QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
-                  //  ui->cBSelectClassFRStudent->clear();
-                    for(int j=0;j<classList.count();j++)
-                    {
-                        QDomNode itemNodeClass = classList.at(j);
-                        if(itemNodeClass.toElement().attribute("ClassName")==ui->cBSelectClassFRStudent->currentText())
-                        {
-                            QDomNodeList studentList=itemNodeClass.toElement().elementsByTagName("students");
-                            QDomNode students=studentList.at(0);
-                            QString studentNameList=students.firstChild().nodeValue();
-                            QStringList studentNameSplitedList=studentNameList.split(",");
-
-
-                            QString newStudentNameList;
-                            int d=0;
-                            foreach (QString studentName, studentNameSplitedList)
-                            {
-
-                                if(!(ui->cBSelectStudentFRStudent->currentText()==studentName))
-                                {
-                                    newStudentNameList.append(studentName);
-                                    if(d!=(studentNameSplitedList.size()-1))
-                                    {
-                                        newStudentNameList.append(",");
-
-                                    }
-
-
-                                }
-
-                                d++;
-
-                            }
-
-
-                            QDomElement newStudentNode= document.createElement("students");
-                            newStudentNode.appendChild(document.createTextNode(newStudentNameList));
-
-
-                            itemNodeClass.replaceChild(newStudentNode,students);
-
-
-                        }
-
-
-                    }
-
-                }
-
-
-               // break;
-
-            }
-
-
-
-
-       }
-
-        document.appendChild(root);
-        openConfigFile.close();
-
-        if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
-        {
+            qDebug()<<"error";
 
         }
         else
         {
-            QTextStream stream(&openConfigFile);
-            stream <<document.toString();
+            QDomDocument document;
+
+            document.setContent(&openConfigFile);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+           // ui->cBSelectGrade_2->clear();
+            for(int i=0;i<grades.count();i++)
+            {
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
+                {
+                    if(ui->cBSelectGradeFRStudent->currentText()==itemNode.toElement().attribute("GradeName"))
+                    {
+                        QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
+                      //  ui->cBSelectClassFRStudent->clear();
+                        for(int j=0;j<classList.count();j++)
+                        {
+                            QDomNode itemNodeClass = classList.at(j);
+                            if(itemNodeClass.toElement().attribute("ClassName")==ui->cBSelectClassFRStudent->currentText())
+                            {
+                                QDomNodeList studentList=itemNodeClass.toElement().elementsByTagName("students");
+                                QDomNode students=studentList.at(0);
+                                QString studentNameList=students.firstChild().nodeValue();
+                                QStringList studentNameSplitedList=studentNameList.split(",");
+
+
+                                QString newStudentNameList;
+                                int d=0;
+                                foreach (QString studentName, studentNameSplitedList)
+                                {
+
+                                    if(!(ui->cBSelectStudentFRStudent->currentText()==studentName))
+                                    {
+                                        newStudentNameList.append(studentName);
+                                        if(d!=(studentNameSplitedList.size()-1))
+                                        {
+                                            newStudentNameList.append(",");
+
+                                        }
+
+
+                                    }
+
+                                    d++;
+
+                                }
+
+
+                                QDomElement newStudentNode= document.createElement("students");
+                                newStudentNode.appendChild(document.createTextNode(newStudentNameList));
+
+
+                                itemNodeClass.replaceChild(newStudentNode,students);
+
+
+                            }
+
+
+                        }
+
+                    }
+
+
+                   // break;
+
+                }
+
+
+
+
+           }
+
+            document.appendChild(root);
             openConfigFile.close();
-        }
+
+            if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+            {
+
+            }
+            else
+            {
+                QTextStream stream(&openConfigFile);
+                stream <<document.toString();
+                openConfigFile.close();
+            }
 
 
-   }
+       }
 
-   on_tWManage_currentChanged(5);
+       on_tWManage_currentChanged(5);
+    }
+    //ui->cBSelectStudentFRStudent->clear();
+
 
 }
