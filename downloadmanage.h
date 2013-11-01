@@ -17,7 +17,8 @@ public:
     ~DownloadManage();
     void downloadingfiles(QString command ,QString filePath,QString studentList);
     ServerCliant *cliant;
-
+protected slots:
+    void OnFileRecived(const QString& studentName);
     
 private:
     Ui::DownloadManage *ui;

@@ -10,16 +10,21 @@
     <height>504</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QListWidget" name="listWidget">
+  <widget class="QListWidget" name="lWAllStudents">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
-     <width>161</width>
-     <height>451</height>
+     <y>30</y>
+     <width>131</width>
+     <height>411</height>
     </rect>
    </property>
   </widget>
@@ -34,6 +39,42 @@
    </property>
    <property name="text">
     <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="lWRecivedStudents">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>30</y>
+     <width>131</width>
+     <height>411</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>All Student List</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>-5</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Recived Student List</string>
    </property>
   </widget>
  </widget>

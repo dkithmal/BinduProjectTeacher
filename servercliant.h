@@ -17,12 +17,14 @@ public:
     explicit ServerCliant(QObject *parent = 0);
     QTcpSocket *socket;
     void test(QString command,QString filePath,QString studentList,QString iPAddress);
-    void toHaddleUploadDone();
+    void toHaddleUploadDone(QByteArray Arg);
+    void  toExicuteTeacherCommand(QString command ,QString filePath,QString studentList,QString iPAddress);
     int DownloadStrted;
     QString downloadFilePath;
     QString studentList;
     QString ipAddress;
     QString filePath;
+    QString studentName;
 
 
 private:
@@ -40,6 +42,8 @@ private:
     QFile *newfile;
 
 signals:
+    void FileSent(const QString& studentName);
+    void FileRecived(const QString& studentName);
 
 public slots:
     void connected();

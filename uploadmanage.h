@@ -18,6 +18,9 @@ public:
     void uploadingfiles(QString command ,QString filePath,QString studentList);
 
     ServerCliant *cliant;
+
+protected slots:
+    void OnFileSent(const QString& studentName);
     
 private:
     Ui::UploadManage *ui;

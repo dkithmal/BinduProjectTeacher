@@ -11,6 +11,11 @@ ServerCliant::ServerCliant(QObject *parent) :
 //in download spceify the subject and file name to get file
 //file path menas download or upload filepath
 //studentList student list in classs
+void  ServerCliant::toExicuteTeacherCommand(QString command ,QString filePath,QString studentList,QString iPAddress)
+{
+    test(command,filePath,studentList,iPAddress);
+
+}
 void ServerCliant::test(QString command ,QString filePath,QString studentList,QString iPAddress)
 {
     this->ipAddress=iPAddress;
@@ -135,7 +140,7 @@ void ServerCliant::ExecuteCommand(QByteArray clientCommand)
         }
         else if(Command=="DownloadDone")
         {
-            toHaddleUploadDone();
+            toHaddleUploadDone(Arg);
 
         }
 
@@ -165,6 +170,8 @@ void ServerCliant::DoINIT(QByteArray Arg)
     {
         if(student==Arg)
         {
+            // to speciy download from student or not
+            studentName=student;
             qDebug()<<" Success: student match";
             x=1;
 
@@ -275,6 +282,9 @@ void ServerCliant::DoNewDownload(QByteArray Arg)
             DownloadStrted=0;
 
             qDebug()<<"Download Done";
+            //to acknolge to app
+            emit socket->disconnectFromHost();
+            emit this->FileRecived(studentName);
         }
         else {
             qDebug()<<"Download Started";
@@ -301,9 +311,10 @@ void ServerCliant::DoDownload(QByteArray Arg)
         DownloadStrted =0;
 
         qDebug()<<"Download Done";
+        emit socket->disconnectFromHost();
 
-
-
+        //to acknoladgement
+        emit this->FileRecived(studentName);
     }
     else
     {
@@ -313,9 +324,11 @@ void ServerCliant::DoDownload(QByteArray Arg)
 
 }
 
-void ServerCliant::toHaddleUploadDone()
+void ServerCliant::toHaddleUploadDone(QByteArray Arg)
 {
-    qDebug()<<"Server Downloaded file";
+    //Arg is student name
+    qDebug()<<QString::fromUtf8(Arg.trimmed().data(), Arg.trimmed().size())<<"Server Downloaded file";
     emit socket->disconnectFromHost();
-
+   // ayya code
+    emit this->FileSent(QString::fromUtf8(Arg.trimmed().data(), Arg.trimmed().size()));
 }
