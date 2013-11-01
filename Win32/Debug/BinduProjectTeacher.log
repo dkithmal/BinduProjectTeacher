@@ -1,51 +1,15 @@
-﻿Build started 10/30/2013 8:51:41 PM.
+﻿Build started 10/31/2013 9:53:18 PM.
      1>Project "D:\Projects\projects qt\Motorola New\BinduProjectTeacher\BinduProjectTeacher.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(345,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-     1>CustomBuild:
-         Moc'ing homeworktool.h...
-         Moc'ing manageclasses.h...
-         Moc'ing newessaypaper.h...
-         Moc'ing newhomework.h...
-         Moc'ing newmcqpaper.h...
-         Moc'ing newmixpaper.h...
-         Moc'ing newnote.h...
-         Moc'ing newnotecreating.h...
-         Moc'ing openhomework.h...
-         Moc'ing subjectmanage.h...
-         Moc'ing teacher.h...
-         Uic'ing homeworktool.ui...
-         Uic'ing newnote.ui...
-         Uic'ing newnotecreating.ui...
-         Uic'ing openhomework.ui...
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\qt\5.1.0\msvc2012\include /IE:\qt\5.1.0\msvc2012\include\QtWidgets /IE:\qt\5.1.0\msvc2012\include\QtXml /IE:\qt\5.1.0\msvc2012\include\QtGui /IE:\qt\5.1.0\msvc2012\include\QtANGLE /IE:\qt\5.1.0\msvc2012\include\QtCore /Idebug /I. /I"E:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_WIDGETS_LIB /D QT_XML_LIB /D QT_GUI_LIB /D QT_CORE_LIB /D QT_OPENGL_ES_2 /D QT_OPENGL_ES_2_ANGLE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt -Zm200 -w34100 -w34189 Debug\moc_homeworktool.cpp Debug\moc_manageclasses.cpp Debug\moc_newessaypaper.cpp Debug\moc_newhomework.cpp Debug\moc_newmcqpaper.cpp Debug\moc_newmixpaper.cpp Debug\moc_newnote.cpp Debug\moc_newnotecreating.cpp Debug\moc_openhomework.cpp Debug\moc_subjectmanage.cpp Debug\moc_teacher.cpp homeworktool.cpp main.cpp newnote.cpp newnotecreating.cpp openhomework.cpp teacher.cpp
-         moc_homeworktool.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\debug\../homeworktool.h(12): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         moc_manageclasses.cpp
-         moc_newessaypaper.cpp
-         moc_newhomework.cpp
-         moc_newmcqpaper.cpp
-         moc_newmixpaper.cpp
-         moc_newnote.cpp
-         moc_newnotecreating.cpp
-         moc_openhomework.cpp
-         moc_subjectmanage.cpp
-         moc_teacher.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\homeworktool.h(12): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         homeworktool.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\homeworktool.h(12): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         main.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\homeworktool.h(12): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         newnote.cpp
-         newnotecreating.cpp
-         openhomework.cpp
-     1>openhomework.cpp(88): warning C4100: 'index' : unreferenced formal parameter
-     1>openhomework.cpp(91): warning C4189: 'x' : local variable is initialized but not referenced
-         teacher.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\homeworktool.h(12): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         Generating Code...
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\qt\5.1.0\msvc2012\include /IE:\qt\5.1.0\msvc2012\include\QtWidgets /IE:\qt\5.1.0\msvc2012\include\QtNetwork /IE:\qt\5.1.0\msvc2012\include\QtXml /IE:\qt\5.1.0\msvc2012\include\QtGui /IE:\qt\5.1.0\msvc2012\include\QtANGLE /IE:\qt\5.1.0\msvc2012\include\QtCore /Idebug /I. /I"E:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_WIDGETS_LIB /D QT_NETWORK_LIB /D QT_XML_LIB /D QT_GUI_LIB /D QT_CORE_LIB /D QT_OPENGL_ES_2 /D QT_OPENGL_ES_2_ANGLE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt -Zm200 -w34100 -w34189 uploadfile.cpp
+         uploadfile.cpp
+     1>uploadfile.cpp(189): warning C4100: 'index' : unreferenced formal parameter
+     1>d:\projects\projects qt\motorola new\binduprojectteacher\uploadfile.cpp(453): warning C4715: 'UploadFile::getSelectedClassStudents' : not all control paths return a value
+     1>d:\projects\projects qt\motorola new\binduprojectteacher\uploadfile.cpp(551): warning C4715: 'UploadFile::getSelecteHomeWorkType' : not all control paths return a value
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"debug\\BinduProjectTeacher.exe" /NOLOGO /LIBPATH:E:\qt\5.1.0\msvc2012\lib /LIBPATH:E:\qt\5.1.0\msvc2012\lib qtmaind.lib E:\qt\5.1.0\msvc2012\lib\Qt5Widgetsd.lib E:\qt\5.1.0\msvc2012\lib\Qt5Xmld.lib E:\qt\5.1.0\msvc2012\lib\Qt5Guid.lib E:\qt\5.1.0\msvc2012\lib\Qt5Cored.lib libEGLd.lib libGLESv2d.lib gdi32.lib user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"debug\BinduProjectTeacher.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" Win32\Debug\moc_homeworktool.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"debug\\BinduProjectTeacher.exe" /NOLOGO /LIBPATH:E:\qt\5.1.0\msvc2012\lib /LIBPATH:E:\qt\5.1.0\msvc2012\lib qtmaind.lib E:\qt\5.1.0\msvc2012\lib\Qt5Widgetsd.lib E:\qt\5.1.0\msvc2012\lib\Qt5Networkd.lib E:\qt\5.1.0\msvc2012\lib\Qt5Xmld.lib E:\qt\5.1.0\msvc2012\lib\Qt5Guid.lib E:\qt\5.1.0\msvc2012\lib\Qt5Cored.lib libEGLd.lib libGLESv2d.lib gdi32.lib user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"debug\BinduProjectTeacher.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" Win32\Debug\moc_editnote.obj
+         Win32\Debug\moc_homeworktool.obj
          Win32\Debug\moc_manageclasses.obj
          Win32\Debug\moc_newessaypaper.obj
          Win32\Debug\moc_newhomework.obj
@@ -53,9 +17,15 @@
          Win32\Debug\moc_newmixpaper.obj
          Win32\Debug\moc_newnote.obj
          Win32\Debug\moc_newnotecreating.obj
+         Win32\Debug\moc_newuploadordownload.obj
          Win32\Debug\moc_openhomework.obj
+         Win32\Debug\moc_opennote.obj
+         Win32\Debug\moc_servercliant.obj
          Win32\Debug\moc_subjectmanage.obj
          Win32\Debug\moc_teacher.obj
+         Win32\Debug\moc_uploadfile.obj
+         Win32\Debug\moc_uploadmanage.obj
+         Win32\Debug\editnote.obj
          Win32\Debug\homeworktool.obj
          Win32\Debug\main.obj
          Win32\Debug\manageclasses.obj
@@ -65,12 +35,17 @@
          Win32\Debug\newmixpaper.obj
          Win32\Debug\newnote.obj
          Win32\Debug\newnotecreating.obj
+         Win32\Debug\newuploadordownload.obj
          Win32\Debug\openhomework.obj
+         Win32\Debug\opennote.obj
+         Win32\Debug\servercliant.obj
          Win32\Debug\subjectmanage.obj
          Win32\Debug\teacher.obj
+         Win32\Debug\uploadfile.obj
+         Win32\Debug\uploadmanage.obj
          BinduProjectTeacher.vcxproj -> D:\Projects\projects qt\Motorola New\BinduProjectTeacher\debug\BinduProjectTeacher.exe
      1>Done Building Project "D:\Projects\projects qt\Motorola New\BinduProjectTeacher\BinduProjectTeacher.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:01:02.28
+Time Elapsed 00:00:03.89

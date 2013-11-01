@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT       += xml
+QT       += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,7 +27,13 @@ SOURCES += main.cpp\
     newessaypaper.cpp \
     newnotecreating.cpp \
     opennote.cpp \
-    editnote.cpp
+    editnote.cpp \
+    uploadfile.cpp \
+    newuploadordownload.cpp \
+    uploadmanage.cpp \
+    servercliant.cpp \
+    downloadfile.cpp \
+    downloadmanage.cpp
 
 HEADERS  += teacher.h \
     homeworktool.h \
@@ -40,7 +47,13 @@ HEADERS  += teacher.h \
     newessaypaper.h \
     newnotecreating.h \
     opennote.h \
-    editnote.h
+    editnote.h \
+    uploadfile.h \
+    newuploadordownload.h \
+    uploadmanage.h \
+    servercliant.h \
+    downloadfile.h \
+    downloadmanage.h
 
 FORMS    += teacher.ui \
     homeworktool.ui \
@@ -54,4 +67,8 @@ FORMS    += teacher.ui \
     newessaypaper.ui \
     newnotecreating.ui \
     opennote.ui \
-    editnote.ui
+    editnote.ui \
+    uploadfile.ui \
+    newuploadordownload.ui \
+    uploadmanage.ui \
+    downloadfile.ui

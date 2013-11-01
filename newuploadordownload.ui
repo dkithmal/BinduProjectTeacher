@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NewUploadOrDownload</class>
+ <widget class="QWidget" name="NewUploadOrDownload">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>488</width>
+    <height>265</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="pBUpload">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>181</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Upload File</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pBDownload">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>191</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Download File</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pBClose">
+   <property name="geometry">
+    <rect>
+     <x>384</x>
+     <y>212</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pBClose</sender>
+   <signal>clicked()</signal>
+   <receiver>NewUploadOrDownload</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>437</x>
+     <y>234</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>635</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

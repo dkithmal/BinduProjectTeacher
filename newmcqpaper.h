@@ -29,6 +29,7 @@ public:
     void toCreatePaperLayout();
     void saveAnswers();
     void saveEditedQuestions();
+    void setQuestionNo();
     QString paperCrationPath;
 
     int qustionNo;

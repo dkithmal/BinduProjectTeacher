@@ -21,6 +21,8 @@ NewMixPaper::NewMixPaper(QWidget *parent,QString filePath) :
     totalNoOfQuestions=0;
     indexofTabWidget=0;
 
+    setQuestionNo();
+
     paperHeaderLayout=0;
     paperQuestionsLayout=0;
     questionLayout[0]=0;
@@ -34,6 +36,33 @@ NewMixPaper::NewMixPaper(QWidget *parent,QString filePath) :
 NewMixPaper::~NewMixPaper()
 {
     delete ui;
+}
+
+void NewMixPaper::setQuestionNo()
+{
+
+        QFile newPaperFile(paperCrationPath);
+        if(!newPaperFile.open(QFile::ReadWrite| QIODevice::Text))
+        {
+            qDebug()<<"error";
+
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&newPaperFile);
+
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList activityItems = root.elementsByTagName("Activity");
+            paperQuestionsLayout = new QVBoxLayout;
+
+            qustionNo=activityItems.count();
+
+        }
+
+
 }
 
 void NewMixPaper::on_cBNoOfChoises_currentIndexChanged(int index)

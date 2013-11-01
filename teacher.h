@@ -8,6 +8,7 @@
 #include "homeworktool.h"
 #include "manageclasses.h"
 #include "subjectmanage.h"
+#include "newuploadordownload.h"
 
 class Teacher : public QWidget
 {
@@ -20,6 +21,7 @@ public:
     HomeWorkTool *homeWorkTool;
     ManageClasses *manageClasses;
     SubjectManage *subjectManage;
+    NewUploadOrDownload *newUploadOrDownload;
 
 private:
 	Ui::TeacherClass ui;
@@ -28,6 +30,7 @@ private slots:
 	void showTime();
     void on_pBHomeWork_clicked();
     void on_cBSettings_currentIndexChanged(int index);
+    void on_pBUpload_clicked();
 };
 
 #endif // TEACHER_H

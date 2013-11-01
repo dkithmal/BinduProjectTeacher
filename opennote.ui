@@ -32,6 +32,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
    <attribute name="headerVisible">
     <bool>false</bool>
    </attribute>
@@ -54,6 +57,9 @@
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="pBOpen">

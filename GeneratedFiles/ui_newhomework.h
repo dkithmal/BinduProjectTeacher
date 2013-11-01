@@ -92,6 +92,7 @@ public:
         tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
         tWSelectSubject->setGeometry(QRect(10, 40, 371, 391));
         tWSelectSubject->setFont(font);
+        tWSelectSubject->setSortingEnabled(true);
         tWSelectSubject->header()->setVisible(false);
 
         retranslateUi(NewHomeWork);

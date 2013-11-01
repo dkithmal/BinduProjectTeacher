@@ -56,14 +56,14 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>E:\qt\5.1.0\msvc2012\include;E:\qt\5.1.0\msvc2012\include\QtWidgets;E:\qt\5.1.0\msvc2012\include\QtXml;E:\qt\5.1.0\msvc2012\include\QtGui;E:\qt\5.1.0\msvc2012\include\QtANGLE;E:\qt\5.1.0\msvc2012\include\QtCore;release;.;E:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\qt\5.1.0\msvc2012\include;E:\qt\5.1.0\msvc2012\include\QtWidgets;E:\qt\5.1.0\msvc2012\include\QtNetwork;E:\qt\5.1.0\msvc2012\include\QtXml;E:\qt\5.1.0\msvc2012\include\QtGui;E:\qt\5.1.0\msvc2012\include\QtANGLE;E:\qt\5.1.0\msvc2012\include\QtCore;release;.;E:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -73,7 +73,7 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>qtmain.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Xml.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;libEGL.lib;libGLESv2.lib;gdi32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmain.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Xml.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;libEGL.lib;libGLESv2.lib;gdi32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -91,12 +91,12 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>E:\qt\5.1.0\msvc2012\include;E:\qt\5.1.0\msvc2012\include\QtWidgets;E:\qt\5.1.0\msvc2012\include\QtXml;E:\qt\5.1.0\msvc2012\include\QtGui;E:\qt\5.1.0\msvc2012\include\QtANGLE;E:\qt\5.1.0\msvc2012\include\QtCore;debug;.;E:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\qt\5.1.0\msvc2012\include;E:\qt\5.1.0\msvc2012\include\QtWidgets;E:\qt\5.1.0\msvc2012\include\QtNetwork;E:\qt\5.1.0\msvc2012\include\QtXml;E:\qt\5.1.0\msvc2012\include\QtGui;E:\qt\5.1.0\msvc2012\include\QtANGLE;E:\qt\5.1.0\msvc2012\include\QtCore;debug;.;E:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -104,7 +104,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -114,7 +114,7 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>qtmaind.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Xmld.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;libEGLd.lib;libGLESv2d.lib;gdi32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Xmld.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;libEGLd.lib;libGLESv2d.lib;gdi32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -131,10 +131,13 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_ES_2;QT_OPENGL_ES_2_ANGLE;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Debug\moc_editnote.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Debug\moc_homeworktool.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -159,7 +162,16 @@
     <ClCompile Include="Debug\moc_newnotecreating.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Debug\moc_newuploadordownload.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Debug\moc_openhomework.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_opennote.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_servercliant.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Debug\moc_subjectmanage.cpp">
@@ -168,6 +180,13 @@
     <ClCompile Include="Debug\moc_teacher.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Debug\moc_uploadfile.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_uploadmanage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="editnote.cpp" />
     <ClCompile Include="homeworktool.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="manageclasses.cpp" />
@@ -177,7 +196,12 @@
     <ClCompile Include="newmixpaper.cpp" />
     <ClCompile Include="newnote.cpp" />
     <ClCompile Include="newnotecreating.cpp" />
+    <ClCompile Include="newuploadordownload.cpp" />
     <ClCompile Include="openhomework.cpp" />
+    <ClCompile Include="opennote.cpp" />
+    <ClCompile Include="Release\moc_editnote.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Release\moc_homeworktool.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -202,7 +226,16 @@
     <ClCompile Include="Release\moc_newnotecreating.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Release\moc_newuploadordownload.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Release\moc_openhomework.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_opennote.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_servercliant.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Release\moc_subjectmanage.cpp">
@@ -211,14 +244,33 @@
     <ClCompile Include="Release\moc_teacher.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Release\moc_uploadfile.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_uploadmanage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="servercliant.cpp" />
     <ClCompile Include="subjectmanage.cpp" />
     <ClCompile Include="teacher.cpp" />
+    <ClCompile Include="uploadfile.cpp" />
+    <ClCompile Include="uploadmanage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="editnote.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing editnote.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing editnote.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
     <CustomBuild Include="homeworktool.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing homeworktool.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing homeworktool.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -226,9 +278,9 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="manageclasses.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing manageclasses.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing manageclasses.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -236,9 +288,9 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="newessaypaper.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing newessaypaper.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing newessaypaper.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -246,9 +298,9 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="newhomework.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing newhomework.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing newhomework.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -256,9 +308,9 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="newmcqpaper.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing newmcqpaper.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing newmcqpaper.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -266,9 +318,9 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="newmixpaper.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing newmixpaper.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing newmixpaper.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -276,9 +328,9 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="newnote.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing newnote.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing newnote.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -286,29 +338,59 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="newnotecreating.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing newnotecreating.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing newnotecreating.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
+    <CustomBuild Include="newuploadordownload.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing newuploadordownload.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing newuploadordownload.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
     <CustomBuild Include="openhomework.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing openhomework.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing openhomework.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
+    <CustomBuild Include="opennote.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing opennote.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing opennote.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="servercliant.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing servercliant.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing servercliant.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
     <CustomBuild Include="subjectmanage.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing subjectmanage.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing subjectmanage.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
@@ -316,10 +398,30 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="teacher.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing teacher.h...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing teacher.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="uploadfile.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing uploadfile.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing uploadfile.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="uploadmanage.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE -DNDEBUG "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\release" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing uploadmanage.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_OPENGL_ES_2 -DQT_OPENGL_ES_2_ANGLE "-IE:\qt\5.1.0\msvc2012\include" "-IE:\qt\5.1.0\msvc2012\include\QtWidgets" "-IE:\qt\5.1.0\msvc2012\include\QtNetwork" "-IE:\qt\5.1.0\msvc2012\include\QtXml" "-IE:\qt\5.1.0\msvc2012\include\QtGui" "-IE:\qt\5.1.0\msvc2012\include\QtANGLE" "-IE:\qt\5.1.0\msvc2012\include\QtCore" "-I.\debug" "-I." "-IE:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing uploadmanage.h...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
@@ -327,6 +429,17 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="editnote.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
     <CustomBuild Include="homeworktool.ui">
       <FileType>Document</FileType>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
@@ -415,7 +528,29 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
+    <CustomBuild Include="newuploadordownload.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
     <CustomBuild Include="openhomework.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="opennote.ui">
       <FileType>Document</FileType>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
@@ -448,8 +583,31 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
+    <CustomBuild Include="uploadfile.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="uploadmanage.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_editnote.h" />
     <ClInclude Include="GeneratedFiles\ui_homeworktool.h" />
     <ClInclude Include="GeneratedFiles\ui_manageclasses.h" />
     <ClInclude Include="GeneratedFiles\ui_newessaypaper.h" />
@@ -458,9 +616,13 @@
     <ClInclude Include="GeneratedFiles\ui_newmixpaper.h" />
     <ClInclude Include="GeneratedFiles\ui_newnote.h" />
     <ClInclude Include="GeneratedFiles\ui_newnotecreating.h" />
+    <ClInclude Include="GeneratedFiles\ui_newuploadordownload.h" />
     <ClInclude Include="GeneratedFiles\ui_openhomework.h" />
+    <ClInclude Include="GeneratedFiles\ui_opennote.h" />
     <ClInclude Include="GeneratedFiles\ui_subjectmanage.h" />
     <ClInclude Include="GeneratedFiles\ui_teacher.h" />
+    <ClInclude Include="GeneratedFiles\ui_uploadfile.h" />
+    <ClInclude Include="GeneratedFiles\ui_uploadmanage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

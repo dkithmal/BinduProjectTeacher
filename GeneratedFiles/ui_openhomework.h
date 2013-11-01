@@ -65,11 +65,13 @@ public:
         tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
         tWSelectSubject->setGeometry(QRect(10, 30, 411, 411));
         tWSelectSubject->setFont(font);
+        tWSelectSubject->setSortingEnabled(true);
         tWSelectSubject->header()->setVisible(false);
         lWHomeWorks = new QListWidget(OpenHomeWork);
         lWHomeWorks->setObjectName(QStringLiteral("lWHomeWorks"));
         lWHomeWorks->setGeometry(QRect(430, 30, 361, 331));
         lWHomeWorks->setFont(font);
+        lWHomeWorks->setSortingEnabled(true);
 
         retranslateUi(OpenHomeWork);
         QObject::connect(pBClose, SIGNAL(clicked()), OpenHomeWork, SLOT(close()));

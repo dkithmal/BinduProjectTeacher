@@ -20,6 +20,7 @@ NewMcqPaper::NewMcqPaper(QWidget *parent,QString filePath) :
     essayNO=0;
     totalNoOfQuestions=0;
     indexofTabWidget=0;
+    setQuestionNo();
 
     paperHeaderLayout=0;
     paperQuestionsLayout=0;
@@ -33,6 +34,33 @@ NewMcqPaper::NewMcqPaper(QWidget *parent,QString filePath) :
 NewMcqPaper::~NewMcqPaper()
 {
     delete ui;
+}
+
+void NewMcqPaper::setQuestionNo()
+{
+
+        QFile newPaperFile(paperCrationPath);
+        if(!newPaperFile.open(QFile::ReadWrite| QIODevice::Text))
+        {
+            qDebug()<<"error";
+
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&newPaperFile);
+
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList activityItems = root.elementsByTagName("Activity");
+            paperQuestionsLayout = new QVBoxLayout;
+
+            qustionNo=activityItems.count();
+
+        }
+
+
 }
 
 void NewMcqPaper::on_cBNoOfChoises_currentIndexChanged(int index)

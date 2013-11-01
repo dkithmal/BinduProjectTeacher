@@ -65,3 +65,10 @@ void Teacher::on_cBSettings_currentIndexChanged(int index)
     }
 
 }
+
+void Teacher::on_pBUpload_clicked()
+{
+    newUploadOrDownload= new NewUploadOrDownload;
+    newUploadOrDownload->show();
+
+}

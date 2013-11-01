@@ -64,6 +64,7 @@ public:
         tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
         tWSelectSubject->setGeometry(QRect(10, 30, 361, 381));
         tWSelectSubject->setFont(font);
+        tWSelectSubject->setSortingEnabled(true);
         tWSelectSubject->header()->setVisible(false);
 
         retranslateUi(NewNote);

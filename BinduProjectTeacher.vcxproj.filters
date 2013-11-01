@@ -36,17 +36,20 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{bb65aae2-ac51-4d86-afb1-62a7f04b774f}</UniqueIdentifier>
+      <UniqueIdentifier>{a6f54dc8-cc13-4739-bb61-ea43fef9ee87}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{2e87733d-7be5-4c27-b791-3cb3ab71f81d}</UniqueIdentifier>
+      <UniqueIdentifier>{5169c6bd-ac83-4b34-b1ca-fcda7fb2e6aa}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="editnote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="homeworktool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -74,7 +77,16 @@
     <ClCompile Include="newnotecreating.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="newuploadordownload.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="openhomework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="opennote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="servercliant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="subjectmanage.cpp">
@@ -82,6 +94,18 @@
     </ClCompile>
     <ClCompile Include="teacher.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uploadfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uploadmanage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_editnote.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_editnote.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_homeworktool.cpp">
       <Filter>Generated Files\Debug</Filter>
@@ -131,10 +155,28 @@
     <ClCompile Include="Release\moc_newnotecreating.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_newuploadordownload.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_newuploadordownload.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="Debug\moc_openhomework.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_openhomework.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_opennote.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_opennote.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_servercliant.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_servercliant.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_subjectmanage.cpp">
@@ -149,8 +191,23 @@
     <ClCompile Include="Release\moc_teacher.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_uploadfile.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_uploadfile.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_uploadmanage.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_uploadmanage.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="editnote.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="homeworktool.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -175,7 +232,16 @@
     <CustomBuild Include="newnotecreating.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="newuploadordownload.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="openhomework.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="opennote.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="servercliant.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="subjectmanage.h">
@@ -184,8 +250,17 @@
     <CustomBuild Include="teacher.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="uploadfile.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="uploadmanage.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="editnote.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="homeworktool.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -210,7 +285,13 @@
     <CustomBuild Include="newnotecreating.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="newuploadordownload.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="openhomework.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="opennote.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="subjectmanage.ui">
@@ -219,8 +300,17 @@
     <CustomBuild Include="teacher.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="uploadfile.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="uploadmanage.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_editnote.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_homeworktool.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -245,13 +335,25 @@
     <ClInclude Include="GeneratedFiles\ui_newnotecreating.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_newuploadordownload.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_openhomework.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_opennote.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_subjectmanage.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_teacher.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_uploadfile.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_uploadmanage.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
