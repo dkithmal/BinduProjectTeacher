@@ -1,8 +1,8 @@
 #include "newhomework.h"
 #include "ui_newhomework.h"
 
-NewHomeWork::NewHomeWork(QWidget *parent) :
-    QWidget(parent),
+NewHomeWork::NewHomeWork(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::NewHomeWork)
 {
     ui->setupUi(this);
@@ -272,25 +272,27 @@ void NewHomeWork::on_pBCreatePaper_clicked()
      if(ui->rBEssayMcq->isChecked()&&x==0)
      {
          newMixPaper = new NewMixPaper(0,newqPaperSavefilepath);
-         newMixPaper->show();
+         newMixPaper->setModal(false);
          this->close();
+         newMixPaper->exec();
+
      }
 
      if(ui->rBMcq->isChecked()&&x==0)
      {
          newMcqPaper = new NewMcqPaper(0,newqPaperSavefilepath);
-         newMcqPaper->show();
-
+         newMcqPaper->setModal(false);
          this->close();
+         newMcqPaper->exec();
 
      }
 
      if(ui->rBEssay->isChecked()&&x==0)
      {
          newEssayPaper = new NewEssayPaper(0,newqPaperSavefilepath);
-         newEssayPaper->show();
+         newEssayPaper->setModal(false);
          this->close();
-
+         newEssayPaper->exec();
      }
 
         // this->close();

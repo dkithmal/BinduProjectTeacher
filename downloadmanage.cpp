@@ -1,8 +1,8 @@
 #include "downloadmanage.h"
 #include "ui_downloadmanage.h"
 
-DownloadManage::DownloadManage(QWidget *parent,QString command ,QString filePath,QString studentList) :
-    QWidget(parent),
+DownloadManage::DownloadManage(QDialog *parent,QString command ,QString filePath,QString studentList) :
+    QDialog(parent),
     ui(new Ui::DownloadManage)
 {
     ui->setupUi(this);

@@ -1,8 +1,8 @@
 #include "newessaypaper.h"
 #include "ui_newessaypaper.h"
 
-NewEssayPaper::NewEssayPaper(QWidget *parent,QString filePath) :
-    QWidget(parent),
+NewEssayPaper::NewEssayPaper(QDialog *parent,QString filePath) :
+    QDialog(parent),
     ui(new Ui::NewEssayPaper)
 {
     ui->setupUi(this);

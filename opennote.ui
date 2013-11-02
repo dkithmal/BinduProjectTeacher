@@ -134,5 +134,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pBClose</sender>
+   <signal>clicked()</signal>
+   <receiver>OpenNote</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>773</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>884</x>
+     <y>433</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

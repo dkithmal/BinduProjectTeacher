@@ -2,6 +2,7 @@
 #define UPLOADFILE_H
 
 #include <QWidget>
+#include <QDialog>
 #include <QFileDialog>
 #include <QString>
 #include <QFile>
@@ -14,12 +15,12 @@ namespace Ui {
 class UploadFile;
 }
 
-class UploadFile : public QWidget
+class UploadFile : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit UploadFile(QWidget *parent = 0);
+    explicit UploadFile(QDialog *parent = 0);
     ~UploadFile();
     void setFileList();
     void setClassList();

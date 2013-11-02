@@ -1,8 +1,8 @@
 #include "editnote.h"
 #include "ui_editnote.h"
 
-EditNote::EditNote(QWidget *parent,QString filePath) :
-    QWidget(parent),
+EditNote::EditNote(QDialog *parent,QString filePath) :
+    QDialog(parent),
     ui(new Ui::EditNote)
 {
     ui->setupUi(this);

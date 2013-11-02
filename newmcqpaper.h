@@ -1,6 +1,7 @@
 #ifndef NEWMCQPAPER_H
 #define NEWMCQPAPER_H
 
+#include <QDialog>
 #include <QMainWindow>
 #include <QTableWidget>
 #include <QString>
@@ -16,12 +17,12 @@ namespace Ui {
 class NewMcqPaper;
 }
 
-class NewMcqPaper : public QWidget
+class NewMcqPaper : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit NewMcqPaper(QWidget *parent = 0,QString filePath=NULL);
+    explicit NewMcqPaper(QDialog *parent = 0,QString filePath=NULL);
     ~NewMcqPaper();
     void drowHeader(QDomElement root);
     void drowEditQuestions(QDomElement root);

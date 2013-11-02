@@ -2,6 +2,7 @@
 #define NEWNOTECREATING_H
 
 #include <QMainWindow>
+#include <QDialog>
 #include <QTableWidget>
 #include <QString>
 #include <QFile>
@@ -15,12 +16,12 @@ namespace Ui {
 class NewNoteCreating;
 }
 
-class NewNoteCreating : public QWidget
+class NewNoteCreating : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit NewNoteCreating(QWidget *parent = 0,QString filePath=NULL);
+    explicit NewNoteCreating(QDialog *parent = 0,QString filePath=NULL);
     ~NewNoteCreating();
     QString noteCrationPath;
     

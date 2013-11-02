@@ -1,8 +1,8 @@
 #include "newnotecreating.h"
 #include "ui_newnotecreating.h"
 
-NewNoteCreating::NewNoteCreating(QWidget *parent,QString filePath) :
-    QWidget(parent),
+NewNoteCreating::NewNoteCreating(QDialog *parent,QString filePath) :
+    QDialog(parent),
     ui(new Ui::NewNoteCreating)
 {
     ui->setupUi(this);

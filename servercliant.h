@@ -2,6 +2,7 @@
 #define SERVERCLIANT_H
 
 #include <QObject>
+#include <QDialog>
 #include <QTcpSocket>
 #include <QAbstractSocket>
 #include <QDebug>

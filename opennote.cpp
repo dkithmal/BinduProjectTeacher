@@ -1,8 +1,8 @@
 #include "opennote.h"
 #include "ui_opennote.h"
 
-OpenNote::OpenNote(QWidget *parent) :
-    QWidget(parent),
+OpenNote::OpenNote(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::OpenNote)
 {
     ui->setupUi(this);
@@ -203,7 +203,9 @@ void OpenNote::on_pBOpen_clicked()
 
 
         editNote= new EditNote(0,newNoteFilePath);
-        editNote->show();
+        editNote->setModal(false);
+        this->close();
+        editNote->exec();
     }
 
 }

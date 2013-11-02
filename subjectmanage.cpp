@@ -1,8 +1,8 @@
 #include "subjectmanage.h"
 #include "ui_subjectmanage.h"
 
-SubjectManage::SubjectManage(QWidget *parent) :
-    QWidget(parent),
+SubjectManage::SubjectManage(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::SubjectManage)
 {
     ui->setupUi(this);

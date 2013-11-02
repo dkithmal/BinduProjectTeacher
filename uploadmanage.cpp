@@ -1,8 +1,8 @@
 #include "uploadmanage.h"
 #include "ui_uploadmanage.h"
 
-UploadManage::UploadManage(QWidget *parent,QString command ,QString filePath,QString studentList) :
-    QWidget(parent),
+UploadManage::UploadManage(QDialog *parent,QString command ,QString filePath,QString studentList) :
+    QDialog(parent),
     ui(new Ui::UploadManage)
 {
     ui->setupUi(this);

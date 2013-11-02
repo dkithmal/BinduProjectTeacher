@@ -2,6 +2,7 @@
 #define NEWHOMEWORK_H
 
 #include <QtWidgets>
+#include <QDialog>
 #include <QString>
 #include <QFile>
 #include <QtXml>
@@ -15,12 +16,12 @@ namespace Ui {
 class NewHomeWork;
 }
 
-class NewHomeWork : public QWidget
+class NewHomeWork : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit NewHomeWork(QWidget *parent = 0);
+    explicit NewHomeWork(QDialog *parent = 0);
     ~NewHomeWork();
     void setSubjetToTree();
     QString filepath;

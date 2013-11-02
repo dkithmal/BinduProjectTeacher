@@ -1,8 +1,8 @@
 #include "uploadfile.h"
 #include "ui_uploadfile.h"
 
-UploadFile::UploadFile(QWidget *parent) :
-    QWidget(parent),
+UploadFile::UploadFile(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::UploadFile)
 {
     ui->setupUi(this);

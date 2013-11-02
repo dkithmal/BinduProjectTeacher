@@ -1,8 +1,8 @@
 #include "manageclasses.h"
 #include "ui_manageclasses.h"
 
-ManageClasses::ManageClasses(QWidget *parent) :
-    QWidget(parent),
+ManageClasses::ManageClasses(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::ManageClasses)
 {
     ui->setupUi(this);

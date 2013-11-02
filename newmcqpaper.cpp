@@ -1,8 +1,8 @@
 #include "newmcqpaper.h"
 #include "ui_newmcqpaper.h"
 
-NewMcqPaper::NewMcqPaper(QWidget *parent,QString filePath) :
-    QWidget(parent),
+NewMcqPaper::NewMcqPaper(QDialog *parent,QString filePath) :
+    QDialog(parent),
     ui(new Ui::NewMcqPaper)
 {
     ui->setupUi(this);

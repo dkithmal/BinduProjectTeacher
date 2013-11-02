@@ -2,6 +2,7 @@
 #define MANAGECLASSES_H
 
 #include <QtWidgets>
+#include <QDialog>
 #include <QString>
 #include <QFile>
 #include <QtXml>
@@ -12,12 +13,12 @@ namespace Ui {
 class ManageClasses;
 }
 
-class ManageClasses : public QWidget
+class ManageClasses : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit ManageClasses(QWidget *parent = 0);
+    explicit ManageClasses(QDialog *parent = 0);
     ~ManageClasses();
     QString filepath;
     QString basicPath;

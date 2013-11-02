@@ -1,8 +1,8 @@
 #include "newnote.h"
 #include "ui_newnote.h"
 
-NewNote::NewNote(QWidget *parent) :
-    QWidget(parent),
+NewNote::NewNote(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::NewNote)
 {
     ui->setupUi(this);
@@ -208,7 +208,9 @@ void NewNote::on_pBCreateNote_clicked()
            }
 
         newNoteCreating= new NewNoteCreating(0,newNoteSavefilepath);
-        newNoteCreating->show();
+        newNoteCreating->setModal(false);
+        this->close();
+        newNoteCreating->exec();
     }
 
 

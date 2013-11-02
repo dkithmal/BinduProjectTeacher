@@ -2,6 +2,7 @@
 #define EDITNOTE_H
 
 #include <QtWidgets>
+#include <QDialog>
 #include <QString>
 #include <QFile>
 #include <QtXml>
@@ -12,12 +13,12 @@ namespace Ui {
 class EditNote;
 }
 
-class EditNote : public QWidget
+class EditNote : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit EditNote(QWidget *parent = 0,QString filePath=NULL);
+    explicit EditNote(QDialog *parent = 0,QString filePath=NULL);
     ~EditNote();
     void showExistingContent();
     QString noteFilePath;

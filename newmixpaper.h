@@ -2,6 +2,7 @@
 #define NEWMIXPAPER_H
 
 #include <QMainWindow>
+#include <QDialog>
 #include <QTableWidget>
 #include <QString>
 #include <QFile>
@@ -15,12 +16,12 @@ namespace Ui {
 class NewMixPaper;
 }
 
-class NewMixPaper : public QWidget
+class NewMixPaper : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit NewMixPaper(QWidget *parent = 0,QString filePath=NULL);
+    explicit NewMixPaper(QDialog *parent = 0,QString filePath=NULL);
     ~NewMixPaper();
     void drowHeader(QDomElement root);
     void drowEditQuestions(QDomElement root);

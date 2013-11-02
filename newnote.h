@@ -2,6 +2,7 @@
 #define NEWNOTE_H
 
 #include <QtWidgets>
+#include <QDialog>
 #include <QString>
 #include <QFile>
 #include <QtXml>
@@ -15,12 +16,12 @@ namespace Ui {
 class NewNote;
 }
 
-class NewNote : public QWidget
+class NewNote : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit NewNote(QWidget *parent = 0);
+    explicit NewNote(QDialog *parent = 0);
     ~NewNote();
     void setSubjetToTree();
     QString filepath;

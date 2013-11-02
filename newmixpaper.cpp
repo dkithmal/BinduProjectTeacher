@@ -1,8 +1,8 @@
 #include "newmixpaper.h"
 #include "ui_newmixpaper.h"
 
-NewMixPaper::NewMixPaper(QWidget *parent,QString filePath) :
-    QWidget(parent),
+NewMixPaper::NewMixPaper(QDialog *parent,QString filePath) :
+    QDialog(parent),
     ui(new Ui::NewMixPaper)
 {
     ui->setupUi(this);

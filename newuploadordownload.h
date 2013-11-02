@@ -2,6 +2,7 @@
 #define NEWUPLOADORDOWNLOAD_H
 
 #include <QWidget>
+#include <QDialog>
 #include "uploadfile.h"
 #include "downloadfile.h"
 
@@ -9,12 +10,12 @@ namespace Ui {
 class NewUploadOrDownload;
 }
 
-class NewUploadOrDownload : public QWidget
+class NewUploadOrDownload : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit NewUploadOrDownload(QWidget *parent = 0);
+    explicit NewUploadOrDownload(QDialog *parent = 0);
     ~NewUploadOrDownload();
     UploadFile *uploadFile;
     DownloadFile *downloadFile;

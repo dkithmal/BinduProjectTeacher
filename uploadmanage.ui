@@ -89,5 +89,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UploadManage</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>278</x>
+     <y>468</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>465</x>
+     <y>484</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

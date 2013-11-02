@@ -2,6 +2,7 @@
 #define DOWNLOADFILE_H
 
 #include <QWidget>
+#include <QDialog>
 #include <QFileDialog>
 #include <QString>
 #include <QFile>
@@ -13,12 +14,12 @@ namespace Ui {
 class DownloadFile;
 }
 
-class DownloadFile : public QWidget
+class DownloadFile : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit DownloadFile(QWidget *parent = 0);
+    explicit DownloadFile(QDialog *parent = 0);
     ~DownloadFile();
     void setFileList();
     void setClassList();

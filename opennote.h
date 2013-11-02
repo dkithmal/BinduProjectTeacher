@@ -2,6 +2,7 @@
 #define OPENNOTE_H
 
 #include <QtWidgets>
+#include <QDialog>
 #include <QString>
 #include <QFile>
 #include <QtXml>
@@ -13,12 +14,12 @@ namespace Ui {
 class OpenNote;
 }
 
-class OpenNote : public QWidget
+class OpenNote : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit OpenNote(QWidget *parent = 0);
+    explicit OpenNote(QDialog *parent = 0);
     ~OpenNote();
     QString filepath;
     QString basicPath;

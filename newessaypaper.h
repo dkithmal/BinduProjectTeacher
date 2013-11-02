@@ -2,6 +2,7 @@
 #define NEWESSAYPAPER_H
 
 #include <QMainWindow>
+#include <QDialog>
 #include <QTableWidget>
 #include <QString>
 #include <QFile>
@@ -15,12 +16,12 @@ namespace Ui {
 class NewEssayPaper;
 }
 
-class NewEssayPaper : public QWidget
+class NewEssayPaper : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit NewEssayPaper(QWidget *parent = 0,QString filePath=NULL);
+    explicit NewEssayPaper(QDialog *parent = 0,QString filePath=NULL);
     ~NewEssayPaper();
     void drowHeader(QDomElement root);
     void drowEditQuestions(QDomElement root);

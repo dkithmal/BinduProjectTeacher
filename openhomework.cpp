@@ -1,8 +1,8 @@
 #include "openhomework.h"
 #include "ui_openhomework.h"
 
-OpenHomeWork::OpenHomeWork(QWidget *parent) :
-    QWidget(parent),
+OpenHomeWork::OpenHomeWork(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::OpenHomeWork)
 {
     ui->setupUi(this);
@@ -243,20 +243,26 @@ void OpenHomeWork::on_pBOpen_clicked()
                                                  if(paper.toElement().attribute("Type")=="Mcq")
                                                  {
                                                      mewMcqPaper= new NewMcqPaper(0,newfilepath);
-                                                     mewMcqPaper->show();
+                                                     mewMcqPaper->setModal(false);
+                                                     this->close();
+                                                     mewMcqPaper->exec();
 
 
                                                  }
                                                  if(paper.toElement().attribute("Type")=="Essay")
                                                  {
                                                      newEssayPaper= new NewEssayPaper(0,newfilepath);
-                                                     newEssayPaper->show();
+                                                     newEssayPaper->setModal(false);
+                                                     this->close();
+                                                     newEssayPaper->exec();
 
                                                  }
                                                  if(paper.toElement().attribute("Type")=="EssayMcq")
                                                  {
                                                      newMixPaper = new NewMixPaper(0,newfilepath);
-                                                     newMixPaper->show();
+                                                     newMixPaper->setModal(false);
+                                                     this->close();
+                                                     newMixPaper->exec();
 
                                                  }
                                                  break;

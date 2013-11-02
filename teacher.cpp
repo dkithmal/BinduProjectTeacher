@@ -4,7 +4,7 @@ Teacher::Teacher(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-//	QWidget::showFullScreen();
+    //QWidget::showFullScreen();
 
 
 
@@ -38,7 +38,9 @@ void Teacher::showTime()
 void Teacher::on_pBHomeWork_clicked()
 {
     homeWorkTool= new HomeWorkTool;
-    homeWorkTool->show();
+    homeWorkTool->setModal(false);
+    homeWorkTool->exec();
+    //homeWorkTool->show();
 
 }
 
@@ -47,17 +49,25 @@ void Teacher::on_cBSettings_currentIndexChanged(int index)
     if(index==1)
     {
         manageClasses = new ManageClasses;
-        manageClasses->show();
-
+        manageClasses->setModal(false);
         ui.cBSettings->setCurrentIndex(0);
+
+        manageClasses->exec();
+        //manageClasses->show();
+
+
 
     }
     if(index==2)
     {
         subjectManage = new SubjectManage;
-        subjectManage->show();
-
+        subjectManage->setModal(false);
         ui.cBSettings->setCurrentIndex(0);
+
+        subjectManage->exec();
+        //subjectManage->show();
+
+
     }
 
 }
@@ -65,6 +75,8 @@ void Teacher::on_cBSettings_currentIndexChanged(int index)
 void Teacher::on_pBUpload_clicked()
 {
     newUploadOrDownload= new NewUploadOrDownload;
-    newUploadOrDownload->show();
+    newUploadOrDownload->setModal(false);
+    newUploadOrDownload->exec();
+    //newUploadOrDownload->show();
 
 }

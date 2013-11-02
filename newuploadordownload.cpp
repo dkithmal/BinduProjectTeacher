@@ -1,8 +1,8 @@
 #include "newuploadordownload.h"
 #include "ui_newuploadordownload.h"
 
-NewUploadOrDownload::NewUploadOrDownload(QWidget *parent) :
-    QWidget(parent),
+NewUploadOrDownload::NewUploadOrDownload(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::NewUploadOrDownload)
 {
     ui->setupUi(this);
@@ -16,14 +16,18 @@ NewUploadOrDownload::~NewUploadOrDownload()
 void NewUploadOrDownload::on_pBUpload_clicked()
 {
     uploadFile = new UploadFile;
-    uploadFile->show();
+    uploadFile->setModal(false);
     this->close();
+    uploadFile->exec();
 
 }
 
 void NewUploadOrDownload::on_pBDownload_clicked()
 {
     downloadFile = new DownloadFile;
-    downloadFile->show();
+    downloadFile->setModal(false);
     this->close();
+    downloadFile->exec();
+
+
 }

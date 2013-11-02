@@ -1,8 +1,8 @@
 #include "downloadfile.h"
 #include "ui_downloadfile.h"
 
-DownloadFile::DownloadFile(QWidget *parent) :
-    QWidget(parent),
+DownloadFile::DownloadFile(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::DownloadFile)
 {
     ui->setupUi(this);

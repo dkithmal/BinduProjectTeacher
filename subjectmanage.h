@@ -2,6 +2,7 @@
 #define SUBJECTMANAGE_H
 
 #include <QtWidgets>
+#include <QDialog>
 #include <QString>
 #include <QFile>
 #include <QtXml>
@@ -12,12 +13,12 @@ namespace Ui {
 class SubjectManage;
 }
 
-class SubjectManage : public QWidget
+class SubjectManage : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit SubjectManage(QWidget *parent = 0);
+    explicit SubjectManage(QDialog *parent = 0);
     ~SubjectManage();
     void setDefaultCB();
     QString filepath;

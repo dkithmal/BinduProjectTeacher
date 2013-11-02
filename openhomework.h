@@ -2,6 +2,7 @@
 #define OPENHOMEWORK_H
 
 #include <QtWidgets>
+#include <QDialog>
 #include <QString>
 #include <QFile>
 #include <QtXml>
@@ -15,12 +16,12 @@ namespace Ui {
 class OpenHomeWork;
 }
 
-class OpenHomeWork : public QWidget
+class OpenHomeWork : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit OpenHomeWork(QWidget *parent = 0);
+    explicit OpenHomeWork(QDialog *parent = 0);
     ~OpenHomeWork();
     QString filepath;
     QString basicPath;

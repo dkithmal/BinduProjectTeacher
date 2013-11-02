@@ -1,8 +1,8 @@
 #include "homeworktool.h"
 #include "ui_homeworktool.h"
 
-HomeWorkTool::HomeWorkTool(QWidget *parent) :
-    QWidget(parent),
+HomeWorkTool::HomeWorkTool(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::HomeWorkTool)
 {
     ui->setupUi(this);
@@ -24,16 +24,20 @@ void HomeWorkTool::on_pBNewHomeWork_clicked()
         if(ui->rBNewHomeWrok->isChecked())
         {
             newHomeWork = new NewHomeWork;
-            newHomeWork->show();
+            newHomeWork->setModal(false);
             this->close();
+            newHomeWork->exec();
+
 
         }
         else
         {
 
             newNote = new NewNote;
-            newNote->show();
+            newNote->setModal(false);
             this->close();
+            newNote->exec();
+
 
         }
     }
@@ -52,15 +56,19 @@ void HomeWorkTool::on_pBOpenExistingHw_clicked()
         if(ui->rBOpenHomeWork->isChecked())
         {
             openHomeWork = new OpenHomeWork;
-            openHomeWork->show();
+            openHomeWork->setModal(false);
             this->close();
+            openHomeWork->exec();
+
 
         }
         else
         {
             openNote = new OpenNote;
-            openNote->show();
+            openNote->setModal(false);
             this->close();
+            openNote->exec();
+
 
         }
     }
