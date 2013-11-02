@@ -17,6 +17,7 @@ void NewUploadOrDownload::on_pBUpload_clicked()
 {
     uploadFile = new UploadFile;
     uploadFile->show();
+    this->close();
 
 }
 
@@ -24,4 +25,5 @@ void NewUploadOrDownload::on_pBDownload_clicked()
 {
     downloadFile = new DownloadFile;
     downloadFile->show();
+    this->close();
 }

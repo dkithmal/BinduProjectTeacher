@@ -27,6 +27,11 @@
      <height>451</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QListWidget" name="lWRecivedStudentList">
    <property name="geometry">
@@ -36,6 +41,11 @@
      <width>131</width>
      <height>451</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">

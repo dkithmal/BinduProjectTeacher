@@ -273,6 +273,7 @@ void NewHomeWork::on_pBCreatePaper_clicked()
      {
          newMixPaper = new NewMixPaper(0,newqPaperSavefilepath);
          newMixPaper->show();
+         this->close();
      }
 
      if(ui->rBMcq->isChecked()&&x==0)
@@ -280,12 +281,15 @@ void NewHomeWork::on_pBCreatePaper_clicked()
          newMcqPaper = new NewMcqPaper(0,newqPaperSavefilepath);
          newMcqPaper->show();
 
+         this->close();
+
      }
 
      if(ui->rBEssay->isChecked()&&x==0)
      {
          newEssayPaper = new NewEssayPaper(0,newqPaperSavefilepath);
          newEssayPaper->show();
+         this->close();
 
      }
 

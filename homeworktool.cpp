@@ -30,8 +30,10 @@ void HomeWorkTool::on_pBNewHomeWork_clicked()
         }
         else
         {
+
             newNote = new NewNote;
             newNote->show();
+            this->close();
 
         }
     }
@@ -58,6 +60,7 @@ void HomeWorkTool::on_pBOpenExistingHw_clicked()
         {
             openNote = new OpenNote;
             openNote->show();
+            this->close();
 
         }
     }

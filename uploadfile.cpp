@@ -386,6 +386,7 @@ void UploadFile::on_pBUpload_clicked()
 		qDebug()<<creatingCommand<<"creating command";
         uploadManage= new UploadManage(0,creatingCommand,creatingFullFilePath,creatingstudentList);
         uploadManage->show();
+        this->close();
        //uploadManage->getuploadReqest(creatingFullFilePath,creatingSubjetAndType,creatingstudentList);
 
 

@@ -320,6 +320,8 @@ void DownloadFile::on_pBDownload_clicked()
         downloadManage=new DownloadManage(0,creatingCommand,creatingFullFilePathToSave,creatingstudentList);
         downloadManage->show();
 
+        this->close();
+
     }
 
 

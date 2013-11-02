@@ -32,7 +32,7 @@ void Teacher::showTime()
 	QString text = time.toString("hh:mm");
 	if ((time.second() % 2) == 0)
 		text[2] = ' ';
-	ui.lcdNClock->display(text);
+    ui.lcdNClock->display(text);
 }
 
 void Teacher::on_pBHomeWork_clicked()
