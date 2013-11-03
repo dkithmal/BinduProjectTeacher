@@ -130,6 +130,7 @@ void NewEssayPaper::on_pBAddEssayQuestion_clicked()
               QMessageBox::information(this,"Success","Eassy Qustion Added");
 
               ui->lEEssayQuestion->clear();
+              ui->lEEssayMarks->clear();
 
           }
 

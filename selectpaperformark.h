@@ -25,6 +25,10 @@ public:
     QString filepath;
     QString basicPath;
     void setSubjectToTree();
+    QString getPaperType(QString paperXmlPath);
+    void toMarkMcqPaper(QString paperXmlPath);
+    QStringList getTeacherAnswers(QString answerPapersPath);
+    void toUpdateMarksInPaperXml(QString paperXmlpath, QString studentName,QString marks);
     Papersummary *papersummary;
     
 private slots:

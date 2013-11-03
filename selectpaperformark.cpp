@@ -197,6 +197,8 @@ void SelectPaperForMark::on_tWSelectSubject_clicked(const QModelIndex &index)
 
 }
 
+
+
 void SelectPaperForMark::on_pBMarkPaper_clicked()
 {
     int x=0;
@@ -224,8 +226,20 @@ void SelectPaperForMark::on_pBMarkPaper_clicked()
         creatingAnswerPapersPath.append("/");
         creatingAnswerPapersPath.append(ui->lWSelectPaper->currentItem()->text());
 
-        qDebug()<<creatingAnswerPapersPath<<"dsssssssssssssssssssssssss";
 
+        QString type =getPaperType(creatingAnswerPapersPath);
+
+        if(type=="Mcq")
+        {
+
+            // to auto making the answers
+            toMarkMcqPaper(creatingAnswerPapersPath);
+
+        }
+        if(type=="EssayMcq")
+        {
+
+        }
         papersummary= new Papersummary(0,creatingAnswerPapersPath);
         papersummary->setModal(false);
         papersummary->exec();
@@ -235,3 +249,297 @@ void SelectPaperForMark::on_pBMarkPaper_clicked()
 
 
 }
+
+
+//this method return type of the queation paper like mcq EssayMcq or Essay
+QString SelectPaperForMark::getPaperType(QString paperXmlPath)
+{
+    QString paperXmlFilePath=paperXmlPath;
+    paperXmlFilePath.append("/");
+    paperXmlFilePath.append("paper.xml");
+
+
+    QFile openPaperXml(paperXmlFilePath);
+    if(!openPaperXml.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+        QMessageBox::information(this,"Error","Student Answer Papers Not Available");
+        //this->close();
+
+    }
+    else
+    {
+        if(openPaperXml.size()==0)
+        {
+            QMessageBox::information(this,"Error","Student Answer Papers Not Available");
+            this->close();
+
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openPaperXml);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList header = root.elementsByTagName("Header");
+
+            return header.at(0).toElement().attribute("type");
+
+
+        }
+
+
+   }
+
+}
+
+
+
+void SelectPaperForMark::toMarkMcqPaper(QString paperXmlPath)
+{
+
+    QStringList teachrAnswerList;
+    teachrAnswerList =getTeacherAnswers(paperXmlPath);
+
+    if(teachrAnswerList.at(0)=="Error")
+    {
+        this->close();
+    }
+
+
+    QString paperXmlFilePath=paperXmlPath;
+    paperXmlFilePath.append("/");
+    paperXmlFilePath.append("paper.xml");
+
+
+
+
+
+    QFile openPaperXml(paperXmlFilePath);
+    if(!openPaperXml.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+        QMessageBox::information(this,"Error","Student Answer Papers Not Available");
+
+
+    }
+    else
+    {
+        if(openPaperXml.size()==0)
+        {
+            QMessageBox::information(this,"Error","Student Answer Papers Not Available");
+            this->close();
+
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openPaperXml);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList header = root.elementsByTagName("Header");
+
+
+            if(!(header.at(0).toElement().attribute("State")=="Marked"))
+            {
+
+                QDomNodeList studentList = root.elementsByTagName("student");
+
+                for(int i=0;i<studentList.size();i++)
+                {
+                    QDomNode student=studentList.at(i);
+                    QString studentName=student.toElement().attribute("StudentName");
+
+                    QString creatingStudentPaperPath=paperXmlPath+paperXmlPath.mid(paperXmlPath.lastIndexOf("/"));
+                    creatingStudentPaperPath.append("-");
+                    creatingStudentPaperPath.append(studentName);
+                    creatingStudentPaperPath.append(".xml");
+
+
+
+                    //open specific student answer paper
+                    int studentMarks=0;
+                    QFile studentPaper(creatingStudentPaperPath);
+                    if(!studentPaper.open(QFile::ReadWrite| QIODevice::Text))
+                    {
+                        qDebug()<<"error";
+
+
+                    }
+                    else
+                    {
+                        QDomDocument studentDocument;
+
+                        studentDocument.setContent(&studentPaper);
+                        QDomElement root= studentDocument.firstChildElement();
+
+                        QDomNodeList mcqQuestions=root.elementsByTagName("Activity");
+
+                         for(int j=0;j<mcqQuestions.size();j++)
+                         {
+                             QDomNode mcqQustionNode=mcqQuestions.at(j);
+
+
+
+
+                             if(mcqQustionNode.toElement().elementsByTagName("StudentAnswer").at(0).firstChild().nodeValue()==teachrAnswerList.at(j))
+                             {
+                                 studentMarks++;
+
+                             }
+
+                         }
+
+                    }
+
+                    QString finalAnswer=QString::number(studentMarks).append("/").append(QString::number(teachrAnswerList.size()));
+
+                    toUpdateMarksInPaperXml(paperXmlFilePath,studentName,finalAnswer);
+
+
+
+                }
+
+            }
+
+
+        }
+
+
+   }
+
+}
+
+
+
+// this method return teacher mcq answers list
+QStringList SelectPaperForMark::getTeacherAnswers(QString answerPapersPath)
+{
+
+    QStringList filePathInfo=answerPapersPath.split("/");
+    QString paperName=filePathInfo.at(filePathInfo.size()-1);
+    QString subject=filePathInfo.at(filePathInfo.size()-2);
+    QString className=filePathInfo.at(filePathInfo.size()-3);
+    QString grade=filePathInfo.at(filePathInfo.size()-4);
+
+    qDebug()<<paperName<<" "<<subject<<" "<<className<<" "<<grade;
+
+    QString creatingQuestionPaperPath=basicPath;
+    creatingQuestionPaperPath.append("HomeWork/");
+    creatingQuestionPaperPath.append(grade);
+    creatingQuestionPaperPath.append("/");
+    creatingQuestionPaperPath.append(subject);
+    creatingQuestionPaperPath.append("/");
+    creatingQuestionPaperPath.append(paperName);
+    creatingQuestionPaperPath.append(".xml");
+
+
+    QStringList teachrAnswerList;
+
+    QFile openTeacherPaper(creatingQuestionPaperPath);
+    if(!openTeacherPaper.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+        QMessageBox::information(this,"Error","Teacher Answer paper Not availble");
+        this->close();
+
+    }
+    else
+    {
+
+            QDomDocument document;
+
+            document.setContent(&openTeacherPaper);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList mcqQuestions= root.elementsByTagName("Activity");
+
+            for(int i=0;i<mcqQuestions.size();i++)
+            {
+                QDomNode mcqNode=mcqQuestions.at(i);
+
+                if(mcqNode.toElement().elementsByTagName("TeacherAnswer").at(0).firstChild().nodeValue().isEmpty())
+                {
+                    QMessageBox::information(this,"Error","Please Create All answers to paper first");
+                    teachrAnswerList.append("Error");
+                    return teachrAnswerList;
+
+
+                }
+                else
+                {
+                    teachrAnswerList.append(mcqNode.toElement().elementsByTagName("TeacherAnswer").at(0).firstChild().nodeValue());
+
+                }
+
+            }
+
+
+   }
+
+
+
+    return teachrAnswerList;
+
+}
+
+
+
+//this method update marks in Paper.xml in spsific dirctry and modify student marks
+void SelectPaperForMark::toUpdateMarksInPaperXml(QString paperXmlpath, QString studentName,QString marks)
+{
+    QFile openPaperXml(paperXmlpath);
+    if(!openPaperXml.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+        //QMessageBox::information(this,"Error","Student Answer Papers Not Available");
+        //this->close();
+
+    }
+    else
+    {
+            QDomDocument document;
+
+            document.setContent(&openPaperXml);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList studentList = root.elementsByTagName("student");
+
+            for(int i=0;i<studentList.size();i++)
+            {
+                if(studentList.at(i).toElement().attribute("StudentName")==studentName)
+                {
+                    QDomElement newStudent=document.createElement("student");
+                    newStudent.setAttribute("StudentName",studentName);
+                    newStudent.setAttribute("Marks",marks);
+                    newStudent.setAttribute("MarkState","Marked");
+
+                    root.replaceChild(newStudent,studentList.at(i).toElement());
+                }
+
+                }
+
+
+            document.appendChild(root);
+            openPaperXml.close();
+
+            if(!openPaperXml.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+            {
+
+            }
+            else
+            {
+                QTextStream stream(&openPaperXml);
+                stream <<document.toString();
+                openPaperXml.close();
+
+            }
+
+
+            }
+
+}
+
+

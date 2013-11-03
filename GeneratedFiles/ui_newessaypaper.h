@@ -34,6 +34,8 @@ public:
     QLabel *lEssayQusesion;
     QLineEdit *lEEssayQuestion;
     QPushButton *pBAddEssayQuestion;
+    QLineEdit *lEEssayMarks;
+    QLabel *label;
     QWidget *tab_2;
     QGroupBox *gBHeader;
     QGroupBox *gBQuestions;
@@ -80,22 +82,29 @@ public:
         gBEssay->setGeometry(QRect(0, 160, 1111, 191));
         lEssayQusesion = new QLabel(gBEssay);
         lEssayQusesion->setObjectName(QStringLiteral("lEssayQusesion"));
-        lEssayQusesion->setGeometry(QRect(60, 70, 81, 21));
+        lEssayQusesion->setGeometry(QRect(60, 50, 81, 21));
         lEEssayQuestion = new QLineEdit(gBEssay);
         lEEssayQuestion->setObjectName(QStringLiteral("lEEssayQuestion"));
-        lEEssayQuestion->setGeometry(QRect(150, 50, 711, 71));
+        lEEssayQuestion->setGeometry(QRect(150, 30, 711, 61));
         lEEssayQuestion->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         pBAddEssayQuestion = new QPushButton(gBEssay);
         pBAddEssayQuestion->setObjectName(QStringLiteral("pBAddEssayQuestion"));
         pBAddEssayQuestion->setGeometry(QRect(480, 140, 241, 41));
+        lEEssayMarks = new QLineEdit(gBEssay);
+        lEEssayMarks->setObjectName(QStringLiteral("lEEssayMarks"));
+        lEEssayMarks->setGeometry(QRect(180, 110, 71, 31));
+        QFont font1;
+        font1.setPointSize(12);
+        lEEssayMarks->setFont(font1);
+        label = new QLabel(gBEssay);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(60, 110, 121, 31));
         tWPaperCreation->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         gBHeader = new QGroupBox(tab_2);
         gBHeader->setObjectName(QStringLiteral("gBHeader"));
         gBHeader->setGeometry(QRect(0, 0, 1111, 81));
-        QFont font1;
-        font1.setPointSize(12);
         gBHeader->setFont(font1);
         gBQuestions = new QGroupBox(tab_2);
         gBQuestions->setObjectName(QStringLiteral("gBQuestions"));
@@ -198,7 +207,7 @@ public:
 
         retranslateUi(NewEssayPaper);
 
-        tWPaperCreation->setCurrentIndex(2);
+        tWPaperCreation->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(NewEssayPaper);
@@ -211,6 +220,7 @@ public:
         gBEssay->setTitle(QApplication::translate("NewEssayPaper", "Add Essay Question", 0));
         lEssayQusesion->setText(QApplication::translate("NewEssayPaper", "Question :", 0));
         pBAddEssayQuestion->setText(QApplication::translate("NewEssayPaper", "Add Essay Question", 0));
+        label->setText(QApplication::translate("NewEssayPaper", "Marks For Question", 0));
         tWPaperCreation->setTabText(tWPaperCreation->indexOf(tab), QApplication::translate("NewEssayPaper", "Add qustions", 0));
         gBHeader->setTitle(QString());
         gBQuestions->setTitle(QString());

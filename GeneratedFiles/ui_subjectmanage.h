@@ -100,7 +100,7 @@ public:
         QObject::connect(pBClose, SIGNAL(clicked()), SubjectManage, SLOT(close()));
         QObject::connect(pBClose_2, SIGNAL(clicked()), SubjectManage, SLOT(close()));
 
-        tWSubjectManage->setCurrentIndex(0);
+        tWSubjectManage->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(SubjectManage);

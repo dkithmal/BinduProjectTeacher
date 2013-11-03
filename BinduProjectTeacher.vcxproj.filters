@@ -36,17 +36,26 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{a6f54dc8-cc13-4739-bb61-ea43fef9ee87}</UniqueIdentifier>
+      <UniqueIdentifier>{52632538-81b7-492d-a2d6-b7bdf35fcfb8}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{5169c6bd-ac83-4b34-b1ca-fcda7fb2e6aa}</UniqueIdentifier>
+      <UniqueIdentifier>{4482d10f-c4c7-4d08-9a84-1fab8cdaabe8}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="classmanage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="downloadfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="downloadmanage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="editnote.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -57,6 +66,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="manageclasses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="markingpapers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="newessaypaper.cpp">
@@ -86,6 +98,12 @@
     <ClCompile Include="opennote.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="papersummary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="selectpaperformark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="servercliant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -100,6 +118,24 @@
     </ClCompile>
     <ClCompile Include="uploadmanage.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_classmanage.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_classmanage.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_downloadfile.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_downloadfile.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_downloadmanage.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_downloadmanage.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_editnote.cpp">
       <Filter>Generated Files\Debug</Filter>
@@ -117,6 +153,12 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_manageclasses.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_markingpapers.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_markingpapers.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_newessaypaper.cpp">
@@ -173,6 +215,18 @@
     <ClCompile Include="Release\moc_opennote.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_papersummary.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_papersummary.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_selectpaperformark.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_selectpaperformark.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="Debug\moc_servercliant.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -205,6 +259,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="classmanage.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="downloadfile.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="downloadmanage.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="editnote.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -212,6 +275,9 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="manageclasses.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="markingpapers.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="newessaypaper.h">
@@ -241,6 +307,12 @@
     <CustomBuild Include="opennote.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="papersummary.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="selectpaperformark.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="servercliant.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -258,6 +330,15 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="classmanage.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="downloadfile.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="downloadmanage.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="editnote.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -265,6 +346,9 @@
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="manageclasses.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="markingpapers.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="newessaypaper.ui">
@@ -294,6 +378,12 @@
     <CustomBuild Include="opennote.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="papersummary.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="selectpaperformark.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="subjectmanage.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -308,6 +398,15 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_classmanage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_downloadfile.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_downloadmanage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_editnote.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -315,6 +414,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_manageclasses.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_markingpapers.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_newessaypaper.h">
@@ -342,6 +444,12 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_opennote.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_papersummary.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_selectpaperformark.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_subjectmanage.h">

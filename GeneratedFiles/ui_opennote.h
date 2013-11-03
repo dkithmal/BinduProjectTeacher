@@ -73,6 +73,7 @@ public:
         label->setGeometry(QRect(430, 10, 81, 16));
 
         retranslateUi(OpenNote);
+        QObject::connect(pBClose, SIGNAL(clicked()), OpenNote, SLOT(close()));
 
         QMetaObject::connectSlotsByName(OpenNote);
     } // setupUi
