@@ -1,8 +1,10 @@
 #include "teacher.h"
+//const QString Teacher::filepath=QString("D:/dk work/Motarola/Bindu New/Administration/Admin.xml");
 
 Teacher::Teacher(QWidget *parent)
 	: QWidget(parent)
 {
+
 	ui.setupUi(this);
     //QWidget::showFullScreen();
 
@@ -15,11 +17,14 @@ Teacher::Teacher(QWidget *parent)
 
 	showTime();
 
-	
-	//this->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+    //to remove all buttons
+   //this->setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+
+    //this->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
     //this->sizeHint();
 	
 }
+
 
 Teacher::~Teacher()
 {
@@ -79,4 +84,11 @@ void Teacher::on_pBUpload_clicked()
     newUploadOrDownload->exec();
     //newUploadOrDownload->show();
 
+}
+
+void Teacher::on_pBManager_clicked()
+{
+    classManage = new ClassManage;
+    classManage->setModal(false);
+    classManage->exec();
 }

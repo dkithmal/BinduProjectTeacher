@@ -23,6 +23,11 @@ public:
 protected slots:
     void OnFileSent(const QString& studentName);
     
+private slots:
+
+
+    void on_pBUpdateClose_clicked();
+
 private:
     Ui::UploadManage *ui;
 };

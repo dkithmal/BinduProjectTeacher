@@ -155,6 +155,25 @@ void NewHomeWork::on_pBCreatePaper_clicked()
              teacherenode.appendChild(document.createTextNode(ui->lEDuration->text()));
              header.appendChild(teacherenode);
 
+             QDomElement typenode=document.createElement("Type");
+             if(ui->rBEssayMcq->isChecked())
+             {
+                 typenode.appendChild(document.createTextNode("EssayMcq"));
+
+             }
+             if(ui->rBMcq->isChecked())
+             {
+                 typenode.appendChild(document.createTextNode("Mcq"));
+
+             }
+             if(ui->rBEssay->isChecked())
+             {
+                 typenode.appendChild(document.createTextNode("Essay"));
+
+             }
+
+             header.appendChild(typenode);
+
 
              root.appendChild(header);
              document.appendChild(root);

@@ -9,6 +9,7 @@
 #include "manageclasses.h"
 #include "subjectmanage.h"
 #include "newuploadordownload.h"
+#include "classmanage.h"
 
 class Teacher : public QWidget
 {
@@ -22,15 +23,21 @@ public:
     ManageClasses *manageClasses;
     SubjectManage *subjectManage;
     NewUploadOrDownload *newUploadOrDownload;
+    ClassManage *classManage;
+
+   // static const QString filepath ;
+
 
 private:
 	Ui::TeacherClass ui;
+
 
 private slots:
 	void showTime();
     void on_pBHomeWork_clicked();
     void on_cBSettings_currentIndexChanged(int index);
     void on_pBUpload_clicked();
+    void on_pBManager_clicked();
 };
 
 #endif // TEACHER_H

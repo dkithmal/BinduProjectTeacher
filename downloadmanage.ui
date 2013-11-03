@@ -18,37 +18,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QListWidget" name="lWAllStudenList">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>131</width>
-     <height>451</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="lWRecivedStudentList">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>30</y>
-     <width>131</width>
-     <height>451</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pBDownloadClose">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -61,37 +31,42 @@
     <string>Close</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QTableWidget" name="tWDownlodingtate">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
-     <width>111</width>
-     <height>21</height>
+     <y>30</y>
+     <width>271</width>
+     <height>431</height>
     </rect>
    </property>
-   <property name="text">
-    <string>All Student List</string>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>5</y>
-     <width>151</width>
-     <height>21</height>
-    </rect>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
    </property>
-   <property name="text">
-    <string>Recived Student List</string>
-   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>120</number>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Student Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>State</string>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pBDownloadClose</sender>
    <signal>clicked()</signal>
    <receiver>DownloadManage</receiver>
    <slot>close()</slot>

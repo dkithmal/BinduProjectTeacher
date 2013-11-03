@@ -33,7 +33,11 @@ SOURCES += main.cpp\
     uploadmanage.cpp \
     servercliant.cpp \
     downloadfile.cpp \
-    downloadmanage.cpp
+    downloadmanage.cpp \
+    classmanage.cpp \
+    selectpaperformark.cpp \
+    papersummary.cpp \
+    markingpapers.cpp
 
 HEADERS  += teacher.h \
     homeworktool.h \
@@ -53,7 +57,11 @@ HEADERS  += teacher.h \
     uploadmanage.h \
     servercliant.h \
     downloadfile.h \
-    downloadmanage.h
+    downloadmanage.h \
+    classmanage.h \
+    selectpaperformark.h \
+    papersummary.h \
+    markingpapers.h
 
 FORMS    += teacher.ui \
     homeworktool.ui \
@@ -72,4 +80,8 @@ FORMS    += teacher.ui \
     newuploadordownload.ui \
     uploadmanage.ui \
     downloadfile.ui \
-    downloadmanage.ui
+    downloadmanage.ui \
+    classmanage.ui \
+    selectpaperformark.ui \
+    papersummary.ui \
+    markingpapers.ui
