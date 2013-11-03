@@ -49,6 +49,7 @@ public:
      QLabel *qusestionLables[50];
      QTextEdit *qusestionEdit[50];
 
+
     
 private slots:
      void on_cBNoOfChoises_currentIndexChanged(int index);

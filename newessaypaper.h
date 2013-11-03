@@ -44,6 +44,7 @@ public:
      QLabel *qusestionLables[50];
      QTextEdit *qusestionEdit[50];
      QTextEdit *essayAnswers[25];
+     QLineEdit *essayMarks[25];
     
 private slots:
      void on_pBAddEssayQuestion_clicked();

@@ -6,9 +6,13 @@ DownloadManage::DownloadManage(QDialog *parent,QString command ,QString filePath
     ui(new Ui::DownloadManage)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+
     downloadLocationPath=filePath;
     basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
     downloadingfiles(command,filePath,studentList);
+
+
 
 }
 
@@ -78,7 +82,7 @@ void DownloadManage::on_pBDownloadClose_clicked()
      creatingQPaperXmlPath.append(paperName);
      creatingQPaperXmlPath.append("/paper.xml");
 
-     qDebug()<<creatingQPaperXmlPath<<"ffffffffffffffffffffffffffffffffffffff";
+
     QString creatingQuestionPaperPath=basicPath;
     creatingQuestionPaperPath.append("HomeWork/");
     creatingQuestionPaperPath.append(grade);

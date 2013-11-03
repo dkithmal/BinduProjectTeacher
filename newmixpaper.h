@@ -48,6 +48,7 @@ public:
      QLabel *qusestionLables[50];
      QTextEdit *qusestionEdit[50];
      QTextEdit *essayAnswers[25];
+    QLineEdit *essayMarks[25];
 
      //QVBoxLayout  *essayQuestionLayout[5];
     

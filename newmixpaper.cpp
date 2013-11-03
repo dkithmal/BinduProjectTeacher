@@ -12,6 +12,7 @@ NewMixPaper::NewMixPaper(QDialog *parent,QString filePath) :
     ui->tWPaperCreation->setCurrentIndex(0);
     ui->pBPrivious->setEnabled(false);
     ui->pBEPrivious->setEnabled(false);
+    ui->lEEssayMarks->setValidator( new QIntValidator(0, 100, this) );
     on_cBNoOfChoises_currentIndexChanged(0);
 
 
@@ -277,6 +278,16 @@ void NewMixPaper::on_pBAddEssayQuestion_clicked()
           essayNO++;
           Activity.setAttribute("EssayNo",essayNO);
 
+          if(!ui->lEEssayMarks->text().isEmpty())
+          {
+              //Activity.setAttribute("Marks",ui->lEEssayMarks->text());
+              QDomElement Marks= document.createElement("Marks");
+              Marks.appendChild(document.createTextNode(ui->lEEssayMarks->text()));
+              Activity.appendChild(Marks);
+
+          }
+
+
 
           QDomElement Question= document.createElement("Question");
           Question.appendChild(document.createTextNode(ui->lEEssayQuestion->text()));
@@ -302,6 +313,7 @@ void NewMixPaper::on_pBAddEssayQuestion_clicked()
               QMessageBox::information(this,"Success","Eassy Qustion Added");
 
               ui->lEEssayQuestion->clear();
+              ui->lEEssayMarks->clear();
 
           }
 
@@ -1001,9 +1013,9 @@ void NewMixPaper::drowEditQuestions(QDomElement root)
 
                     questionLayout[qNoInPage-1]->addWidget(new QLabel(QString::number(questionNo)+")", this),0,0);
                     questionLayout[qNoInPage-1]->addWidget(qusestionEdit[questionNo],0,1,1,3,0);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A1)", this), 1, 0);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a1)", this), 1, 0);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][0],1,1);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A2)", this), 1, 2);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a2)", this), 1, 2);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][1],1,3);
 
 
@@ -1024,11 +1036,11 @@ void NewMixPaper::drowEditQuestions(QDomElement root)
 
                     questionLayout[qNoInPage-1]->addWidget(new QLabel(QString::number(questionNo)+")", this),0,0);
                     questionLayout[qNoInPage-1]->addWidget(qusestionEdit[questionNo],0,1,1,3,0);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A1)", this), 1, 0);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a1)", this), 1, 0);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][0],1,1);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A2)", this), 1, 2);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a2)", this), 1, 2);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][1],1,3);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A3)", this), 2, 0);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a3)", this), 2, 0);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][2],2,1);
 
 
@@ -1051,13 +1063,13 @@ void NewMixPaper::drowEditQuestions(QDomElement root)
 
                     questionLayout[qNoInPage-1]->addWidget(new QLabel(QString::number(questionNo)+")", this),0,0);
                     questionLayout[qNoInPage-1]->addWidget(qusestionEdit[questionNo],0,1,1,3,0);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A1)", this), 1, 0);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a1)", this), 1, 0);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][0],1,1);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A2)", this), 1, 2);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a2)", this), 1, 2);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][1],1,3);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A3)", this), 2, 0);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a3)", this), 2, 0);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][2],2,1);
-                    questionLayout[qNoInPage-1]->addWidget(new QLabel("A4)", this), 2, 2);
+                    questionLayout[qNoInPage-1]->addWidget(new QLabel("a4)", this), 2, 2);
                     questionLayout[qNoInPage-1]->addWidget(lEMcqAnswers[mcqQusrionNo-1][3],2,3);
 
 
@@ -1100,12 +1112,27 @@ void NewMixPaper::drowEditQuestions(QDomElement root)
 
                  QDomElement itemElement=itemNode.toElement();
                  QDomNode question=itemElement.elementsByTagName("Question").at(0);
+
+
                  //qusestionLables[questionNo]=new QLabel(QString::number(questionNo)+")"+question.firstChild().nodeValue());
                  qusestionEdit[questionNo]=new QTextEdit;
                  qusestionEdit[questionNo]->setText(question.firstChild().nodeValue());
-                 questionLayout[qNoInPage-1]->addWidget(new QLabel(QString::number(questionNo)+")", this),0,0);
+                 qusestionEdit[questionNo]->setMinimumHeight(50);
+                 qusestionEdit[questionNo]->setMaximumHeight(50);
+                 qusestionEdit[questionNo]->setMinimumWidth(1000);
+                 qusestionEdit[questionNo]->setMaximumWidth(1000);
+                 essayMarks[EssayQusrionNo-1]=new QLineEdit;
+                 essayMarks[EssayQusrionNo-1]->setText(itemElement.elementsByTagName("Marks").at(0).firstChild().nodeValue());
+                 essayMarks[EssayQusrionNo-1]->setMinimumHeight(30);
+                 essayMarks[EssayQusrionNo-1]->setMaximumHeight(30);
+                 essayMarks[EssayQusrionNo-1]->setMinimumWidth(80);
+                 essayMarks[EssayQusrionNo-1]->setMaximumWidth(80);
 
+                 questionLayout[qNoInPage-1]->addWidget(new QLabel(QString::number(questionNo)+")", this),0,0);
                  questionLayout[qNoInPage-1]->addWidget(qusestionEdit[questionNo],0,1,1,40,0);
+
+                 questionLayout[qNoInPage-1]->addWidget(new QLabel("Marks", this),1,0);
+                 questionLayout[qNoInPage-1]->addWidget(essayMarks[EssayQusrionNo-1],1,1,1,40,0);
 
                 // essayAnswers[EssayQusrionNo-1] = new QTextEdit;
                 // questionLayout[qNoInPage-1]->addWidget(essayAnswers[EssayQusrionNo-1]);
@@ -1231,15 +1258,23 @@ void NewMixPaper::saveEditedQuestions()
                 {
 
                     int questionNo=itemNode.toElement().attribute("QusetionNo").toInt();
+                    int essayNo=itemNode.toElement().attribute("EssayNo").toInt();
 
                     QDomElement itemElement=itemNode.toElement();
                     QDomNode question=itemElement.elementsByTagName("Question").at(0);
+                     QDomNode marks=itemElement.elementsByTagName("Marks").at(0);
 
 
                     QDomElement newQuesion = document.createElement(QString("Question"));
                     newQuesion.appendChild(document.createTextNode(qusestionEdit[questionNo]->document()->toPlainText()));
 
+                    QDomElement newMark = document.createElement(QString("Marks"));
+                    newMark.appendChild(document.createTextNode( essayMarks[essayNo-1]->text()));
+
                    itemNode.replaceChild(newQuesion,question);
+                    itemNode.replaceChild(newMark,marks);
+
+
 
 
 

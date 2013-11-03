@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -63,7 +63,7 @@
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>70</y>
+        <y>50</y>
         <width>81</width>
         <height>21</height>
        </rect>
@@ -76,9 +76,9 @@
       <property name="geometry">
        <rect>
         <x>150</x>
-        <y>50</y>
+        <y>30</y>
         <width>711</width>
-        <height>71</height>
+        <height>61</height>
        </rect>
       </property>
       <property name="alignment">
@@ -96,6 +96,34 @@
       </property>
       <property name="text">
        <string>Add Essay Question</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lEEssayMarks">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>110</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>110</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Marks For Question</string>
       </property>
      </widget>
     </widget>

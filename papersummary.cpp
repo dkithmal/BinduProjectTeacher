@@ -50,7 +50,7 @@ void Papersummary::createPaperSummary()
             document.setContent(&openPaperXml);
             QDomElement root= document.firstChildElement();
 
-            QDomNodeList header = root.elementsByTagName("header");
+            QDomNodeList header = root.elementsByTagName("Header");
 
 
             //set peper name
