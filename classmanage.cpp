@@ -21,3 +21,17 @@ void ClassManage::on_pBMarkPapers_clicked()
     selectPaperForMark->exec();
 
 }
+
+void ClassManage::on_pBEditStudent_clicked()
+{
+    selectStuForAddDetails = new SelectStuForAddDetails;
+    selectStuForAddDetails->setModal(false);
+    selectStuForAddDetails->exec();
+}
+
+void ClassManage::on_pBStudentProgress_clicked()
+{
+    selectStudentForView = new SelectStudentForView;
+    selectStudentForView->setModal(false);
+    selectStudentForView->exec();
+}

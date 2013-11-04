@@ -37,7 +37,11 @@ SOURCES += main.cpp\
     classmanage.cpp \
     selectpaperformark.cpp \
     papersummary.cpp \
-    markingpapers.cpp
+    markingpapers.cpp \
+    selectstuforadddetails.cpp \
+    addstudentinfromation.cpp \
+    studentinformation.cpp \
+    selectstudentforview.cpp
 
 HEADERS  += teacher.h \
     homeworktool.h \
@@ -61,7 +65,11 @@ HEADERS  += teacher.h \
     classmanage.h \
     selectpaperformark.h \
     papersummary.h \
-    markingpapers.h
+    markingpapers.h \
+    selectstuforadddetails.h \
+    addstudentinfromation.h \
+    studentinformation.h \
+    selectstudentforview.h
 
 FORMS    += teacher.ui \
     homeworktool.ui \
@@ -84,4 +92,8 @@ FORMS    += teacher.ui \
     classmanage.ui \
     selectpaperformark.ui \
     papersummary.ui \
-    markingpapers.ui
+    markingpapers.ui \
+    selectstuforadddetails.ui \
+    addstudentinfromation.ui \
+    studentinformation.ui \
+    selectstudentforview.ui
