@@ -1,124 +1,12 @@
-﻿Build started 11/3/2013 11:18:52 PM.
+﻿Build started 11/4/2013 12:44:26 PM.
      1>Project "D:\Projects\projects qt\Motorola New\BinduProjectTeacher\BinduProjectTeacher.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(345,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-     1>CustomBuild:
-         Moc'ing classmanage.h...
-         Moc'ing downloadfile.h...
-         Moc'ing downloadmanage.h...
-         Moc'ing editnote.h...
-         Moc'ing homeworktool.h...
-         Moc'ing manageclasses.h...
-         Moc'ing markingpapers.h...
-         Moc'ing newessaypaper.h...
-         Moc'ing newhomework.h...
-         Moc'ing newmcqpaper.h...
-         Moc'ing newmixpaper.h...
-         Moc'ing newnote.h...
-         Moc'ing newnotecreating.h...
-         Moc'ing newuploadordownload.h...
-         Moc'ing openhomework.h...
-         Moc'ing opennote.h...
-         Moc'ing papersummary.h...
-         Moc'ing selectpaperformark.h...
-         Moc'ing servercliant.h...
-         Moc'ing subjectmanage.h...
-         Moc'ing teacher.h...
-         Moc'ing uploadfile.h...
-         Moc'ing uploadmanage.h...
-         Uic'ing classmanage.ui...
-         Uic'ing downloadfile.ui...
-         Uic'ing downloadmanage.ui...
-         Uic'ing manageclasses.ui...
-         Uic'ing markingpapers.ui...
-         Uic'ing newessaypaper.ui...
-         Uic'ing newmixpaper.ui...
-         Uic'ing opennote.ui...
-         Uic'ing papersummary.ui...
-         Uic'ing selectpaperformark.ui...
-         Uic'ing subjectmanage.ui...
-         Uic'ing uploadmanage.ui...
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\qt\5.1.0\msvc2012\include /IE:\qt\5.1.0\msvc2012\include\QtWidgets /IE:\qt\5.1.0\msvc2012\include\QtNetwork /IE:\qt\5.1.0\msvc2012\include\QtXml /IE:\qt\5.1.0\msvc2012\include\QtGui /IE:\qt\5.1.0\msvc2012\include\QtANGLE /IE:\qt\5.1.0\msvc2012\include\QtCore /Idebug /I. /I"E:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_WIDGETS_LIB /D QT_NETWORK_LIB /D QT_XML_LIB /D QT_GUI_LIB /D QT_CORE_LIB /D QT_OPENGL_ES_2 /D QT_OPENGL_ES_2_ANGLE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt -Zm200 -w34100 -w34189 classmanage.cpp Debug\moc_classmanage.cpp Debug\moc_downloadfile.cpp Debug\moc_downloadmanage.cpp Debug\moc_editnote.cpp Debug\moc_homeworktool.cpp Debug\moc_manageclasses.cpp Debug\moc_markingpapers.cpp Debug\moc_newessaypaper.cpp Debug\moc_newhomework.cpp Debug\moc_newmcqpaper.cpp Debug\moc_newmixpaper.cpp Debug\moc_newnote.cpp Debug\moc_newnotecreating.cpp Debug\moc_newuploadordownload.cpp Debug\moc_openhomework.cpp Debug\moc_opennote.cpp Debug\moc_papersummary.cpp Debug\moc_selectpaperformark.cpp Debug\moc_servercliant.cpp Debug\moc_subjectmanage.cpp Debug\moc_teacher.cpp Debug\moc_uploadfile.cpp Debug\moc_uploadmanage.cpp downloadfile.cpp downloadmanage.cpp editnote.cpp homeworktool.cpp main.cpp manageclasses.cpp markingpapers.cpp newessaypaper.cpp newhomework.cpp newmcqpaper.cpp newmixpaper.cpp newnote.cpp newnotecreating.cpp newuploadordownload.cpp openhomework.cpp opennote.cpp papersummary.cpp selectpaperformark.cpp servercliant.cpp subjectmanage.cpp teacher.cpp uploadfile.cpp uploadmanage.cpp
-         classmanage.cpp
-         moc_classmanage.cpp
-         moc_downloadfile.cpp
-         moc_downloadmanage.cpp
-         moc_editnote.cpp
-         moc_homeworktool.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\debug\../homeworktool.h(13): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         moc_manageclasses.cpp
-         moc_markingpapers.cpp
-         moc_newessaypaper.cpp
-         moc_newhomework.cpp
-         moc_newmcqpaper.cpp
-         moc_newmixpaper.cpp
-         moc_newnote.cpp
-         moc_newnotecreating.cpp
-         moc_newuploadordownload.cpp
-         moc_openhomework.cpp
-         moc_opennote.cpp
-         moc_papersummary.cpp
-         moc_selectpaperformark.cpp
-         moc_servercliant.cpp
-         Generating Code...
-         Compiling...
-         moc_subjectmanage.cpp
-         moc_teacher.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\homeworktool.h(13): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         moc_uploadfile.cpp
-         moc_uploadmanage.cpp
-         downloadfile.cpp
-     1>downloadfile.cpp(157): warning C4100: 'index' : unreferenced formal parameter
-         downloadmanage.cpp
-         editnote.cpp
-         homeworktool.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\homeworktool.h(13): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         main.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\homeworktool.h(13): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         manageclasses.cpp
-     1>manageclasses.cpp(558): warning C4100: 'arg1' : unreferenced formal parameter
-     1>manageclasses.cpp(720): warning C4100: 'index' : unreferenced formal parameter
-     1>manageclasses.cpp(773): warning C4100: 'index' : unreferenced formal parameter
-     1>manageclasses.cpp(825): warning C4100: 'index' : unreferenced formal parameter
-     1>manageclasses.cpp(967): warning C4189: 'a' : local variable is initialized but not referenced
-     1>manageclasses.cpp(976): warning C4189: 'a' : local variable is initialized but not referenced
-     1>manageclasses.cpp(985): warning C4189: 'a' : local variable is initialized but not referenced
-     1>manageclasses.cpp(1118): warning C4189: 'a' : local variable is initialized but not referenced
-         markingpapers.cpp
-         newessaypaper.cpp
-         newhomework.cpp
-         newmcqpaper.cpp
-         newmixpaper.cpp
-     1>newmixpaper.cpp(328): warning C4100: 'index' : unreferenced formal parameter
-         newnote.cpp
-         newnotecreating.cpp
-         newuploadordownload.cpp
-         openhomework.cpp
-     1>openhomework.cpp(88): warning C4100: 'index' : unreferenced formal parameter
-         opennote.cpp
-     1>opennote.cpp(91): warning C4100: 'index' : unreferenced formal parameter
-         Generating Code...
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\downloadfile.cpp(404): warning C4715: 'DownloadFile::getSelectedClassStudents' : not all control paths return a value
-         Compiling...
-         papersummary.cpp
-     1>papersummary.cpp(97): warning C4100: 'index' : unreferenced formal parameter
-         selectpaperformark.cpp
-     1>selectpaperformark.cpp(123): warning C4100: 'index' : unreferenced formal parameter
-     1>selectpaperformark.cpp(125): warning C4189: 'x' : local variable is initialized but not referenced
-         servercliant.cpp
-         subjectmanage.cpp
-     1>subjectmanage.cpp(240): warning C4100: 'index' : unreferenced formal parameter
-     1>subjectmanage.cpp(379): warning C4189: 'a' : local variable is initialized but not referenced
-     1>subjectmanage.cpp(395): warning C4189: 'a' : local variable is initialized but not referenced
-         teacher.cpp
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\homeworktool.h(13): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\qt\5.1.0\msvc2012\include /IE:\qt\5.1.0\msvc2012\include\QtWidgets /IE:\qt\5.1.0\msvc2012\include\QtNetwork /IE:\qt\5.1.0\msvc2012\include\QtXml /IE:\qt\5.1.0\msvc2012\include\QtGui /IE:\qt\5.1.0\msvc2012\include\QtANGLE /IE:\qt\5.1.0\msvc2012\include\QtCore /Idebug /I. /I"E:\qt\5.1.0\msvc2012\mkspecs\win32-msvc2012" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_WIDGETS_LIB /D QT_NETWORK_LIB /D QT_XML_LIB /D QT_GUI_LIB /D QT_CORE_LIB /D QT_OPENGL_ES_2 /D QT_OPENGL_ES_2_ANGLE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt -Zm200 -w34100 -w34189 uploadfile.cpp
          uploadfile.cpp
      1>uploadfile.cpp(190): warning C4100: 'index' : unreferenced formal parameter
-         uploadmanage.cpp
-         Generating Code...
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\uploadfile.cpp(567): warning C4715: 'UploadFile::getSelecteHomeWorkType' : not all control paths return a value
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\uploadfile.cpp(469): warning C4715: 'UploadFile::getSelectedClassStudents' : not all control paths return a value
-     1>d:\projects\projects qt\motorola new\binduprojectteacher\selectpaperformark.cpp(298): warning C4715: 'SelectPaperForMark::getPaperType' : not all control paths return a value
+     1>d:\projects\projects qt\motorola new\binduprojectteacher\uploadfile.cpp(559): warning C4715: 'UploadFile::getSelectedClassStudents' : not all control paths return a value
+     1>d:\projects\projects qt\motorola new\binduprojectteacher\uploadfile.cpp(657): warning C4715: 'UploadFile::getSelecteHomeWorkType' : not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"debug\\BinduProjectTeacher.exe" /NOLOGO /LIBPATH:E:\qt\5.1.0\msvc2012\lib /LIBPATH:E:\qt\5.1.0\msvc2012\lib qtmaind.lib E:\qt\5.1.0\msvc2012\lib\Qt5Widgetsd.lib E:\qt\5.1.0\msvc2012\lib\Qt5Networkd.lib E:\qt\5.1.0\msvc2012\lib\Qt5Xmld.lib E:\qt\5.1.0\msvc2012\lib\Qt5Guid.lib E:\qt\5.1.0\msvc2012\lib\Qt5Cored.lib libEGLd.lib libGLESv2d.lib gdi32.lib user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"debug\BinduProjectTeacher.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" Win32\Debug\classmanage.obj
          Win32\Debug\moc_classmanage.obj
@@ -167,10 +55,9 @@
          Win32\Debug\teacher.obj
          Win32\Debug\uploadfile.obj
          Win32\Debug\uploadmanage.obj
-         LINK : debug\\BinduProjectTeacher.exe not found or not built by the last incremental link; performing full link
          BinduProjectTeacher.vcxproj -> D:\Projects\projects qt\Motorola New\BinduProjectTeacher\debug\BinduProjectTeacher.exe
      1>Done Building Project "D:\Projects\projects qt\Motorola New\BinduProjectTeacher\BinduProjectTeacher.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:02:41.65
+Time Elapsed 00:00:03.81

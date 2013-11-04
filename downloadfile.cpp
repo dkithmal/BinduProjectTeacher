@@ -8,7 +8,7 @@ DownloadFile::DownloadFile(QDialog *parent) :
     ui->setupUi(this);
     filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
     basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
-    setFileList();
+  //  setFileList();
     setClassList();
 }
 
@@ -157,6 +157,7 @@ void DownloadFile::setClassList()
 void DownloadFile::on_tWSelectClass_clicked(const QModelIndex &index)
 {
     ui->cBSelectStudent->clear();
+    ui->cBSelectStudent->clear();
     ui->cBSelectStudent->addItem("All");
     if(ui->tWSelectClass->currentIndex().parent().isValid())
     {
@@ -232,13 +233,92 @@ void DownloadFile::on_tWSelectClass_clicked(const QModelIndex &index)
 
        }
 
+        //set content of subjects and notes and homeworks
+        QFile openConfigFile2(filepath);
+        if(!openConfigFile2.open(QFile::ReadWrite| QIODevice::Text))
+        {
+            qDebug()<<"error";
+
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openConfigFile2);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+
+            for(int i=0;i<grades.count();i++)
+            {
+
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
+                {
+                    if(itemNode.toElement().attribute("GradeName")==ui->tWSelectClass->currentItem()->parent()->text(0))
+                    {
+                        QDomNodeList classeList= itemNode.toElement().elementsByTagName("Class");
+
+                            for(int j=0;j<classeList.count();j++)
+                            {
+                                QDomNode itemNodeClass = classeList.at(j);
+                                if(itemNodeClass.toElement().attribute("ClassName")==ui->tWSelectClass->currentItem()->text(0))
+                                {
+                                    QDomNodeList subjectList= itemNodeClass.toElement().elementsByTagName("CSubject");
+
+                                    ui->tWSelectHomeWork->clear();
+                                    for(int k=0;k<subjectList.size();k++)
+                                    {
+                                        QTreeWidgetItem *subject= new QTreeWidgetItem(ui->tWSelectHomeWork);
+                                        subject->setText(0,subjectList.at(k).toElement().attribute("SubjectName"));
+
+                                        QDomNodeList subjectListForGetHomeWork=itemNode.toElement().elementsByTagName("Subject");
+
+                                        for(int l=0;l<subjectListForGetHomeWork.size();l++)
+                                        {
+                                            if(subjectListForGetHomeWork.at(l).toElement().attribute("SubjectName")==subjectList.at(k).toElement().attribute("SubjectName"))
+                                            {
+                                                QDomNodeList homeWorkList= subjectListForGetHomeWork.at(l).toElement().elementsByTagName("HomeWork");
+                                                QDomNodeList noteList= subjectListForGetHomeWork.at(l).toElement().elementsByTagName("Note");
+
+
+                                                for(int m=0;m<homeWorkList.count();m++)
+                                                {
+                                                    QDomNode itemNodehomeWork = homeWorkList.at(m);
+                                                    QTreeWidgetItem *homeWorkItem= new QTreeWidgetItem(subject);
+                                                    homeWorkItem->setText(0,itemNodehomeWork.toElement().attribute("HomeWorkName"));
+
+
+                                                }
+
+                                            }
+                                        }
+
+                                         ui->tWSelectHomeWork->addTopLevelItem(subject);
+
+                                    }
+
+
+                                }
+
+
+                            }
+
+
+                    }
+                }
+            }
+        }
+
 
     }
 }
 
 void DownloadFile::on_pBDownload_clicked()
 {int x=0;
-    if(!ui->tWSelectHomeWork->currentIndex().parent().parent().isValid())
+    if(!ui->tWSelectHomeWork->currentIndex().parent().isValid())
     {
         QMessageBox::information(this,"Error","Please select Home Work");
        x=1;
@@ -269,7 +349,7 @@ void DownloadFile::on_pBDownload_clicked()
         //creating directry to subject and paper name
         QString creatingDirectries=basicPath;
         creatingDirectries.append("Answers/");
-        creatingDirectries.append(ui->tWSelectHomeWork->currentItem()->parent()->parent()->text(0));
+        creatingDirectries.append(ui->tWSelectClass->currentItem()->parent()->text(0));
         creatingDirectries.append("/");
         creatingDirectries.append(ui->tWSelectClass->currentItem()->text(0));
         creatingDirectries.append("/");

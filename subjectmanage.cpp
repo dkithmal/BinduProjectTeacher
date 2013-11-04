@@ -46,10 +46,26 @@ void SubjectManage::setDefaultCB()
                 ui->cBSelectGradeAdd->addItem(itemNode.toElement().attribute("GradeName"));
 
 
-        }
+            }
 
 
-    }
+            if(i==0)
+            {
+                QDomNodeList classList=itemNode.toElement().elementsByTagName("Class");
+
+                 ui->cBSelectClass->clear();
+                for(int k=0;k<classList.size();k++)
+                {
+                    QDomNode classItemNode = classList.at(k);
+
+                    ui->cBSelectClass->addItem(classItemNode.toElement().attribute("ClassName"));
+
+                }
+
+            }
+
+
+     }
 
 
    }
@@ -80,6 +96,9 @@ void SubjectManage::on_pBAddSubject_clicked()
 
     }
 
+
+
+
     if(x==0)
     {
         QFile newConfigFile(filepath);
@@ -107,32 +126,92 @@ void SubjectManage::on_pBAddSubject_clicked()
 
 
 
+
                     if(!itemNode.toElement().attribute("GradeName").compare(ui->cBSelectGradeAdd->currentText()))
                     {
-
-
-                        QDomElement subject= document.createElement("Subject");
-                        subject.setAttribute("SubjectName",ui->lESubjectName->text());
-                        itemNode.appendChild(subject);
-                        //root.appendChild(itemNode);
-
-                        QDomNodeList classList=itemNode.toElement().elementsByTagName("Class");
-
-                        for(int z=0;z<classList.size();z++)
+                        QDomNodeList subjectList=itemNode.toElement().elementsByTagName("Subject");
+                    int itemExist=0;
+                        for(int e=0;e<subjectList.size();e++)
                         {
-                            if(classList.at(z).toElement().attribute("ClassName")==ui->cBSelectClass->currentText())
+                            QDomNode itemNodeSubject=subjectList.at(e);
+
+                            if(itemNodeSubject.toElement().attribute("SubjectName")==ui->lESubjectName->text())
                             {
-                                QDomElement subjectToClass= document.createElement("CSubject");
-                                subjectToClass.setAttribute("SubjectName",ui->lESubjectName->text());
-                                classList.at(z).appendChild(subjectToClass);
+                                itemExist=1;
+                                break;
 
                             }
 
                         }
 
+                        if(itemExist==0)
+                        {
+                            QDomElement subject= document.createElement("Subject");
+                            subject.setAttribute("SubjectName",ui->lESubjectName->text());
+                            itemNode.appendChild(subject);
+
+                        }
+
+
+                        QDomNodeList classListForCheck = itemNode.toElement().elementsByTagName("Class");
+
+
+                         int itemExistSubject=0;
+                        for(int f=0;f<classListForCheck.size();f++)
+                        {
+                            QDomNode itemNodeClass=classListForCheck.at(f);
+
+                            if(itemNodeClass.toElement().attribute("ClassName")==ui->cBSelectClass->currentText())
+                            {
+                                QDomNodeList subjectListForClass=itemNodeClass.toElement().elementsByTagName("CSubject");
+
+
+                                for(int u=0;u<subjectListForClass.size();u++)
+                                {
+                                    QDomNode itemNodeCSubject=subjectListForClass.at(u);
+
+                                    if(itemNodeCSubject.toElement().attribute("SubjectName")==ui->lESubjectName->text())
+                                    {itemExistSubject=1;
+                                        QMessageBox::information(this,"Error","This Subject Already exist in this class");
+                                       return;
+
+                                    }
+
+                                }
+
+
+                            }
+
+                        }
+
+                        if(itemExistSubject==0)
+                        {
+                            //root.appendChild(itemNode)
+
+                            //create subject eliment in classs element
+                            QDomNodeList classList=itemNode.toElement().elementsByTagName("Class");
+
+                            for(int z=0;z<classList.size();z++)
+                            {
+                                if(classList.at(z).toElement().attribute("ClassName")==ui->cBSelectClass->currentText())
+                                {
+                                    QDomElement subjectToClass= document.createElement("CSubject");
+                                    subjectToClass.setAttribute("SubjectName",ui->lESubjectName->text());
+                                    classList.at(z).appendChild(subjectToClass);
+
+                                }
+
+                            }
+
+                        }
+
+
+
+
+
                         root.appendChild(itemNode);
 
-                       // break;
+                        break;
 
                     }
 
@@ -245,6 +324,19 @@ void SubjectManage::on_tWSubjectManage_currentChanged(int index)
 
                              if(l==0)
                              {
+
+                                     QDomNodeList classList=itemNode.toElement().elementsByTagName("Class");
+
+                                     for(int k=0;k<classList.size();k++)
+                                     {
+                                         QDomNode classItemNode = classList.at(k);
+
+                                         ui->cBSelectClass->addItem(classItemNode.toElement().attribute("ClassName"));
+
+                                     }
+
+
+
                                  QDomNodeList subjctList= itemNodeClass.toElement().elementsByTagName("CSubject");
 
                                  ui->cBSelectSubjectRemove->clear();

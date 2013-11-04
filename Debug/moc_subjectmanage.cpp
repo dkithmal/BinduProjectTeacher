@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_SubjectManage_t {
-    QByteArrayData data[7];
-    char stringdata[143];
+    QByteArrayData data[9];
+    char stringdata[226];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,12 +35,16 @@ QT_MOC_LITERAL(2, 38, 0),
 QT_MOC_LITERAL(3, 39, 33),
 QT_MOC_LITERAL(4, 73, 5),
 QT_MOC_LITERAL(5, 79, 42),
-QT_MOC_LITERAL(6, 122, 19)
+QT_MOC_LITERAL(6, 122, 19),
+QT_MOC_LITERAL(7, 142, 39),
+QT_MOC_LITERAL(8, 182, 42)
     },
     "SubjectManage\0on_pBAddSubject_clicked\0"
     "\0on_tWSubjectManage_currentChanged\0"
     "index\0on_cBSelectGradeRemove_currentIndexChanged\0"
     "on_pBRemove_clicked\0"
+    "on_cBSelectGradeAdd_currentIndexChanged\0"
+    "on_cBSelectClassToRSub_currentIndexChanged\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -50,7 +54,7 @@ static const uint qt_meta_data_SubjectManage[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,16 +62,20 @@ static const uint qt_meta_data_SubjectManage[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x08,
-       3,    1,   35,    2, 0x08,
-       5,    1,   38,    2, 0x08,
-       6,    0,   41,    2, 0x08,
+       1,    0,   44,    2, 0x08,
+       3,    1,   45,    2, 0x08,
+       5,    1,   48,    2, 0x08,
+       6,    0,   51,    2, 0x08,
+       7,    1,   52,    2, 0x08,
+       8,    1,   55,    2, 0x08,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void, QMetaType::Int,    4,
 
        0        // eod
 };
@@ -81,6 +89,8 @@ void SubjectManage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 1: _t->on_tWSubjectManage_currentChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 2: _t->on_cBSelectGradeRemove_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->on_pBRemove_clicked(); break;
+        case 4: _t->on_cBSelectGradeAdd_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->on_cBSelectClassToRSub_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -111,13 +121,13 @@ int SubjectManage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }

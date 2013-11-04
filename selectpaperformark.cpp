@@ -54,8 +54,9 @@ void SelectPaperForMark::setSubjectToTree()
                     classItem->setText(0,itemNodeClass.toElement().attribute("ClassName"));
 
 
+                     QDomNodeList subjecList= itemNodeClass.toElement().elementsByTagName("CSubject");
 
-                   QDomNodeList subjecList= itemNode.toElement().elementsByTagName("Subject");
+                  // QDomNodeList subjecList= itemNode.toElement().elementsByTagName("Subject");
 
                     for(int j=0;j<subjecList.count();j++)
                     {
@@ -229,20 +230,27 @@ void SelectPaperForMark::on_pBMarkPaper_clicked()
 
         QString type =getPaperType(creatingAnswerPapersPath);
 
-        if(type=="Mcq")
-        {
+		if(type!="error")
+		{
+			if(type=="Mcq")
+			{
 
-            // to auto making the answers
-            toMarkMcqPaper(creatingAnswerPapersPath);
+				// to auto making the answers
+				toMarkMcqPaper(creatingAnswerPapersPath);
 
-        }
-        if(type=="EssayMcq")
-        {
+			}
+			if(type=="EssayMcq")
+			{
 
-        }
-        papersummary= new Papersummary(0,creatingAnswerPapersPath);
-        papersummary->setModal(false);
-        papersummary->exec();
+			}
+			papersummary= new Papersummary(0,creatingAnswerPapersPath);
+			papersummary->setModal(false);
+			papersummary->exec();
+
+
+		}
+
+
 
     }
 
@@ -264,6 +272,7 @@ QString SelectPaperForMark::getPaperType(QString paperXmlPath)
     {
         qDebug()<<"error";
         QMessageBox::information(this,"Error","Student Answer Papers Not Available");
+		return "error";
         //this->close();
 
     }
