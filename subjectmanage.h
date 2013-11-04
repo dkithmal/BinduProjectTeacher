@@ -34,6 +34,10 @@ private slots:
 
        void on_pBRemove_clicked();
 
+       void on_cBSelectGradeAdd_currentIndexChanged(int index);
+
+       void on_cBSelectClassToRSub_currentIndexChanged(int index);
+
 private:
     Ui::SubjectManage *ui;
 };

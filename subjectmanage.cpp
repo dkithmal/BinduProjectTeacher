@@ -73,6 +73,13 @@ void SubjectManage::on_pBAddSubject_clicked()
 
     }
 
+    if(ui->cBSelectClass->currentText().isEmpty())
+    {
+        QMessageBox::information(this,"Error","Please Select Class to add subject");
+        x=1;
+
+    }
+
     if(x==0)
     {
         QFile newConfigFile(filepath);
@@ -107,8 +114,25 @@ void SubjectManage::on_pBAddSubject_clicked()
                         QDomElement subject= document.createElement("Subject");
                         subject.setAttribute("SubjectName",ui->lESubjectName->text());
                         itemNode.appendChild(subject);
+                        //root.appendChild(itemNode);
+
+                        QDomNodeList classList=itemNode.toElement().elementsByTagName("Class");
+
+                        for(int z=0;z<classList.size();z++)
+                        {
+                            if(classList.at(z).toElement().attribute("ClassName")==ui->cBSelectClass->currentText())
+                            {
+                                QDomElement subjectToClass= document.createElement("CSubject");
+                                subjectToClass.setAttribute("SubjectName",ui->lESubjectName->text());
+                                classList.at(z).appendChild(subjectToClass);
+
+                            }
+
+                        }
+
                         root.appendChild(itemNode);
-                        break;
+
+                       // break;
 
                     }
 
@@ -211,15 +235,31 @@ void SubjectManage::on_tWSubjectManage_currentChanged(int index)
 
                     if(i==0)
                     {
-                        QDomNodeList subjctList= itemNode.toElement().elementsByTagName("Subject");
+                        QDomNodeList classList=itemNode.toElement().elementsByTagName("Class");
 
-                        ui->cBSelectSubjectRemove->clear();
-                        for(int j=0;j<subjctList.count();j++)
+                        ui->cBSelectClassToRSub->clear();
+                        for(int l=0;l<classList.size();l++)
                         {
-                            QDomNode itemNodeSubject = subjctList.at(j);
-                             ui->cBSelectSubjectRemove->addItem(itemNodeSubject.toElement().attribute("SubjectName"));
+                            QDomNode itemNodeClass = classList.at(l);
+                             ui->cBSelectClassToRSub->addItem(itemNodeClass.toElement().attribute("ClassName"));
+
+                             if(l==0)
+                             {
+                                 QDomNodeList subjctList= itemNodeClass.toElement().elementsByTagName("CSubject");
+
+                                 ui->cBSelectSubjectRemove->clear();
+                                 for(int j=0;j<subjctList.count();j++)
+                                 {
+                                     QDomNode itemNodeSubject = subjctList.at(j);
+                                      ui->cBSelectSubjectRemove->addItem(itemNodeSubject.toElement().attribute("SubjectName"));
+
+                                 }
+
+                             }
 
                         }
+
+
 
                     }
 
@@ -263,12 +303,12 @@ void SubjectManage::on_cBSelectGradeRemove_currentIndexChanged(int index)
             {
                 if(ui->cBSelectGradeRemove->currentText()==itemNode.toElement().attribute("GradeName"))
                 {
-                    QDomNodeList subjectList= itemNode.toElement().elementsByTagName("Subject");
-                    ui->cBSelectSubjectRemove->clear();
-                    for(int j=0;j<subjectList.count();j++)
+                    QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
+                    ui->cBSelectClassToRSub->clear();
+                    for(int j=0;j<classList.count();j++)
                     {
-                        QDomNode itemNodeSubject = subjectList.at(j);
-                         ui->cBSelectSubjectRemove->addItem(itemNodeSubject.toElement().attribute("SubjectName"));
+                        QDomNode itemNodeSubject = classList.at(j);
+                         ui->cBSelectClassToRSub->addItem(itemNodeSubject.toElement().attribute("ClassName"));
 
                     }
 
@@ -301,6 +341,13 @@ void SubjectManage::on_pBRemove_clicked()
         x=1;
     }
 
+    if(ui->cBSelectClassToRSub->currentText().isEmpty())
+    {
+        QMessageBox::information(this,"Error","Please Select Class To Remove");
+        x=1;
+
+    }
+
     if(x==0)
     {
         QFile openConfigFile(filepath);
@@ -327,6 +374,36 @@ void SubjectManage::on_pBRemove_clicked()
                 {
                     if(ui->cBSelectGradeRemove->currentText()==itemNode.toElement().attribute("GradeName"))
                     {
+                         QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
+
+                         for(int k=0;k<classList.size();k++)
+                         {
+                             QDomNode itemNodeClass= classList.at(k);
+
+                             if(itemNodeClass.toElement().attribute("ClassName")==ui->cBSelectClassToRSub->currentText())
+                             {
+                                 QDomNodeList ClassSubjectList= itemNode.toElement().elementsByTagName("CSubject");
+                               //  ui->cBSelectClassFRStudent->clear();
+                                 for(int z=0;z<ClassSubjectList.count();z++)
+                                 {
+                                     QDomNode itemNodeSubject= ClassSubjectList.at(z);
+                                     if(itemNodeSubject.toElement().attribute("SubjectName")==ui->cBSelectSubjectRemove->currentText())
+                                     {
+                                         itemNodeClass.toElement().removeChild(itemNodeSubject);
+
+
+                                     }
+                                     // ui->cBSelectClassFRStudent->addItem(itemNodeClass.toElement().attribute("ClassName"));
+
+                                 }
+
+                             }
+
+                         }
+
+
+
+
                         QDomNodeList subjectList= itemNode.toElement().elementsByTagName("Subject");
                       //  ui->cBSelectClassFRStudent->clear();
                         for(int j=0;j<subjectList.count();j++)
@@ -341,6 +418,8 @@ void SubjectManage::on_pBRemove_clicked()
                             // ui->cBSelectClassFRStudent->addItem(itemNodeClass.toElement().attribute("ClassName"));
 
                         }
+
+
 
                     }
 
@@ -435,3 +514,118 @@ bool SubjectManage::removeDir(const QString &dirName)
 
     return result;
 }
+
+void SubjectManage::on_cBSelectGradeAdd_currentIndexChanged(int index)
+{
+    QFile openConfigFile(filepath);
+    if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+
+    }
+    else
+    {
+        QDomDocument document;
+
+        document.setContent(&openConfigFile);
+        QDomElement root= document.firstChildElement();
+
+        QDomNodeList grades = root.elementsByTagName("Grade");
+
+        //ui->cBSelectGrade_2->clear();
+        for(int i=0;i<grades.count();i++)
+        {
+            QDomNode itemNode = grades.at(i);
+
+            if(itemNode.isElement())
+            {
+                if(ui->cBSelectGradeAdd->currentText()==itemNode.toElement().attribute("GradeName"))
+                {
+                    QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
+                    ui->cBSelectClass->clear();
+                    for(int j=0;j<classList.count();j++)
+                    {
+                        QDomNode itemNodeClass = classList.at(j);
+                         ui->cBSelectClass->addItem(itemNodeClass.toElement().attribute("ClassName"));
+
+                    }
+
+                }
+
+
+
+            }
+
+
+
+
+       }
+
+
+   }
+
+}
+
+void SubjectManage::on_cBSelectClassToRSub_currentIndexChanged(int index)
+{
+    QFile openConfigFile(filepath);
+    if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+
+    }
+    else
+    {
+        QDomDocument document;
+
+        document.setContent(&openConfigFile);
+        QDomElement root= document.firstChildElement();
+
+        QDomNodeList grades = root.elementsByTagName("Grade");
+
+        //ui->cBSelectGrade_2->clear();
+        for(int i=0;i<grades.count();i++)
+        {
+            QDomNode itemNode = grades.at(i);
+
+            if(itemNode.isElement())
+            {
+                if(ui->cBSelectGradeRemove->currentText()==itemNode.toElement().attribute("GradeName"))
+                {
+                    QDomNodeList classList=itemNode.toElement().elementsByTagName("Class");
+
+
+                    for(int k=0;k<classList.size();k++)
+                    {
+                        if(classList.at(k).toElement().attribute("ClassName")==ui->cBSelectClassToRSub->currentText())
+                        {
+                            QDomNodeList subjectList= classList.at(k).toElement().elementsByTagName("CSubject");
+                            ui->cBSelectSubjectRemove->clear();
+                            for(int j=0;j<subjectList.count();j++)
+                            {
+                                QDomNode itemNodeSubject = subjectList.at(j);
+                                 ui->cBSelectSubjectRemove->addItem(itemNodeSubject.toElement().attribute("SubjectName"));
+
+                            }
+
+                        }
+                    }
+
+
+
+                }
+
+
+
+            }
+
+
+
+
+       }
+
+
+   }
+}
+
+
