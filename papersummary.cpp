@@ -96,7 +96,7 @@ void Papersummary::createPaperSummary()
 
 void Papersummary::on_tWStudentPaperSummery_doubleClicked(const QModelIndex &index)
 {
-    if( ui->tWStudentPaperSummery->currentItem()->text()=="NotMark")
+    if( ui->tWStudentPaperSummery->currentItem()->text()=="NotMark"||"Marked")
     {
         QString createStudentAnswerPath=paperFilepath;
         createStudentAnswerPath.append("/");
@@ -109,6 +109,8 @@ void Papersummary::on_tWStudentPaperSummery_doubleClicked(const QModelIndex &ind
         markingPapers= new MarkingPapers(0,createStudentAnswerPath);
         markingPapers->setModal(false);
         markingPapers->exec();
+
+        createPaperSummary();
 
        // qDebug()<<createStudentAnswerPath<<"fdffffffffffffffffffff";
 

@@ -13,17 +13,17 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pBSaveMarks">
    <property name="geometry">
     <rect>
-     <x>1030</x>
+     <x>964</x>
      <y>580</y>
-     <width>75</width>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Close</string>
+    <string>Save All Marks And Close</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pBPrivious">
@@ -166,10 +166,13 @@
      </rect>
     </property>
     <property name="text">
-     <string>/</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLineEdit" name="lEAnswer1Marks">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>1000</x>
@@ -177,6 +180,9 @@
       <width>61</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
     </property>
    </widget>
    <widget class="QLabel" name="lAnswer2TMarks">
@@ -189,7 +195,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>/</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLineEdit" name="lEAnswer2Marks">
@@ -222,7 +228,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>/</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="lAnswer5TMarks">
@@ -235,7 +241,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>/</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLineEdit" name="lEAnswer5Marks">
@@ -258,7 +264,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>/</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLineEdit" name="lEAnswer4Marks">
@@ -340,6 +346,37 @@
       <width>91</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>855</x>
+      <y>13</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>student Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lStudentName">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>10</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

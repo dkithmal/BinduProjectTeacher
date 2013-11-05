@@ -101,7 +101,7 @@ void NewEssayPaper::on_pBAddEssayQuestion_clicked()
           if(!ui->lEEssayMarks->text().isEmpty())
           {
               //Activity.setAttribute("Marks",ui->lEEssayMarks->text());
-              QDomElement Marks= document.createElement("Marks");
+              QDomElement Marks= document.createElement("TeacharMarks");
               Marks.appendChild(document.createTextNode(ui->lEEssayMarks->text()));
               Activity.appendChild(Marks);
 
@@ -636,7 +636,7 @@ void NewEssayPaper::drowEditQuestions(QDomElement root)
                  qusestionEdit[questionNo]->setMinimumWidth(1000);
                  qusestionEdit[questionNo]->setMaximumWidth(1000);
                  essayMarks[EssayQusrionNo-1]=new QLineEdit;
-                 essayMarks[EssayQusrionNo-1]->setText(itemElement.elementsByTagName("Marks").at(0).firstChild().nodeValue());
+                 essayMarks[EssayQusrionNo-1]->setText(itemElement.elementsByTagName("TeacharMarks").at(0).firstChild().nodeValue());
                  essayMarks[EssayQusrionNo-1]->setMinimumHeight(30);
                  essayMarks[EssayQusrionNo-1]->setMaximumHeight(30);
                  essayMarks[EssayQusrionNo-1]->setMinimumWidth(80);
@@ -645,7 +645,7 @@ void NewEssayPaper::drowEditQuestions(QDomElement root)
                  questionLayout[qNoInPage-1]->addWidget(new QLabel(QString::number(questionNo)+")", this),0,0);
                  questionLayout[qNoInPage-1]->addWidget(qusestionEdit[questionNo],0,1,1,40,0);
 
-                 questionLayout[qNoInPage-1]->addWidget(new QLabel("Marks", this),1,0);
+                 questionLayout[qNoInPage-1]->addWidget(new QLabel("TeacharMarks", this),1,0);
                  questionLayout[qNoInPage-1]->addWidget(essayMarks[EssayQusrionNo-1],1,1,1,40,0);
 
                 // essayAnswers[EssayQusrionNo-1] = new QTextEdit;
@@ -727,13 +727,13 @@ void NewEssayPaper::saveEditedQuestions()
 
                     QDomElement itemElement=itemNode.toElement();
                     QDomNode question=itemElement.elementsByTagName("Question").at(0);
-                     QDomNode marks=itemElement.elementsByTagName("Marks").at(0);
+                     QDomNode marks=itemElement.elementsByTagName("TeacharMarks").at(0);
 
 
                     QDomElement newQuesion = document.createElement(QString("Question"));
                     newQuesion.appendChild(document.createTextNode(qusestionEdit[questionNo]->document()->toPlainText()));
 
-                    QDomElement newMark = document.createElement(QString("Marks"));
+                    QDomElement newMark = document.createElement(QString("TeacharMarks"));
                     newMark.appendChild(document.createTextNode( essayMarks[essayNo-1]->text()));
 
                     itemNode.replaceChild(newQuesion,question);

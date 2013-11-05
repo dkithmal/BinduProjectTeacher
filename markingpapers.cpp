@@ -9,6 +9,7 @@ MarkingPapers::MarkingPapers(QWidget *parent,QString filePath) :
 
     paperOpenPath=filePath;
 
+   studentName=paperOpenPath.mid(paperOpenPath.lastIndexOf("-")+1,paperOpenPath.lastIndexOf(".")-paperOpenPath.lastIndexOf("-")-1);
 
     //qDebug()<<paperOpenPath<<"ssssssssssssssssssssssss";
     qustionNo = 0;
@@ -26,6 +27,12 @@ MarkingPapers::MarkingPapers(QWidget *parent,QString filePath) :
     questionLayout[4]=0;
 
     ui->pBPrivious->setEnabled(false);
+    ui->lEAnswer1Marks->setHidden(true);
+    ui->lEAnswer2Marks->setHidden(true);
+    ui->lEAnswer3Marks->setHidden(true);
+    ui->lEAnswer4Marks->setHidden(true);
+    ui->lEAnswer5Marks->setHidden(true);
+
 
     toCreatePaperLayout();
 }
@@ -126,7 +133,7 @@ void MarkingPapers::toCreatePaperLayout()
             }
 
 
-                drowHeader(root);
+               // drowHeader(root);
                 drowQuestions(root);
 
 
@@ -160,10 +167,17 @@ void MarkingPapers::drowHeader(QDomElement root)
       QDomNode title=itemElement.elementsByTagName("Title").at(0);
       QDomNode subject=itemElement.elementsByTagName("Subject").at(0);
       QDomNode duration=itemElement.elementsByTagName("Duration").at(0);
+      QDomNode totalmarks=itemElement.elementsByTagName("TotalMarks").at(0);
+
 
       QLabel *lTitle=new QLabel("<h5>"+title.firstChild().nodeValue()+"</h5>");
       QLabel *lSubject=new QLabel("Subject :"+subject.firstChild().nodeValue());
       QLabel *lDuration=new QLabel("Duration :"+duration.firstChild().nodeValue());
+
+      totalStudentMarks=totalmarks.firstChild().nodeValue();
+      ui->lETotalMarks->setText(totalmarks.firstChild().nodeValue());
+      ui->lETotalMarks->setReadOnly(true);
+      ui->lStudentName->setText(studentName);
 
       paperHeaderLayout = new QVBoxLayout;
 
@@ -226,6 +240,79 @@ void MarkingPapers::drowQuestions(QDomElement root)
                 QDomElement itemElement=itemNode.toElement();
                 QDomNode question=itemElement.elementsByTagName("Question").at(0);
                 qusestionLables[questionNo]=new QLabel(QString::number(questionNo)+")"+question.firstChild().nodeValue());
+
+                QString marks=itemNode.toElement().attribute("Mark");
+                if(qNoInPage==1)
+                {
+                    ui->lEAnswer1Marks->setHidden(false);
+                    if(!marks.isEmpty())
+                        ui->lEAnswer1Marks->setText("correct");
+                    else
+                    {
+                        ui->lEAnswer1Marks->setText("wrong");
+
+                    }
+                    ui->lEAnswer1Marks->setReadOnly(true);
+
+                }
+
+                if(qNoInPage==2)
+                {
+                    ui->lEAnswer2Marks->setHidden(false);
+                    if(!marks.isEmpty())
+                        ui->lEAnswer2Marks->setText("correct");
+                    else
+                    {
+                        ui->lEAnswer2Marks->setText("wrong");
+
+                    }
+                    ui->lEAnswer2Marks->setReadOnly(true);
+
+
+                }
+                if(qNoInPage==3)
+                {
+                    ui->lEAnswer3Marks->setHidden(false);
+                    if(!marks.isEmpty())
+                        ui->lEAnswer3Marks->setText("correct");
+                    else
+                    {
+                        ui->lEAnswer3Marks->setText("wrong");
+
+                    }
+                    ui->lEAnswer3Marks->setReadOnly(true);
+
+
+                }
+                if(qNoInPage==4)
+                {
+                    ui->lEAnswer4Marks->setHidden(false);
+                    if(!marks.isEmpty())
+                        ui->lEAnswer4Marks->setText("correct");
+                    else
+                    {
+                        ui->lEAnswer4Marks->setText("wrong");
+
+                    }
+                    ui->lEAnswer4Marks->setReadOnly(true);
+
+
+                }
+                if(qNoInPage==5)
+                {
+                    ui->lEAnswer5Marks->setHidden(false);
+                    if(!marks.isEmpty())
+                        ui->lEAnswer5Marks->setText("correct");
+                    else
+                    {
+                        ui->lEAnswer5Marks->setText("wrong");
+
+                    }
+                    ui->lEAnswer5Marks->setReadOnly(true);
+
+
+                }
+
 
 
 
@@ -356,6 +443,118 @@ void MarkingPapers::drowQuestions(QDomElement root)
                  QDomElement itemElement=itemNode.toElement();
                  QDomNode question=itemElement.elementsByTagName("Question").at(0);
                  qusestionLables[questionNo]=new QLabel(QString::number(questionNo)+")"+question.firstChild().nodeValue());
+
+                 //set marks in lEdit
+                 QString marks=itemNode.toElement().attribute("Mark");
+
+
+                 QDomElement teachermarks=itemNode.toElement();
+                 QDomNode teachrmark=itemElement.elementsByTagName("TeacharMarks").at(0);
+                 if(qNoInPage==1)
+                 {
+
+                     ui->lEAnswer1Marks->setReadOnly(false);
+                     ui->lEAnswer1Marks->setHidden(false);
+                     if(!marks.isEmpty())
+                     {
+                          ui->lEAnswer1Marks->setText(marks);
+                          PreviousStudentMarks1=marks.toInt();
+                     }
+                     else
+                     {
+                         ui->lEAnswer1Marks->setText("");
+                         PreviousStudentMarks1=0;
+
+                     }
+
+
+                     ui->lAnswer1TMark->setText("/"+teachrmark.firstChild().nodeValue());
+
+
+                 }
+
+                 if(qNoInPage==2)
+                 {
+                     ui->lEAnswer2Marks->setReadOnly(false);
+                     ui->lEAnswer2Marks->setHidden(false);
+                     if(!marks.isEmpty())
+                     {
+
+                         ui->lEAnswer2Marks->setText(marks);
+                         PreviousStudentMarks2=marks.toInt();
+                     }
+                     else
+                     {
+                         ui->lEAnswer2Marks->setText("");
+                         PreviousStudentMarks2=0;
+
+                     }
+
+                      ui->lAnswer2TMarks->setText("/"+teachrmark.firstChild().nodeValue());
+
+
+                 }
+                 if(qNoInPage==3)
+                 {
+                     ui->lEAnswer3Marks->setReadOnly(false);
+                     ui->lEAnswer3Marks->setHidden(false);
+                     if(!marks.isEmpty())
+                     {
+
+                         ui->lEAnswer3Marks->setText(marks);
+                         PreviousStudentMarks3=marks.toInt();
+                     }
+                     else
+                     {
+                         ui->lEAnswer3Marks->setText("");
+                         PreviousStudentMarks3=0;
+
+                     }
+                      ui->lAnswer3TMarks->setText("/"+teachrmark.firstChild().nodeValue());
+
+
+
+                 }
+                 if(qNoInPage==4)
+                 {
+                     ui->lEAnswer4Marks->setReadOnly(false);
+                     ui->lEAnswer4Marks->setHidden(false);
+                     if(!marks.isEmpty())
+                     {
+                         ui->lEAnswer4Marks->setText(marks);
+                         PreviousStudentMarks4=marks.toInt();
+                     }
+                     else
+                     {
+                         ui->lEAnswer4Marks->setText("");
+                         PreviousStudentMarks4=0;
+
+                     }
+                      ui->lAnswer4TMarks->setText("/"+teachrmark.firstChild().nodeValue());
+
+
+
+                 }
+                 if(qNoInPage==5)
+                 {
+                     ui->lEAnswer5Marks->setReadOnly(false);
+                     ui->lEAnswer5Marks->setHidden(false);
+                     if(!marks.isEmpty())
+                     {
+                         ui->lEAnswer5Marks->setText(marks);
+                         PreviousStudentMarks5=marks.toInt();
+                     }
+                     else
+                     {
+                         ui->lEAnswer5Marks->setText("");
+                         PreviousStudentMarks5=0;
+
+                     }
+                      ui->lAnswer5TMarks->setText("/"+teachrmark.firstChild().nodeValue());
+
+
+
+                 }
 
                  questionLayout[qNoInPage-1]->addWidget(qusestionLables[questionNo]);
 
@@ -559,6 +758,23 @@ void MarkingPapers::saveAnswers()
 
 void MarkingPapers::on_pBPrivious_clicked()
 {
+    saveEssayMarks();
+    ui->lEAnswer1Marks->setHidden(true);
+    ui->lEAnswer1Marks->clear();
+    ui->lAnswer1TMark->clear();
+    ui->lEAnswer2Marks->setHidden(true);
+    ui->lEAnswer2Marks->clear();
+    ui->lAnswer2TMarks->clear();
+    ui->lEAnswer3Marks->setHidden(true);
+    ui->lEAnswer3Marks->clear();
+    ui->lAnswer3TMarks->clear();
+    ui->lEAnswer4Marks->setHidden(true);
+    ui->lEAnswer4Marks->clear();
+    ui->lAnswer4TMarks->clear();
+    ui->lEAnswer5Marks->setHidden(true);
+    ui->lEAnswer5Marks->clear();
+    ui->lAnswer5TMarks->clear();
+
     //saveAnswers();
         ui->lPageNo->setText(QString::number(ui->lPageNo->text().toInt()-1));
         if(ui->lPageNo->text().toInt()==1)
@@ -575,6 +791,23 @@ void MarkingPapers::on_pBPrivious_clicked()
 
 void MarkingPapers::on_pBNext_clicked()
 {
+    saveEssayMarks();
+    ui->lEAnswer1Marks->setHidden(true);
+    ui->lEAnswer1Marks->clear();
+    ui->lAnswer1TMark->clear();
+    ui->lEAnswer2Marks->setHidden(true);
+    ui->lEAnswer2Marks->clear();
+    ui->lAnswer2TMarks->clear();
+    ui->lEAnswer3Marks->setHidden(true);
+    ui->lEAnswer3Marks->clear();
+    ui->lAnswer3TMarks->clear();
+    ui->lEAnswer4Marks->setHidden(true);
+    ui->lEAnswer4Marks->clear();
+    ui->lAnswer4TMarks->clear();
+    ui->lEAnswer5Marks->setHidden(true);
+    ui->lEAnswer5Marks->clear();
+    ui->lAnswer5TMarks->clear();
+
     //saveAnswers();
       ui->lPageNo->setText(QString::number(ui->lPageNo->text().toInt()+1));
       if(totalNoOfQuestions/5==ui->lPageNo->text().toInt())
@@ -597,5 +830,250 @@ void MarkingPapers::on_pBNext_clicked()
       ui->pBPrivious->setEnabled(true);
 
       toCreatePaperLayout();
+
+}
+
+
+void MarkingPapers::saveEssayMarks()
+{
+
+    QFile newPaperFile(paperOpenPath);
+    if(!newPaperFile.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+
+    }
+    else
+    {
+        QDomDocument document;
+
+        document.setContent(&newPaperFile);
+
+        QDomElement root= document.firstChildElement();
+
+        QDomNodeList activityItems = root.elementsByTagName("Activity");
+
+        int i=0;
+        int j=0;
+        if(ui->lPageNo->text().toInt()==1)
+        {
+            j=5;
+
+        }
+        else
+        {
+            i=(ui->lPageNo->text().toInt()-1)*5;
+            j=i+5;
+        }
+
+        int qNoinPage=1;
+        for (i;i<j;i++)
+        {
+
+            QDomNode itemNode = activityItems.at(i);
+             if(itemNode.isElement())
+             {
+
+                if(itemNode.toElement().attribute("Type")=="Essay")
+                  {
+                    QDomElement essayElement=itemNode.toElement();
+
+
+                     QDomElement newEssayElement=essayElement;
+                     if(!newEssayElement.attribute("Mark").isEmpty())
+                     {
+                         newEssayElement.removeAttribute("Mark");
+                         if(qNoinPage==1)
+                            newEssayElement.setAttribute("Mark",ui->lEAnswer1Marks->text());
+                         if(qNoinPage==2)
+                            newEssayElement.setAttribute("Mark",ui->lEAnswer2Marks->text());
+                         if(qNoinPage==3)
+                             newEssayElement.setAttribute("Mark",ui->lEAnswer3Marks->text());
+                         if(qNoinPage==4)
+                             newEssayElement.setAttribute("Mark",ui->lEAnswer4Marks->text());
+                         if(qNoinPage==5)
+                             newEssayElement.setAttribute("Mark",ui->lEAnswer5Marks->text());
+
+
+                     }
+                     else
+                     {
+                         if(qNoinPage==1)
+                            essayElement.setAttribute("Mark",ui->lEAnswer1Marks->text());
+                         if(qNoinPage==2)
+                            essayElement.setAttribute("Mark",ui->lEAnswer2Marks->text());
+                         if(qNoinPage==3)
+                             essayElement.setAttribute("Mark",ui->lEAnswer3Marks->text());
+                         if(qNoinPage==4)
+                             essayElement.setAttribute("Mark",ui->lEAnswer4Marks->text());
+                         if(qNoinPage==5)
+                             essayElement.setAttribute("Mark",ui->lEAnswer5Marks->text());
+
+                     }
+
+                     if(qNoinPage==1)
+                     {
+                         totalStudentMarks=QString::number(totalStudentMarks.mid(0,totalStudentMarks.lastIndexOf("/")).toInt()+ui->lEAnswer1Marks->text().toInt()-PreviousStudentMarks1).append(totalStudentMarks.mid(totalStudentMarks.lastIndexOf("/")));
+                     }
+                     if(qNoinPage==2)
+                     {
+                         totalStudentMarks=QString::number(totalStudentMarks.mid(0,totalStudentMarks.lastIndexOf("/")).toInt()+ui->lEAnswer2Marks->text().toInt()-PreviousStudentMarks2).append(totalStudentMarks.mid(totalStudentMarks.lastIndexOf("/")));
+                     }
+                     if(qNoinPage==3)
+                     {
+                         totalStudentMarks=QString::number(totalStudentMarks.mid(0,totalStudentMarks.lastIndexOf("/")).toInt()+ui->lEAnswer3Marks->text().toInt()-PreviousStudentMarks3).append(totalStudentMarks.mid(totalStudentMarks.lastIndexOf("/")));
+                     }
+                     if(qNoinPage==4)
+                     {
+                         totalStudentMarks=QString::number(totalStudentMarks.mid(0,totalStudentMarks.lastIndexOf("/")).toInt()+ui->lEAnswer4Marks->text().toInt()-PreviousStudentMarks4).append(totalStudentMarks.mid(totalStudentMarks.lastIndexOf("/")));
+                     }
+                     if(qNoinPage==5)
+                     {
+                         totalStudentMarks=QString::number(totalStudentMarks.mid(0,totalStudentMarks.lastIndexOf("/")).toInt()+ui->lEAnswer5Marks->text().toInt()-PreviousStudentMarks5).append(totalStudentMarks.mid(totalStudentMarks.lastIndexOf("/")));
+                     }
+
+
+
+
+
+
+                  }
+
+                qNoinPage++;
+
+             }
+
+             }
+
+        newPaperFile.close();
+
+        if(!newPaperFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+        {
+            qDebug()<<"error";
+
+        }
+        else
+        {
+            QTextStream stream(&newPaperFile);
+            stream <<document.toString();
+            //qDebug() <<document.toString();
+            newPaperFile.close();
+        //  QMessageBox::information(this,"Success","Mcq Qustion Added");
+
+       }
+
+        }
+
+    ui->lETotalMarks->setReadOnly(false);
+    ui->lETotalMarks->setText(totalStudentMarks);
+    ui->lETotalMarks->setReadOnly(true);
+
+}
+
+void MarkingPapers::on_pBSaveMarks_clicked()
+{
+     saveEssayMarks();
+
+    QFile newPaperFile(paperOpenPath);
+    if(!newPaperFile.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+
+    }
+    else
+    {
+        QDomDocument document;
+
+        document.setContent(&newPaperFile);
+        QDomElement root= document.firstChildElement();
+
+        QDomNodeList items = root.elementsByTagName("Header");
+
+          QDomElement totalmarks= items.at(0).toElement().elementsByTagName("TotalMarks").at(0).toElement();
+          QDomElement newTotalmarks=document.createElement("TotalMarks");
+          newTotalmarks.appendChild(document.createTextNode(totalStudentMarks));
+          items.at(0).toElement().replaceChild(newTotalmarks,totalmarks);
+
+
+
+
+          newPaperFile.close();
+
+          if(!newPaperFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+          {
+              qDebug()<<"error";
+
+          }
+          else
+          {
+              QTextStream stream(&newPaperFile);
+              stream <<document.toString();
+              //qDebug() <<document.toString();
+              newPaperFile.close();
+          //  QMessageBox::information(this,"Success","Mcq Qustion Added");
+
+         }
+          //header.appendChild(subjectnode);
+    }
+
+    QString  paperXmlpath=paperOpenPath.mid(0,paperOpenPath.lastIndexOf("/")+1).append("paper.xml");
+     qDebug()<<paperOpenPath;
+
+
+     qDebug()<<paperXmlpath<<studentName<<"dfdddddddddddddd";
+    //updating paper.xml
+    QFile openPaperXml(paperXmlpath);
+    if(!openPaperXml.open(QFile::ReadWrite| QIODevice::Text))
+    {
+        qDebug()<<"error";
+        //QMessageBox::information(this,"Error","Student Answer Papers Not Available");
+        //this->close();
+
+    }
+    else
+    {
+            QDomDocument document;
+
+            document.setContent(&openPaperXml);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList studentList = root.elementsByTagName("student");
+
+            for(int i=0;i<studentList.size();i++)
+            {
+                if(studentList.at(i).toElement().attribute("StudentName")==studentName)
+                {
+                    qDebug()<<studentList.at(i).toElement().attribute("StudentName")<<"dddddddddsssssssssssss";
+                    QDomElement newStudent=document.createElement("student");
+                    newStudent.setAttribute("StudentName",studentName);
+                    newStudent.setAttribute("Marks",totalStudentMarks);
+                    newStudent.setAttribute("MarkState","Marked");
+
+                    root.replaceChild(newStudent,studentList.at(i).toElement());
+                }
+
+             }
+
+
+            document.appendChild(root);
+            openPaperXml.close();
+
+            if(!openPaperXml.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+            {
+
+            }
+            else
+            {
+                QTextStream stream(&openPaperXml);
+                stream <<document.toString();
+                openPaperXml.close();
+
+            }
+
+
+            }
+
+    this->close();
+
 
 }

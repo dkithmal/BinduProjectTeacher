@@ -26,10 +26,14 @@ public:
     QString basicPath;
     void setSubjectToTree();
     QString getPaperType(QString paperXmlPath);
-    void toMarkMcqPaper(QString paperXmlPath);
+    QString  toMarkMcqPaper(QString paperXmlPath);
+    QString  toMarkEssayMcqPaper(QString paperXmlPath);
     QStringList getTeacherAnswers(QString answerPapersPath);
+    QString  toMarkEssayPaper(QString paperXmlPath);
     void toUpdateMarksInPaperXml(QString paperXmlpath, QString studentName,QString marks);
     Papersummary *papersummary;
+    int totleMarksOfPaper;
+    int totleMarksOfStudent;
     
 private slots:
     void on_tWSelectSubject_clicked(const QModelIndex &index);

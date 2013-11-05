@@ -198,7 +198,7 @@ public:
         fQuestion5->setFrameShadow(QFrame::Raised);
         pushButton_2 = new QPushButton(tab_2);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(1040, 580, 75, 31));
+        pushButton_2->setGeometry(QRect(964, 580, 141, 31));
         pBPrivious = new QPushButton(tab_2);
         pBPrivious->setObjectName(QStringLiteral("pBPrivious"));
         pBPrivious->setGeometry(QRect(450, 582, 75, 31));
@@ -257,7 +257,7 @@ public:
         lEPageNo->setFont(font3);
         pBEClose = new QPushButton(tab_3);
         pBEClose->setObjectName(QStringLiteral("pBEClose"));
-        pBEClose->setGeometry(QRect(1030, 580, 75, 31));
+        pBEClose->setGeometry(QRect(954, 580, 151, 31));
         pBENext = new QPushButton(tab_3);
         pBENext->setObjectName(QStringLiteral("pBENext"));
         pBENext->setGeometry(QRect(570, 580, 75, 31));
@@ -270,7 +270,7 @@ public:
         QObject::connect(pBClose, SIGNAL(clicked()), NewMixPaper, SLOT(close()));
         QObject::connect(pushButton_2, SIGNAL(clicked()), NewMixPaper, SLOT(close()));
 
-        tWPaperCreation->setCurrentIndex(0);
+        tWPaperCreation->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(NewMixPaper);
@@ -301,7 +301,7 @@ public:
         tWPaperCreation->setTabText(tWPaperCreation->indexOf(tab), QApplication::translate("NewMixPaper", "Add qustions", 0));
         gBHeader->setTitle(QString());
         gBQuestions->setTitle(QString());
-        pushButton_2->setText(QApplication::translate("NewMixPaper", "Close", 0));
+        pushButton_2->setText(QApplication::translate("NewMixPaper", "Save All And Close", 0));
         pBPrivious->setText(QApplication::translate("NewMixPaper", "Privious", 0));
         pBNext->setText(QApplication::translate("NewMixPaper", "Next", 0));
         lPageNo->setText(QApplication::translate("NewMixPaper", "1", 0));
@@ -309,7 +309,7 @@ public:
         gBEHeader->setTitle(QString());
         gBEQuestions->setTitle(QString());
         lEPageNo->setText(QApplication::translate("NewMixPaper", "1", 0));
-        pBEClose->setText(QApplication::translate("NewMixPaper", "Close", 0));
+        pBEClose->setText(QApplication::translate("NewMixPaper", "Save All and  Close", 0));
         pBENext->setText(QApplication::translate("NewMixPaper", "Next", 0));
         pBEPrivious->setText(QApplication::translate("NewMixPaper", "Privious", 0));
         tWPaperCreation->setTabText(tWPaperCreation->indexOf(tab_3), QApplication::translate("NewMixPaper", "Edit Questions", 0));

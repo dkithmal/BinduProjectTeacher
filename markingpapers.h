@@ -25,6 +25,7 @@ public:
     void toCreatePaperLayout();
     void drowHeader(QDomElement root);
     void drowQuestions(QDomElement root);
+    void saveEssayMarks();
     void saveAnswers();
 
 
@@ -36,6 +37,13 @@ public:
     int essayNO;
     int totalNoOfQuestions;
     int indexofTabWidget;
+    int PreviousStudentMarks1;
+    int PreviousStudentMarks2;
+    int PreviousStudentMarks3;
+    int PreviousStudentMarks4;
+    int PreviousStudentMarks5;
+    QString totalStudentMarks;
+    QString studentName;
 
      QVBoxLayout *paperHeaderLayout;
      QVBoxLayout *paperQuestionsLayout;
@@ -52,6 +60,8 @@ private slots:
     void on_pBPrivious_clicked();
 
     void on_pBNext_clicked();
+
+    void on_pBSaveMarks_clicked();
 
 private:
     Ui::MarkingPapers *ui;

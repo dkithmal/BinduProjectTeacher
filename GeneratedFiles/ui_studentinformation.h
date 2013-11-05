@@ -89,8 +89,10 @@ public:
         tWMarksSummery->setObjectName(QStringLiteral("tWMarksSummery"));
         tWMarksSummery->setGeometry(QRect(10, 20, 571, 481));
         tWMarksSummery->setFont(font);
+        tWMarksSummery->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tWMarksSummery->setShowGrid(false);
         tWMarksSummery->setGridStyle(Qt::SolidLine);
+        tWMarksSummery->setCornerButtonEnabled(true);
         tWMarksSummery->horizontalHeader()->setDefaultSectionSize(110);
         tWMarksSummery->verticalHeader()->setVisible(false);
         tabWidget->addTab(tab, QString());

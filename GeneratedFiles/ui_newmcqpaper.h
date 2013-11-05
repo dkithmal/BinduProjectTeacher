@@ -53,7 +53,7 @@ public:
     QFrame *fQuestion3;
     QFrame *fQuestion4;
     QFrame *fQuestion5;
-    QPushButton *pushButton_2;
+    QPushButton *pBCClose;
     QPushButton *pBPrivious;
     QPushButton *pBNext;
     QLabel *lPageNo;
@@ -170,9 +170,9 @@ public:
         fQuestion5->setGeometry(QRect(0, 400, 1110, 100));
         fQuestion5->setFrameShape(QFrame::StyledPanel);
         fQuestion5->setFrameShadow(QFrame::Raised);
-        pushButton_2 = new QPushButton(tab_2);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(1040, 580, 75, 31));
+        pBCClose = new QPushButton(tab_2);
+        pBCClose->setObjectName(QStringLiteral("pBCClose"));
+        pBCClose->setGeometry(QRect(984, 580, 131, 31));
         pBPrivious = new QPushButton(tab_2);
         pBPrivious->setObjectName(QStringLiteral("pBPrivious"));
         pBPrivious->setGeometry(QRect(450, 582, 75, 31));
@@ -229,7 +229,7 @@ public:
         lEPageNo->setFont(font3);
         pBEClose = new QPushButton(tab_3);
         pBEClose->setObjectName(QStringLiteral("pBEClose"));
-        pBEClose->setGeometry(QRect(1030, 580, 75, 31));
+        pBEClose->setGeometry(QRect(974, 580, 131, 31));
         pBENext = new QPushButton(tab_3);
         pBENext->setObjectName(QStringLiteral("pBENext"));
         pBENext->setGeometry(QRect(570, 580, 75, 31));
@@ -267,7 +267,7 @@ public:
         tWPaperCreation->setTabText(tWPaperCreation->indexOf(tab), QApplication::translate("NewMcqPaper", "Add qustions", 0));
         gBHeader->setTitle(QString());
         gBQuestions->setTitle(QString());
-        pushButton_2->setText(QApplication::translate("NewMcqPaper", "Close", 0));
+        pBCClose->setText(QApplication::translate("NewMcqPaper", "Save All and Close", 0));
         pBPrivious->setText(QApplication::translate("NewMcqPaper", "Privious", 0));
         pBNext->setText(QApplication::translate("NewMcqPaper", "Next", 0));
         lPageNo->setText(QApplication::translate("NewMcqPaper", "1", 0));
@@ -275,7 +275,7 @@ public:
         gBEHeader->setTitle(QString());
         gBEQuestions->setTitle(QString());
         lEPageNo->setText(QApplication::translate("NewMcqPaper", "1", 0));
-        pBEClose->setText(QApplication::translate("NewMcqPaper", "Close", 0));
+        pBEClose->setText(QApplication::translate("NewMcqPaper", "Save All and Close", 0));
         pBENext->setText(QApplication::translate("NewMcqPaper", "Next", 0));
         pBEPrivious->setText(QApplication::translate("NewMcqPaper", "Privious", 0));
         tWPaperCreation->setTabText(tWPaperCreation->indexOf(tab_3), QApplication::translate("NewMcqPaper", "Edit Questions", 0));
