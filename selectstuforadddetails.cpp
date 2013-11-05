@@ -119,7 +119,7 @@ void SelectStuForAddDetails::on_tWSelectClass_clicked(const QModelIndex &index)
                                     QDomNodeList studentList=itemNodeClass.toElement().elementsByTagName("students");
                                     QDomNode students=studentList.at(0);
                                     QString studentNameList=students.firstChild().nodeValue();
-                                    qDebug()<<studentNameList<<"student NameList";
+                                    //qDebug()<<studentNameList<<"student NameList";
                                     QStringList studentNameSplitedList=studentNameList.split(",");
                                     foreach (QString studentName, studentNameSplitedList)
                                     {

@@ -6,6 +6,8 @@ NewEssayPaper::NewEssayPaper(QDialog *parent,QString filePath) :
     ui(new Ui::NewEssayPaper)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+
     paperCrationPath=filePath;
 
 
@@ -814,4 +816,17 @@ void NewEssayPaper::on_pBENext_clicked()
      ui->pBEPrivious->setEnabled(true);
 
      toCreatePaperLayout();
+}
+
+void NewEssayPaper::on_pBCClose_clicked()
+{
+    saveAnswers();
+    this->close();
+}
+
+void NewEssayPaper::on_pBEClose_clicked()
+{
+    saveEditedQuestions();
+    this->close();
+
 }

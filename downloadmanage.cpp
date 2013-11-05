@@ -116,6 +116,7 @@ void DownloadManage::on_pBDownloadClose_clicked()
             header.setAttribute("type",type);
             header.setAttribute("Grade",grade);
             header.setAttribute("class",className);
+            header.setAttribute("subject",subject);
             //header.setAttribute("PaperName");
 
             for(int k=0;k<DownloadedStudentNameList.size();k++)

@@ -66,6 +66,10 @@ private slots:
 
      void on_pBENext_clicked();
 
+     void on_pBCClose_clicked();
+
+     void on_pBEClose_clicked();
+
 private:
     Ui::NewMcqPaper *ui;
 };

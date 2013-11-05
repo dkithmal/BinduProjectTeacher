@@ -71,6 +71,10 @@ private slots:
 
     void on_pBENext_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_pBEClose_clicked();
+
 private:
     Ui::NewMixPaper *ui;
 };

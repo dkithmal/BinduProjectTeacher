@@ -20,11 +20,14 @@ public:
     explicit StudentInformation(QWidget *parent = 0,QString studentName=NULL,QString grade=NULL,QString className=NULL,QString studentInfoPath=NULL);
     ~StudentInformation();
     void setStudentDetails();
+    void setStudentMarks();
     QString studentName;
     QString grade;
     QString className;
     QString studentInfoFilePath;
-    
+    QString filepath;
+    QString basicPath;
+    QStringList subjectList;
 private:
     Ui::StudentInformation *ui;
 };

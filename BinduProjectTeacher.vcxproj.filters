@@ -36,17 +36,20 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{04c342ce-eea4-4d87-840c-4f7eeabb2ee3}</UniqueIdentifier>
+      <UniqueIdentifier>{9d3afffb-0f57-4ef9-91c6-683e0265ae2d}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{237c72d2-432c-4e90-9a7d-d524de329de5}</UniqueIdentifier>
+      <UniqueIdentifier>{46ac5d32-d459-4ca1-a2bd-70347b9dd301}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="addstudentinfromation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="classmanage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -104,7 +107,16 @@
     <ClCompile Include="selectpaperformark.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="selectstudentforview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="selectstuforadddetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="servercliant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="studentinformation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="subjectmanage.cpp">
@@ -118,6 +130,12 @@
     </ClCompile>
     <ClCompile Include="uploadmanage.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_addstudentinfromation.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_addstudentinfromation.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_classmanage.cpp">
       <Filter>Generated Files\Debug</Filter>
@@ -227,10 +245,28 @@
     <ClCompile Include="Release\moc_selectpaperformark.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_selectstudentforview.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_selectstudentforview.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_selectstuforadddetails.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_selectstuforadddetails.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="Debug\moc_servercliant.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_servercliant.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_studentinformation.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_studentinformation.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_subjectmanage.cpp">
@@ -259,6 +295,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="addstudentinfromation.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="classmanage.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -313,7 +352,16 @@
     <CustomBuild Include="selectpaperformark.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="selectstudentforview.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="selectstuforadddetails.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="servercliant.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="studentinformation.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="subjectmanage.h">
@@ -330,6 +378,9 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="addstudentinfromation.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="classmanage.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -384,6 +435,15 @@
     <CustomBuild Include="selectpaperformark.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="selectstudentforview.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="selectstuforadddetails.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="studentinformation.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="subjectmanage.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -398,6 +458,9 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_addstudentinfromation.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_classmanage.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -450,6 +513,15 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_selectpaperformark.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_selectstudentforview.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_selectstuforadddetails.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_studentinformation.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_subjectmanage.h">

@@ -176,13 +176,13 @@ void OpenHomeWork::on_pBOpen_clicked()
     int x=0;
     if(!ui->tWSelectSubject->currentIndex().isValid()||!ui->tWSelectSubject->currentIndex().parent().isValid())
     {
-        QMessageBox::information(this,"Error","Select Subject");
+        QMessageBox::warning(this,"Error","Select Subject");
        x=1;
 
     }
     if(!ui->lWHomeWorks->currentIndex().isValid())
     {
-        QMessageBox::information(this,"Error","Select Paper");
+        QMessageBox::warning(this,"Error","Select Paper");
        x=1;
 
     }

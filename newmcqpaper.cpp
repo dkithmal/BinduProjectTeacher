@@ -6,6 +6,8 @@ NewMcqPaper::NewMcqPaper(QDialog *parent,QString filePath) :
     ui(new Ui::NewMcqPaper)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+
     paperCrationPath=filePath;
 
     ui->cBNoOfChoises->setCurrentIndex(0);
@@ -1119,5 +1121,18 @@ void NewMcqPaper::on_pBENext_clicked()
      ui->pBEPrivious->setEnabled(true);
 
      toCreatePaperLayout();
+
+}
+
+void NewMcqPaper::on_pBCClose_clicked()
+{
+    saveAnswers();
+    this->close();
+}
+
+void NewMcqPaper::on_pBEClose_clicked()
+{
+    saveEditedQuestions();
+    this->close();
 
 }

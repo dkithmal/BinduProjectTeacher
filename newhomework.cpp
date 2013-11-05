@@ -84,28 +84,28 @@ void NewHomeWork::on_pBCreatePaper_clicked()
     int x=0;
     if(!ui->tWSelectSubject->currentIndex().isValid()||!ui->tWSelectSubject->currentIndex().parent().isValid())
     {
-        QMessageBox::information(this,"Error","Select Subject");
+        QMessageBox::warning(this,"Error","Select Subject");
         x=1;
 
     }
 
      if(ui->lEPaperName->text().isEmpty())
     {
-        QMessageBox::information(this,"Error","Enter Paper Name");
+        QMessageBox::warning(this,"Error","Enter Paper Name");
         x=1;
 
     }
 
     if(ui->lEDuration->text().isEmpty())
     {
-        QMessageBox::information(this,"Error","Enter Paper Duration");
+        QMessageBox::warning(this,"Error","Enter Paper Duration");
         x=1;
 
     }
 
     if(!(ui->rBEssay->isChecked()||ui->rBEssayMcq->isChecked()||ui->rBMcq->isChecked()))
     {
-        QMessageBox::information(this,"Error","Select Paper Type");
+        QMessageBox::warning(this,"Error","Select Paper Type");
         x=1;
 
     }

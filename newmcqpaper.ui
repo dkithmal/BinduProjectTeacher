@@ -353,17 +353,17 @@
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="pBCClose">
      <property name="geometry">
       <rect>
-       <x>1040</x>
+       <x>984</x>
        <y>580</y>
-       <width>75</width>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Close</string>
+      <string>Save All and Close</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pBPrivious">
@@ -556,14 +556,14 @@
     <widget class="QPushButton" name="pBEClose">
      <property name="geometry">
       <rect>
-       <x>1030</x>
+       <x>974</x>
        <y>580</y>
-       <width>75</width>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Close</string>
+      <string>Save All and Close</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pBENext">

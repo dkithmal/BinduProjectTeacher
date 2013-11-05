@@ -11,9 +11,14 @@ StudentInformation::StudentInformation(QWidget *parent,QString studentName,QStri
     this->grade=grade;
     this->className=className;
     this->studentInfoFilePath=studentInfoPath;
+    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
     ui->tabWidget->setCurrentIndex(0);
 
+    //ui->tWMarksSummery->setFrameShape(QFrame::NoFrame);
+
     setStudentDetails();
+    setStudentMarks();
 }
 
 StudentInformation::~StudentInformation()
@@ -74,3 +79,111 @@ void StudentInformation::setStudentDetails()
         }
 
 }
+
+void StudentInformation::setStudentMarks()
+{
+    QString createAnswerPaperPathForClass=basicPath;
+
+    createAnswerPaperPathForClass.append("Answers/");
+    createAnswerPaperPathForClass.append(grade);
+    createAnswerPaperPathForClass.append("/");
+    createAnswerPaperPathForClass.append(className);
+    createAnswerPaperPathForClass.append("/");
+
+    //qDebug()<<createAnswerPaperPathForClass<<"number of diretrys";
+    QStringList all_dirs;
+    all_dirs << createAnswerPaperPathForClass;
+    QDirIterator directories(createAnswerPaperPathForClass, QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot, QDirIterator::Subdirectories);
+
+    while(directories.hasNext()){
+    directories.next();
+   // qDebug()<<directories.filePath();
+
+    QFile newPaperXml(directories.filePath().append("/paper.xml"));
+
+    if(newPaperXml.exists())
+    {
+        
+        QDomDocument document;
+        QDomElement root;
+
+        document.setContent(&newPaperXml);
+        root= document.firstChildElement();
+
+        QDomNodeList headernode = root.elementsByTagName("Header");
+
+        int desition=0;
+        if(!subjectList.isEmpty())
+        foreach (QString subjectitem, subjectList)
+        {
+
+            if(subjectitem==headernode.at(0).toElement().attribute("subject"))
+                desition=1;
+
+
+        }
+
+        if(desition==0)
+        {
+			ui->tWMarksSummery->insertRow(ui->tWMarksSummery->rowCount());
+            ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,0,new QTableWidgetItem(headernode.at(0).toElement().attribute("subject")));
+            subjectList.append(headernode.at(0).toElement().attribute("subject"));
+
+        }
+
+            QDomNodeList studentList = root.elementsByTagName("student");
+
+
+            int x=0;
+            for(int i=0;i<studentList.count();i++)
+            {
+
+
+                QDomNode itemNode = studentList.at(i);
+                if(itemNode.toElement().attribute("StudentName")==studentName)
+                {
+                     ui->tWMarksSummery->insertRow(ui->tWMarksSummery->rowCount());
+                     ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,1,new QTableWidgetItem(headernode.at(0).toElement().attribute("PaperName")));
+                     ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,2,new QTableWidgetItem(itemNode.toElement().attribute("Marks")));
+                     ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,3,new QTableWidgetItem(itemNode.toElement().attribute("MarkState")));
+                     ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,4,new QTableWidgetItem(headernode.at(0).toElement().attribute("type")));
+                     x=1;
+
+                }
+
+            }
+            if(x==0)
+            {
+                ui->tWMarksSummery->insertRow(ui->tWMarksSummery->rowCount());
+                ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,1,new QTableWidgetItem(headernode.at(0).toElement().attribute("PaperName")));
+                ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,2,new QTableWidgetItem("-"));
+                ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,3,new QTableWidgetItem("NotDoneByStudent"));
+                ui->tWMarksSummery->setItem(ui->tWMarksSummery->rowCount()-1,4,new QTableWidgetItem(headernode.at(0).toElement().attribute("type")));
+
+            }
+
+
+   // all_dirs << directories.filePath();
+    }
+
+
+
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

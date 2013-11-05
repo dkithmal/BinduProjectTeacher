@@ -6,6 +6,8 @@ NewMixPaper::NewMixPaper(QDialog *parent,QString filePath) :
     ui(new Ui::NewMixPaper)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+
     paperCrationPath=filePath;
 
     ui->cBNoOfChoises->setCurrentIndex(0);
@@ -1352,5 +1354,18 @@ void NewMixPaper::on_pBENext_clicked()
      ui->pBEPrivious->setEnabled(true);
 
      toCreatePaperLayout();
+
+}
+
+void NewMixPaper::on_pushButton_2_clicked()
+{
+    saveAnswers();
+    this->close();
+}
+
+void NewMixPaper::on_pBEClose_clicked()
+{
+    saveEditedQuestions();
+    this->close();
 
 }

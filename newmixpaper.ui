@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -436,14 +436,14 @@
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>1040</x>
+       <x>964</x>
        <y>580</y>
-       <width>75</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Close</string>
+      <string>Save All And Close</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pBPrivious">
@@ -636,14 +636,14 @@
     <widget class="QPushButton" name="pBEClose">
      <property name="geometry">
       <rect>
-       <x>1030</x>
+       <x>954</x>
        <y>580</y>
-       <width>75</width>
+       <width>151</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Close</string>
+      <string>Save All and  Close</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pBENext">
