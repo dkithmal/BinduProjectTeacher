@@ -1,7 +1,7 @@
 #ifndef OPENNOTE_H
 #define OPENNOTE_H
 
-#include <QtWidgets>
+#include <QWidget>
 #include <QDialog>
 #include <QString>
 #include <QFile>

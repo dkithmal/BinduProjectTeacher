@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -60,10 +60,10 @@
     <widget class="QPushButton" name="pBAddGrade">
      <property name="geometry">
       <rect>
-       <x>470</x>
-       <y>62</y>
-       <width>91</width>
-       <height>31</height>
+       <x>430</x>
+       <y>180</y>
+       <width>131</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -91,7 +91,7 @@
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>20</x>
        <y>60</y>
        <width>91</width>
        <height>31</height>
@@ -114,7 +114,7 @@
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>20</x>
        <y>160</y>
        <width>91</width>
        <height>21</height>
@@ -138,9 +138,9 @@
      <property name="geometry">
       <rect>
        <x>600</x>
-       <y>80</y>
+       <y>90</y>
        <width>91</width>
-       <height>61</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">
@@ -237,9 +237,9 @@
     <widget class="QPushButton" name="pBAddStudent">
      <property name="geometry">
       <rect>
-       <x>450</x>
-       <y>80</y>
-       <width>101</width>
+       <x>420</x>
+       <y>190</y>
+       <width>141</width>
        <height>41</height>
       </rect>
      </property>
@@ -314,10 +314,10 @@
     <widget class="QPushButton" name="pBRemoveGrade">
      <property name="geometry">
       <rect>
-       <x>460</x>
-       <y>60</y>
+       <x>440</x>
+       <y>180</y>
        <width>131</width>
-       <height>51</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -327,10 +327,10 @@
     <widget class="QPushButton" name="pBClose_4">
      <property name="geometry">
       <rect>
-       <x>590</x>
-       <y>192</y>
+       <x>600</x>
+       <y>180</y>
        <width>75</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -368,8 +368,8 @@
     <widget class="QPushButton" name="pBRemoveClass">
      <property name="geometry">
       <rect>
-       <x>390</x>
-       <y>90</y>
+       <x>450</x>
+       <y>180</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -382,9 +382,9 @@
      <property name="geometry">
       <rect>
        <x>610</x>
-       <y>192</y>
+       <y>182</y>
        <width>75</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -458,7 +458,7 @@
     <widget class="QComboBox" name="cBSelectStudentFRStudent">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>190</x>
        <y>180</y>
        <width>171</width>
        <height>31</height>
@@ -468,8 +468,8 @@
     <widget class="QPushButton" name="pBRemoveStudent">
      <property name="geometry">
       <rect>
-       <x>390</x>
-       <y>100</y>
+       <x>440</x>
+       <y>180</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -482,9 +482,9 @@
      <property name="geometry">
       <rect>
        <x>600</x>
-       <y>192</y>
+       <y>182</y>
        <width>75</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">

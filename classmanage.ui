@@ -18,50 +18,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pBMarkPapers">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>20</y>
-     <width>201</width>
-     <height>181</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Mark Papers</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pBStudentProgress">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>20</y>
-     <width>221</width>
-     <height>181</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>View Student Progress</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pBEditStudent">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>20</y>
-     <width>241</width>
-     <height>181</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Edit Student Details</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>222</y>
+     <x>720</x>
+     <y>230</y>
      <width>75</width>
      <height>31</height>
     </rect>
@@ -74,6 +35,109 @@
    <property name="text">
     <string>Close</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>741</width>
+     <height>202</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="4">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="6">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="pBStudentProgress">
+      <property name="minimumSize">
+       <size>
+        <width>220</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>View Student Progress</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="pBMarkPapers">
+      <property name="minimumSize">
+       <size>
+        <width>220</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Mark Papers</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QPushButton" name="pBEditStudent">
+      <property name="minimumSize">
+       <size>
+        <width>220</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Edit Student Details</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

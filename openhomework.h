@@ -1,7 +1,7 @@
 #ifndef OPENHOMEWORK_H
 #define OPENHOMEWORK_H
 
-#include <QtWidgets>
+#include <QWidget>
 #include <QDialog>
 #include <QString>
 #include <QFile>

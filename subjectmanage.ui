@@ -96,10 +96,10 @@
     <widget class="QPushButton" name="pBAddSubject">
      <property name="geometry">
       <rect>
-       <x>430</x>
-       <y>70</y>
-       <width>111</width>
-       <height>51</height>
+       <x>350</x>
+       <y>220</y>
+       <width>161</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -138,9 +138,9 @@
      <property name="geometry">
       <rect>
        <x>530</x>
-       <y>232</y>
+       <y>222</y>
        <width>75</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -196,10 +196,10 @@
     <widget class="QPushButton" name="pBRemove">
      <property name="geometry">
       <rect>
-       <x>430</x>
-       <y>82</y>
-       <width>131</width>
-       <height>31</height>
+       <x>350</x>
+       <y>220</y>
+       <width>161</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">

@@ -593,6 +593,7 @@ void SelectPaperForMark::toUpdateMarksInPaperXml(QString paperXmlpath, QString s
             {
                 if(studentList.at(i).toElement().attribute("StudentName")==studentName)
                 {
+
                     QDomElement newStudent=document.createElement("student");
                     newStudent.setAttribute("StudentName",studentName);
                     newStudent.setAttribute("Marks",marks);
@@ -1009,6 +1010,7 @@ QString  SelectPaperForMark::toMarkEssayPaper(QString paperXmlPath)
 
 
    }
+    totleMarksOfPaper=0;
 
 
     return "success";

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>506</width>
+    <width>473</width>
     <height>493</height>
    </rect>
   </property>
@@ -36,6 +36,11 @@
    <attribute name="headerHighlightSections">
     <bool>false</bool>
    </attribute>
+   <column>
+    <property name="text">
+     <string notr="true">1</string>
+    </property>
+   </column>
   </widget>
   <widget class="QListWidget" name="lWSelectPaper">
    <property name="geometry">
@@ -55,8 +60,8 @@
   <widget class="QPushButton" name="pBClose">
    <property name="geometry">
     <rect>
-     <x>394</x>
-     <y>432</y>
+     <x>380</x>
+     <y>450</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -68,10 +73,10 @@
   <widget class="QPushButton" name="pBMarkPaper">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>120</x>
      <y>410</y>
-     <width>141</width>
-     <height>41</height>
+     <width>211</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">

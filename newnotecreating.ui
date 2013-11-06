@@ -31,7 +31,7 @@
   <widget class="QPushButton" name="pBSaveAndClose">
    <property name="geometry">
     <rect>
-     <x>704</x>
+     <x>720</x>
      <y>490</y>
      <width>121</width>
      <height>41</height>

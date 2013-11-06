@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>594</width>
+    <width>678</width>
     <height>583</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>601</width>
+     <width>671</width>
      <height>581</height>
     </rect>
    </property>
@@ -31,7 +31,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -42,7 +42,7 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>571</width>
+       <width>641</width>
        <height>481</height>
       </rect>
      </property>
@@ -64,7 +64,7 @@
       <bool>true</bool>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>110</number>
+      <number>125</number>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
@@ -95,6 +95,19 @@
       </property>
      </column>
     </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>510</y>
+       <width>75</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -118,7 +131,7 @@
       <rect>
        <x>10</x>
        <y>410</y>
-       <width>571</width>
+       <width>621</width>
        <height>91</height>
       </rect>
      </property>
@@ -149,8 +162,8 @@
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>490</x>
-       <y>512</y>
+       <x>570</x>
+       <y>510</y>
        <width>75</width>
        <height>31</height>
       </rect>
@@ -159,12 +172,12 @@
       <string>Close</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>11</x>
        <y>40</y>
-       <width>521</width>
+       <width>591</width>
        <height>351</height>
       </rect>
      </property>
@@ -555,5 +568,38 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>StudentInformation</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>606</x>
+     <y>547</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>677</x>
+     <y>549</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>StudentInformation</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>618</x>
+     <y>551</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>673</x>
+     <y>558</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

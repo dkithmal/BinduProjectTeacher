@@ -9,7 +9,7 @@
 #include <QtXml>
 #include <QDebug>
 #include <QMessageBox>
-#include <QtWidgets>
+#include <QWidget>
 #include <QtGui>
 
 namespace Ui {

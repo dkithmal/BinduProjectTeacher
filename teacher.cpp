@@ -57,6 +57,7 @@ Teacher::Teacher(QWidget *parent)
    ui.cBSettings->setItemIcon(1,cBSettings);
    ui.cBSettings->setItemIcon(2,cBSettings);
    ui.cBSettings->setItemIcon(3,cBSettings);
+
   // ui.cBSettings->setIconSize(homeDownloadlPM.rect().size());
 
    ui.wHeader->setStyleSheet(" background-color:black ;");

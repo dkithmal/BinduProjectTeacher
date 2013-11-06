@@ -22,7 +22,7 @@
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>482</y>
+     <y>470</y>
      <width>75</width>
      <height>31</height>
     </rect>
@@ -34,9 +34,9 @@
   <widget class="QTableWidget" name="tWDownlodingtate">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>271</width>
+     <x>20</x>
+     <y>20</y>
+     <width>261</width>
      <height>431</height>
     </rect>
    </property>
@@ -48,8 +48,17 @@
    <property name="editTriggers">
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
+   <property name="showGrid">
+    <bool>false</bool>
+   </property>
+   <property name="cornerButtonEnabled">
+    <bool>true</bool>
+   </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
     <number>120</number>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>true</bool>
    </attribute>
    <column>
     <property name="text">

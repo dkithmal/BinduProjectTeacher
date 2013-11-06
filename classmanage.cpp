@@ -18,6 +18,7 @@ void ClassManage::on_pBMarkPapers_clicked()
 {
     selectPaperForMark = new SelectPaperForMark;
     selectPaperForMark->setModal(false);
+    this->close();
     selectPaperForMark->exec();
 
 }
@@ -26,6 +27,7 @@ void ClassManage::on_pBEditStudent_clicked()
 {
     selectStuForAddDetails = new SelectStuForAddDetails;
     selectStuForAddDetails->setModal(false);
+    this->close();
     selectStuForAddDetails->exec();
 }
 
@@ -33,5 +35,6 @@ void ClassManage::on_pBStudentProgress_clicked()
 {
     selectStudentForView = new SelectStudentForView;
     selectStudentForView->setModal(false);
+    this->close();
     selectStudentForView->exec();
 }

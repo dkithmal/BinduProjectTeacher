@@ -1,7 +1,7 @@
 #ifndef TEACHER_H
 #define TEACHER_H
 
-#include <QtWidgets>
+#include <QWidget>
 #include <QTime>
 #include <QTimer>
 #include "ui_teacher.h"

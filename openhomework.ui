@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>662</width>
     <height>450</height>
    </rect>
   </property>
@@ -39,10 +39,10 @@
   <widget class="QLabel" name="lSelectPaper">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>5</y>
+     <x>330</x>
+     <y>0</y>
      <width>101</width>
-     <height>21</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -57,7 +57,7 @@
   <widget class="QPushButton" name="pBOpen">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>490</x>
      <y>370</y>
      <width>161</width>
      <height>31</height>
@@ -70,7 +70,7 @@
   <widget class="QPushButton" name="pBClose">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>570</x>
      <y>410</y>
      <width>75</width>
      <height>31</height>
@@ -83,9 +83,9 @@
   <widget class="QPushButton" name="pBDeleteHomeWork">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>330</x>
      <y>370</y>
-     <width>151</width>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
@@ -98,7 +98,7 @@
     <rect>
      <x>10</x>
      <y>30</y>
-     <width>411</width>
+     <width>301</width>
      <height>411</height>
     </rect>
    </property>
@@ -108,7 +108,7 @@
     </font>
    </property>
    <property name="sortingEnabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <attribute name="headerVisible">
     <bool>false</bool>
@@ -122,9 +122,9 @@
   <widget class="QListWidget" name="lWHomeWorks">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>330</x>
      <y>30</y>
-     <width>361</width>
+     <width>321</width>
      <height>331</height>
     </rect>
    </property>

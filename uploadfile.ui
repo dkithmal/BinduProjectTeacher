@@ -33,7 +33,7 @@
     </font>
    </property>
    <property name="sortingEnabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <attribute name="headerVisible">
     <bool>false</bool>
@@ -139,7 +139,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>430</y>
+     <y>410</y>
      <width>301</width>
      <height>91</height>
     </rect>

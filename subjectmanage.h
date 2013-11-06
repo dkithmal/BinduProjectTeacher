@@ -1,7 +1,7 @@
 #ifndef SUBJECTMANAGE_H
 #define SUBJECTMANAGE_H
 
-#include <QtWidgets>
+#include <QWidget>
 #include <QDialog>
 #include <QString>
 #include <QFile>

@@ -7,7 +7,6 @@
 #include <QFile>
 #include <QtXml>
 #include <QDebug>
-#include <QMessageBox>
 #include <QtWidgets>
 #include <QtGui>
 

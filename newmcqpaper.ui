@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -596,5 +596,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pBClose</sender>
+   <signal>clicked()</signal>
+   <receiver>NewMcqPaper</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1078</x>
+     <y>601</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1255</x>
+     <y>586</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

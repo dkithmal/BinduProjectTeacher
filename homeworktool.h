@@ -1,7 +1,7 @@
 #ifndef HOMEWORKTOOL_H
 #define HOMEWORKTOOL_H
 
-#include <QtWidgets>
+#include <QWidget>
 #include <QDialog>
 #include <QString>
 #include <QFile>

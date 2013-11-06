@@ -19,7 +19,7 @@
      <x>964</x>
      <y>580</y>
      <width>141</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -277,23 +277,6 @@
      </rect>
     </property>
    </widget>
-   <zorder>fQuestion1</zorder>
-   <zorder>fQuestion2</zorder>
-   <zorder>fQuestion3</zorder>
-   <zorder>fQuestion4</zorder>
-   <zorder>fQuestion5</zorder>
-   <zorder>lAnswer1TMark</zorder>
-   <zorder>lEAnswer1Marks</zorder>
-   <zorder>lAnswer2TMarks</zorder>
-   <zorder>lEAnswer2Marks</zorder>
-   <zorder>lAnswer3TMarks</zorder>
-   <zorder>lEAnswer3Marks</zorder>
-   <zorder>lEAnswer3Marks</zorder>
-   <zorder>lAnswer3TMarks</zorder>
-   <zorder>lAnswer5TMarks</zorder>
-   <zorder>lEAnswer5Marks</zorder>
-   <zorder>lAnswer4TMarks</zorder>
-   <zorder>lEAnswer4Marks</zorder>
   </widget>
   <widget class="QPushButton" name="pBNext">
    <property name="geometry">
@@ -353,31 +336,43 @@
      </font>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>855</x>
-      <y>13</y>
-      <width>101</width>
-      <height>20</height>
+      <x>860</x>
+      <y>0</y>
+      <width>251</width>
+      <height>41</height>
      </rect>
     </property>
-    <property name="text">
-     <string>student Name</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lStudentName">
-    <property name="geometry">
-     <rect>
-      <x>970</x>
-      <y>10</y>
-      <width>131</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>student Name</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lStudentName">
+       <property name="minimumSize">
+        <size>
+         <width>130</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

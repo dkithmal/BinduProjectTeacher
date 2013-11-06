@@ -1,7 +1,7 @@
 #ifndef NEWNOTE_H
 #define NEWNOTE_H
 
-#include <QtWidgets>
+#include <QWidget>
 #include <QDialog>
 #include <QString>
 #include <QFile>

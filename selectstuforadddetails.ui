@@ -90,10 +90,10 @@
   <widget class="QPushButton" name="pBAddDetails">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>492</y>
-     <width>121</width>
-     <height>41</height>
+     <x>170</x>
+     <y>490</y>
+     <width>171</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -103,10 +103,10 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>404</x>
-     <y>522</y>
+     <x>410</x>
+     <y>530</y>
      <width>71</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -115,5 +115,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>SelectStuForAddDetails</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>442</x>
+     <y>546</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>534</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

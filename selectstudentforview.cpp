@@ -160,13 +160,31 @@ void SelectStudentForView::on_tWSelectClass_clicked(const QModelIndex &index)
 
 void SelectStudentForView::on_pBViewStudent_clicked()
 {
-    QString creatingStudentInfoPath=basicPath;
-    creatingStudentInfoPath.append("StudentInformation");
-    creatingStudentInfoPath.append("/").append(ui->tWSelectClass->currentItem()->parent()->text(0));
-    creatingStudentInfoPath.append("/").append(ui->tWSelectClass->currentItem()->text(0));
-     creatingStudentInfoPath.append("/").append(ui->lWStudent->currentItem()->text()).append(".xml");
+    int x=0 ;
+    if(!ui->lWStudent->currentIndex().isValid())
+    {
+        QMessageBox::information(this,"Error","Please slect student");
+        x=1;
 
-     studentInformation = new StudentInformation(0,ui->lWStudent->currentItem()->text(),ui->tWSelectClass->currentItem()->parent()->text(0),ui->tWSelectClass->currentItem()->text(0),creatingStudentInfoPath);
-     studentInformation->setModal(false);
-     studentInformation->exec();
+    }
+    if(!ui->tWSelectClass->currentIndex().parent().isValid())
+    {
+        QMessageBox::information(this,"Error","Please slect class");
+        x=1;
+
+    }
+
+    if(x==0)
+    {
+        QString creatingStudentInfoPath=basicPath;
+        creatingStudentInfoPath.append("StudentInformation");
+        creatingStudentInfoPath.append("/").append(ui->tWSelectClass->currentItem()->parent()->text(0));
+        creatingStudentInfoPath.append("/").append(ui->tWSelectClass->currentItem()->text(0));
+         creatingStudentInfoPath.append("/").append(ui->lWStudent->currentItem()->text()).append(".xml");
+
+         studentInformation = new StudentInformation(0,ui->lWStudent->currentItem()->text(),ui->tWSelectClass->currentItem()->parent()->text(0),ui->tWSelectClass->currentItem()->text(0),creatingStudentInfoPath);
+         studentInformation->setModal(false);
+         studentInformation->exec();
+    }
+
 }

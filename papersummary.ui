@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>492</width>
+    <width>643</width>
     <height>533</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>10</x>
      <y>60</y>
-     <width>471</width>
+     <width>621</width>
      <height>431</height>
     </rect>
    </property>
@@ -48,12 +48,17 @@
      <string>Marks</string>
     </property>
    </column>
+   <column>
+    <property name="text">
+     <string>View</string>
+    </property>
+   </column>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>492</y>
+     <x>560</x>
+     <y>500</y>
      <width>75</width>
      <height>31</height>
     </rect>
@@ -62,13 +67,13 @@
     <string>Close</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>9</y>
-     <width>441</width>
-     <height>40</height>
+     <x>20</x>
+     <y>10</y>
+     <width>591</width>
+     <height>44</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -100,6 +105,11 @@
     </item>
     <item row="0" column="2">
      <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Class</string>
       </property>
@@ -146,6 +156,11 @@
     </item>
     <item row="1" column="2">
      <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Type</string>
       </property>
@@ -168,5 +183,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Papersummary</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>578</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>601</x>
+     <y>508</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

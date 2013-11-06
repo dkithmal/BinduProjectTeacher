@@ -1,7 +1,7 @@
 #ifndef NEWHOMEWORK_H
 #define NEWHOMEWORK_H
 
-#include <QtWidgets>
+#include <QWidget>
 #include <QDialog>
 #include <QString>
 #include <QFile>

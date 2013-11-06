@@ -160,38 +160,57 @@ void SelectStuForAddDetails::on_tWSelectClass_clicked(const QModelIndex &index)
 
 void SelectStuForAddDetails::on_pBAddDetails_clicked()
 {
-
-
-    //creaging directry if not exist
-    QString creatingDirctry=basicPath;
-    creatingDirctry.append("StudentInformation");
-
-    if(!QDir(creatingDirctry).exists())
+    int x=0 ;
+    if(!ui->lWStudent->currentIndex().isValid())
     {
-        QDir().mkdir(creatingDirctry);
+        QMessageBox::information(this,"Error","Please slect student");
+        x=1;
 
+    }
+    if(!ui->tWSelectClass->currentIndex().parent().isValid())
+    {
+        QMessageBox::information(this,"Error","Please slect class");
+        x=1;
 
     }
 
-    creatingDirctry.append("/").append(ui->tWSelectClass->currentItem()->parent()->text(0));
-
-    if(!QDir(creatingDirctry).exists())
+    if(x==0)
     {
-        QDir().mkdir(creatingDirctry);
+        //creaging directry if not exist
+        QString creatingDirctry=basicPath;
+        creatingDirctry.append("StudentInformation");
+
+        if(!QDir(creatingDirctry).exists())
+        {
+            QDir().mkdir(creatingDirctry);
+
+
+        }
+
+        creatingDirctry.append("/").append(ui->tWSelectClass->currentItem()->parent()->text(0));
+
+        if(!QDir(creatingDirctry).exists())
+        {
+            QDir().mkdir(creatingDirctry);
+        }
+
+        creatingDirctry.append("/").append(ui->tWSelectClass->currentItem()->text(0));
+        if(!QDir(creatingDirctry).exists())
+        {
+            QDir().mkdir(creatingDirctry);
+        }
+
+        //creating studentinfo file path and sent to class
+        creatingDirctry.append("/").append(ui->lWStudent->currentItem()->text()).append(".xml");
+
+        addStudentInfromation = new AddStudentInfromation(0,ui->lWStudent->currentItem()->text(),creatingDirctry);
+        addStudentInfromation->setModal(false);
+        addStudentInfromation->exec();
+
     }
 
-    creatingDirctry.append("/").append(ui->tWSelectClass->currentItem()->text(0));
-    if(!QDir(creatingDirctry).exists())
-    {
-        QDir().mkdir(creatingDirctry);
-    }
 
-    //creating studentinfo file path and sent to class
-    creatingDirctry.append("/").append(ui->lWStudent->currentItem()->text()).append(".xml");
 
-    addStudentInfromation = new AddStudentInfromation(0,ui->lWStudent->currentItem()->text(),creatingDirctry);
-    addStudentInfromation->setModal(false);
-    addStudentInfromation->exec();
 
 
 

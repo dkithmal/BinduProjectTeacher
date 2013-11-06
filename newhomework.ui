@@ -155,7 +155,7 @@
      <x>400</x>
      <y>270</y>
      <width>371</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -190,7 +190,7 @@
     </font>
    </property>
    <property name="sortingEnabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <attribute name="headerVisible">
     <bool>false</bool>
