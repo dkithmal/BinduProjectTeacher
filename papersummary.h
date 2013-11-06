@@ -27,6 +27,8 @@ public:
 private slots:
     void on_tWStudentPaperSummery_doubleClicked(const QModelIndex &index);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Papersummary *ui;
 };

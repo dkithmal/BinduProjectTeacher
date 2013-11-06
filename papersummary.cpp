@@ -120,3 +120,8 @@ void Papersummary::on_tWStudentPaperSummery_doubleClicked(const QModelIndex &ind
 
 
 }
+
+void Papersummary::on_pushButton_clicked()
+{
+    this->close();
+}

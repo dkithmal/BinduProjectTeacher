@@ -796,6 +796,7 @@ QString  SelectPaperForMark::toMarkEssayMcqPaper(QString paperXmlPath)
                          }
 
 
+                         totleMarksOfPaper=0;
 
 
 
