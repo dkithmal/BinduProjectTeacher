@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/binduTeacher/new">
+        <file>imgs/homePage.jpeg</file>
+        <file>imgs/dm.png</file>
+        <file>imgs/cm.png</file>
+        <file>imgs/hw.png</file>
+        <file>imgs/settings_symbol.png</file>
+    </qresource>
+</RCC>

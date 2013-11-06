@@ -27,6 +27,16 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -36,12 +46,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{9dcd626f-11f5-4d5f-8694-685948aa75a6}</UniqueIdentifier>
+      <UniqueIdentifier>{9b2d4190-eec0-41f9-81d1-7f7fabb7baa9}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{af790cbd-5f67-4956-aa58-f0e3832eb686}</UniqueIdentifier>
+      <UniqueIdentifier>{5bc3e93f-c24e-4b49-b107-718cc07fb473}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -293,6 +303,9 @@
     <ClCompile Include="Release\moc_uploadmanage.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_BinduTeacherResource.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="addstudentinfromation.h">
@@ -456,6 +469,26 @@
     <CustomBuild Include="uploadmanage.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="BinduTeacherResource.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="imgs\cm.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\dm.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\homePage.jpeg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\hw.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\settings_symbol.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_addstudentinfromation.h">

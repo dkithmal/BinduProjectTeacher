@@ -97,3 +97,6 @@ FORMS    += teacher.ui \
     addstudentinfromation.ui \
     studentinformation.ui \
     selectstudentforview.ui
+
+RESOURCES += \
+    BinduTeacherResource.qrc
