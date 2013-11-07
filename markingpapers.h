@@ -7,8 +7,13 @@
 #include <QFile>
 #include <QtXml>
 #include <QDebug>
-#include <QtWidgets>
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QTextEdit>
+#include <QRadioButton>
+#include <QLabel>
 #include <QtGui>
+#include <QDialog>
 
 namespace Ui {
 class MarkingPapers;
