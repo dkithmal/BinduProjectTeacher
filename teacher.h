@@ -25,6 +25,7 @@ public:
     SubjectManage *subjectManage;
     NewUploadOrDownload *newUploadOrDownload;
     ClassManage *classManage;
+    int x;
 
    // static const QString filepath ;
 
@@ -39,6 +40,8 @@ private slots:
     void on_cBSettings_currentIndexChanged(int index);
     void on_pBUpload_clicked();
     void on_pBManager_clicked();
+    void on_pBSettings_clicked();
+    void on_lWSettings_clicked(const QModelIndex &index);
 };
 
 #endif // TEACHER_H

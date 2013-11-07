@@ -6,6 +6,8 @@ Teacher::Teacher(QWidget *parent)
 {
 
 	ui.setupUi(this);
+
+    ui.lWSettings->setHidden(true);
     //QWidget::showFullScreen();
 
     //to remove all buttons
@@ -53,10 +55,15 @@ Teacher::Teacher(QWidget *parent)
    //
    QPixmap pixmap2(":/binduTeacher/new/imgs/settings_symbol.png");
    QIcon cBSettings(pixmap2);
-   ui.cBSettings->setItemIcon(0,cBSettings);
-   ui.cBSettings->setItemIcon(1,cBSettings);
-   ui.cBSettings->setItemIcon(2,cBSettings);
-   ui.cBSettings->setItemIcon(3,cBSettings);
+   ui.pBSettings->setIcon(cBSettings);
+    QSize size2(30,30);
+    ui.pBSettings->setIconSize(size2);
+    ui.lWSettings->setStyleSheet( "background-color:black; color:Azure;");
+   //ui.pBSettings->setIconSize(pixmap2.rect().size());
+   //ui.cBSettings->setItemIcon(0,cBSettings);
+  // ui.cBSettings->setItemIcon(1,cBSettings);
+  // ui.cBSettings->setItemIcon(2,cBSettings);
+  // ui.cBSettings->setItemIcon(3,cBSettings);
 
   // ui.cBSettings->setIconSize(homeDownloadlPM.rect().size());
 
@@ -64,9 +71,9 @@ Teacher::Teacher(QWidget *parent)
    ui.lClock->setStyleSheet(" color:Azure ;");
   // ui.cBSettings->setStyleSheet ("QComboBox::drop-down {border-width: 0px;} QComboBox::down-arrow {image: url(noimg); border-width: 0px;  color:Azure ; }");
   // ui.cBSettings->setStyleSheet("color:#ccc; background-color:#333;  selection-background-color:#1c1c1c; selection-color: #ccc; ");
-   ui.cBSettings->setStyleSheet("down-arrow {image: url(noimg);  font-size:  20;");
-   QSize size2(30,30);
-   ui.cBSettings->setIconSize(size2);
+   //ui.cBSettings->setStyleSheet("down-arrow {image: url(noimg);  font-size:  20;");
+  // QSize size2(30,30);
+  // ui.cBSettings->setIconSize(size2);
   // ui.cBSettings->setFont(QFont ("Courier New", 30));
 
 
@@ -74,19 +81,19 @@ Teacher::Teacher(QWidget *parent)
 
    //create activity icons
    QPixmap homeWorktoolPM(":/binduTeacher/new/imgs/hw.png");
-   homeWorktoolPM.setDevicePixelRatio(Qt::KeepAspectRatio);
+  // homeWorktoolPM.setDevicePixelRatio(Qt::KeepAspectRatio);
    QIcon homeWorktoolIcon(homeWorktoolPM);
    ui.pBHomeWork->setIcon(homeWorktoolIcon);
    ui.pBHomeWork->setIconSize(homeWorktoolPM.rect().size());
 
    QPixmap homeDownloadlPM(":/binduTeacher/new/imgs/dm.png");
-   homeDownloadlPM.setDevicePixelRatio(Qt::KeepAspectRatio);
+  // homeDownloadlPM.setDevicePixelRatio(Qt::KeepAspectRatio);
    QIcon homeDownloadIcon(homeDownloadlPM);
    ui.pBUpload->setIcon(homeDownloadIcon);
    ui.pBUpload->setIconSize(homeDownloadlPM.rect().size());
 
    QPixmap homeClassManagePM(":/binduTeacher/new/imgs/cm.png");
-   homeClassManagePM.setDevicePixelRatio(Qt::KeepAspectRatio);
+ //  homeClassManagePM.setDevicePixelRatio(Qt::KeepAspectRatio);
    QIcon homeClassManageIcon(homeClassManagePM);
    ui.pBManager->setIcon(homeClassManageIcon);
    ui.pBManager->setIconSize(homeClassManagePM.rect().size());
@@ -132,8 +139,9 @@ void Teacher::on_cBSettings_currentIndexChanged(int index)
     {
         manageClasses = new ManageClasses;
         manageClasses->setModal(false);
-        ui.cBSettings->setCurrentIndex(0);
+        //ui.lWSettings->setCurrentIndex(0);
 
+        ui.lWSettings->setHidden(true);
         manageClasses->exec();
         //manageClasses->show();
 
@@ -144,10 +152,10 @@ void Teacher::on_cBSettings_currentIndexChanged(int index)
     {
         subjectManage = new SubjectManage;
         subjectManage->setModal(false);
-        ui.cBSettings->setCurrentIndex(0);
 
+        ui.lWSettings->setHidden(true);
         subjectManage->exec();
-        //subjectManage->show();
+
 
 
     }
@@ -159,7 +167,7 @@ void Teacher::on_pBUpload_clicked()
     newUploadOrDownload= new NewUploadOrDownload;
     newUploadOrDownload->setModal(false);
     newUploadOrDownload->exec();
-    //newUploadOrDownload->show();
+
 
 }
 
@@ -168,4 +176,47 @@ void Teacher::on_pBManager_clicked()
     classManage = new ClassManage;
     classManage->setModal(false);
     classManage->exec();
+}
+
+void Teacher::on_pBSettings_clicked()
+{
+
+    if(ui.lWSettings->isHidden())
+    {
+        ui.lWSettings->setHidden(false);
+    }
+    else
+    {
+        ui.lWSettings->setHidden(true);
+
+    }
+
+}
+
+void Teacher::on_lWSettings_clicked(const QModelIndex &index)
+{
+    if(ui.lWSettings->currentItem()->text()=="Add Class")
+    {
+        manageClasses = new ManageClasses;
+        manageClasses->setModal(false);
+
+
+        ui.lWSettings->setHidden(true);
+        manageClasses->exec();
+
+
+
+
+    }
+    if(ui.lWSettings->currentItem()->text()=="Add Subject")
+    {
+        subjectManage = new SubjectManage;
+        subjectManage->setModal(false);
+        ui.lWSettings->setHidden(true);
+        subjectManage->exec();
+
+
+
+    }
+
 }
