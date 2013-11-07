@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Add Grade And Class</string>
   </property>
   <widget class="QTabWidget" name="tWManage">
    <property name="geometry">

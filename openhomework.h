@@ -35,6 +35,8 @@ private slots:
 
     void on_pBOpen_clicked();
 
+    void on_pBDeleteHomeWork_clicked();
+
 private:
     Ui::OpenHomeWork *ui;
 };

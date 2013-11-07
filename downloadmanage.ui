@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Downloading State</string>
   </property>
   <widget class="QPushButton" name="pBDownloadClose">
    <property name="geometry">

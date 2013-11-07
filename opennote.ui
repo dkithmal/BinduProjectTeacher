@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Slect Note To Open</string>
   </property>
   <widget class="QTreeWidget" name="tWSelectSubject">
    <property name="geometry">
@@ -106,7 +106,7 @@
     <string>Close</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pBDeleteHomeWork">
+  <widget class="QPushButton" name="pBDeleteNote">
    <property name="geometry">
     <rect>
      <x>390</x>

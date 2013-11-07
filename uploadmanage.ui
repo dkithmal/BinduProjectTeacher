@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Uploding State</string>
   </property>
   <widget class="QPushButton" name="pBUpdateClose">
    <property name="geometry">

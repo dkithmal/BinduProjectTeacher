@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Select File To Upload</string>
   </property>
   <widget class="QTreeWidget" name="tWSelectHomeWork">
    <property name="geometry">

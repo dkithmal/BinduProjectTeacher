@@ -209,3 +209,8 @@ void OpenNote::on_pBOpen_clicked()
     }
 
 }
+
+void OpenNote::on_pBDeleteNote_clicked()
+{
+
+}

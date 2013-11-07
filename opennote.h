@@ -31,6 +31,8 @@ private slots:
 
     void on_tWSelectSubject_clicked(const QModelIndex &index);
 
+    void on_pBDeleteNote_clicked();
+
 private:
     Ui::OpenNote *ui;
 };

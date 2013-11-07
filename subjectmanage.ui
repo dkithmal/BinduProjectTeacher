@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Add Remove Subjecet</string>
   </property>
   <widget class="QTabWidget" name="tWSubjectManage">
    <property name="geometry">

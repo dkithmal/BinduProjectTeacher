@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Select Student to Add details</string>
   </property>
   <widget class="QTreeWidget" name="tWSelectClass">
    <property name="geometry">

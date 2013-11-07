@@ -298,3 +298,26 @@ void OpenHomeWork::on_pBOpen_clicked()
     }
 
 }
+
+void OpenHomeWork::on_pBDeleteHomeWork_clicked()
+{
+    int x=0;
+    if(!ui->tWSelectSubject->currentIndex().isValid()||!ui->tWSelectSubject->currentIndex().parent().isValid())
+    {
+        QMessageBox::warning(this,"Error","Select Subject");
+       x=1;
+
+    }
+    if(!ui->lWHomeWorks->currentIndex().isValid())
+    {
+        QMessageBox::warning(this,"Error","Select Paper");
+       x=1;
+
+    }
+
+    if(x==0)
+    {
+
+    }
+
+}

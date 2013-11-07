@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Select Paper For Mark</string>
   </property>
   <widget class="QTreeWidget" name="tWSelectSubject">
    <property name="geometry">
