@@ -43,6 +43,7 @@ void SelectStudentForView::setClassList()
             {
                 QTreeWidgetItem *grade= new QTreeWidgetItem(ui->tWSelectClass);
                 grade->setText(0,itemNode.toElement().attribute("GradeName"));
+                grade->setIcon(0,QIcon(":/binduTeacher/new/imgs/grade.png"));
 
 
                 QDomNodeList classeList= itemNode.toElement().elementsByTagName("Class");
@@ -52,6 +53,7 @@ void SelectStudentForView::setClassList()
                         QDomNode itemNodeClass = classeList.at(j);
                         QTreeWidgetItem *classItem= new QTreeWidgetItem(grade);
                         classItem->setText(0,itemNodeClass.toElement().attribute("ClassName"));
+                        classItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/class.png"));
 
 
 
@@ -121,10 +123,12 @@ void SelectStudentForView::on_tWSelectClass_clicked(const QModelIndex &index)
                                     QString studentNameList=students.firstChild().nodeValue();
                                     //qDebug()<<studentNameList<<"student NameList";
                                     QStringList studentNameSplitedList=studentNameList.split(",");
+
                                     foreach (QString studentName, studentNameSplitedList)
                                     {
                                         //QListWidgetItem
-                                       ui->lWStudent->addItem(studentName);
+                                      // ui->lWStudent->addItem(studentName);
+                                       ui->lWStudent->addItem(new QListWidgetItem(QIcon(":/binduTeacher/new/imgs/student.jpg"), studentName));
 
                                     }
 

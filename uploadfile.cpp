@@ -44,6 +44,7 @@ void UploadFile::setFileList()
             {
                 QTreeWidgetItem *grade= new QTreeWidgetItem(ui->tWSelectHomeWork);
                 grade->setText(0,itemNode.toElement().attribute("GradeName"));
+                grade->setIcon(0,QIcon(":/binduTeacher/new/imgs/grade.png"));
 
 
                 QDomNodeList subjecList= itemNode.toElement().elementsByTagName("Subject");
@@ -55,6 +56,7 @@ void UploadFile::setFileList()
                         // ui->cBSelectClass->addItem(itemNodeClass.toElement().attribute("ClassName"));
                          QTreeWidgetItem *subjectItem= new QTreeWidgetItem(grade);
                          subjectItem->setText(0,itemNodeSubject.toElement().attribute("SubjectName"));
+                         subjectItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/subject.png"));
 
                          if(itemNodeSubject.isElement())
                          {
@@ -130,6 +132,7 @@ void UploadFile::setClassList()
             {
                 QTreeWidgetItem *grade= new QTreeWidgetItem(ui->tWSelectClass);
                 grade->setText(0,itemNode.toElement().attribute("GradeName"));
+                grade->setIcon(0,QIcon(":/binduTeacher/new/imgs/grade.png"));
 
 
                 QDomNodeList classeList= itemNode.toElement().elementsByTagName("Class");
@@ -139,6 +142,7 @@ void UploadFile::setClassList()
                         QDomNode itemNodeClass = classeList.at(j);
                         QTreeWidgetItem *classItem= new QTreeWidgetItem(grade);
                         classItem->setText(0,itemNodeClass.toElement().attribute("ClassName"));
+                        classItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/class.png"));
 
 
 
@@ -189,8 +193,12 @@ void UploadFile::on_pushButton_3_clicked()
 
 void UploadFile::on_tWSelectClass_clicked(const QModelIndex &index)
 {
+    int itemicon=0;
     ui->cBSelectStudent->clear();
     ui->cBSelectStudent->addItem("All");
+    ui->cBSelectStudent->setItemIcon(itemicon,QIcon(":/binduTeacher/new/imgs/student.jpg"));
+    itemicon++;
+
     if(ui->tWSelectClass->currentIndex().parent().isValid())
     {
 
@@ -231,10 +239,15 @@ void UploadFile::on_tWSelectClass_clicked(const QModelIndex &index)
                                     QString studentNameList=students.firstChild().nodeValue();
                                    // qDebug()<<studentNameList<<"student NameList";
                                     QStringList studentNameSplitedList=studentNameList.split(",");
+
                                     foreach (QString studentName, studentNameSplitedList)
                                     {
                                         ui->cBSelectStudent->addItem(studentName);
+                                        ui->cBSelectStudent->setItemIcon(itemicon,QIcon(":/binduTeacher/new/imgs/student.jpg"));
+                                       // ui->cBSelectStudent->addItem(new (QIcon(":/binduTeacher/new/F:/download/student.jpg"), studentName));
 
+
+                                        itemicon++;
                                     }
 
 
@@ -305,6 +318,7 @@ void UploadFile::on_tWSelectClass_clicked(const QModelIndex &index)
                                     {
                                         QTreeWidgetItem *subject= new QTreeWidgetItem(ui->tWSelectHomeWork);
                                         subject->setText(0,subjectList.at(k).toElement().attribute("SubjectName"));
+                                        subject->setIcon(0,QIcon(":/binduTeacher/new/imgs/subject.png"));
 
                                         QDomNodeList subjectListForGetHomeWork=itemNode.toElement().elementsByTagName("Subject");
 
@@ -321,6 +335,7 @@ void UploadFile::on_tWSelectClass_clicked(const QModelIndex &index)
                                                     QDomNode itemNodehomeWork = homeWorkList.at(m);
                                                     QTreeWidgetItem *homeWorkItem= new QTreeWidgetItem(subject);
                                                     homeWorkItem->setText(0,itemNodehomeWork.toElement().attribute("HomeWorkName"));
+                                                    homeWorkItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/paper.png"));
 
 
                                                 }
@@ -329,6 +344,7 @@ void UploadFile::on_tWSelectClass_clicked(const QModelIndex &index)
                                                     QDomNode itemNodeNote = noteList.at(n);
                                                     QTreeWidgetItem *noteItem= new QTreeWidgetItem(subject);
                                                     noteItem->setText(0,itemNodeNote.toElement().attribute("NoteName"));
+                                                    noteItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/note.png"));
 
 
                                                 }

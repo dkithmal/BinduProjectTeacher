@@ -58,51 +58,43 @@ Teacher::Teacher(QWidget *parent)
    ui.pBSettings->setIcon(cBSettings);
     QSize size2(30,30);
     ui.pBSettings->setIconSize(size2);
-    ui.lWSettings->setStyleSheet( "background-color:black; color:Azure;");
-   //ui.pBSettings->setIconSize(pixmap2.rect().size());
-   //ui.cBSettings->setItemIcon(0,cBSettings);
-  // ui.cBSettings->setItemIcon(1,cBSettings);
-  // ui.cBSettings->setItemIcon(2,cBSettings);
-  // ui.cBSettings->setItemIcon(3,cBSettings);
+    ui.lWSettings->setStyleSheet( "background-color: rgba(0,0,0, 80%); color:Azure;");
 
-  // ui.cBSettings->setIconSize(homeDownloadlPM.rect().size());
 
    ui.wHeader->setStyleSheet(" background-color:black ;");
    ui.lClock->setStyleSheet(" color:Azure ;");
-  // ui.cBSettings->setStyleSheet ("QComboBox::drop-down {border-width: 0px;} QComboBox::down-arrow {image: url(noimg); border-width: 0px;  color:Azure ; }");
-  // ui.cBSettings->setStyleSheet("color:#ccc; background-color:#333;  selection-background-color:#1c1c1c; selection-color: #ccc; ");
-   //ui.cBSettings->setStyleSheet("down-arrow {image: url(noimg);  font-size:  20;");
-  // QSize size2(30,30);
-  // ui.cBSettings->setIconSize(size2);
-  // ui.cBSettings->setFont(QFont ("Courier New", 30));
+
 
 
 
 
    //create activity icons
    QPixmap homeWorktoolPM(":/binduTeacher/new/imgs/hw.png");
-  // homeWorktoolPM.setDevicePixelRatio(Qt::KeepAspectRatio);
+
    QIcon homeWorktoolIcon(homeWorktoolPM);
    ui.pBHomeWork->setIcon(homeWorktoolIcon);
    ui.pBHomeWork->setIconSize(homeWorktoolPM.rect().size());
 
    QPixmap homeDownloadlPM(":/binduTeacher/new/imgs/dm.png");
-  // homeDownloadlPM.setDevicePixelRatio(Qt::KeepAspectRatio);
    QIcon homeDownloadIcon(homeDownloadlPM);
    ui.pBUpload->setIcon(homeDownloadIcon);
    ui.pBUpload->setIconSize(homeDownloadlPM.rect().size());
 
    QPixmap homeClassManagePM(":/binduTeacher/new/imgs/cm.png");
- //  homeClassManagePM.setDevicePixelRatio(Qt::KeepAspectRatio);
    QIcon homeClassManageIcon(homeClassManagePM);
    ui.pBManager->setIcon(homeClassManageIcon);
    ui.pBManager->setIconSize(homeClassManagePM.rect().size());
 
    ui.groupBox->setStyleSheet("background-color: rgba(0,0,0, 80%); ");
 
-  // QPalette pal = this->palette();
-  // pal.setBrush(QPalette::Base, Qt::transparent);
- // ui.groupBox->setPalette(pal);
+
+ ui.lWSettings->addItem(new QListWidgetItem(QIcon(":/binduTeacher/new/imgs/addclass.png"), "Add Class"));
+ ui.lWSettings->addItem(new QListWidgetItem(QIcon(":/binduTeacher/new/imgs/addsubject.png"), "Add Subject"));
+ ui.lWSettings->addItem(new QListWidgetItem(QIcon(":/binduTeacher/new/imgs/shutdown.png"), "Shut Down"));
+ QSize sizeforSettingList(20,20);
+ ui.lWSettings->setIconSize(sizeforSettingList);
+
+
 
 
 	

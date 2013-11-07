@@ -50,6 +50,7 @@ void SelectPaperForMark::setSubjectToTree()
             {
                 QTreeWidgetItem *grade= new QTreeWidgetItem(ui->tWSelectSubject);
                 grade->setText(0,itemNode.toElement().attribute("GradeName"));
+                grade->setIcon(0,QIcon(":/binduTeacher/new/imgs/grade.png"));
 
                 QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
 
@@ -58,6 +59,7 @@ void SelectPaperForMark::setSubjectToTree()
                     QDomNode itemNodeClass = classList.at(j);
                     QTreeWidgetItem *classItem= new QTreeWidgetItem(grade);
                     classItem->setText(0,itemNodeClass.toElement().attribute("ClassName"));
+                    classItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/class.png"));
 
 
                      QDomNodeList subjecList= itemNodeClass.toElement().elementsByTagName("CSubject");
@@ -71,6 +73,7 @@ void SelectPaperForMark::setSubjectToTree()
                      // ui->cBSelectClass->addItem(itemNodeClass.toElement().attribute("ClassName"));
                      QTreeWidgetItem *subjectItem= new QTreeWidgetItem(classItem);
                     subjectItem->setText(0,itemNodeSubject.toElement().attribute("SubjectName"));
+                    subjectItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/subject.png"));
                     }
 
                 }
@@ -134,11 +137,12 @@ void SelectPaperForMark::on_tWSelectSubject_clicked(const QModelIndex &index)
 
                                  for(int z=0;z<HomeWorkList.count();z++)
                                  {
-                                     //qDebug()<<"ddddddddddddddddddddddddddddddddddddd";
+
                                      QDomNode itemNodeHomeWork= HomeWorkList.at(z);
 
-                                     ui->lWSelectPaper->addItem(itemNodeHomeWork.toElement().attribute("HomeWorkName"));
-                                    // qDebug()<<itemNodeHomeWork.toElement().attribute("HomeWorkName");
+                                    // ui->lWSelectPaper->addItem(itemNodeHomeWork.toElement().attribute("HomeWorkName"));
+                                     ui->lWSelectPaper->addItem(new QListWidgetItem(QIcon(":/binduTeacher/new/imgs/paper.png"), itemNodeHomeWork.toElement().attribute("HomeWorkName")));
+
 
 
                                  }

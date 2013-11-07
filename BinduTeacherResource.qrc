@@ -5,5 +5,19 @@
         <file>imgs/cm.png</file>
         <file>imgs/hw.png</file>
         <file>imgs/settings_symbol.png</file>
+        <file>imgs/addclass.png</file>
+        <file>imgs/addgrade.png</file>
+        <file>imgs/addStd.png</file>
+        <file>imgs/addsubject.png</file>
+        <file>imgs/admin.png</file>
+        <file>imgs/class.png</file>
+        <file>imgs/grade.png</file>
+        <file>imgs/list_student.png</file>
+        <file>imgs/note.png</file>
+        <file>imgs/paper.png</file>
+        <file>imgs/shutdown.png</file>
+        <file>imgs/student.jpg</file>
+        <file>imgs/subject.png</file>
+        <file>imgs/system.png</file>
     </qresource>
 </RCC>

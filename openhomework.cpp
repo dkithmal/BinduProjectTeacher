@@ -52,6 +52,7 @@ void OpenHomeWork::setSubjetToTree()
             {
                 QTreeWidgetItem *grade= new QTreeWidgetItem(ui->tWSelectSubject);
                 grade->setText(0,itemNode.toElement().attribute("GradeName"));
+                 grade->setIcon(0,QIcon(":/binduTeacher/new/imgs/grade.png"));
 
 
                 QDomNodeList classList= itemNode.toElement().elementsByTagName("Subject");
@@ -63,6 +64,7 @@ void OpenHomeWork::setSubjetToTree()
                         // ui->cBSelectClass->addItem(itemNodeClass.toElement().attribute("ClassName"));
                          QTreeWidgetItem *subjectItem= new QTreeWidgetItem(grade);
                          subjectItem->setText(0,itemNodeClass.toElement().attribute("SubjectName"));
+                         subjectItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/subject.png"));
 
                     }
 
@@ -137,7 +139,8 @@ void OpenHomeWork::on_tWSelectSubject_clicked(const QModelIndex &index)
                                          for(int z=0;z<paperNameList.size();z++)
                                          {
                                              QDomNode paper=paperNameList.at(z);
-                                            ui->lWHomeWorks->addItem( paper.toElement().attribute("HomeWorkName"));
+                                            //ui->lWHomeWorks->addItem( paper.toElement().attribute("HomeWorkName"));
+                                            ui->lWHomeWorks->addItem(new QListWidgetItem(QIcon(":/binduTeacher/new/imgs/paper.png"), paper.toElement().attribute("HomeWorkName")));
 
                                          }
 

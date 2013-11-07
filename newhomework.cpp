@@ -46,7 +46,7 @@ void NewHomeWork::setSubjetToTree()
             {
                 QTreeWidgetItem *grade= new QTreeWidgetItem(ui->tWSelectSubject);
                 grade->setText(0,itemNode.toElement().attribute("GradeName"));
-
+                grade->setIcon(0,QIcon(":/binduTeacher/new/imgs/grade.png"));
 
                 QDomNodeList classList= itemNode.toElement().elementsByTagName("Subject");
 
@@ -57,6 +57,7 @@ void NewHomeWork::setSubjetToTree()
                         // ui->cBSelectClass->addItem(itemNodeClass.toElement().attribute("ClassName"));
                          QTreeWidgetItem *subjectItem= new QTreeWidgetItem(grade);
                          subjectItem->setText(0,itemNodeClass.toElement().attribute("SubjectName"));
+                         subjectItem->setIcon(0,QIcon(":/binduTeacher/new/imgs/subject.png"));
 
                     }
 
