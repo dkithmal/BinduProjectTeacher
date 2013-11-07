@@ -47,6 +47,10 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tEText</tabstop>
+  <tabstop>pBSaveAndClose</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

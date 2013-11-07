@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>5</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -517,6 +517,34 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWManage</tabstop>
+  <tabstop>lEGradeName</tabstop>
+  <tabstop>pBAddGrade</tabstop>
+  <tabstop>pBClose</tabstop>
+  <tabstop>cBSelectGrade_2</tabstop>
+  <tabstop>lEClassName</tabstop>
+  <tabstop>tEStudents</tabstop>
+  <tabstop>pBCreateClass</tabstop>
+  <tabstop>pBClose_2</tabstop>
+  <tabstop>cBSelectGrade_3</tabstop>
+  <tabstop>cBSelectClass</tabstop>
+  <tabstop>lEStudentName</tabstop>
+  <tabstop>pBAddStudent</tabstop>
+  <tabstop>pBClose_3</tabstop>
+  <tabstop>cBSelectGrade</tabstop>
+  <tabstop>pBRemoveGrade</tabstop>
+  <tabstop>pBClose_4</tabstop>
+  <tabstop>cBSelectGradeForRClass</tabstop>
+  <tabstop>cBSelectClassForRClass</tabstop>
+  <tabstop>pBRemoveClass</tabstop>
+  <tabstop>pBClose_5</tabstop>
+  <tabstop>cBSelectGradeFRStudent</tabstop>
+  <tabstop>cBSelectClassFRStudent</tabstop>
+  <tabstop>cBSelectStudentFRStudent</tabstop>
+  <tabstop>pBRemoveStudent</tabstop>
+  <tabstop>pBClose_6</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

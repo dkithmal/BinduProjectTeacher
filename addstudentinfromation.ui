@@ -212,6 +212,22 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lEStudentName</tabstop>
+  <tabstop>lEStudentFullName</tabstop>
+  <tabstop>lEStudentBDate</tabstop>
+  <tabstop>lEStudentFatherName</tabstop>
+  <tabstop>lEStudentFOcupation</tabstop>
+  <tabstop>lEStudentFTelNo</tabstop>
+  <tabstop>lEMotherFullName</tabstop>
+  <tabstop>lEMotherOccupation</tabstop>
+  <tabstop>lEMotherTelNo</tabstop>
+  <tabstop>lEStudentHomeAddress</tabstop>
+  <tabstop>lEStudentHomeTelNo</tabstop>
+  <tabstop>TEStudentDiscription</tabstop>
+  <tabstop>pBSubmit</tabstop>
+  <tabstop>pBClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

@@ -232,6 +232,19 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>cBSelectGradeAdd</tabstop>
+  <tabstop>cBSelectClass</tabstop>
+  <tabstop>lESubjectName</tabstop>
+  <tabstop>pBAddSubject</tabstop>
+  <tabstop>pBClose</tabstop>
+  <tabstop>cBSelectGradeRemove</tabstop>
+  <tabstop>cBSelectClassToRSub</tabstop>
+  <tabstop>cBSelectSubjectRemove</tabstop>
+  <tabstop>pBRemove</tabstop>
+  <tabstop>pBClose_2</tabstop>
+  <tabstop>tWSubjectManage</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

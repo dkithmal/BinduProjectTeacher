@@ -66,6 +66,10 @@
    </column>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWUplodingState</tabstop>
+  <tabstop>pBUpdateClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

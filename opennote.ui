@@ -133,6 +133,13 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWSelectSubject</tabstop>
+  <tabstop>lWHomeWorks</tabstop>
+  <tabstop>pBOpen</tabstop>
+  <tabstop>pBDeleteNote</tabstop>
+  <tabstop>pBClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

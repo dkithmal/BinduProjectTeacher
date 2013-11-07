@@ -140,6 +140,12 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>pBMarkPapers</tabstop>
+  <tabstop>pBStudentProgress</tabstop>
+  <tabstop>pBEditStudent</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

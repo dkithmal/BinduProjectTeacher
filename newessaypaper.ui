@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -490,6 +490,19 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWPaperCreation</tabstop>
+  <tabstop>lEEssayQuestion</tabstop>
+  <tabstop>lEEssayMarks</tabstop>
+  <tabstop>pBAddEssayQuestion</tabstop>
+  <tabstop>pBClose</tabstop>
+  <tabstop>pBPrivious</tabstop>
+  <tabstop>pBNext</tabstop>
+  <tabstop>pBCClose</tabstop>
+  <tabstop>pBEPrivious</tabstop>
+  <tabstop>pBENext</tabstop>
+  <tabstop>pBEClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

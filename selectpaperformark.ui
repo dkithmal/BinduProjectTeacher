@@ -120,6 +120,12 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWSelectSubject</tabstop>
+  <tabstop>lWSelectPaper</tabstop>
+  <tabstop>pBMarkPaper</tabstop>
+  <tabstop>pBClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

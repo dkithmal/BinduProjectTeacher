@@ -190,6 +190,15 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>rBNewHomeWrok</tabstop>
+  <tabstop>rBNewShotNote</tabstop>
+  <tabstop>pBNewHomeWork</tabstop>
+  <tabstop>rBOpenHomeWork</tabstop>
+  <tabstop>rBOpenNote</tabstop>
+  <tabstop>pBOpenExistingHw</tabstop>
+  <tabstop>pBClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

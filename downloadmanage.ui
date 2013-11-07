@@ -72,6 +72,10 @@
    </column>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWDownlodingtate</tabstop>
+  <tabstop>pBDownloadClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

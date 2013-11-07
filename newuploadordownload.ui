@@ -78,6 +78,11 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>pBUpload</tabstop>
+  <tabstop>pBDownload</tabstop>
+  <tabstop>pBClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

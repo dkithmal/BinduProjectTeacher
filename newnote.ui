@@ -117,6 +117,12 @@
    </column>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWSelectSubject</tabstop>
+  <tabstop>lENoteName</tabstop>
+  <tabstop>pBCreateNote</tabstop>
+  <tabstop>pBClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

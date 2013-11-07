@@ -376,6 +376,17 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>pBSaveMarks</tabstop>
+  <tabstop>pBPrivious</tabstop>
+  <tabstop>pBNext</tabstop>
+  <tabstop>lETotalMarks</tabstop>
+  <tabstop>lEAnswer1Marks</tabstop>
+  <tabstop>lEAnswer2Marks</tabstop>
+  <tabstop>lEAnswer3Marks</tabstop>
+  <tabstop>lEAnswer4Marks</tabstop>
+  <tabstop>lEAnswer5Marks</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

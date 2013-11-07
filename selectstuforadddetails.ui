@@ -114,6 +114,12 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWSelectClass</tabstop>
+  <tabstop>lWStudent</tabstop>
+  <tabstop>pBAddDetails</tabstop>
+  <tabstop>pushButton_2</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

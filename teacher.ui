@@ -397,6 +397,13 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>pBHomeWork</tabstop>
+  <tabstop>pBUpload</tabstop>
+  <tabstop>pBManager</tabstop>
+  <tabstop>pBSettings</tabstop>
+  <tabstop>lWSettings</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

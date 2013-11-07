@@ -227,6 +227,17 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWSelectClass</tabstop>
+  <tabstop>cBSelectStudent</tabstop>
+  <tabstop>rBSelectHomeWork</tabstop>
+  <tabstop>tWSelectHomeWork</tabstop>
+  <tabstop>rBSelectOtherFile</tabstop>
+  <tabstop>lEFileName</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>pBUpload</tabstop>
+  <tabstop>pBClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

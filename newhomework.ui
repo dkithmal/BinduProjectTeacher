@@ -202,6 +202,16 @@
    </column>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tWSelectSubject</tabstop>
+  <tabstop>lEPaperName</tabstop>
+  <tabstop>lEDuration</tabstop>
+  <tabstop>rBMcq</tabstop>
+  <tabstop>rBEssay</tabstop>
+  <tabstop>rBEssayMcq</tabstop>
+  <tabstop>pBCreatePaper</tabstop>
+  <tabstop>pBClose</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

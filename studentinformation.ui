@@ -567,6 +567,13 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>tWMarksSummery</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>textEdit</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
