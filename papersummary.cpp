@@ -75,9 +75,21 @@ void Papersummary::createPaperSummary()
                 //QTableWidgetItem* item= new QTableWidgetItem(itemNodestudent.toElement().attribute("StudentName"));
 
                  ui->tWStudentPaperSummery->setItem(i,0,new QTableWidgetItem(itemNodestudent.toElement().attribute("StudentName")));
-                 ui->tWStudentPaperSummery->setItem(i,1,new QTableWidgetItem(itemNodestudent.toElement().attribute("MarkState")));
-                 ui->tWStudentPaperSummery->setItem(i,2,new QTableWidgetItem(itemNodestudent.toElement().attribute("Marks")));
-                 qDebug()<<itemNodestudent.toElement().attribute("StudentName")<<"fddfdfdfdfd";
+                 ui->tWStudentPaperSummery->setItem(i,1,new QTableWidgetItem(itemNodestudent.toElement().attribute("Marks")));
+                 ui->tWStudentPaperSummery->setItem(i,2,new QTableWidgetItem(itemNodestudent.toElement().attribute("MarkState")));
+                 if(itemNodestudent.toElement().attribute("MarkState")!="Marked")
+                 {
+                      ui->tWStudentPaperSummery->setItem(i,3,new QTableWidgetItem("ToMark"));
+
+                 }
+                 else
+                 {
+                      ui->tWStudentPaperSummery->setItem(i,3,new QTableWidgetItem("View"));
+
+                 }
+
+
+                // qDebug()<<itemNodestudent.toElement().attribute("StudentName")<<"fddfdfdfdfd";
 
             }
 
@@ -96,7 +108,7 @@ void Papersummary::createPaperSummary()
 
 void Papersummary::on_tWStudentPaperSummery_doubleClicked(const QModelIndex &index)
 {
-    if( ui->tWStudentPaperSummery->currentItem()->text()=="NotMark"||"Marked")
+    if( ui->tWStudentPaperSummery->currentItem()->text()=="View"||ui->tWStudentPaperSummery->currentItem()->text()=="ToMark")
     {
         QString createStudentAnswerPath=paperFilepath;
         createStudentAnswerPath.append("/");

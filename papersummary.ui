@@ -40,17 +40,17 @@
    </column>
    <column>
     <property name="text">
-     <string>State</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
      <string>Marks</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>View</string>
+     <string>State</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string> View Paper</string>
     </property>
    </column>
   </widget>
