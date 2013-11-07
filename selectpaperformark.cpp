@@ -13,6 +13,7 @@ SelectPaperForMark::SelectPaperForMark(QWidget *parent) :
          totleMarksOfPaper=0;
          totleMarksOfStudent=0;
 
+
      setSubjectToTree();
 }
 
@@ -204,6 +205,7 @@ void SelectPaperForMark::on_pBMarkPaper_clicked()
 		{
 			if(type=="Mcq")
 			{
+                paperType="Mcq";
 
 				// to auto making the answers
                 if(toMarkMcqPaper(creatingAnswerPapersPath)!="error")
@@ -217,6 +219,7 @@ void SelectPaperForMark::on_pBMarkPaper_clicked()
 			}
             if(type=="EssayMcq")
 			{
+                paperType="EssayMcq";
                 if(toMarkEssayMcqPaper(creatingAnswerPapersPath)!="error")
                 {
                     papersummary= new Papersummary(0,creatingAnswerPapersPath);
@@ -229,6 +232,7 @@ void SelectPaperForMark::on_pBMarkPaper_clicked()
 
             if(type=="Essay")
             {
+                paperType="Essay";
                 if(toMarkEssayPaper(creatingAnswerPapersPath)!="error")
                 {
                     papersummary= new Papersummary(0,creatingAnswerPapersPath);
@@ -242,6 +246,11 @@ void SelectPaperForMark::on_pBMarkPaper_clicked()
 
 
 		}
+        else
+        {
+            paperType="error";
+
+        }
 
 
 
@@ -593,13 +602,47 @@ void SelectPaperForMark::toUpdateMarksInPaperXml(QString paperXmlpath, QString s
             {
                 if(studentList.at(i).toElement().attribute("StudentName")==studentName)
                 {
+                    if(paperType=="Mcq")
+                    {
+                        QDomElement newStudent=document.createElement("student");
+                        newStudent.setAttribute("StudentName",studentName);
+                        newStudent.setAttribute("Marks",marks);
+                        newStudent.setAttribute("MarkState","Marked");
 
-                    QDomElement newStudent=document.createElement("student");
-                    newStudent.setAttribute("StudentName",studentName);
-                    newStudent.setAttribute("Marks",marks);
-                    newStudent.setAttribute("MarkState","Marked");
+                        root.replaceChild(newStudent,studentList.at(i).toElement());
 
-                    root.replaceChild(newStudent,studentList.at(i).toElement());
+                    }
+                    if(paperType=="Essay")
+                    {
+                        if(!(studentList.at(i).toElement().attribute("MarkState")=="Marked"))
+                        {
+                            QDomElement newStudent=document.createElement("student");
+                            newStudent.setAttribute("StudentName",studentName);
+                            newStudent.setAttribute("Marks",marks);
+                            newStudent.setAttribute("MarkState","NotMarked");
+
+                            root.replaceChild(newStudent,studentList.at(i).toElement());
+
+                        }
+
+
+                    }
+                    if(paperType=="EssayMcq")
+                    {
+                        if(!(studentList.at(i).toElement().attribute("MarkState")=="Marked"))
+                        {
+                            QDomElement newStudent=document.createElement("student");
+                            newStudent.setAttribute("StudentName",studentName);
+                            newStudent.setAttribute("Marks",marks);
+                            newStudent.setAttribute("MarkState","McqMarked");
+
+                            root.replaceChild(newStudent,studentList.at(i).toElement());
+
+                        }
+
+                    }
+
+
                 }
 
                 }

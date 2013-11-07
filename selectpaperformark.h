@@ -34,6 +34,7 @@ public:
     Papersummary *papersummary;
     int totleMarksOfPaper;
     int totleMarksOfStudent;
+   QString paperType;
     
 private slots:
     void on_tWSelectSubject_clicked(const QModelIndex &index);

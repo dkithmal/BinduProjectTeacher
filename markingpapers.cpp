@@ -1008,19 +1008,18 @@ void MarkingPapers::on_pBSaveMarks_clicked()
           {
               QTextStream stream(&newPaperFile);
               stream <<document.toString();
-              //qDebug() <<document.toString();
               newPaperFile.close();
-          //  QMessageBox::information(this,"Success","Mcq Qustion Added");
+
 
          }
-          //header.appendChild(subjectnode);
+
     }
 
     QString  paperXmlpath=paperOpenPath.mid(0,paperOpenPath.lastIndexOf("/")+1).append("paper.xml");
      qDebug()<<paperOpenPath;
 
 
-     qDebug()<<paperXmlpath<<studentName<<"dfdddddddddddddd";
+
     //updating paper.xml
     QFile openPaperXml(paperXmlpath);
     if(!openPaperXml.open(QFile::ReadWrite| QIODevice::Text))
@@ -1043,7 +1042,7 @@ void MarkingPapers::on_pBSaveMarks_clicked()
             {
                 if(studentList.at(i).toElement().attribute("StudentName")==studentName)
                 {
-                    qDebug()<<studentList.at(i).toElement().attribute("StudentName")<<"dddddddddsssssssssssss";
+
                     QDomElement newStudent=document.createElement("student");
                     newStudent.setAttribute("StudentName",studentName);
                     newStudent.setAttribute("Marks",totalStudentMarks);
