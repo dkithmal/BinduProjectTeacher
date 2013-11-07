@@ -12,7 +12,7 @@ MarkingPapers::MarkingPapers(QWidget *parent,QString filePath) :
 
    studentName=paperOpenPath.mid(paperOpenPath.lastIndexOf("-")+1,paperOpenPath.lastIndexOf(".")-paperOpenPath.lastIndexOf("-")-1);
 
-    //qDebug()<<paperOpenPath<<"ssssssssssssssssssssssss";
+
     qustionNo = 0;
     mcqNo=0;
     essayNO=0;
