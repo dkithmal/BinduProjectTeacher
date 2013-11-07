@@ -6,6 +6,7 @@ UploadFile::UploadFile(QDialog *parent) :
     ui(new Ui::UploadFile)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
         filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
         basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
         //setFileList();

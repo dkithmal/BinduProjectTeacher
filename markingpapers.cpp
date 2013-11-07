@@ -6,6 +6,7 @@ MarkingPapers::MarkingPapers(QWidget *parent,QString filePath) :
     ui(new Ui::MarkingPapers)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     paperOpenPath=filePath;
 

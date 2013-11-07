@@ -6,6 +6,7 @@ NewUploadOrDownload::NewUploadOrDownload(QDialog *parent) :
     ui(new Ui::NewUploadOrDownload)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 NewUploadOrDownload::~NewUploadOrDownload()

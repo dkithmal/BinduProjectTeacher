@@ -6,6 +6,7 @@ SelectStudentForView::SelectStudentForView(QWidget *parent) :
     ui(new Ui::SelectStudentForView)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
     basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
     setClassList();

@@ -6,6 +6,7 @@ EditNote::EditNote(QDialog *parent,QString filePath) :
     ui(new Ui::EditNote)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     noteFilePath=filePath;
     showExistingContent();
 }

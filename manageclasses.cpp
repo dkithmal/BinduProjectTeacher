@@ -6,10 +6,15 @@ ManageClasses::ManageClasses(QDialog *parent) :
     ui(new Ui::ManageClasses)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     ui->tWManage->setCurrentIndex(0);
     //filepath means config filepath
     filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
     basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
+    ui->tWManage->setTabIcon(0,QIcon(":/binduTeacher/new/imgs/addgrade.png"));
+    ui->tWManage->setTabIcon(1,QIcon(":/binduTeacher/new/imgs/addclass.png"));
+    ui->tWManage->setTabIcon(2,QIcon(":/binduTeacher/new/imgs/addStd.png"));
+
 
 }
 

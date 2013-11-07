@@ -9,6 +9,7 @@ AddStudentInfromation::AddStudentInfromation(QWidget *parent,QString studentName
     this->studentName=studentName;
     this->studentInfoFilePath=sInfoFilePath;
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     ui->lEStudentName->setText(studentName);
 

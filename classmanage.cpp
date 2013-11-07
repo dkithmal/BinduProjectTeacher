@@ -6,6 +6,7 @@ ClassManage::ClassManage(QWidget *parent) :
     ui(new Ui::ClassManage)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
       //this->setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
 }
 

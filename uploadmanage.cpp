@@ -6,6 +6,7 @@ UploadManage::UploadManage(QDialog *parent,QString command ,QString filePath,QSt
     ui(new Ui::UploadManage)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     uploadingfiles(command,filePath,studentList);
 }
 

@@ -6,6 +6,7 @@ StudentInformation::StudentInformation(QWidget *parent,QString studentName,QStri
     ui(new Ui::StudentInformation)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     ui->lStudentName->setText(studentName);
     this->studentName=studentName;
     this->grade=grade;

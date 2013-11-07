@@ -21,7 +21,8 @@ Teacher::Teacher(QWidget *parent)
 	connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
 	timer->start(1000);
 
-	showTime();
+    showTime();
+
 
 
 
@@ -109,11 +110,12 @@ Teacher::~Teacher()
 void Teacher::showTime()
 {
 	QTime time = QTime::currentTime();
-	QString text = time.toString("hh:mm");
-	if ((time.second() % 2) == 0)
-		text[2] = ' ';
+    QString text = time.toString("h:m ap");
+    //if ((time.second() % 2) == 0)
+     //   text[2] = ' ';
     //ui.lcdNClock->display(text);
     ui.lClock->setText(text);
+
 }
 
 void Teacher::on_pBHomeWork_clicked()

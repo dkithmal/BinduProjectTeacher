@@ -6,9 +6,11 @@ SubjectManage::SubjectManage(QDialog *parent) :
     ui(new Ui::SubjectManage)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
      filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
      basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
      ui->tWSubjectManage->setCurrentIndex(0);
+     ui->tWSubjectManage->setTabIcon(0,QIcon(":/binduTeacher/new/imgs/addsubject.png"));
     setDefaultCB();
 }
 

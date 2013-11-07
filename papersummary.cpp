@@ -6,6 +6,7 @@ Papersummary::Papersummary(QWidget *parent,QString filepath) :
     ui(new Ui::Papersummary)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     paperFilepath=filepath;
     createPaperSummary();
 

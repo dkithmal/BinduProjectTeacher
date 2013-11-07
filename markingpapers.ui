@@ -355,7 +355,7 @@
         </size>
        </property>
        <property name="text">
-        <string>student Name</string>
+        <string>Student Name</string>
        </property>
       </widget>
      </item>
@@ -380,12 +380,12 @@
   <tabstop>pBSaveMarks</tabstop>
   <tabstop>pBPrivious</tabstop>
   <tabstop>pBNext</tabstop>
-  <tabstop>lETotalMarks</tabstop>
   <tabstop>lEAnswer1Marks</tabstop>
   <tabstop>lEAnswer2Marks</tabstop>
   <tabstop>lEAnswer3Marks</tabstop>
   <tabstop>lEAnswer4Marks</tabstop>
   <tabstop>lEAnswer5Marks</tabstop>
+  <tabstop>lETotalMarks</tabstop>
  </tabstops>
  <resources/>
  <connections/>

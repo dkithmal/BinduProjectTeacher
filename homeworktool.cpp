@@ -6,6 +6,7 @@ HomeWorkTool::HomeWorkTool(QDialog *parent) :
     ui(new Ui::HomeWorkTool)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 HomeWorkTool::~HomeWorkTool()

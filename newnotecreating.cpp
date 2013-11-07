@@ -6,6 +6,7 @@ NewNoteCreating::NewNoteCreating(QDialog *parent,QString filePath) :
     ui(new Ui::NewNoteCreating)
 {
     ui->setupUi(this);
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
      noteCrationPath=filePath;
 }
 
