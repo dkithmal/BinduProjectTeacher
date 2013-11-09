@@ -36,7 +36,7 @@ public:
         DownloadManage->setFont(font);
         pBDownloadClose = new QPushButton(DownloadManage);
         pBDownloadClose->setObjectName(QStringLiteral("pBDownloadClose"));
-        pBDownloadClose->setGeometry(QRect(230, 482, 75, 31));
+        pBDownloadClose->setGeometry(QRect(230, 470, 75, 31));
         tWDownlodingtate = new QTableWidget(DownloadManage);
         if (tWDownlodingtate->columnCount() < 2)
             tWDownlodingtate->setColumnCount(2);
@@ -45,10 +45,14 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tWDownlodingtate->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tWDownlodingtate->setObjectName(QStringLiteral("tWDownlodingtate"));
-        tWDownlodingtate->setGeometry(QRect(10, 30, 271, 431));
+        tWDownlodingtate->setGeometry(QRect(20, 20, 261, 431));
         tWDownlodingtate->setFont(font);
         tWDownlodingtate->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        tWDownlodingtate->setShowGrid(false);
+        tWDownlodingtate->setCornerButtonEnabled(true);
         tWDownlodingtate->horizontalHeader()->setDefaultSectionSize(120);
+        tWDownlodingtate->horizontalHeader()->setHighlightSections(true);
+        QWidget::setTabOrder(tWDownlodingtate, pBDownloadClose);
 
         retranslateUi(DownloadManage);
         QObject::connect(pBDownloadClose, SIGNAL(clicked()), DownloadManage, SLOT(close()));
@@ -58,7 +62,7 @@ public:
 
     void retranslateUi(QWidget *DownloadManage)
     {
-        DownloadManage->setWindowTitle(QApplication::translate("DownloadManage", "Form", 0));
+        DownloadManage->setWindowTitle(QApplication::translate("DownloadManage", "Downloading State", 0));
         pBDownloadClose->setText(QApplication::translate("DownloadManage", "Close", 0));
         QTableWidgetItem *___qtablewidgetitem = tWDownlodingtate->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("DownloadManage", "Student Name", 0));

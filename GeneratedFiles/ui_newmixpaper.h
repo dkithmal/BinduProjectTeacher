@@ -141,7 +141,7 @@ public:
         gBEssay->setGeometry(QRect(0, 350, 1141, 191));
         lEssayQusesion = new QLabel(gBEssay);
         lEssayQusesion->setObjectName(QStringLiteral("lEssayQusesion"));
-        lEssayQusesion->setGeometry(QRect(60, 40, 81, 21));
+        lEssayQusesion->setGeometry(QRect(30, 40, 81, 21));
         lEEssayQuestion = new QLineEdit(gBEssay);
         lEEssayQuestion->setObjectName(QStringLiteral("lEEssayQuestion"));
         lEEssayQuestion->setGeometry(QRect(150, 20, 711, 61));
@@ -151,10 +151,10 @@ public:
         pBAddEssayQuestion->setGeometry(QRect(480, 140, 241, 41));
         label = new QLabel(gBEssay);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(60, 90, 121, 31));
+        label->setGeometry(QRect(30, 90, 121, 31));
         lEEssayMarks = new QLineEdit(gBEssay);
         lEEssayMarks->setObjectName(QStringLiteral("lEEssayMarks"));
-        lEEssayMarks->setGeometry(QRect(180, 90, 71, 31));
+        lEEssayMarks->setGeometry(QRect(150, 90, 71, 31));
         QFont font1;
         font1.setPointSize(12);
         lEEssayMarks->setFont(font1);
@@ -265,6 +265,23 @@ public:
         pBEPrivious->setObjectName(QStringLiteral("pBEPrivious"));
         pBEPrivious->setGeometry(QRect(450, 580, 75, 31));
         tWPaperCreation->addTab(tab_3, QString());
+        QWidget::setTabOrder(tWPaperCreation, lEMcqQuestion);
+        QWidget::setTabOrder(lEMcqQuestion, cBNoOfChoises);
+        QWidget::setTabOrder(cBNoOfChoises, lEAnswer1);
+        QWidget::setTabOrder(lEAnswer1, lEAnswer2);
+        QWidget::setTabOrder(lEAnswer2, lEAnswer3);
+        QWidget::setTabOrder(lEAnswer3, lEAnswer4);
+        QWidget::setTabOrder(lEAnswer4, pBAddMcq);
+        QWidget::setTabOrder(pBAddMcq, lEEssayQuestion);
+        QWidget::setTabOrder(lEEssayQuestion, lEEssayMarks);
+        QWidget::setTabOrder(lEEssayMarks, pBAddEssayQuestion);
+        QWidget::setTabOrder(pBAddEssayQuestion, pBClose);
+        QWidget::setTabOrder(pBClose, pBPrivious);
+        QWidget::setTabOrder(pBPrivious, pBNext);
+        QWidget::setTabOrder(pBNext, pushButton_2);
+        QWidget::setTabOrder(pushButton_2, pBEPrivious);
+        QWidget::setTabOrder(pBEPrivious, pBENext);
+        QWidget::setTabOrder(pBENext, pBEClose);
 
         retranslateUi(NewMixPaper);
         QObject::connect(pBClose, SIGNAL(clicked()), NewMixPaper, SLOT(close()));
@@ -278,7 +295,7 @@ public:
 
     void retranslateUi(QWidget *NewMixPaper)
     {
-        NewMixPaper->setWindowTitle(QApplication::translate("NewMixPaper", "Form", 0));
+        NewMixPaper->setWindowTitle(QApplication::translate("NewMixPaper", "New Mix Paper", 0));
         pBClose->setText(QApplication::translate("NewMixPaper", "Close", 0));
         gBMcq->setTitle(QApplication::translate("NewMixPaper", "Add MCQ question", 0));
         lMcqQuestion->setText(QApplication::translate("NewMixPaper", "Question :", 0));

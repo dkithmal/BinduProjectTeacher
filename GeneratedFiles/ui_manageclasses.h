@@ -77,10 +77,10 @@ public:
     {
         if (ManageClasses->objectName().isEmpty())
             ManageClasses->setObjectName(QStringLiteral("ManageClasses"));
-        ManageClasses->resize(698, 274);
+        ManageClasses->resize(769, 274);
         tWManage = new QTabWidget(ManageClasses);
         tWManage->setObjectName(QStringLiteral("tWManage"));
-        tWManage->setGeometry(QRect(0, 0, 701, 281));
+        tWManage->setGeometry(QRect(0, 0, 771, 281));
         QFont font;
         font.setPointSize(12);
         tWManage->setFont(font);
@@ -94,7 +94,7 @@ public:
         lEGradeName->setGeometry(QRect(190, 60, 231, 31));
         pBAddGrade = new QPushButton(tab);
         pBAddGrade->setObjectName(QStringLiteral("pBAddGrade"));
-        pBAddGrade->setGeometry(QRect(470, 62, 91, 31));
+        pBAddGrade->setGeometry(QRect(430, 180, 131, 41));
         pBClose = new QPushButton(tab);
         pBClose->setObjectName(QStringLiteral("pBClose"));
         pBClose->setGeometry(QRect(600, 192, 75, 31));
@@ -103,19 +103,19 @@ public:
         tab_2->setObjectName(QStringLiteral("tab_2"));
         label_2 = new QLabel(tab_2);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(30, 60, 91, 31));
+        label_2->setGeometry(QRect(20, 60, 91, 31));
         lEClassName = new QLineEdit(tab_2);
         lEClassName->setObjectName(QStringLiteral("lEClassName"));
         lEClassName->setGeometry(QRect(130, 60, 151, 31));
         label_3 = new QLabel(tab_2);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(30, 160, 91, 21));
+        label_3->setGeometry(QRect(20, 160, 91, 21));
         tEStudents = new QTextEdit(tab_2);
         tEStudents->setObjectName(QStringLiteral("tEStudents"));
         tEStudents->setGeometry(QRect(130, 100, 461, 121));
         pBCreateClass = new QPushButton(tab_2);
         pBCreateClass->setObjectName(QStringLiteral("pBCreateClass"));
-        pBCreateClass->setGeometry(QRect(600, 80, 91, 61));
+        pBCreateClass->setGeometry(QRect(600, 90, 91, 51));
         pBClose_2 = new QPushButton(tab_2);
         pBClose_2->setObjectName(QStringLiteral("pBClose_2"));
         pBClose_2->setGeometry(QRect(610, 202, 75, 31));
@@ -142,7 +142,7 @@ public:
         lEStudentName->setGeometry(QRect(180, 140, 171, 31));
         pBAddStudent = new QPushButton(tab_3);
         pBAddStudent->setObjectName(QStringLiteral("pBAddStudent"));
-        pBAddStudent->setGeometry(QRect(450, 80, 101, 41));
+        pBAddStudent->setGeometry(QRect(420, 190, 141, 41));
         pBClose_3 = new QPushButton(tab_3);
         pBClose_3->setObjectName(QStringLiteral("pBClose_3"));
         pBClose_3->setGeometry(QRect(600, 190, 75, 41));
@@ -163,10 +163,10 @@ public:
         cBSelectGrade->setGeometry(QRect(210, 70, 151, 31));
         pBRemoveGrade = new QPushButton(tab_4);
         pBRemoveGrade->setObjectName(QStringLiteral("pBRemoveGrade"));
-        pBRemoveGrade->setGeometry(QRect(460, 60, 131, 51));
+        pBRemoveGrade->setGeometry(QRect(440, 180, 131, 41));
         pBClose_4 = new QPushButton(tab_4);
         pBClose_4->setObjectName(QStringLiteral("pBClose_4"));
-        pBClose_4->setGeometry(QRect(590, 192, 75, 31));
+        pBClose_4->setGeometry(QRect(600, 180, 75, 41));
         tWManage->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
@@ -178,10 +178,10 @@ public:
         cBSelectClassForRClass->setGeometry(QRect(200, 140, 121, 31));
         pBRemoveClass = new QPushButton(tab_5);
         pBRemoveClass->setObjectName(QStringLiteral("pBRemoveClass"));
-        pBRemoveClass->setGeometry(QRect(390, 90, 131, 41));
+        pBRemoveClass->setGeometry(QRect(450, 180, 131, 41));
         pBClose_5 = new QPushButton(tab_5);
         pBClose_5->setObjectName(QStringLiteral("pBClose_5"));
-        pBClose_5->setGeometry(QRect(610, 192, 75, 31));
+        pBClose_5->setGeometry(QRect(610, 182, 75, 41));
         label_11 = new QLabel(tab_5);
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setGeometry(QRect(40, 55, 111, 21));
@@ -202,13 +202,13 @@ public:
         label_9->setGeometry(QRect(40, 180, 111, 21));
         cBSelectStudentFRStudent = new QComboBox(tab_6);
         cBSelectStudentFRStudent->setObjectName(QStringLiteral("cBSelectStudentFRStudent"));
-        cBSelectStudentFRStudent->setGeometry(QRect(170, 180, 171, 31));
+        cBSelectStudentFRStudent->setGeometry(QRect(190, 180, 171, 31));
         pBRemoveStudent = new QPushButton(tab_6);
         pBRemoveStudent->setObjectName(QStringLiteral("pBRemoveStudent"));
-        pBRemoveStudent->setGeometry(QRect(390, 100, 131, 41));
+        pBRemoveStudent->setGeometry(QRect(440, 180, 131, 41));
         pBClose_6 = new QPushButton(tab_6);
         pBClose_6->setObjectName(QStringLiteral("pBClose_6"));
-        pBClose_6->setGeometry(QRect(600, 192, 75, 31));
+        pBClose_6->setGeometry(QRect(600, 182, 75, 41));
         label_12 = new QLabel(tab_6);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(40, 45, 101, 21));
@@ -216,6 +216,31 @@ public:
         cBSelectGradeFRStudent->setObjectName(QStringLiteral("cBSelectGradeFRStudent"));
         cBSelectGradeFRStudent->setGeometry(QRect(190, 41, 131, 31));
         tWManage->addTab(tab_6, QString());
+        QWidget::setTabOrder(tWManage, lEGradeName);
+        QWidget::setTabOrder(lEGradeName, pBAddGrade);
+        QWidget::setTabOrder(pBAddGrade, pBClose);
+        QWidget::setTabOrder(pBClose, cBSelectGrade_2);
+        QWidget::setTabOrder(cBSelectGrade_2, lEClassName);
+        QWidget::setTabOrder(lEClassName, tEStudents);
+        QWidget::setTabOrder(tEStudents, pBCreateClass);
+        QWidget::setTabOrder(pBCreateClass, pBClose_2);
+        QWidget::setTabOrder(pBClose_2, cBSelectGrade_3);
+        QWidget::setTabOrder(cBSelectGrade_3, cBSelectClass);
+        QWidget::setTabOrder(cBSelectClass, lEStudentName);
+        QWidget::setTabOrder(lEStudentName, pBAddStudent);
+        QWidget::setTabOrder(pBAddStudent, pBClose_3);
+        QWidget::setTabOrder(pBClose_3, cBSelectGrade);
+        QWidget::setTabOrder(cBSelectGrade, pBRemoveGrade);
+        QWidget::setTabOrder(pBRemoveGrade, pBClose_4);
+        QWidget::setTabOrder(pBClose_4, cBSelectGradeForRClass);
+        QWidget::setTabOrder(cBSelectGradeForRClass, cBSelectClassForRClass);
+        QWidget::setTabOrder(cBSelectClassForRClass, pBRemoveClass);
+        QWidget::setTabOrder(pBRemoveClass, pBClose_5);
+        QWidget::setTabOrder(pBClose_5, cBSelectGradeFRStudent);
+        QWidget::setTabOrder(cBSelectGradeFRStudent, cBSelectClassFRStudent);
+        QWidget::setTabOrder(cBSelectClassFRStudent, cBSelectStudentFRStudent);
+        QWidget::setTabOrder(cBSelectStudentFRStudent, pBRemoveStudent);
+        QWidget::setTabOrder(pBRemoveStudent, pBClose_6);
 
         retranslateUi(ManageClasses);
         QObject::connect(pBClose, SIGNAL(clicked()), ManageClasses, SLOT(close()));
@@ -225,7 +250,7 @@ public:
         QObject::connect(pBClose_5, SIGNAL(clicked()), ManageClasses, SLOT(close()));
         QObject::connect(pBClose_6, SIGNAL(clicked()), ManageClasses, SLOT(close()));
 
-        tWManage->setCurrentIndex(2);
+        tWManage->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(ManageClasses);
@@ -233,7 +258,7 @@ public:
 
     void retranslateUi(QWidget *ManageClasses)
     {
-        ManageClasses->setWindowTitle(QApplication::translate("ManageClasses", "Form", 0));
+        ManageClasses->setWindowTitle(QApplication::translate("ManageClasses", "Add Grade And Class", 0));
         lGradeName->setText(QApplication::translate("ManageClasses", "Grade Name :", 0));
         pBAddGrade->setText(QApplication::translate("ManageClasses", "Add Grade", 0));
         pBClose->setText(QApplication::translate("ManageClasses", "Close", 0));

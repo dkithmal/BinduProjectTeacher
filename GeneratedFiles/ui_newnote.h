@@ -53,10 +53,10 @@ public:
         lENoteName->setGeometry(QRect(380, 30, 321, 31));
         pBCreateNote = new QPushButton(NewNote);
         pBCreateNote->setObjectName(QStringLiteral("pBCreateNote"));
-        pBCreateNote->setGeometry(QRect(380, 80, 321, 31));
+        pBCreateNote->setGeometry(QRect(380, 80, 321, 51));
         pBClose = new QPushButton(NewNote);
         pBClose->setObjectName(QStringLiteral("pBClose"));
-        pBClose->setGeometry(QRect(630, 380, 75, 31));
+        pBClose->setGeometry(QRect(614, 380, 91, 31));
         tWSelectSubject = new QTreeWidget(NewNote);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
         __qtreewidgetitem->setText(0, QStringLiteral("1"));
@@ -64,8 +64,11 @@ public:
         tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
         tWSelectSubject->setGeometry(QRect(10, 30, 361, 381));
         tWSelectSubject->setFont(font);
-        tWSelectSubject->setSortingEnabled(true);
+        tWSelectSubject->setSortingEnabled(false);
         tWSelectSubject->header()->setVisible(false);
+        QWidget::setTabOrder(tWSelectSubject, lENoteName);
+        QWidget::setTabOrder(lENoteName, pBCreateNote);
+        QWidget::setTabOrder(pBCreateNote, pBClose);
 
         retranslateUi(NewNote);
         QObject::connect(pBClose, SIGNAL(clicked()), NewNote, SLOT(close()));
@@ -75,7 +78,7 @@ public:
 
     void retranslateUi(QWidget *NewNote)
     {
-        NewNote->setWindowTitle(QApplication::translate("NewNote", "Form", 0));
+        NewNote->setWindowTitle(QApplication::translate("NewNote", "New Note", 0));
         lSelectSubject->setText(QApplication::translate("NewNote", "Select Subject", 0));
         lNoteName->setText(QApplication::translate("NewNote", "Note Name", 0));
         pBCreateNote->setText(QApplication::translate("NewNote", "Create Note", 0));

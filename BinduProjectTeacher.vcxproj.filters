@@ -46,12 +46,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{9b2d4190-eec0-41f9-81d1-7f7fabb7baa9}</UniqueIdentifier>
+      <UniqueIdentifier>{8eb7e019-c256-45fb-9822-729c6766076c}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{5bc3e93f-c24e-4b49-b107-718cc07fb473}</UniqueIdentifier>
+      <UniqueIdentifier>{9d1fa658-3f99-491a-9550-a9d4189fdcd4}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -474,10 +474,31 @@
     <CustomBuild Include="BinduTeacherResource.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="imgs\addStd.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\addclass.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\addgrade.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\addsubject.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\admin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\class.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="imgs\cm.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="imgs\dm.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\grade.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="imgs\homePage.jpeg">
@@ -486,7 +507,28 @@
     <None Include="imgs\hw.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="imgs\list_student.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\note.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\paper.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="imgs\settings_symbol.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\shutdown.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\student.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\subject.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="imgs\system.png">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

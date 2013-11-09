@@ -216,5 +216,140 @@ void OpenNote::on_pBOpen_clicked()
 
 void OpenNote::on_pBDeleteNote_clicked()
 {
+    int x=0;
+    if(!ui->tWSelectSubject->currentIndex().isValid()||!ui->tWSelectSubject->currentIndex().parent().isValid())
+    {
+        QMessageBox::information(this,"Error","Select Subject");
+       x=1;
+
+    }
+    if(!ui->lWHomeWorks->currentIndex().isValid())
+    {
+        QMessageBox::information(this,"Error","Select Note");
+       x=1;
+
+    }
+
+    if(x==0)
+    {QString creatingNotePath=basicPath;
+        creatingNotePath.append("Note/");
+        creatingNotePath.append(ui->tWSelectSubject->currentItem()->parent()->text(0));
+        creatingNotePath.append("/");
+        creatingNotePath.append(ui->tWSelectSubject->currentItem()->text(0));
+        creatingNotePath.append("/");
+        creatingNotePath.append(ui->lWHomeWorks->currentItem()->text());
+        creatingNotePath.append(".txt");
+
+     qDebug()<<creatingNotePath<<"dddddddddddddddddddddd";
+
+
+        QFile notefile(creatingNotePath);
+        if(notefile.exists())
+        {
+            qDebug()<<creatingNotePath<<"dddddddddddddddddddddd";
+            notefile.remove();
+        }
+
+
+
+        //delete in admin.xml
+        QFile openConfigFile(filepath);
+        if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+        {
+            qDebug()<<"error";
+
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openConfigFile);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+
+            for(int i=0;i<grades.count();i++)
+            {
+
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
+                {
+                    if(itemNode.toElement().attribute("GradeName")==ui->tWSelectSubject->currentItem()->parent()->text(0))
+                    {
+                        QDomNodeList subjectList= itemNode.toElement().elementsByTagName("Subject");
+
+                        for(int j=0;j<subjectList.count();j++)
+                        {
+                             QDomNode itemNodeSubject = subjectList.at(j);
+                             if(itemNodeSubject.toElement().attribute("SubjectName")==ui->tWSelectSubject->currentItem()->text(0))
+                             {
+                                 QDomNodeList HomeWorkList=itemNodeSubject.toElement().elementsByTagName("Note");
+
+                                 for(int z=0;z<HomeWorkList.count();z++)
+                                 {
+
+                                     QDomNode itemNodeHomeWork= HomeWorkList.at(z);
+
+                                     if(itemNodeHomeWork.toElement().attribute("NoteName")==ui->lWHomeWorks->currentItem()->text())
+                                     {
+                                         itemNodeSubject.toElement().removeChild(HomeWorkList.at(z));
+                                         QMessageBox::warning(this,"Error","Home Work removed");
+
+                                     }
+
+
+
+                                 }
+
+
+
+                             }
+
+                        }
+
+
+
+                    }
+
+
+
+                }
+
+
+
+
+           }
+
+
+            //root.appendChild(Activity);
+            document.appendChild(root);
+
+            openConfigFile.close();
+
+            if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+            {
+                qDebug()<<"error";
+
+            }
+            else
+            {
+                QTextStream stream(&openConfigFile);
+                stream <<document.toString();
+                openConfigFile.close();
+
+
+
+            }
+
+            ui->tWSelectSubject->clear();
+            ui->lWHomeWorks->clear();
+            setSubjetToTree();
+
+
+
+       }
+    }
 
 }

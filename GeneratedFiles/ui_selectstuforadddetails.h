@@ -61,19 +61,23 @@ public:
         label_2->setFont(font);
         pBAddDetails = new QPushButton(SelectStuForAddDetails);
         pBAddDetails->setObjectName(QStringLiteral("pBAddDetails"));
-        pBAddDetails->setGeometry(QRect(180, 492, 121, 41));
+        pBAddDetails->setGeometry(QRect(170, 490, 171, 51));
         pushButton_2 = new QPushButton(SelectStuForAddDetails);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(404, 522, 71, 41));
+        pushButton_2->setGeometry(QRect(410, 530, 71, 31));
+        QWidget::setTabOrder(tWSelectClass, lWStudent);
+        QWidget::setTabOrder(lWStudent, pBAddDetails);
+        QWidget::setTabOrder(pBAddDetails, pushButton_2);
 
         retranslateUi(SelectStuForAddDetails);
+        QObject::connect(pushButton_2, SIGNAL(clicked()), SelectStuForAddDetails, SLOT(close()));
 
         QMetaObject::connectSlotsByName(SelectStuForAddDetails);
     } // setupUi
 
     void retranslateUi(QDialog *SelectStuForAddDetails)
     {
-        SelectStuForAddDetails->setWindowTitle(QApplication::translate("SelectStuForAddDetails", "Dialog", 0));
+        SelectStuForAddDetails->setWindowTitle(QApplication::translate("SelectStuForAddDetails", "Select Student to Add details", 0));
         label->setText(QApplication::translate("SelectStuForAddDetails", "Select Class", 0));
         label_2->setText(QApplication::translate("SelectStuForAddDetails", "Select Student", 0));
         pBAddDetails->setText(QApplication::translate("SelectStuForAddDetails", "Add Details", 0));

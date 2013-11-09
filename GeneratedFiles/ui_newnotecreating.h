@@ -39,7 +39,7 @@ public:
         tEText->setFont(font);
         pBSaveAndClose = new QPushButton(NewNoteCreating);
         pBSaveAndClose->setObjectName(QStringLiteral("pBSaveAndClose"));
-        pBSaveAndClose->setGeometry(QRect(704, 490, 121, 41));
+        pBSaveAndClose->setGeometry(QRect(720, 490, 121, 41));
         pBSaveAndClose->setFont(font);
 
         retranslateUi(NewNoteCreating);
@@ -49,7 +49,7 @@ public:
 
     void retranslateUi(QWidget *NewNoteCreating)
     {
-        NewNoteCreating->setWindowTitle(QApplication::translate("NewNoteCreating", "Form", 0));
+        NewNoteCreating->setWindowTitle(QApplication::translate("NewNoteCreating", "Create New Note", 0));
         pBSaveAndClose->setText(QApplication::translate("NewNoteCreating", "Save And Close", 0));
     } // retranslateUi
 

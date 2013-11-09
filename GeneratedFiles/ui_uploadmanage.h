@@ -30,13 +30,13 @@ public:
     {
         if (UploadManage->objectName().isEmpty())
             UploadManage->setObjectName(QStringLiteral("UploadManage"));
-        UploadManage->resize(323, 504);
+        UploadManage->resize(318, 504);
         QFont font;
         font.setPointSize(12);
         UploadManage->setFont(font);
         pBUpdateClose = new QPushButton(UploadManage);
         pBUpdateClose->setObjectName(QStringLiteral("pBUpdateClose"));
-        pBUpdateClose->setGeometry(QRect(240, 460, 75, 23));
+        pBUpdateClose->setGeometry(QRect(210, 460, 75, 31));
         tWUplodingState = new QTableWidget(UploadManage);
         if (tWUplodingState->columnCount() < 2)
             tWUplodingState->setColumnCount(2);
@@ -48,7 +48,9 @@ public:
         tWUplodingState->setGeometry(QRect(20, 20, 271, 431));
         tWUplodingState->setFont(font);
         tWUplodingState->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        tWUplodingState->setShowGrid(false);
         tWUplodingState->horizontalHeader()->setDefaultSectionSize(120);
+        QWidget::setTabOrder(tWUplodingState, pBUpdateClose);
 
         retranslateUi(UploadManage);
         QObject::connect(pBUpdateClose, SIGNAL(clicked()), UploadManage, SLOT(close()));
@@ -58,7 +60,7 @@ public:
 
     void retranslateUi(QWidget *UploadManage)
     {
-        UploadManage->setWindowTitle(QApplication::translate("UploadManage", "Form", 0));
+        UploadManage->setWindowTitle(QApplication::translate("UploadManage", "Uploding State", 0));
         pBUpdateClose->setText(QApplication::translate("UploadManage", "Close", 0));
         QTableWidgetItem *___qtablewidgetitem = tWUplodingState->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("UploadManage", "Student Name", 0));

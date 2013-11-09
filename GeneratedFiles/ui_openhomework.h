@@ -37,7 +37,7 @@ public:
     {
         if (OpenHomeWork->objectName().isEmpty())
             OpenHomeWork->setObjectName(QStringLiteral("OpenHomeWork"));
-        OpenHomeWork->resize(800, 450);
+        OpenHomeWork->resize(662, 450);
         QFont font;
         font.setPointSize(12);
         OpenHomeWork->setFont(font);
@@ -47,31 +47,35 @@ public:
         lSelectSubject->setFont(font);
         lSelectPaper = new QLabel(OpenHomeWork);
         lSelectPaper->setObjectName(QStringLiteral("lSelectPaper"));
-        lSelectPaper->setGeometry(QRect(430, 5, 101, 21));
+        lSelectPaper->setGeometry(QRect(330, 0, 101, 31));
         lSelectPaper->setFont(font);
         pBOpen = new QPushButton(OpenHomeWork);
         pBOpen->setObjectName(QStringLiteral("pBOpen"));
-        pBOpen->setGeometry(QRect(630, 370, 161, 31));
+        pBOpen->setGeometry(QRect(490, 370, 161, 31));
         pBClose = new QPushButton(OpenHomeWork);
         pBClose->setObjectName(QStringLiteral("pBClose"));
-        pBClose->setGeometry(QRect(710, 410, 75, 31));
+        pBClose->setGeometry(QRect(570, 410, 75, 31));
         pBDeleteHomeWork = new QPushButton(OpenHomeWork);
         pBDeleteHomeWork->setObjectName(QStringLiteral("pBDeleteHomeWork"));
-        pBDeleteHomeWork->setGeometry(QRect(430, 370, 151, 31));
+        pBDeleteHomeWork->setGeometry(QRect(330, 370, 141, 31));
         tWSelectSubject = new QTreeWidget(OpenHomeWork);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
         __qtreewidgetitem->setText(0, QStringLiteral("1"));
         tWSelectSubject->setHeaderItem(__qtreewidgetitem);
         tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
-        tWSelectSubject->setGeometry(QRect(10, 30, 411, 411));
+        tWSelectSubject->setGeometry(QRect(10, 30, 301, 411));
         tWSelectSubject->setFont(font);
-        tWSelectSubject->setSortingEnabled(true);
+        tWSelectSubject->setSortingEnabled(false);
         tWSelectSubject->header()->setVisible(false);
         lWHomeWorks = new QListWidget(OpenHomeWork);
         lWHomeWorks->setObjectName(QStringLiteral("lWHomeWorks"));
-        lWHomeWorks->setGeometry(QRect(430, 30, 361, 331));
+        lWHomeWorks->setGeometry(QRect(330, 30, 321, 331));
         lWHomeWorks->setFont(font);
         lWHomeWorks->setSortingEnabled(true);
+        QWidget::setTabOrder(tWSelectSubject, lWHomeWorks);
+        QWidget::setTabOrder(lWHomeWorks, pBOpen);
+        QWidget::setTabOrder(pBOpen, pBDeleteHomeWork);
+        QWidget::setTabOrder(pBDeleteHomeWork, pBClose);
 
         retranslateUi(OpenHomeWork);
         QObject::connect(pBClose, SIGNAL(clicked()), OpenHomeWork, SLOT(close()));
@@ -81,7 +85,7 @@ public:
 
     void retranslateUi(QWidget *OpenHomeWork)
     {
-        OpenHomeWork->setWindowTitle(QApplication::translate("OpenHomeWork", "Form", 0));
+        OpenHomeWork->setWindowTitle(QApplication::translate("OpenHomeWork", "Select Home Work To Open", 0));
         lSelectSubject->setText(QApplication::translate("OpenHomeWork", "Select Subject", 0));
         lSelectPaper->setText(QApplication::translate("OpenHomeWork", "Select paper", 0));
         pBOpen->setText(QApplication::translate("OpenHomeWork", "Open", 0));

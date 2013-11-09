@@ -39,8 +39,9 @@ public:
         tEText->setFont(font);
         pBSaveAndClose = new QPushButton(EditNote);
         pBSaveAndClose->setObjectName(QStringLiteral("pBSaveAndClose"));
-        pBSaveAndClose->setGeometry(QRect(704, 500, 121, 41));
+        pBSaveAndClose->setGeometry(QRect(730, 490, 121, 41));
         pBSaveAndClose->setFont(font);
+        QWidget::setTabOrder(tEText, pBSaveAndClose);
 
         retranslateUi(EditNote);
 
@@ -49,7 +50,7 @@ public:
 
     void retranslateUi(QWidget *EditNote)
     {
-        EditNote->setWindowTitle(QApplication::translate("EditNote", "Form", 0));
+        EditNote->setWindowTitle(QApplication::translate("EditNote", "Edit Note", 0));
         pBSaveAndClose->setText(QApplication::translate("EditNote", "Save And Close", 0));
     } // retranslateUi
 

@@ -39,7 +39,7 @@ void UploadManage::uploadingfiles(QString command ,QString filePath,QString stud
     //ayya code
 
     cliant = new ServerCliant;
-    cliant->toExicuteTeacherCommand(command,filePath,studentList,"192.168.1.5");
+    cliant->toExicuteTeacherCommand(command,filePath,studentList,"192.168.1.2");
 
     connect(cliant, SIGNAL(FileSent(QString)), this, SLOT(OnFileSent(QString)));
 

@@ -320,7 +320,125 @@ void OpenHomeWork::on_pBDeleteHomeWork_clicked()
     }
 
     if(x==0)
-    {
+    {QString creatingPaperPath=basicPath;
+        creatingPaperPath.append("HomeWork/");
+        creatingPaperPath.append(ui->tWSelectSubject->currentItem()->parent()->text(0));
+        creatingPaperPath.append("/");
+        creatingPaperPath.append(ui->tWSelectSubject->currentItem()->text(0));
+        creatingPaperPath.append("/");
+        creatingPaperPath.append(ui->lWHomeWorks->currentItem()->text());
+        creatingPaperPath.append(".xml");
+
+     qDebug()<<creatingPaperPath<<"dddddddddddddddddddddd";
+
+
+        QFile paperfile(creatingPaperPath);
+        if(paperfile.exists())
+        {
+            qDebug()<<creatingPaperPath<<"dddddddddddddddddddddd";
+            paperfile.remove();
+        }
+
+
+
+        //delete in admin.xml
+        QFile openConfigFile(filepath);
+        if(!openConfigFile.open(QFile::ReadWrite| QIODevice::Text))
+        {
+            qDebug()<<"error";
+
+        }
+        else
+        {
+            QDomDocument document;
+
+            document.setContent(&openConfigFile);
+            QDomElement root= document.firstChildElement();
+
+            QDomNodeList grades = root.elementsByTagName("Grade");
+
+
+            for(int i=0;i<grades.count();i++)
+            {
+
+                QDomNode itemNode = grades.at(i);
+
+                if(itemNode.isElement())
+                {
+                    if(itemNode.toElement().attribute("GradeName")==ui->tWSelectSubject->currentItem()->parent()->text(0))
+                    {
+                        QDomNodeList subjectList= itemNode.toElement().elementsByTagName("Subject");
+
+                        for(int j=0;j<subjectList.count();j++)
+                        {
+                             QDomNode itemNodeSubject = subjectList.at(j);
+                             if(itemNodeSubject.toElement().attribute("SubjectName")==ui->tWSelectSubject->currentItem()->text(0))
+                             {
+                                 QDomNodeList HomeWorkList=itemNodeSubject.toElement().elementsByTagName("HomeWork");
+
+                                 for(int z=0;z<HomeWorkList.count();z++)
+                                 {
+
+                                     QDomNode itemNodeHomeWork= HomeWorkList.at(z);
+
+                                     if(itemNodeHomeWork.toElement().attribute("HomeWorkName")==ui->lWHomeWorks->currentItem()->text())
+                                     {
+                                         itemNodeSubject.toElement().removeChild(HomeWorkList.at(z));
+                                         QMessageBox::warning(this,"Error","Home Work removed");
+
+                                     }
+
+
+
+                                 }
+
+
+
+                             }
+
+                        }
+
+
+
+                    }
+
+
+
+                }
+
+
+
+
+           }
+
+
+            //root.appendChild(Activity);
+            document.appendChild(root);
+
+            openConfigFile.close();
+
+            if(!openConfigFile.open(QFile::ReadWrite|QIODevice::Truncate | QIODevice::Text))
+            {
+                qDebug()<<"error";
+
+            }
+            else
+            {
+                QTextStream stream(&openConfigFile);
+                stream <<document.toString();
+                openConfigFile.close();
+
+
+
+            }
+
+            ui->tWSelectSubject->clear();
+            ui->lWHomeWorks->clear();
+            setSubjetToTree();
+
+
+
+       }
 
     }
 

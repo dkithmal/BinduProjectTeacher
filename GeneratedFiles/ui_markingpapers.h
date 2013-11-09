@@ -16,10 +16,12 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -49,6 +51,8 @@ public:
     QGroupBox *gBHeader;
     QLabel *label_6;
     QLineEdit *lETotalMarks;
+    QWidget *layoutWidget;
+    QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLabel *lStudentName;
 
@@ -59,7 +63,7 @@ public:
         MarkingPapers->resize(1117, 627);
         pBSaveMarks = new QPushButton(MarkingPapers);
         pBSaveMarks->setObjectName(QStringLiteral("pBSaveMarks"));
-        pBSaveMarks->setGeometry(QRect(964, 580, 141, 31));
+        pBSaveMarks->setGeometry(QRect(964, 580, 141, 41));
         pBPrivious = new QPushButton(MarkingPapers);
         pBPrivious->setObjectName(QStringLiteral("pBPrivious"));
         pBPrivious->setGeometry(QRect(450, 582, 75, 31));
@@ -134,23 +138,6 @@ public:
         lEAnswer4Marks = new QLineEdit(gBQuestions);
         lEAnswer4Marks->setObjectName(QStringLiteral("lEAnswer4Marks"));
         lEAnswer4Marks->setGeometry(QRect(1000, 330, 61, 31));
-        fQuestion1->raise();
-        fQuestion2->raise();
-        fQuestion3->raise();
-        fQuestion4->raise();
-        fQuestion5->raise();
-        lAnswer1TMark->raise();
-        lEAnswer1Marks->raise();
-        lAnswer2TMarks->raise();
-        lEAnswer2Marks->raise();
-        lAnswer3TMarks->raise();
-        lEAnswer3Marks->raise();
-        lEAnswer3Marks->raise();
-        lAnswer3TMarks->raise();
-        lAnswer5TMarks->raise();
-        lEAnswer5Marks->raise();
-        lAnswer4TMarks->raise();
-        lEAnswer4Marks->raise();
         pBNext = new QPushButton(MarkingPapers);
         pBNext->setObjectName(QStringLiteral("pBNext"));
         pBNext->setGeometry(QRect(580, 582, 75, 31));
@@ -169,12 +156,32 @@ public:
         QFont font3;
         font3.setPointSize(15);
         lETotalMarks->setFont(font3);
-        label = new QLabel(gBHeader);
+        layoutWidget = new QWidget(gBHeader);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(860, 0, 251, 41));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(855, 13, 101, 20));
-        lStudentName = new QLabel(gBHeader);
+        label->setMinimumSize(QSize(100, 20));
+
+        horizontalLayout->addWidget(label);
+
+        lStudentName = new QLabel(layoutWidget);
         lStudentName->setObjectName(QStringLiteral("lStudentName"));
-        lStudentName->setGeometry(QRect(970, 10, 131, 21));
+        lStudentName->setMinimumSize(QSize(130, 20));
+
+        horizontalLayout->addWidget(lStudentName);
+
+        QWidget::setTabOrder(pBSaveMarks, pBPrivious);
+        QWidget::setTabOrder(pBPrivious, pBNext);
+        QWidget::setTabOrder(pBNext, lEAnswer1Marks);
+        QWidget::setTabOrder(lEAnswer1Marks, lEAnswer2Marks);
+        QWidget::setTabOrder(lEAnswer2Marks, lEAnswer3Marks);
+        QWidget::setTabOrder(lEAnswer3Marks, lEAnswer4Marks);
+        QWidget::setTabOrder(lEAnswer4Marks, lEAnswer5Marks);
+        QWidget::setTabOrder(lEAnswer5Marks, lETotalMarks);
 
         retranslateUi(MarkingPapers);
 
@@ -183,7 +190,7 @@ public:
 
     void retranslateUi(QDialog *MarkingPapers)
     {
-        MarkingPapers->setWindowTitle(QApplication::translate("MarkingPapers", "Dialog", 0));
+        MarkingPapers->setWindowTitle(QApplication::translate("MarkingPapers", "Mark Paper", 0));
         pBSaveMarks->setText(QApplication::translate("MarkingPapers", "Save All Marks And Close", 0));
         pBPrivious->setText(QApplication::translate("MarkingPapers", "Privious", 0));
         lPageNo->setText(QApplication::translate("MarkingPapers", "1", 0));
@@ -196,7 +203,7 @@ public:
         pBNext->setText(QApplication::translate("MarkingPapers", "Next", 0));
         gBHeader->setTitle(QString());
         label_6->setText(QApplication::translate("MarkingPapers", "Total Marks", 0));
-        label->setText(QApplication::translate("MarkingPapers", "student Name", 0));
+        label->setText(QApplication::translate("MarkingPapers", "Student Name", 0));
         lStudentName->setText(QString());
     } // retranslateUi
 

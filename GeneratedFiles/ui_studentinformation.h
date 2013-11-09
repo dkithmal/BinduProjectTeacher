@@ -31,12 +31,13 @@ public:
     QTabWidget *tabWidget;
     QWidget *tab;
     QTableWidget *tWMarksSummery;
+    QPushButton *pushButton_2;
     QWidget *tab_2;
     QLabel *label_13;
     QTextEdit *textEdit;
     QLabel *lStudentName;
     QPushButton *pushButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout;
     QLabel *lStudentMotherFullName;
     QLabel *label_8;
@@ -63,10 +64,10 @@ public:
     {
         if (StudentInformation->objectName().isEmpty())
             StudentInformation->setObjectName(QStringLiteral("StudentInformation"));
-        StudentInformation->resize(594, 583);
+        StudentInformation->resize(678, 583);
         tabWidget = new QTabWidget(StudentInformation);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 601, 581));
+        tabWidget->setGeometry(QRect(0, 0, 671, 581));
         QFont font;
         font.setPointSize(12);
         tabWidget->setFont(font);
@@ -87,14 +88,17 @@ public:
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         tWMarksSummery->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         tWMarksSummery->setObjectName(QStringLiteral("tWMarksSummery"));
-        tWMarksSummery->setGeometry(QRect(10, 20, 571, 481));
+        tWMarksSummery->setGeometry(QRect(10, 20, 641, 481));
         tWMarksSummery->setFont(font);
         tWMarksSummery->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tWMarksSummery->setShowGrid(false);
         tWMarksSummery->setGridStyle(Qt::SolidLine);
         tWMarksSummery->setCornerButtonEnabled(true);
-        tWMarksSummery->horizontalHeader()->setDefaultSectionSize(110);
+        tWMarksSummery->horizontalHeader()->setDefaultSectionSize(125);
         tWMarksSummery->verticalHeader()->setVisible(false);
+        pushButton_2 = new QPushButton(tab);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(570, 510, 75, 31));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -103,7 +107,7 @@ public:
         label_13->setGeometry(QRect(10, 390, 91, 21));
         textEdit = new QTextEdit(tab_2);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(10, 410, 571, 91));
+        textEdit->setGeometry(QRect(10, 410, 621, 91));
         textEdit->setReadOnly(true);
         lStudentName = new QLabel(tab_2);
         lStudentName->setObjectName(QStringLiteral("lStudentName"));
@@ -115,14 +119,14 @@ public:
         lStudentName->setFont(font1);
         pushButton = new QPushButton(tab_2);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(490, 512, 75, 31));
-        widget = new QWidget(tab_2);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(11, 40, 521, 351));
-        gridLayout = new QGridLayout(widget);
+        pushButton->setGeometry(QRect(570, 510, 75, 31));
+        layoutWidget = new QWidget(tab_2);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(11, 40, 591, 351));
+        gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        lStudentMotherFullName = new QLabel(widget);
+        lStudentMotherFullName = new QLabel(layoutWidget);
         lStudentMotherFullName->setObjectName(QStringLiteral("lStudentMotherFullName"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -138,17 +142,17 @@ public:
 
         gridLayout->addWidget(lStudentMotherFullName, 5, 1, 1, 1);
 
-        label_8 = new QLabel(widget);
+        label_8 = new QLabel(layoutWidget);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         gridLayout->addWidget(label_8, 6, 0, 1, 1);
 
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
 
         gridLayout->addWidget(label_4, 5, 0, 1, 1);
 
-        lStudentFatherFullName = new QLabel(widget);
+        lStudentFatherFullName = new QLabel(layoutWidget);
         lStudentFatherFullName->setObjectName(QStringLiteral("lStudentFatherFullName"));
         sizePolicy.setHeightForWidth(lStudentFatherFullName->sizePolicy().hasHeightForWidth());
         lStudentFatherFullName->setSizePolicy(sizePolicy);
@@ -158,12 +162,12 @@ public:
 
         gridLayout->addWidget(lStudentFatherFullName, 2, 1, 1, 1);
 
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
 
         gridLayout->addWidget(label_5, 3, 0, 1, 1);
 
-        lStudentDateOfBirth = new QLabel(widget);
+        lStudentDateOfBirth = new QLabel(layoutWidget);
         lStudentDateOfBirth->setObjectName(QStringLiteral("lStudentDateOfBirth"));
         sizePolicy.setHeightForWidth(lStudentDateOfBirth->sizePolicy().hasHeightForWidth());
         lStudentDateOfBirth->setSizePolicy(sizePolicy);
@@ -173,7 +177,7 @@ public:
 
         gridLayout->addWidget(lStudentDateOfBirth, 1, 1, 1, 1);
 
-        lStudentFatherTelNo = new QLabel(widget);
+        lStudentFatherTelNo = new QLabel(layoutWidget);
         lStudentFatherTelNo->setObjectName(QStringLiteral("lStudentFatherTelNo"));
         sizePolicy.setHeightForWidth(lStudentFatherTelNo->sizePolicy().hasHeightForWidth());
         lStudentFatherTelNo->setSizePolicy(sizePolicy);
@@ -183,22 +187,22 @@ public:
 
         gridLayout->addWidget(lStudentFatherTelNo, 4, 1, 1, 1);
 
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         gridLayout->addWidget(label_7, 4, 0, 1, 1);
 
-        label_11 = new QLabel(widget);
+        label_11 = new QLabel(layoutWidget);
         label_11->setObjectName(QStringLiteral("label_11"));
 
         gridLayout->addWidget(label_11, 1, 0, 1, 1);
 
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
 
         gridLayout->addWidget(label_3, 2, 0, 1, 1);
 
-        lStudentFullName = new QLabel(widget);
+        lStudentFullName = new QLabel(layoutWidget);
         lStudentFullName->setObjectName(QStringLiteral("lStudentFullName"));
         sizePolicy.setHeightForWidth(lStudentFullName->sizePolicy().hasHeightForWidth());
         lStudentFullName->setSizePolicy(sizePolicy);
@@ -208,12 +212,12 @@ public:
 
         gridLayout->addWidget(lStudentFullName, 0, 1, 1, 1);
 
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         gridLayout->addWidget(label_2, 0, 0, 1, 1);
 
-        lStudentFatherOccupation = new QLabel(widget);
+        lStudentFatherOccupation = new QLabel(layoutWidget);
         lStudentFatherOccupation->setObjectName(QStringLiteral("lStudentFatherOccupation"));
         sizePolicy.setHeightForWidth(lStudentFatherOccupation->sizePolicy().hasHeightForWidth());
         lStudentFatherOccupation->setSizePolicy(sizePolicy);
@@ -223,12 +227,12 @@ public:
 
         gridLayout->addWidget(lStudentFatherOccupation, 3, 1, 1, 1);
 
-        label_10 = new QLabel(widget);
+        label_10 = new QLabel(layoutWidget);
         label_10->setObjectName(QStringLiteral("label_10"));
 
         gridLayout->addWidget(label_10, 9, 0, 1, 1);
 
-        lStudentHomeAddress = new QLabel(widget);
+        lStudentHomeAddress = new QLabel(layoutWidget);
         lStudentHomeAddress->setObjectName(QStringLiteral("lStudentHomeAddress"));
         sizePolicy.setHeightForWidth(lStudentHomeAddress->sizePolicy().hasHeightForWidth());
         lStudentHomeAddress->setSizePolicy(sizePolicy);
@@ -238,7 +242,7 @@ public:
 
         gridLayout->addWidget(lStudentHomeAddress, 8, 1, 1, 1);
 
-        lStudentMotherOccupation = new QLabel(widget);
+        lStudentMotherOccupation = new QLabel(layoutWidget);
         lStudentMotherOccupation->setObjectName(QStringLiteral("lStudentMotherOccupation"));
         sizePolicy.setHeightForWidth(lStudentMotherOccupation->sizePolicy().hasHeightForWidth());
         lStudentMotherOccupation->setSizePolicy(sizePolicy);
@@ -248,12 +252,12 @@ public:
 
         gridLayout->addWidget(lStudentMotherOccupation, 6, 1, 1, 1);
 
-        label_9 = new QLabel(widget);
+        label_9 = new QLabel(layoutWidget);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         gridLayout->addWidget(label_9, 8, 0, 1, 1);
 
-        lStudentMotherTelNo = new QLabel(widget);
+        lStudentMotherTelNo = new QLabel(layoutWidget);
         lStudentMotherTelNo->setObjectName(QStringLiteral("lStudentMotherTelNo"));
         sizePolicy.setHeightForWidth(lStudentMotherTelNo->sizePolicy().hasHeightForWidth());
         lStudentMotherTelNo->setSizePolicy(sizePolicy);
@@ -263,7 +267,7 @@ public:
 
         gridLayout->addWidget(lStudentMotherTelNo, 7, 1, 1, 1);
 
-        lStudentHomeTelNo = new QLabel(widget);
+        lStudentHomeTelNo = new QLabel(layoutWidget);
         lStudentHomeTelNo->setObjectName(QStringLiteral("lStudentHomeTelNo"));
         sizePolicy.setHeightForWidth(lStudentHomeTelNo->sizePolicy().hasHeightForWidth());
         lStudentHomeTelNo->setSizePolicy(sizePolicy);
@@ -273,16 +277,22 @@ public:
 
         gridLayout->addWidget(lStudentHomeTelNo, 9, 1, 1, 1);
 
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         gridLayout->addWidget(label_6, 7, 0, 1, 1);
 
         tabWidget->addTab(tab_2, QString());
+        QWidget::setTabOrder(tabWidget, tWMarksSummery);
+        QWidget::setTabOrder(tWMarksSummery, pushButton_2);
+        QWidget::setTabOrder(pushButton_2, textEdit);
+        QWidget::setTabOrder(textEdit, pushButton);
 
         retranslateUi(StudentInformation);
+        QObject::connect(pushButton_2, SIGNAL(clicked()), StudentInformation, SLOT(close()));
+        QObject::connect(pushButton, SIGNAL(clicked()), StudentInformation, SLOT(close()));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(StudentInformation);
@@ -290,7 +300,7 @@ public:
 
     void retranslateUi(QDialog *StudentInformation)
     {
-        StudentInformation->setWindowTitle(QApplication::translate("StudentInformation", "Dialog", 0));
+        StudentInformation->setWindowTitle(QApplication::translate("StudentInformation", "Student Infromation", 0));
         QTableWidgetItem *___qtablewidgetitem = tWMarksSummery->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("StudentInformation", "Subject", 0));
         QTableWidgetItem *___qtablewidgetitem1 = tWMarksSummery->horizontalHeaderItem(1);
@@ -301,6 +311,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("StudentInformation", "MarkState", 0));
         QTableWidgetItem *___qtablewidgetitem4 = tWMarksSummery->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("StudentInformation", "type", 0));
+        pushButton_2->setText(QApplication::translate("StudentInformation", "Close", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("StudentInformation", "Student Progress", 0));
         label_13->setText(QApplication::translate("StudentInformation", "Discription", 0));
         lStudentName->setText(QString());

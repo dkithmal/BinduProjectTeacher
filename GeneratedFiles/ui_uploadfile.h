@@ -59,7 +59,7 @@ public:
         tWSelectHomeWork->setObjectName(QStringLiteral("tWSelectHomeWork"));
         tWSelectHomeWork->setGeometry(QRect(370, 30, 331, 371));
         tWSelectHomeWork->setFont(font);
-        tWSelectHomeWork->setSortingEnabled(true);
+        tWSelectHomeWork->setSortingEnabled(false);
         tWSelectHomeWork->header()->setVisible(false);
         tWSelectClass = new QTreeWidget(UploadFile);
         QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem();
@@ -90,13 +90,13 @@ public:
         line->setFrameShadow(QFrame::Sunken);
         gBSelectStudent = new QGroupBox(UploadFile);
         gBSelectStudent->setObjectName(QStringLiteral("gBSelectStudent"));
-        gBSelectStudent->setGeometry(QRect(10, 430, 301, 91));
+        gBSelectStudent->setGeometry(QRect(10, 410, 301, 91));
         label = new QLabel(gBSelectStudent);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 33, 111, 31));
         cBSelectStudent = new QComboBox(gBSelectStudent);
         cBSelectStudent->setObjectName(QStringLiteral("cBSelectStudent"));
-        cBSelectStudent->setGeometry(QRect(130, 30, 121, 31));
+        cBSelectStudent->setGeometry(QRect(130, 30, 161, 31));
         pBUpload = new QPushButton(UploadFile);
         pBUpload->setObjectName(QStringLiteral("pBUpload"));
         pBUpload->setGeometry(QRect(210, 530, 251, 51));
@@ -110,6 +110,14 @@ public:
         rBSelectOtherFile = new QRadioButton(UploadFile);
         rBSelectOtherFile->setObjectName(QStringLiteral("rBSelectOtherFile"));
         rBSelectOtherFile->setGeometry(QRect(370, 400, 141, 31));
+        QWidget::setTabOrder(tWSelectClass, cBSelectStudent);
+        QWidget::setTabOrder(cBSelectStudent, rBSelectHomeWork);
+        QWidget::setTabOrder(rBSelectHomeWork, tWSelectHomeWork);
+        QWidget::setTabOrder(tWSelectHomeWork, rBSelectOtherFile);
+        QWidget::setTabOrder(rBSelectOtherFile, lEFileName);
+        QWidget::setTabOrder(lEFileName, pushButton_3);
+        QWidget::setTabOrder(pushButton_3, pBUpload);
+        QWidget::setTabOrder(pBUpload, pBClose);
 
         retranslateUi(UploadFile);
         QObject::connect(pBClose, SIGNAL(clicked()), UploadFile, SLOT(close()));
@@ -119,16 +127,12 @@ public:
 
     void retranslateUi(QWidget *UploadFile)
     {
-        UploadFile->setWindowTitle(QApplication::translate("UploadFile", "Form", 0));
+        UploadFile->setWindowTitle(QApplication::translate("UploadFile", "Select File To Upload", 0));
         label_2->setText(QApplication::translate("UploadFile", "Select Class", 0));
         gBSelectOtherFile->setTitle(QString());
         pushButton_3->setText(QApplication::translate("UploadFile", "Select", 0));
         gBSelectStudent->setTitle(QApplication::translate("UploadFile", "Select Specific Student", 0));
         label->setText(QApplication::translate("UploadFile", "Select Student", 0));
-        cBSelectStudent->clear();
-        cBSelectStudent->insertItems(0, QStringList()
-         << QApplication::translate("UploadFile", "All", 0)
-        );
         pBUpload->setText(QApplication::translate("UploadFile", "Upload", 0));
         pBClose->setText(QApplication::translate("UploadFile", "Cancel", 0));
         rBSelectHomeWork->setText(QApplication::translate("UploadFile", "Select HomeWork Or Note", 0));

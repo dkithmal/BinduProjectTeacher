@@ -79,10 +79,10 @@ public:
         pBClose->setGeometry(QRect(1020, 560, 75, 31));
         gBEssay = new QGroupBox(tab);
         gBEssay->setObjectName(QStringLiteral("gBEssay"));
-        gBEssay->setGeometry(QRect(0, 160, 1111, 191));
+        gBEssay->setGeometry(QRect(0, 10, 1111, 191));
         lEssayQusesion = new QLabel(gBEssay);
         lEssayQusesion->setObjectName(QStringLiteral("lEssayQusesion"));
-        lEssayQusesion->setGeometry(QRect(60, 50, 81, 21));
+        lEssayQusesion->setGeometry(QRect(30, 50, 81, 21));
         lEEssayQuestion = new QLineEdit(gBEssay);
         lEEssayQuestion->setObjectName(QStringLiteral("lEEssayQuestion"));
         lEEssayQuestion->setGeometry(QRect(150, 30, 711, 61));
@@ -92,13 +92,13 @@ public:
         pBAddEssayQuestion->setGeometry(QRect(480, 140, 241, 41));
         lEEssayMarks = new QLineEdit(gBEssay);
         lEEssayMarks->setObjectName(QStringLiteral("lEEssayMarks"));
-        lEEssayMarks->setGeometry(QRect(180, 110, 71, 31));
+        lEEssayMarks->setGeometry(QRect(150, 110, 71, 31));
         QFont font1;
         font1.setPointSize(12);
         lEEssayMarks->setFont(font1);
         label = new QLabel(gBEssay);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(60, 110, 121, 31));
+        label->setGeometry(QRect(30, 110, 121, 31));
         tWPaperCreation->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -204,8 +204,19 @@ public:
         pBEPrivious->setObjectName(QStringLiteral("pBEPrivious"));
         pBEPrivious->setGeometry(QRect(450, 580, 75, 31));
         tWPaperCreation->addTab(tab_3, QString());
+        QWidget::setTabOrder(tWPaperCreation, lEEssayQuestion);
+        QWidget::setTabOrder(lEEssayQuestion, lEEssayMarks);
+        QWidget::setTabOrder(lEEssayMarks, pBAddEssayQuestion);
+        QWidget::setTabOrder(pBAddEssayQuestion, pBClose);
+        QWidget::setTabOrder(pBClose, pBPrivious);
+        QWidget::setTabOrder(pBPrivious, pBNext);
+        QWidget::setTabOrder(pBNext, pBCClose);
+        QWidget::setTabOrder(pBCClose, pBEPrivious);
+        QWidget::setTabOrder(pBEPrivious, pBENext);
+        QWidget::setTabOrder(pBENext, pBEClose);
 
         retranslateUi(NewEssayPaper);
+        QObject::connect(pBClose, SIGNAL(clicked()), NewEssayPaper, SLOT(close()));
 
         tWPaperCreation->setCurrentIndex(2);
 
@@ -215,7 +226,7 @@ public:
 
     void retranslateUi(QWidget *NewEssayPaper)
     {
-        NewEssayPaper->setWindowTitle(QApplication::translate("NewEssayPaper", "Form", 0));
+        NewEssayPaper->setWindowTitle(QApplication::translate("NewEssayPaper", "New Essay Paper", 0));
         pBClose->setText(QApplication::translate("NewEssayPaper", "Close", 0));
         gBEssay->setTitle(QApplication::translate("NewEssayPaper", "Add Essay Question", 0));
         lEssayQusesion->setText(QApplication::translate("NewEssayPaper", "Question :", 0));

@@ -86,6 +86,12 @@ public:
         rBOpenNote->setObjectName(QStringLiteral("rBOpenNote"));
         rBOpenNote->setGeometry(QRect(150, 46, 101, 21));
         rBOpenNote->setFont(font1);
+        QWidget::setTabOrder(rBNewHomeWrok, rBNewShotNote);
+        QWidget::setTabOrder(rBNewShotNote, pBNewHomeWork);
+        QWidget::setTabOrder(pBNewHomeWork, rBOpenHomeWork);
+        QWidget::setTabOrder(rBOpenHomeWork, rBOpenNote);
+        QWidget::setTabOrder(rBOpenNote, pBOpenExistingHw);
+        QWidget::setTabOrder(pBOpenExistingHw, pBClose);
 
         retranslateUi(HomeWorkTool);
         QObject::connect(pBClose, SIGNAL(clicked()), HomeWorkTool, SLOT(close()));
@@ -95,7 +101,7 @@ public:
 
     void retranslateUi(QWidget *HomeWorkTool)
     {
-        HomeWorkTool->setWindowTitle(QApplication::translate("HomeWorkTool", "Form", 0));
+        HomeWorkTool->setWindowTitle(QApplication::translate("HomeWorkTool", "Home Work Tool", 0));
         lHomeWork->setText(QApplication::translate("HomeWorkTool", "Home Work Tool", 0));
         pBClose->setText(QApplication::translate("HomeWorkTool", "Close", 0));
         groupBox->setTitle(QApplication::translate("HomeWorkTool", "Create New One", 0));

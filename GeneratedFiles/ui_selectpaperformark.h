@@ -36,8 +36,11 @@ public:
     {
         if (SelectPaperForMark->objectName().isEmpty())
             SelectPaperForMark->setObjectName(QStringLiteral("SelectPaperForMark"));
-        SelectPaperForMark->resize(506, 493);
+        SelectPaperForMark->resize(473, 493);
         tWSelectSubject = new QTreeWidget(SelectPaperForMark);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setText(0, QStringLiteral("1"));
+        tWSelectSubject->setHeaderItem(__qtreewidgetitem);
         tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
         tWSelectSubject->setGeometry(QRect(0, 30, 261, 361));
         QFont font;
@@ -52,10 +55,10 @@ public:
         lWSelectPaper->setFont(font);
         pBClose = new QPushButton(SelectPaperForMark);
         pBClose->setObjectName(QStringLiteral("pBClose"));
-        pBClose->setGeometry(QRect(394, 432, 81, 31));
+        pBClose->setGeometry(QRect(380, 450, 81, 31));
         pBMarkPaper = new QPushButton(SelectPaperForMark);
         pBMarkPaper->setObjectName(QStringLiteral("pBMarkPaper"));
-        pBMarkPaper->setGeometry(QRect(180, 410, 141, 41));
+        pBMarkPaper->setGeometry(QRect(120, 410, 211, 51));
         label = new QLabel(SelectPaperForMark);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(10, 2, 111, 21));
@@ -64,6 +67,9 @@ public:
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(280, 5, 111, 21));
         label_2->setFont(font);
+        QWidget::setTabOrder(tWSelectSubject, lWSelectPaper);
+        QWidget::setTabOrder(lWSelectPaper, pBMarkPaper);
+        QWidget::setTabOrder(pBMarkPaper, pBClose);
 
         retranslateUi(SelectPaperForMark);
         QObject::connect(pBClose, SIGNAL(clicked()), SelectPaperForMark, SLOT(close()));
@@ -73,7 +79,7 @@ public:
 
     void retranslateUi(QDialog *SelectPaperForMark)
     {
-        SelectPaperForMark->setWindowTitle(QApplication::translate("SelectPaperForMark", "Dialog", 0));
+        SelectPaperForMark->setWindowTitle(QApplication::translate("SelectPaperForMark", "Select Paper For Mark", 0));
         pBClose->setText(QApplication::translate("SelectPaperForMark", "Close", 0));
         pBMarkPaper->setText(QApplication::translate("SelectPaperForMark", "Mark Paper", 0));
         label->setText(QApplication::translate("SelectPaperForMark", "Select Subject", 0));

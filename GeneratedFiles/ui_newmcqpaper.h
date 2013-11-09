@@ -237,8 +237,23 @@ public:
         pBEPrivious->setObjectName(QStringLiteral("pBEPrivious"));
         pBEPrivious->setGeometry(QRect(450, 580, 75, 31));
         tWPaperCreation->addTab(tab_3, QString());
+        QWidget::setTabOrder(tWPaperCreation, lEMcqQuestion);
+        QWidget::setTabOrder(lEMcqQuestion, cBNoOfChoises);
+        QWidget::setTabOrder(cBNoOfChoises, lEAnswer1);
+        QWidget::setTabOrder(lEAnswer1, lEAnswer2);
+        QWidget::setTabOrder(lEAnswer2, lEAnswer3);
+        QWidget::setTabOrder(lEAnswer3, lEAnswer4);
+        QWidget::setTabOrder(lEAnswer4, pBAddMcq);
+        QWidget::setTabOrder(pBAddMcq, pBClose);
+        QWidget::setTabOrder(pBClose, pBPrivious);
+        QWidget::setTabOrder(pBPrivious, pBNext);
+        QWidget::setTabOrder(pBNext, pBCClose);
+        QWidget::setTabOrder(pBCClose, pBEPrivious);
+        QWidget::setTabOrder(pBEPrivious, pBENext);
+        QWidget::setTabOrder(pBENext, pBEClose);
 
         retranslateUi(NewMcqPaper);
+        QObject::connect(pBClose, SIGNAL(clicked()), NewMcqPaper, SLOT(close()));
 
         tWPaperCreation->setCurrentIndex(2);
 
@@ -248,7 +263,7 @@ public:
 
     void retranslateUi(QWidget *NewMcqPaper)
     {
-        NewMcqPaper->setWindowTitle(QApplication::translate("NewMcqPaper", "Form", 0));
+        NewMcqPaper->setWindowTitle(QApplication::translate("NewMcqPaper", "Niew Mcq Paper", 0));
         pBClose->setText(QApplication::translate("NewMcqPaper", "Close", 0));
         gBMcq->setTitle(QApplication::translate("NewMcqPaper", "Add MCQ question", 0));
         lMcqQuestion->setText(QApplication::translate("NewMcqPaper", "Question :", 0));

@@ -45,14 +45,14 @@ public:
         label->setFont(font);
         pushButton_2 = new QPushButton(SelectStudentForView);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(414, 522, 71, 41));
+        pushButton_2->setGeometry(QRect(420, 540, 71, 31));
         lWStudent = new QListWidget(SelectStudentForView);
         lWStudent->setObjectName(QStringLiteral("lWStudent"));
         lWStudent->setGeometry(QRect(320, 30, 171, 451));
         lWStudent->setFont(font);
         pBViewStudent = new QPushButton(SelectStudentForView);
         pBViewStudent->setObjectName(QStringLiteral("pBViewStudent"));
-        pBViewStudent->setGeometry(QRect(190, 492, 121, 41));
+        pBViewStudent->setGeometry(QRect(140, 490, 201, 51));
         label_2 = new QLabel(SelectStudentForView);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(330, 0, 101, 31));
@@ -65,15 +65,19 @@ public:
         tWSelectClass->setGeometry(QRect(20, 30, 281, 451));
         tWSelectClass->setFont(font);
         tWSelectClass->header()->setVisible(false);
+        QWidget::setTabOrder(tWSelectClass, lWStudent);
+        QWidget::setTabOrder(lWStudent, pBViewStudent);
+        QWidget::setTabOrder(pBViewStudent, pushButton_2);
 
         retranslateUi(SelectStudentForView);
+        QObject::connect(pushButton_2, SIGNAL(clicked()), SelectStudentForView, SLOT(close()));
 
         QMetaObject::connectSlotsByName(SelectStudentForView);
     } // setupUi
 
     void retranslateUi(QDialog *SelectStudentForView)
     {
-        SelectStudentForView->setWindowTitle(QApplication::translate("SelectStudentForView", "Dialog", 0));
+        SelectStudentForView->setWindowTitle(QApplication::translate("SelectStudentForView", "Select Student To View", 0));
         label->setText(QApplication::translate("SelectStudentForView", "Select Class", 0));
         pushButton_2->setText(QApplication::translate("SelectStudentForView", "Close", 0));
         pBViewStudent->setText(QApplication::translate("SelectStudentForView", "ViewStudent", 0));

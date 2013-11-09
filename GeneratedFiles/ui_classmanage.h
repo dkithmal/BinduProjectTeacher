@@ -14,18 +14,27 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_ClassManage
 {
 public:
-    QPushButton *pBMarkPapers;
-    QPushButton *pBStudentProgress;
-    QPushButton *pBEditStudent;
     QPushButton *pushButton;
+    QWidget *layoutWidget;
+    QGridLayout *gridLayout;
+    QSpacerItem *horizontalSpacer;
+    QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *horizontalSpacer_3;
+    QPushButton *pBStudentProgress;
+    QPushButton *pBMarkPapers;
+    QPushButton *pBEditStudent;
+    QSpacerItem *horizontalSpacer_4;
 
     void setupUi(QDialog *ClassManage)
     {
@@ -35,21 +44,55 @@ public:
         QFont font;
         font.setPointSize(15);
         ClassManage->setFont(font);
-        pBMarkPapers = new QPushButton(ClassManage);
-        pBMarkPapers->setObjectName(QStringLiteral("pBMarkPapers"));
-        pBMarkPapers->setGeometry(QRect(30, 20, 201, 181));
-        pBStudentProgress = new QPushButton(ClassManage);
-        pBStudentProgress->setObjectName(QStringLiteral("pBStudentProgress"));
-        pBStudentProgress->setGeometry(QRect(270, 20, 221, 181));
-        pBEditStudent = new QPushButton(ClassManage);
-        pBEditStudent->setObjectName(QStringLiteral("pBEditStudent"));
-        pBEditStudent->setGeometry(QRect(530, 20, 241, 181));
         pushButton = new QPushButton(ClassManage);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(700, 222, 75, 31));
+        pushButton->setGeometry(QRect(720, 230, 75, 31));
         QFont font1;
         font1.setPointSize(10);
         pushButton->setFont(font1);
+        layoutWidget = new QWidget(ClassManage);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 10, 741, 202));
+        gridLayout = new QGridLayout(layoutWidget);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 0, 2, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 0, 4, 1, 1);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_3, 0, 6, 1, 1);
+
+        pBStudentProgress = new QPushButton(layoutWidget);
+        pBStudentProgress->setObjectName(QStringLiteral("pBStudentProgress"));
+        pBStudentProgress->setMinimumSize(QSize(220, 200));
+
+        gridLayout->addWidget(pBStudentProgress, 0, 3, 1, 1);
+
+        pBMarkPapers = new QPushButton(layoutWidget);
+        pBMarkPapers->setObjectName(QStringLiteral("pBMarkPapers"));
+        pBMarkPapers->setMinimumSize(QSize(220, 200));
+
+        gridLayout->addWidget(pBMarkPapers, 0, 1, 1, 1);
+
+        pBEditStudent = new QPushButton(layoutWidget);
+        pBEditStudent->setObjectName(QStringLiteral("pBEditStudent"));
+        pBEditStudent->setMinimumSize(QSize(220, 200));
+
+        gridLayout->addWidget(pBEditStudent, 0, 5, 1, 1);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_4, 0, 0, 1, 1);
+
+        QWidget::setTabOrder(pBMarkPapers, pBStudentProgress);
+        QWidget::setTabOrder(pBStudentProgress, pBEditStudent);
+        QWidget::setTabOrder(pBEditStudent, pushButton);
 
         retranslateUi(ClassManage);
         QObject::connect(pushButton, SIGNAL(clicked()), ClassManage, SLOT(close()));
@@ -59,11 +102,11 @@ public:
 
     void retranslateUi(QDialog *ClassManage)
     {
-        ClassManage->setWindowTitle(QApplication::translate("ClassManage", "Dialog", 0));
-        pBMarkPapers->setText(QApplication::translate("ClassManage", "Mark Papers", 0));
-        pBStudentProgress->setText(QApplication::translate("ClassManage", "View Student Progress", 0));
-        pBEditStudent->setText(QApplication::translate("ClassManage", "Edit Student Details", 0));
+        ClassManage->setWindowTitle(QApplication::translate("ClassManage", "Class Manage ", 0));
         pushButton->setText(QApplication::translate("ClassManage", "Close", 0));
+        pBStudentProgress->setText(QApplication::translate("ClassManage", "View Student Progress", 0));
+        pBMarkPapers->setText(QApplication::translate("ClassManage", "Mark Papers", 0));
+        pBEditStudent->setText(QApplication::translate("ClassManage", "Edit Student Details", 0));
     } // retranslateUi
 
 };

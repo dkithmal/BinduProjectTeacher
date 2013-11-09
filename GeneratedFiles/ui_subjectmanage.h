@@ -76,7 +76,7 @@ public:
         lESubjectName->setGeometry(QRect(160, 170, 171, 31));
         pBAddSubject = new QPushButton(tab);
         pBAddSubject->setObjectName(QStringLiteral("pBAddSubject"));
-        pBAddSubject->setGeometry(QRect(430, 70, 111, 51));
+        pBAddSubject->setGeometry(QRect(350, 220, 161, 41));
         label_5 = new QLabel(tab);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(10, 120, 101, 21));
@@ -88,7 +88,7 @@ public:
         tab_2->setObjectName(QStringLiteral("tab_2"));
         pBClose_2 = new QPushButton(tab_2);
         pBClose_2->setObjectName(QStringLiteral("pBClose_2"));
-        pBClose_2->setGeometry(QRect(530, 232, 75, 31));
+        pBClose_2->setGeometry(QRect(530, 222, 75, 41));
         label_3 = new QLabel(tab_2);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(50, 50, 101, 31));
@@ -103,7 +103,7 @@ public:
         cBSelectSubjectRemove->setGeometry(QRect(180, 180, 131, 31));
         pBRemove = new QPushButton(tab_2);
         pBRemove->setObjectName(QStringLiteral("pBRemove"));
-        pBRemove->setGeometry(QRect(430, 82, 131, 31));
+        pBRemove->setGeometry(QRect(350, 220, 161, 41));
         cBSelectClassToRSub = new QComboBox(tab_2);
         cBSelectClassToRSub->setObjectName(QStringLiteral("cBSelectClassToRSub"));
         cBSelectClassToRSub->setGeometry(QRect(180, 120, 131, 31));
@@ -111,6 +111,16 @@ public:
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(50, 120, 101, 31));
         tWSubjectManage->addTab(tab_2, QString());
+        QWidget::setTabOrder(cBSelectGradeAdd, cBSelectClass);
+        QWidget::setTabOrder(cBSelectClass, lESubjectName);
+        QWidget::setTabOrder(lESubjectName, pBAddSubject);
+        QWidget::setTabOrder(pBAddSubject, pBClose);
+        QWidget::setTabOrder(pBClose, cBSelectGradeRemove);
+        QWidget::setTabOrder(cBSelectGradeRemove, cBSelectClassToRSub);
+        QWidget::setTabOrder(cBSelectClassToRSub, cBSelectSubjectRemove);
+        QWidget::setTabOrder(cBSelectSubjectRemove, pBRemove);
+        QWidget::setTabOrder(pBRemove, pBClose_2);
+        QWidget::setTabOrder(pBClose_2, tWSubjectManage);
 
         retranslateUi(SubjectManage);
         QObject::connect(pBClose, SIGNAL(clicked()), SubjectManage, SLOT(close()));
@@ -124,7 +134,7 @@ public:
 
     void retranslateUi(QWidget *SubjectManage)
     {
-        SubjectManage->setWindowTitle(QApplication::translate("SubjectManage", "Form", 0));
+        SubjectManage->setWindowTitle(QApplication::translate("SubjectManage", "Add Remove Subjecet", 0));
         pBClose->setText(QApplication::translate("SubjectManage", "Close", 0));
         label->setText(QApplication::translate("SubjectManage", "Select Grade :", 0));
         label_2->setText(QApplication::translate("SubjectManage", "Enter Subject Name :", 0));

@@ -81,7 +81,7 @@ public:
         rBEssayMcq->setGeometry(QRect(50, 70, 131, 17));
         pBCreatePaper = new QPushButton(NewHomeWork);
         pBCreatePaper->setObjectName(QStringLiteral("pBCreatePaper"));
-        pBCreatePaper->setGeometry(QRect(400, 270, 371, 41));
+        pBCreatePaper->setGeometry(QRect(400, 270, 371, 51));
         pBClose = new QPushButton(NewHomeWork);
         pBClose->setObjectName(QStringLiteral("pBClose"));
         pBClose->setGeometry(QRect(680, 380, 75, 31));
@@ -92,8 +92,15 @@ public:
         tWSelectSubject->setObjectName(QStringLiteral("tWSelectSubject"));
         tWSelectSubject->setGeometry(QRect(10, 40, 371, 391));
         tWSelectSubject->setFont(font);
-        tWSelectSubject->setSortingEnabled(true);
+        tWSelectSubject->setSortingEnabled(false);
         tWSelectSubject->header()->setVisible(false);
+        QWidget::setTabOrder(tWSelectSubject, lEPaperName);
+        QWidget::setTabOrder(lEPaperName, lEDuration);
+        QWidget::setTabOrder(lEDuration, rBMcq);
+        QWidget::setTabOrder(rBMcq, rBEssay);
+        QWidget::setTabOrder(rBEssay, rBEssayMcq);
+        QWidget::setTabOrder(rBEssayMcq, pBCreatePaper);
+        QWidget::setTabOrder(pBCreatePaper, pBClose);
 
         retranslateUi(NewHomeWork);
         QObject::connect(pBClose, SIGNAL(clicked()), NewHomeWork, SLOT(close()));
@@ -103,7 +110,7 @@ public:
 
     void retranslateUi(QWidget *NewHomeWork)
     {
-        NewHomeWork->setWindowTitle(QApplication::translate("NewHomeWork", "Form", 0));
+        NewHomeWork->setWindowTitle(QApplication::translate("NewHomeWork", "New Home Work", 0));
         lPaperName->setText(QApplication::translate("NewHomeWork", "Paper Name", 0));
         lSelectSubject->setText(QApplication::translate("NewHomeWork", "Select Subject", 0));
         lDuration->setText(QApplication::translate("NewHomeWork", "Duration", 0));
