@@ -7,8 +7,8 @@ OpenHomeWork::OpenHomeWork(QDialog *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
-    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
+    filepath ="D:/dk work/Motarola/Project Location/Teacher Path/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
     setSubjetToTree();
 }
 
@@ -329,13 +329,13 @@ void OpenHomeWork::on_pBDeleteHomeWork_clicked()
         creatingPaperPath.append(ui->lWHomeWorks->currentItem()->text());
         creatingPaperPath.append(".xml");
 
-     qDebug()<<creatingPaperPath<<"dddddddddddddddddddddd";
+
 
 
         QFile paperfile(creatingPaperPath);
         if(paperfile.exists())
         {
-            qDebug()<<creatingPaperPath<<"dddddddddddddddddddddd";
+
             paperfile.remove();
         }
 

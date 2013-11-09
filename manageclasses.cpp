@@ -9,8 +9,8 @@ ManageClasses::ManageClasses(QDialog *parent) :
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     ui->tWManage->setCurrentIndex(0);
     //filepath means config filepath
-    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
-    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
+    filepath ="D:/dk work/Motarola/Project Location/Teacher Path/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
     ui->tWManage->setTabIcon(0,QIcon(":/binduTeacher/new/imgs/addgrade.png"));
     ui->tWManage->setTabIcon(1,QIcon(":/binduTeacher/new/imgs/addclass.png"));
     ui->tWManage->setTabIcon(2,QIcon(":/binduTeacher/new/imgs/addStd.png"));
@@ -235,6 +235,7 @@ void ManageClasses::on_tWManage_currentChanged(int index)
             QDomNodeList grades = root.elementsByTagName("Grade");
 
             ui->cBSelectGrade_3->clear();
+            ui->cBSelectClass->clear();
             for(int i=0;i<grades.count();i++)
             {
                 QDomNode itemNode = grades.at(i);
@@ -249,7 +250,7 @@ void ManageClasses::on_tWManage_currentChanged(int index)
                     {
                         QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
 
-                        ui->cBSelectClass->clear();
+
                         for(int j=0;j<classList.count();j++)
                         {
                             QDomNode itemNodeClass = classList.at(j);
@@ -414,6 +415,7 @@ void ManageClasses::on_tWManage_currentChanged(int index)
                                  ui->cBSelectStudentFRStudent->clear();
                                  foreach (QString studentName, studentNameSplitedList)
                                  {
+                                     if(!studentName.isEmpty())
                                      ui->cBSelectStudentFRStudent->addItem(studentName);
 
                                  }
@@ -675,6 +677,7 @@ void ManageClasses::on_pBAddStudent_clicked()
                                 QDomNode studentNames=students.elementsByTagName("students").at(0);
                                // qDebug()<<studentNames.firstChild().nodeValue();
                                 QString newStudents=studentNames.firstChild().nodeValue();
+                                if(!studentNames.firstChild().nodeValue().isEmpty())
                                 newStudents.append(",");
                                 newStudents.append(ui->lEStudentName->text());
                                 QDomElement newstudents = document.createElement(QString("students"));
@@ -932,6 +935,7 @@ void ManageClasses::on_pBRemoveGrade_clicked()
                     if(ui->cBSelectGrade->currentText()==itemNode.toElement().attribute("GradeName"))
                     {
                         root.removeChild(itemNode);
+                        QMessageBox::information(this,"Success","Grade Removed");
 
 
                     }
@@ -1055,6 +1059,7 @@ void ManageClasses::on_pBRemoveClass_clicked()
         }
         else
         {
+
             QDomDocument document;
 
             document.setContent(&openConfigFile);
@@ -1069,16 +1074,20 @@ void ManageClasses::on_pBRemoveClass_clicked()
 
                 if(itemNode.isElement())
                 {
-                    if(ui->cBSelectGradeFRStudent->currentText()==itemNode.toElement().attribute("GradeName"))
+                    if(ui->cBSelectGradeForRClass->currentText()==itemNode.toElement().attribute("GradeName"))
                     {
+
                         QDomNodeList classList= itemNode.toElement().elementsByTagName("Class");
                       //  ui->cBSelectClassFRStudent->clear();
                         for(int j=0;j<classList.count();j++)
                         {
                             QDomNode itemNodeClass = classList.at(j);
-                            if(itemNodeClass.toElement().attribute("ClassName")==ui->cBSelectClassFRStudent->currentText())
+                            if(itemNodeClass.toElement().attribute("ClassName")==ui->cBSelectClassForRClass->currentText())
                             {
+
+
                                 itemNode.toElement().removeChild(itemNodeClass);
+                                QMessageBox::information(this,"Success","Class removed");
 
 
                             }
@@ -1207,7 +1216,7 @@ void ManageClasses::on_pBRemoveStudent_clicked()
                                     if(!(ui->cBSelectStudentFRStudent->currentText()==studentName))
                                     {
                                         newStudentNameList.append(studentName);
-                                        if(d!=(studentNameSplitedList.size()-1))
+                                        if(d!=(studentNameSplitedList.size()-2))
                                         {
                                             newStudentNameList.append(",");
 
@@ -1226,6 +1235,7 @@ void ManageClasses::on_pBRemoveStudent_clicked()
 
 
                                 itemNodeClass.replaceChild(newStudentNode,students);
+                                QMessageBox::information(this,"Success","Student removed");
 
 
                             }

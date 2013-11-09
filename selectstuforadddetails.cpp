@@ -7,8 +7,8 @@ SelectStuForAddDetails::SelectStuForAddDetails(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
-    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
+    filepath ="D:/dk work/Motarola/Project Location/Teacher Path/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
     setClassList();
 }
 

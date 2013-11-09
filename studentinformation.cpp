@@ -12,8 +12,8 @@ StudentInformation::StudentInformation(QWidget *parent,QString studentName,QStri
     this->grade=grade;
     this->className=className;
     this->studentInfoFilePath=studentInfoPath;
-    filepath ="D:/dk work/Motarola/Bindu New/Administration/Admin.xml";
-    basicPath="D:/dk work/Motarola/Bindu New/Teacher/";
+    filepath ="D:/dk work/Motarola/Project Location/Teacher Path/Administration/Admin.xml";
+    basicPath="D:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
     ui->tabWidget->setCurrentIndex(0);
 
     //ui->tWMarksSummery->setFrameShape(QFrame::NoFrame);
