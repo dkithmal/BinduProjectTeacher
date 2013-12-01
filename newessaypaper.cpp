@@ -645,7 +645,7 @@ void NewEssayPaper::drowEditQuestions(QDomElement root)
                  questionLayout[qNoInPage-1]->addWidget(new QLabel(QString::number(questionNo)+")", this),0,0);
                  questionLayout[qNoInPage-1]->addWidget(qusestionEdit[questionNo],0,1,1,40,0);
 
-                 questionLayout[qNoInPage-1]->addWidget(new QLabel("TeacharMarks", this),1,0);
+                 questionLayout[qNoInPage-1]->addWidget(new QLabel("Teachar Marks", this),1,0);
                  questionLayout[qNoInPage-1]->addWidget(essayMarks[EssayQusrionNo-1],1,1,1,40,0);
 
                 // essayAnswers[EssayQusrionNo-1] = new QTextEdit;

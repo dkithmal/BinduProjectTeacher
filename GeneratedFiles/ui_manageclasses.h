@@ -250,7 +250,7 @@ public:
         QObject::connect(pBClose_5, SIGNAL(clicked()), ManageClasses, SLOT(close()));
         QObject::connect(pBClose_6, SIGNAL(clicked()), ManageClasses, SLOT(close()));
 
-        tWManage->setCurrentIndex(5);
+        tWManage->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(ManageClasses);

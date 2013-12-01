@@ -40,13 +40,13 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>410</y>
+     <y>400</y>
      <width>91</width>
-     <height>16</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Discription</string>
+    <string>Description</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="TEStudentDiscription">

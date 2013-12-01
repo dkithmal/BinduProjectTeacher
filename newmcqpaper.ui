@@ -28,11 +28,11 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
-     <string>Add qustions</string>
+     <string>Add Qustions</string>
     </attribute>
     <widget class="QPushButton" name="pBClose">
      <property name="geometry">
@@ -57,7 +57,7 @@
       </rect>
      </property>
      <property name="title">
-      <string>Add MCQ question</string>
+      <string>Add MCQ Question</string>
      </property>
      <widget class="QLabel" name="lMcqQuestion">
       <property name="geometry">
@@ -95,7 +95,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>No of Choises :</string>
+       <string>No of choices :</string>
       </property>
      </widget>
      <widget class="QComboBox" name="cBNoOfChoises">
@@ -376,7 +376,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Privious</string>
+      <string>previous</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pBNext">
@@ -589,7 +589,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Privious</string>
+      <string>previous</string>
      </property>
     </widget>
    </widget>

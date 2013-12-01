@@ -172,7 +172,67 @@ void StudentInformation::setStudentMarks()
 
 
 }
+
+    setStudentAvarageMarks();
 }
+
+
+
+void StudentInformation::setStudentAvarageMarks()
+{
+    QStringList studentpaperMarkList;
+    int rowcount=ui->tWMarksSummery->rowCount();
+    for(int i=0;i<rowcount;i++)
+    {
+          if(!ui->tWMarksSummery->item(i,2)==NULL)
+          {
+
+              float marksForPaper =ui->tWMarksSummery->item(i,2)->text().mid(0,ui->tWMarksSummery->item(i,2)->text().indexOf("/")).toFloat();
+              float totalMarks=ui->tWMarksSummery->item(i,2)->text().mid((ui->tWMarksSummery->item(i,2)->text().indexOf("/"))+1).toFloat();
+
+              float marksForm100=(marksForPaper/totalMarks)*100;
+              studentpaperMarkList.append(QString::number(marksForm100));
+
+
+          }
+    }
+
+  float allPaperMarks=0;
+
+    for(int y=0;y<studentpaperMarkList.count();y++)
+    {
+        allPaperMarks=allPaperMarks+studentpaperMarkList.at(y).toFloat();
+
+    }
+
+    float avarageMarks=allPaperMarks/studentpaperMarkList.count();
+
+    ui->pBStudentMSummry->setValue((int)avarageMarks);
+    if((int)avarageMarks<35)
+    {
+        ui->pBStudentMSummry->setStyleSheet(" QProgressBar {border: 2px solid grey;border-radius: 5px;  text-align: center;} QProgressBar::chunk {background-color:red;width: 20px;}");
+    }
+    if((int)avarageMarks>=35&&(int)avarageMarks<75)
+    {
+
+        ui->pBStudentMSummry->setStyleSheet(" QProgressBar {border: 2px solid grey;border-radius: 5px;  text-align: center;} QProgressBar::chunk {background-color:yellow;width: 20px;}");
+
+
+
+    }
+
+    if((int)avarageMarks>=75)
+    {
+        ui->pBStudentMSummry->setStyleSheet(" QProgressBar {border: 2px solid grey;border-radius: 5px;  text-align: center;} QProgressBar::chunk {background-color:green;width: 20px;}");
+
+
+
+    }
+
+
+
+}
+
 
 
 

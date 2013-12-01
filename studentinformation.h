@@ -21,6 +21,7 @@ public:
     ~StudentInformation();
     void setStudentDetails();
     void setStudentMarks();
+    void setStudentAvarageMarks();
     QString studentName;
     QString grade;
     QString className;

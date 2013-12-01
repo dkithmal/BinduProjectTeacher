@@ -39,7 +39,7 @@ void DownloadManage::downloadingfiles(QString command ,QString filePath,QString 
     qDebug()<<filePath<<"filePath";
     qDebug()<<studentList<<"studentList";
     cliant = new ServerCliant;
-    cliant->toExicuteTeacherCommand(command,filePath,studentList,"192.168.1.2");
+    cliant->toExicuteTeacherCommand(command,filePath,studentList,"127.0.0.1");
 
      connect(cliant, SIGNAL(FileRecived(QString)), this, SLOT(OnFileRecived(QString)));
 

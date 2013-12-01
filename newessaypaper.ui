@@ -28,11 +28,11 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
-     <string>Add qustions</string>
+     <string>Add Qustions</string>
     </attribute>
     <widget class="QPushButton" name="pBClose">
      <property name="geometry">
@@ -271,7 +271,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Privious</string>
+      <string>previous</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pBNext">
@@ -484,7 +484,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Privious</string>
+      <string>previous</string>
      </property>
     </widget>
    </widget>
