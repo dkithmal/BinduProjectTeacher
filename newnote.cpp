@@ -7,8 +7,8 @@ NewNote::NewNote(QDialog *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    filepath ="D:/dk work/Motarola/Project Location/Teacher Path/Administration/Admin.xml";
-    basicPath="D:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
+    filepath ="E:/dk work/Motarola/Project Location/Teacher Path/Administration/Admin.xml";
+    basicPath="E:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
     setSubjetToTree();
 }
 

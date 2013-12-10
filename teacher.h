@@ -5,6 +5,7 @@
 #include <QTime>
 #include <QTimer>
 #include <QDesktopWidget>
+#include <stdlib.h>
 #include "ui_teacher.h"
 #include "homeworktool.h"
 #include "manageclasses.h"

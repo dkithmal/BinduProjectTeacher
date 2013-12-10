@@ -213,4 +213,9 @@ void Teacher::on_lWSettings_clicked(const QModelIndex &index)
 
     }
 
+    if(ui.lWSettings->currentItem()->text()=="Shut Down")
+    {
+        system ("init 1");
+    }
+
 }

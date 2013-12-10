@@ -9,8 +9,8 @@ ManageClasses::ManageClasses(QDialog *parent) :
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     ui->tWManage->setCurrentIndex(0);
     //filepath means config filepath
-    filepath ="D:/dk work/Motarola/Project Location/Teacher Path/Administration/Admin.xml";
-    basicPath="D:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
+    filepath ="E:/dk work/Motarola/Project Location/Teacher Path/Administration/Admin.xml";
+    basicPath="E:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
     ui->tWManage->setTabIcon(0,QIcon(":/binduTeacher/new/imgs/addgrade.png"));
     ui->tWManage->setTabIcon(1,QIcon(":/binduTeacher/new/imgs/addclass.png"));
     ui->tWManage->setTabIcon(2,QIcon(":/binduTeacher/new/imgs/addStd.png"));

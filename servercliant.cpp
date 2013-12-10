@@ -22,7 +22,7 @@ void ServerCliant::test(QString command ,QString filePath,QString studentList,QS
     this->studentList=studentList;
     this->filePath=filePath;
     DownloadStrted=0;
-    downloadFilePath ="D:/dk work/Motarola/project/teacher/";
+    downloadFilePath ="E:/dk work/Motarola/project/teacher/";
 
 
     int pos = command.indexOf(" ");

@@ -9,7 +9,7 @@ DownloadManage::DownloadManage(QDialog *parent,QString command ,QString filePath
     this->setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
 
     downloadLocationPath=filePath;
-    basicPath="D:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
+    basicPath="E:/dk work/Motarola/Project Location/Teacher Path/Teacher/";
     downloadingfiles(command,filePath,studentList);
 
 
