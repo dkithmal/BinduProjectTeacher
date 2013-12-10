@@ -19,5 +19,10 @@
         <file>imgs/student.jpg</file>
         <file>imgs/subject.png</file>
         <file>imgs/system.png</file>
+        <file>imgs/download.jpg</file>
+        <file>imgs/editStudent.jpg</file>
+        <file>imgs/markPapers.jpg</file>
+        <file>imgs/studentProgress.jpg</file>
+        <file>imgs/upload.jpg</file>
     </qresource>
 </RCC>

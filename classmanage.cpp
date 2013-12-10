@@ -8,6 +8,34 @@ ClassManage::ClassManage(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
       //this->setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+
+
+
+    //set icons to buttons
+    QPixmap markStudentPapers(":/binduTeacher/new/imgs/markPapers.jpg");
+    QIcon markStudentPapersIcon(markStudentPapers);
+    ui->pBMarkPapers->setIcon(markStudentPapersIcon);
+    QSize pBMarkPapersSize=markStudentPapers.rect().size();
+    pBMarkPapersSize.setHeight(pBMarkPapersSize.height()-50);
+    pBMarkPapersSize.setWidth(pBMarkPapersSize.width()-50);
+    ui->pBMarkPapers->setIconSize(pBMarkPapersSize);
+
+    QPixmap viewStudentProgress(":/binduTeacher/new/imgs/studentProgress.jpg");
+    QIcon studentProgressIcon(viewStudentProgress);
+    ui->pBStudentProgress->setIcon(studentProgressIcon);
+    QSize pBviewStudentSize=viewStudentProgress.rect().size();
+    pBviewStudentSize.setHeight(pBviewStudentSize.height()-455);
+    pBviewStudentSize.setWidth(pBviewStudentSize.width()-120);
+    ui->pBStudentProgress->setIconSize(pBviewStudentSize);
+
+    //set icons to buttons
+    QPixmap editStudent(":/binduTeacher/new/imgs/editStudent.jpg");
+    QIcon editStudentIcon(editStudent);
+    ui->pBEditStudent->setIcon(editStudentIcon);
+    QSize pBEditStudentSize=editStudent.rect().size();
+    pBEditStudentSize.setHeight(pBEditStudentSize.height()-50);
+    pBEditStudentSize.setWidth(pBEditStudentSize.width()-50);
+    ui->pBEditStudent->setIconSize(pBEditStudentSize);
 }
 
 ClassManage::~ClassManage()

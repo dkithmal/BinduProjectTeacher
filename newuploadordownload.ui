@@ -55,7 +55,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Download File</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -73,7 +73,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Upload File</string>
+       <string/>
       </property>
      </widget>
     </item>

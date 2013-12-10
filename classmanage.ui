@@ -89,12 +89,18 @@
      <widget class="QPushButton" name="pBStudentProgress">
       <property name="minimumSize">
        <size>
-        <width>220</width>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
         <height>200</height>
        </size>
       </property>
       <property name="text">
-       <string>View Student Progress</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -102,12 +108,18 @@
      <widget class="QPushButton" name="pBMarkPapers">
       <property name="minimumSize">
        <size>
-        <width>220</width>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
         <height>200</height>
        </size>
       </property>
       <property name="text">
-       <string>Mark Papers</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -115,12 +127,18 @@
      <widget class="QPushButton" name="pBEditStudent">
       <property name="minimumSize">
        <size>
-        <width>220</width>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
         <height>200</height>
        </size>
       </property>
       <property name="text">
-       <string>Edit Student Details</string>
+       <string/>
       </property>
      </widget>
     </item>
